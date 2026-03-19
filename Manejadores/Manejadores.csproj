@@ -94,12 +94,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManejadorCitas.cs" />
     <Compile Include="ManejadorDiseño.cs" />
+    <Compile Include="ManejadorHistorialClinico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{75be8bb8-4d75-4d0a-8642-3796584270b0}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{828492ef-1604-44db-883b-060af9d7cf66}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
