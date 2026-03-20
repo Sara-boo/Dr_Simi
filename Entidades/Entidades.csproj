@@ -92,6 +92,9 @@
   <ItemGroup>
     <Compile Include="Citas.cs" />
     <Compile Include="HistorialClinico.cs" />
+    <Compile Include="Inventario.cs" />
+    <Compile Include="Medicamentos.cs" />
+    <Compile Include="MovimientosInventario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
