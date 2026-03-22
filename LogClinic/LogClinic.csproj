@@ -97,6 +97,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Citas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Citas.Designer.cs">
+      <DependentUpon>Citas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPaginaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Citas.resx">
+      <DependentUpon>Citas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
