@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LogClinic
 {
-    public partial class Citas : Form
+    public partial class FrmRegristroCitas : Form
     {
-        public Citas()
+        public FrmRegristroCitas()
         {
             InitializeComponent();
-        }
-
-        private void Citas_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

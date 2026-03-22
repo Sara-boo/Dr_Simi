@@ -1,6 +1,6 @@
 ﻿namespace LogClinic
 {
-    partial class Citas
+    partial class FrmCitas
     {
         /// <summary>
         /// Required designer variable.
