@@ -29,7 +29,7 @@ namespace Manejadores
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
-            //tabla.Columns["Id_cita"].Visible = false;
+            //tabla.Columns["Id_Cita"].Visible = false;
             //tabla.Columns["created_at"].Visible = false;
             //tabla.Columns["updated_at"].Visible = false;
             tabla.Columns.Insert(5, Boton("Cambiar estado", Color.Green));
@@ -43,7 +43,7 @@ namespace Manejadores
             caja.DisplayMember = "nombre";
             caja.ValueMember = "id_pieza";
         }
-        public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
+        public static DataGridViewButtonColumn Boton(string titulo ,Color fondo)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.Text = titulo;

@@ -172,6 +172,10 @@
     <None Include="Resources\BotonOcultarClave.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{828492ef-1604-44db-883b-060af9d7cf66}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Manejadores\Manejadores.csproj">
       <Project>{71e9c884-717c-4c3a-a528-fcd3a04c8272}</Project>
       <Name>Manejadores</Name>
