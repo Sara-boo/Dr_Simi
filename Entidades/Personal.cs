@@ -28,5 +28,6 @@ namespace Entidades
         public string Especialidad { get; set; }
         public string Estado { get; set; }
         public int FkidRol { get; set; }
+        ///holaa
     }
 }
