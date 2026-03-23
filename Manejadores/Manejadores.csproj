@@ -101,6 +101,7 @@
     <Compile Include="ManejadorCitas.cs" />
     <Compile Include="ManejadorDiseño.cs" />
     <Compile Include="ManejadorHistorialClinico.cs" />
+    <Compile Include="ManejadorRPaciente.cs" />
     <Compile Include="ManejadorLogin.cs" />
     <Compile Include="ManejadorUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
