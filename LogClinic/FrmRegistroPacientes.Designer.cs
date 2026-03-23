@@ -265,22 +265,26 @@
             // 
             // BntGuardar
             // 
-            this.BntGuardar.Location = new System.Drawing.Point(417, 693);
+            this.BntGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
+            this.BntGuardar.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BntGuardar.Location = new System.Drawing.Point(493, 684);
             this.BntGuardar.Name = "BntGuardar";
-            this.BntGuardar.Size = new System.Drawing.Size(75, 23);
+            this.BntGuardar.Size = new System.Drawing.Size(110, 41);
             this.BntGuardar.TabIndex = 25;
             this.BntGuardar.Text = "Guardar";
-            this.BntGuardar.UseVisualStyleBackColor = true;
+            this.BntGuardar.UseVisualStyleBackColor = false;
             this.BntGuardar.Click += new System.EventHandler(this.BntGuardar_Click);
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(743, 693);
+            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.BtnCancelar.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.Location = new System.Drawing.Point(745, 684);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancelar.Size = new System.Drawing.Size(110, 41);
             this.BtnCancelar.TabIndex = 26;
             this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // FrmRegistroPacientes

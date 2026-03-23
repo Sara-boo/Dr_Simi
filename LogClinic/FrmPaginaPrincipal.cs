@@ -28,11 +28,15 @@ namespace LogClinic
             LblUsuarioActivo.ForeColor = ColorTranslator.FromHtml("#CCECEE");
             md.QuitarBordesBotones(BtnCerrar);
             md.QuitarBordesBotones(BtnOcultarVentana);
-           
+
         }
         private void FrmPaginaPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tsPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
         }
     }
 }
