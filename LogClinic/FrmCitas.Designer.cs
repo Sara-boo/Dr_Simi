@@ -47,27 +47,29 @@
             // BtnNuevaCita
             // 
             this.BtnNuevaCita.Location = new System.Drawing.Point(788, 26);
-            this.BtnNuevaCita.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.BtnNuevaCita.Margin = new System.Windows.Forms.Padding(5);
             this.BtnNuevaCita.Name = "BtnNuevaCita";
             this.BtnNuevaCita.Size = new System.Drawing.Size(153, 49);
             this.BtnNuevaCita.TabIndex = 0;
             this.BtnNuevaCita.Text = "+ Nueva Cita";
             this.BtnNuevaCita.UseVisualStyleBackColor = true;
+            this.BtnNuevaCita.Click += new System.EventHandler(this.BtnNuevaCita_Click);
             // 
             // BtnFiltrar
             // 
             this.BtnFiltrar.Location = new System.Drawing.Point(957, 26);
-            this.BtnFiltrar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.BtnFiltrar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnFiltrar.Name = "BtnFiltrar";
             this.BtnFiltrar.Size = new System.Drawing.Size(153, 49);
             this.BtnFiltrar.TabIndex = 1;
             this.BtnFiltrar.Text = "Filtrar";
             this.BtnFiltrar.UseVisualStyleBackColor = true;
+            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1955, 48);
-            this.button3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 35);
             this.button3.TabIndex = 2;
@@ -86,12 +88,13 @@
             // BtnCsv
             // 
             this.BtnCsv.Location = new System.Drawing.Point(1133, 26);
-            this.BtnCsv.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.BtnCsv.Margin = new System.Windows.Forms.Padding(5);
             this.BtnCsv.Name = "BtnCsv";
             this.BtnCsv.Size = new System.Drawing.Size(153, 49);
             this.BtnCsv.TabIndex = 4;
             this.BtnCsv.Text = "CSV";
             this.BtnCsv.UseVisualStyleBackColor = true;
+            this.BtnCsv.Click += new System.EventHandler(this.BtnCsv_Click);
             // 
             // TxtPaciente
             // 
@@ -143,7 +146,13 @@
             // 
             // CmbEstado
             // 
+            this.CmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbEstado.FormattingEnabled = true;
+            this.CmbEstado.Items.AddRange(new object[] {
+            "Programada",
+            "Atendida",
+            "Cancelada",
+            "No_asistio"});
             this.CmbEstado.Location = new System.Drawing.Point(1098, 129);
             this.CmbEstado.Name = "CmbEstado";
             this.CmbEstado.Size = new System.Drawing.Size(188, 28);
@@ -151,13 +160,14 @@
             // 
             // DtgDatos
             // 
+            this.DtgDatos.AllowUserToAddRows = false;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgDatos.Location = new System.Drawing.Point(12, 188);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.Size = new System.Drawing.Size(1289, 537);
             this.DtgDatos.TabIndex = 14;
             // 
-            // Citas
+            // FrmCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,8 +188,9 @@
             this.Controls.Add(this.BtnNuevaCita);
             this.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Name = "Citas";
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "FrmCitas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";
             this.Load += new System.EventHandler(this.Citas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();

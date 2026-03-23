@@ -32,3 +32,16 @@ BEGIN
     SET activo = NOT activo
     WHERE id_usuario = p_id_usuario;
 END
+
+-- Vista para mostrar las citas
+CREATE VIEW v_citas AS
+SELECT 
+    p.nombre_completo                                        AS Paciente,
+    c.fecha_hora                                             AS Fecha_Hora,
+    CONCAT('Dr. ', per.nombre, ' ', per.apellido, 
+           ' (', per.especialidad, ')')                      AS Medico_Asignado,
+    c.motivo                                                 AS Observaciones,
+    c.estado                                                 AS Estado
+FROM tbl_citas c
+INNER JOIN tbl_pacientes p   ON c.fkid_paciente = p.id_paciente
+INNER JOIN tbl_personal  per ON c.fkid_personal = per.id_personal;
