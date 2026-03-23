@@ -97,6 +97,7 @@
     <Compile Include="ManejadorCitas.cs" />
     <Compile Include="ManejadorDiseño.cs" />
     <Compile Include="ManejadorHistorialClinico.cs" />
+    <Compile Include="ManejadorRPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

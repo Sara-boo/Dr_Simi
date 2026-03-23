@@ -95,6 +95,7 @@
     <Compile Include="Inventario.cs" />
     <Compile Include="Medicamentos.cs" />
     <Compile Include="MovimientosInventario.cs" />
+    <Compile Include="Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
