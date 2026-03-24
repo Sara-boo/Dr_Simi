@@ -35,16 +35,16 @@
             this.CmbMedico = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtPaciente = new System.Windows.Forms.TextBox();
-            this.TxtCurp = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtTelefono = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TxtAlergias = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.TxtEnfCronicas = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.TxtAlergias = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtTelefono = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TxtCurp = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtPaciente = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.DtpFechaProgramada = new System.Windows.Forms.DateTimePicker();
@@ -98,7 +98,7 @@
             this.CmbMedico.FormattingEnabled = true;
             this.CmbMedico.Location = new System.Drawing.Point(589, 125);
             this.CmbMedico.Name = "CmbMedico";
-            this.CmbMedico.Size = new System.Drawing.Size(121, 28);
+            this.CmbMedico.Size = new System.Drawing.Size(345, 28);
             this.CmbMedico.TabIndex = 4;
             // 
             // label4
@@ -129,53 +129,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // label5
+            // TxtEnfCronicas
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Nombre Completo";
+            this.TxtEnfCronicas.Location = new System.Drawing.Point(277, 230);
+            this.TxtEnfCronicas.Multiline = true;
+            this.TxtEnfCronicas.Name = "TxtEnfCronicas";
+            this.TxtEnfCronicas.Size = new System.Drawing.Size(203, 77);
+            this.TxtEnfCronicas.TabIndex = 9;
             // 
-            // TxtPaciente
+            // label9
             // 
-            this.TxtPaciente.Location = new System.Drawing.Point(24, 68);
-            this.TxtPaciente.Name = "TxtPaciente";
-            this.TxtPaciente.Size = new System.Drawing.Size(456, 26);
-            this.TxtPaciente.TabIndex = 1;
-            // 
-            // TxtCurp
-            // 
-            this.TxtCurp.Location = new System.Drawing.Point(24, 144);
-            this.TxtCurp.Name = "TxtCurp";
-            this.TxtCurp.Size = new System.Drawing.Size(203, 26);
-            this.TxtCurp.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 111);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "CURP";
-            // 
-            // TxtTelefono
-            // 
-            this.TxtTelefono.Location = new System.Drawing.Point(277, 144);
-            this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(203, 26);
-            this.TxtTelefono.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(273, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 20);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Teléfono";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(273, 197);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(191, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Enfermedades Crónicas";
             // 
             // TxtAlergias
             // 
@@ -194,22 +163,53 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Alergias";
             // 
-            // TxtEnfCronicas
+            // TxtTelefono
             // 
-            this.TxtEnfCronicas.Location = new System.Drawing.Point(277, 230);
-            this.TxtEnfCronicas.Multiline = true;
-            this.TxtEnfCronicas.Name = "TxtEnfCronicas";
-            this.TxtEnfCronicas.Size = new System.Drawing.Size(203, 77);
-            this.TxtEnfCronicas.TabIndex = 9;
+            this.TxtTelefono.Location = new System.Drawing.Point(277, 144);
+            this.TxtTelefono.Name = "TxtTelefono";
+            this.TxtTelefono.Size = new System.Drawing.Size(203, 26);
+            this.TxtTelefono.TabIndex = 5;
             // 
-            // label9
+            // label7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(273, 197);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(191, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Enfermedades Crónicas";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(273, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 20);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Teléfono";
+            // 
+            // TxtCurp
+            // 
+            this.TxtCurp.Location = new System.Drawing.Point(24, 144);
+            this.TxtCurp.Name = "TxtCurp";
+            this.TxtCurp.Size = new System.Drawing.Size(203, 26);
+            this.TxtCurp.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "CURP";
+            // 
+            // TxtPaciente
+            // 
+            this.TxtPaciente.Location = new System.Drawing.Point(24, 68);
+            this.TxtPaciente.Name = "TxtPaciente";
+            this.TxtPaciente.Size = new System.Drawing.Size(456, 26);
+            this.TxtPaciente.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Nombre Completo";
             // 
             // label10
             // 
@@ -310,7 +310,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmRegristroCitas";
             this.Text = "FrmRegristroCitas";
             this.groupBox1.ResumeLayout(false);

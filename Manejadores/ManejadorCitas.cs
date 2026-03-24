@@ -29,10 +29,12 @@ namespace Manejadores
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
-            //tabla.Columns["Id_Cita"].Visible = false;
+            tabla.Columns["Id_Cita"].Visible = false;
+            tabla.Columns["Id_Paciente"].Visible = false;
+            tabla.Columns["Id_Personal"].Visible = false;
             //tabla.Columns["created_at"].Visible = false;
             //tabla.Columns["updated_at"].Visible = false;
-            tabla.Columns.Insert(5, Boton("Cambiar estado", Color.Green));
+            tabla.Columns.Insert(8, Boton("Cambiar estado", Color.Green));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
 

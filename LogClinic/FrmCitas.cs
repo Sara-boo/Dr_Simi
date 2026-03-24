@@ -10,14 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Google.Protobuf.WellKnownTypes;
 
 namespace LogClinic
 {
     public partial class FrmCitas : Form
     {
         ManejadorCitas mc;
-        int fila =0, columna = 0;
-        public static Citas cita = new Citas(0,0,0,DateTime.MinValue,"","");
+        int fila = 0, columna = 0;
+        public static Citas cita = new Citas(0, 0, 0, DateTime.MinValue, "", "");
         public FrmCitas()
         {
             InitializeComponent();
@@ -31,12 +32,19 @@ namespace LogClinic
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            mc.Mostrar($@"SELECT * FROM v_citas 
-                  WHERE Paciente LIKE '%{TxtPaciente.Text}%'
-                  AND Fecha_Hora BETWEEN '{DtpDesdeFecha.Value:yyyy-MM-dd} 00:00:00' 
-                                     AND '{DtpHastaFecha.Value:yyyy-MM-dd} 23:59:59'
-                  AND Estado LIKE '%{CmbEstado.Text}%'",
-               DtgDatos, "Citas");
+            string consulta = "SELECT * FROM v_citas WHERE 1=1";
+
+            if (TxtPaciente.Text != "")
+                consulta += $" AND Paciente LIKE '%{TxtPaciente.Text}%'";
+
+            if (DtpDesdeFecha.Value.Date != DtpHastaFecha.Value.Date)
+                consulta += $" AND Fecha_Hora BETWEEN '{DtpDesdeFecha.Value:yyyy-MM-dd} 00:00:00' AND '{DtpHastaFecha.Value:yyyy-MM-dd} 23:59:59'";
+
+            if (CmbEstado.Text != "")
+                consulta += $" AND Estado = '{CmbEstado.Text}'";
+
+            mc.Mostrar(consulta, DtgDatos, "v_citas");
+
         }
 
         private void BtnNuevaCita_Click(object sender, EventArgs e)
@@ -59,30 +67,23 @@ namespace LogClinic
         private void DtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             cita.IdCita = int.Parse(DtgDatos.Rows[fila].Cells["Id_Cita"].Value.ToString());
-            cita.IdPaciente = int.Parse(DtgDatos.Rows[fila].Cells["Paciente"].Value.ToString());
-            cita.Id_mecanico = int.Parse(DtgDatos.Rows[fila].Cells["id_mecanico"].Value.ToString());
-            mecanico.Nombre = DtgDatos.Rows[fila].Cells["nombre"].Value.ToString();
-            mecanico.Telefono = DtgDatos.Rows[fila].Cells["telefono"].Value.ToString();
-            mecanico.Email = DtgDatos.Rows[fila].Cells["email"].Value.ToString();
-            mecanico.Estatus = DtgDatos.Rows[fila].Cells["estatus"].Value.ToString();
+            cita.IdPaciente = int.Parse(DtgDatos.Rows[fila].Cells["Id_Paciente"].Value.ToString());
+            cita.IdPersonal = int.Parse(DtgDatos.Rows[fila].Cells["Id_Personal"].Value.ToString());
+            cita.FechaHora = DateTime.Parse(DtgDatos.Rows[fila].Cells["Fecha_Hora"].Value.ToString());
+            cita.Estado = DtgDatos.Rows[fila].Cells["Estado"].Value.ToString();
+            cita.Motivo = DtgDatos.Rows[fila].Cells["Motivo"].Value.ToString();
             switch (columna)
             {
-                case 5:
+                case 8:
                     {
-                        FrmDatosMecanico dme = new FrmDatosMecanico();
-                        dme.ShowDialog();
+                        FrmRegristroCitas rc = new FrmRegristroCitas();
+                        rc.ShowDialog();
                         DtgDatos.Columns.Clear();
 
                     }
                     break;
-                case 6:
-                    {
-
-                        mme.Borrar(mecanico);
-                        //actualizar datagridview
-                        DtgDatos.Columns.Clear();
-                    }
 
             }
         }
+    }
 }
