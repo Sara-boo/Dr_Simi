@@ -31,26 +31,24 @@ namespace LogClinic
         {
             try
             {
-                if (cmbTipo.SelectedIndex==-1)
+                if (cmbTipo.SelectedIndex == -1)
                 {
                     MessageBox.Show("Seleccione un tipo de medicamento");
                     return;
                 }
-                if (chkRequiereReceta.Checked)
-                {
-                    mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text,true));
-                }
-                else
-                {
-                    mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, false));
-                }
-                FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario();
-                sm.Show();
+
+                bool requiere = chkRequiereReceta.Checked;
+                mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
+
+                int ultimoId = mm.ObtenerUltimoIdMedicamento();
+                FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
+
+                sm.ShowDialog();
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el medicamento" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al guardar el medicamento: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
