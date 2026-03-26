@@ -97,6 +97,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCitas.Designer.cs">
+      <DependentUpon>FrmCitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPaginaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
     <Compile Include="FrmRegistroMedicamentos.Designer.cs">
       <DependentUpon>FrmRegistroMedicamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRegristroCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegristroCitas.Designer.cs">
+      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSeguimientoRegistroInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCitas.resx">
+      <DependentUpon>FrmCitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistroMedicamentos.resx">
       <DependentUpon>FrmRegistroMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegristroCitas.resx">
+      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
       <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
