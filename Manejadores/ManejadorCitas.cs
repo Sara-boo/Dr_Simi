@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -18,7 +19,7 @@ namespace Manejadores
         public void Insertar(Citas cita)
         {
 
-            b.Comando($"CALL p_insertar_citas()");
+            b.Comando($"CALL p_insertar_cita({cita.IdPaciente}, {cita.IdPersonal}, '{cita.FechaHora:yyyy-MM-dd HH:mm:ss}', '{cita.Motivo}')");
         }
 
         public void Editar(Citas cita)
@@ -39,11 +40,20 @@ namespace Manejadores
             tabla.AutoResizeRows();
 
         }
-        public void LlenarPiezas(ComboBox caja)
+        public DataRow BuscarPacientePorCurp(string curp)
         {
-            caja.DataSource = b.Consultar($"select id_pieza, nombre from Piezas", "Piezas").Tables[0];
+            DataTable dt = b.Consultar($"SELECT id_paciente, nombre_completo, fecha_nacimiento, tipo_sangre, alergias, enfermedades_cronicas FROM tbl_pacientes WHERE curp = '{curp}'", "tbl_pacientes").Tables[0];
+
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0];
+            else
+                return null;
+        }
+        public void LlenarMedico(ComboBox caja)
+        {
+            caja.DataSource = b.Consultar($"select id_personal, nombre, apellido, especialidad where fkid_rol = 2 from personal", "Piezas").Tables[0];
             caja.DisplayMember = "nombre";
-            caja.ValueMember = "id_pieza";
+            caja.ValueMember = "id_personal";
         }
         public static DataGridViewButtonColumn Boton(string titulo ,Color fondo)
         {

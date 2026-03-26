@@ -39,9 +39,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.TxtAlergias = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.TxtTelefono = new System.Windows.Forms.TextBox();
+            this.TxtFechaNac = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TxtCurp = new System.Windows.Forms.TextBox();
+            this.TxtTipoSangre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtPaciente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,6 +54,8 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.LblPaciente = new System.Windows.Forms.Label();
+            this.LblPersonal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +102,7 @@
             this.CmbMedico.Name = "CmbMedico";
             this.CmbMedico.Size = new System.Drawing.Size(345, 28);
             this.CmbMedico.TabIndex = 4;
+            this.CmbMedico.SelectedIndexChanged += new System.EventHandler(this.CmbMedico_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -112,13 +115,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LblPaciente);
             this.groupBox1.Controls.Add(this.TxtEnfCronicas);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.TxtAlergias);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.TxtTelefono);
+            this.groupBox1.Controls.Add(this.TxtFechaNac);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.TxtCurp);
+            this.groupBox1.Controls.Add(this.TxtTipoSangre);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.TxtPaciente);
             this.groupBox1.Controls.Add(this.label5);
@@ -163,37 +167,37 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Alergias";
             // 
-            // TxtTelefono
+            // TxtFechaNac
             // 
-            this.TxtTelefono.Location = new System.Drawing.Point(277, 144);
-            this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(203, 26);
-            this.TxtTelefono.TabIndex = 5;
+            this.TxtFechaNac.Location = new System.Drawing.Point(277, 144);
+            this.TxtFechaNac.Name = "TxtFechaNac";
+            this.TxtFechaNac.Size = new System.Drawing.Size(203, 26);
+            this.TxtFechaNac.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(273, 111);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 20);
+            this.label7.Size = new System.Drawing.Size(168, 20);
             this.label7.TabIndex = 4;
-            this.label7.Text = "Teléfono";
+            this.label7.Text = "Fecha de nacimiento";
             // 
-            // TxtCurp
+            // TxtTipoSangre
             // 
-            this.TxtCurp.Location = new System.Drawing.Point(24, 144);
-            this.TxtCurp.Name = "TxtCurp";
-            this.TxtCurp.Size = new System.Drawing.Size(203, 26);
-            this.TxtCurp.TabIndex = 3;
+            this.TxtTipoSangre.Location = new System.Drawing.Point(24, 144);
+            this.TxtTipoSangre.Name = "TxtTipoSangre";
+            this.TxtTipoSangre.Size = new System.Drawing.Size(203, 26);
+            this.TxtTipoSangre.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(20, 111);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.Size = new System.Drawing.Size(124, 20);
             this.label6.TabIndex = 2;
-            this.label6.Text = "CURP";
+            this.label6.Text = "Tipo de sangre";
             // 
             // TxtPaciente
             // 
@@ -262,12 +266,13 @@
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(364, 116);
+            this.BtnBuscar.Location = new System.Drawing.Point(363, 124);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(103, 41);
             this.BtnBuscar.TabIndex = 13;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // BtnCancelar
             // 
@@ -286,12 +291,32 @@
             this.BtnGuardar.TabIndex = 15;
             this.BtnGuardar.Text = "GUARDAR";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // LblPaciente
+            // 
+            this.LblPaciente.AutoSize = true;
+            this.LblPaciente.Location = new System.Drawing.Point(488, 13);
+            this.LblPaciente.Name = "LblPaciente";
+            this.LblPaciente.Size = new System.Drawing.Size(25, 20);
+            this.LblPaciente.TabIndex = 10;
+            this.LblPaciente.Text = "Id";
+            // 
+            // LblPersonal
+            // 
+            this.LblPersonal.AutoSize = true;
+            this.LblPersonal.Location = new System.Drawing.Point(972, 128);
+            this.LblPersonal.Name = "LblPersonal";
+            this.LblPersonal.Size = new System.Drawing.Size(25, 20);
+            this.LblPersonal.TabIndex = 11;
+            this.LblPersonal.Text = "Id";
             // 
             // FrmRegristroCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 620);
+            this.Controls.Add(this.LblPersonal);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnBuscar);
@@ -329,7 +354,7 @@
         private System.Windows.Forms.ComboBox CmbMedico;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox TxtCurp;
+        private System.Windows.Forms.TextBox TxtTipoSangre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TxtPaciente;
         private System.Windows.Forms.Label label5;
@@ -337,7 +362,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtAlergias;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TxtTelefono;
+        private System.Windows.Forms.TextBox TxtFechaNac;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -348,5 +373,7 @@
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Label LblPaciente;
+        private System.Windows.Forms.Label LblPersonal;
     }
 }
