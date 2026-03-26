@@ -31,14 +31,12 @@
             this.txtLote = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtFechaCaducidad = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtStockMinimo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtpFechaCaducidad = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
@@ -71,15 +69,6 @@
             this.label2.Size = new System.Drawing.Size(237, 26);
             this.label2.TabIndex = 4;
             this.label2.Text = "Fecha de caducidad:";
-            // 
-            // txtFechaCaducidad
-            // 
-            this.txtFechaCaducidad.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaCaducidad.Location = new System.Drawing.Point(489, 181);
-            this.txtFechaCaducidad.Multiline = true;
-            this.txtFechaCaducidad.Name = "txtFechaCaducidad";
-            this.txtFechaCaducidad.Size = new System.Drawing.Size(243, 55);
-            this.txtFechaCaducidad.TabIndex = 5;
             // 
             // txtCantidad
             // 
@@ -138,20 +127,6 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Ubicación:";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(660, 551);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(139, 54);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
@@ -159,7 +134,7 @@
             this.btnGuardar.FlatAppearance.BorderSize = 2;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(411, 551);
+            this.btnGuardar.Location = new System.Drawing.Point(559, 495);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(139, 54);
             this.btnGuardar.TabIndex = 14;
@@ -169,9 +144,10 @@
             // 
             // dtpFechaCaducidad
             // 
-            this.dtpFechaCaducidad.Location = new System.Drawing.Point(489, 242);
+            this.dtpFechaCaducidad.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
+            this.dtpFechaCaducidad.Location = new System.Drawing.Point(489, 185);
             this.dtpFechaCaducidad.Name = "dtpFechaCaducidad";
-            this.dtpFechaCaducidad.Size = new System.Drawing.Size(200, 22);
+            this.dtpFechaCaducidad.Size = new System.Drawing.Size(270, 23);
             this.dtpFechaCaducidad.TabIndex = 16;
             // 
             // FrmSeguimientoRegistroInventario
@@ -182,7 +158,6 @@
             this.ClientSize = new System.Drawing.Size(1200, 737);
             this.ControlBox = false;
             this.Controls.Add(this.dtpFechaCaducidad);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.label5);
@@ -190,7 +165,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtFechaCaducidad);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLote);
             this.Controls.Add(this.label1);
@@ -207,14 +181,12 @@
         private System.Windows.Forms.TextBox txtLote;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtFechaCaducidad;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtStockMinimo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUbicacion;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DateTimePicker dtpFechaCaducidad;
     }
