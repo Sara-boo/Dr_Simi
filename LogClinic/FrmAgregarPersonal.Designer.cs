@@ -175,10 +175,6 @@
             // CmbRol
             // 
             this.CmbRol.FormattingEnabled = true;
-            this.CmbRol.Items.AddRange(new object[] {
-            "Administrativo",
-            "Enfermera",
-            "Doctor"});
             this.CmbRol.Location = new System.Drawing.Point(306, 451);
             this.CmbRol.Name = "CmbRol";
             this.CmbRol.Size = new System.Drawing.Size(544, 53);
@@ -192,6 +188,7 @@
             this.BtnGuardar.TabIndex = 15;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
@@ -201,6 +198,7 @@
             this.BtnCancelar.TabIndex = 16;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click_1);
             // 
             // FrmAgregarPersonal
             // 

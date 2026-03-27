@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtBuscador = new System.Windows.Forms.TextBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.DtgDatosPersonal = new System.Windows.Forms.DataGridView();
@@ -46,13 +46,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del empleado";
             // 
-            // textBox1
+            // TxtBuscador
             // 
-            this.textBox1.Location = new System.Drawing.Point(296, 91);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(987, 31);
-            this.textBox1.TabIndex = 1;
+            this.TxtBuscador.Location = new System.Drawing.Point(296, 91);
+            this.TxtBuscador.Multiline = true;
+            this.TxtBuscador.Name = "TxtBuscador";
+            this.TxtBuscador.Size = new System.Drawing.Size(987, 31);
+            this.TxtBuscador.TabIndex = 1;
             // 
             // BtnBuscar
             // 
@@ -65,6 +65,7 @@
             this.BtnBuscar.TabIndex = 2;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // BtnAgregar
             // 
@@ -80,6 +81,7 @@
             this.BtnAgregar.Text = "+";
             this.BtnAgregar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // DtgDatosPersonal
             // 
@@ -90,6 +92,7 @@
             this.DtgDatosPersonal.RowTemplate.Height = 24;
             this.DtgDatosPersonal.Size = new System.Drawing.Size(1431, 594);
             this.DtgDatosPersonal.TabIndex = 4;
+            this.DtgDatosPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatosPersonal_CellContentClick);
             // 
             // FrmPersonal
             // 
@@ -100,7 +103,7 @@
             this.Controls.Add(this.DtgDatosPersonal);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnBuscar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtBuscador);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -116,7 +119,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtBuscador;
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridView DtgDatosPersonal;
