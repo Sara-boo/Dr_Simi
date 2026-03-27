@@ -35,6 +35,7 @@
             this.CmbMedico = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LblPaciente = new System.Windows.Forms.Label();
             this.TxtEnfCronicas = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.TxtAlergias = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
-            this.LblPaciente = new System.Windows.Forms.Label();
             this.LblPersonal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +132,15 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // LblPaciente
+            // 
+            this.LblPaciente.AutoSize = true;
+            this.LblPaciente.Location = new System.Drawing.Point(488, 13);
+            this.LblPaciente.Name = "LblPaciente";
+            this.LblPaciente.Size = new System.Drawing.Size(25, 20);
+            this.LblPaciente.TabIndex = 10;
+            this.LblPaciente.Text = "Id";
             // 
             // TxtEnfCronicas
             // 
@@ -282,6 +291,7 @@
             this.BtnCancelar.TabIndex = 14;
             this.BtnCancelar.Text = "CANCELAR";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnGuardar
             // 
@@ -292,15 +302,6 @@
             this.BtnGuardar.Text = "GUARDAR";
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // LblPaciente
-            // 
-            this.LblPaciente.AutoSize = true;
-            this.LblPaciente.Location = new System.Drawing.Point(488, 13);
-            this.LblPaciente.Name = "LblPaciente";
-            this.LblPaciente.Size = new System.Drawing.Size(25, 20);
-            this.LblPaciente.TabIndex = 10;
-            this.LblPaciente.Text = "Id";
             // 
             // LblPersonal
             // 
@@ -337,6 +338,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmRegristroCitas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegristroCitas";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

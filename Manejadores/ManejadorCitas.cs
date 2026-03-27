@@ -51,8 +51,8 @@ namespace Manejadores
         }
         public void LlenarMedico(ComboBox caja)
         {
-            caja.DataSource = b.Consultar($"select id_personal, nombre, apellido, especialidad where fkid_rol = 2 from personal", "Piezas").Tables[0];
-            caja.DisplayMember = "nombre";
+            caja.DataSource = b.Consultar($"select id_personal, Medico from v_CmbMedico", "v_CmbMedico").Tables[0];
+            caja.DisplayMember = "Medico" ;
             caja.ValueMember = "id_personal";
         }
         public static DataGridViewButtonColumn Boton(string titulo ,Color fondo)

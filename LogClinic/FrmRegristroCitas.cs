@@ -26,8 +26,8 @@ namespace LogClinic
                 DtpFechaProgramada.Value = FrmCitas.cita.FechaHora;
                 DtpHoraProgramada.Value = FrmCitas.cita.FechaHora;
                 TxtMotivo.Text = FrmCitas.cita.Motivo.ToString();
-                mc.LlenarMedico(CmbMedico);
-            }
+                
+            }mc.LlenarMedico(CmbMedico);
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -73,6 +73,11 @@ namespace LogClinic
         private void CmbMedico_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
