@@ -139,6 +139,18 @@
     <Compile Include="FrmRegristroCitas.Designer.cs">
       <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVerUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerUsuarios.Designer.cs">
+      <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSeguimientoRegistroInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegristroCitas.resx">
       <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerUsuarios.resx">
+      <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
       <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
@@ -240,6 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Casa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioInicioSsesion.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

@@ -23,9 +23,8 @@ namespace LogClinic
             {
                 ctrl.BackColor = ColorTranslator.FromHtml("#CCECEE");
             }
-            tsPrincipal.BackColor = ColorTranslator.FromHtml("#095D7E");
             pSuperior.BackColor = ColorTranslator.FromHtml("#095D7E");
-            LblUsuarioActivo.ForeColor = ColorTranslator.FromHtml("#CCECEE");
+            tsPrincipal.BackColor = ColorTranslator.FromHtml("#095D7E");
             md.QuitarBordesBotones(BtnCerrar);
             md.QuitarBordesBotones(BtnOcultarVentana);
 
