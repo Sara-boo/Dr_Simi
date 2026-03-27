@@ -139,6 +139,12 @@
     <Compile Include="FrmRegistroPacientes.Designer.cs">
       <DependentUpon>FrmRegistroPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSeguimientoRegistroInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSeguimientoRegistroInventario.Designer.cs">
+      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCitas.resx">
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistroPacientes.resx">
       <DependentUpon>FrmRegistroPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
+      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
