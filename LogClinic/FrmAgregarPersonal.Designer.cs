@@ -227,6 +227,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.Name = "FrmAgregarPersonal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAgregarPersonal";
             this.ResumeLayout(false);
             this.PerformLayout();

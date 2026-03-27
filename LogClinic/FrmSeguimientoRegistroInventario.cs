@@ -20,7 +20,6 @@ namespace LogClinic
         {
             InitializeComponent();
             this.idRecibido = idMed;
-            btnCancelar.BackColor = Color.FromArgb(94, 226, 252, 214);
             mm = new ManejadorMedicamentos();
         }
 

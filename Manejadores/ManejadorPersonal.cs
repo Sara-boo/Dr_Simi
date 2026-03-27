@@ -29,7 +29,6 @@ namespace Manejadores
         {
             string consulta = $"CALL sp_eliminar_personal({idPersonal})";
             b.Comando(consulta);
-            // Tu clase Base ya muestra un MessageBox si el procedimiento manda error (ej. si el empleado tiene citas).
         }
 
         public void BuscarPersonal(DataGridView tabla, string busqueda)

@@ -13,7 +13,7 @@ SELECT
 FROM tbl_personal p
 INNER JOIN tbl_roles r ON p.fkid_rol = r.id_rol;
 
-
+DROP PROCEDURE IF EXISTS sp_buscar_personal;
 DELIMITER $$
 CREATE PROCEDURE sp_buscar_personal(IN p_busqueda VARCHAR(100))
 BEGIN
@@ -25,7 +25,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-
+DROP PROCEDURE IF EXISTS sp_agregar_personal;
 DELIMITER $$
 CREATE PROCEDURE sp_agregar_personal(
     IN p_nombre       VARCHAR(100),
@@ -44,7 +44,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-
+DROP PROCEDURE IF EXISTS sp_editar_personal;
 DELIMITER $$
 CREATE PROCEDURE sp_editar_personal(
     IN p_id_personal  INT,
@@ -71,6 +71,7 @@ BEGIN
 END $$
 DELIMITER ;
 
+DROP PROCEDURE IF EXISTS sp_eliminar_personal;
 
 DELIMITER $$
 CREATE PROCEDURE sp_eliminar_personal(IN p_id_personal INT)
@@ -83,6 +84,10 @@ BEGIN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'No se puede eliminar: el personal tiene citas programadas.';
     ELSE
+        DELETE FROM tbl_usuarios WHERE fkid_personal = p_id_personal;
+        
+        DELETE FROM tbl_horarios WHERE fkid_personal = p_id_personal;
+        
         DELETE FROM tbl_personal WHERE id_personal = p_id_personal;
     END IF;
 END $$
