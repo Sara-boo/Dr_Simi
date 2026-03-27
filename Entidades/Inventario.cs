@@ -8,27 +8,25 @@ namespace Entidades
 {
     public class Inventario
     {
-        public Inventario(int idInventario, int fkidMedicamento, string lote, string fechaCaducidad, int stockActual, int stockMinimo, string ubicacion, DateTime fechaRegistro, string estatus)
+        public Inventario(int idInventario, int fkidMedicamento, string lote, string fechaCaducidad, int cantidad, int stockMinimo, string ubicacion, int fkidUsuario)
         {
             IdInventario = idInventario;
             FkidMedicamento = fkidMedicamento;
             Lote = lote;
             FechaCaducidad = fechaCaducidad;
-            StockActual = stockActual;
+            Cantidad = cantidad;
             StockMinimo = stockMinimo;
             Ubicacion = ubicacion;
-            FechaRegistro = fechaRegistro;
-            Estatus = estatus;
+            FkidUsuario = fkidUsuario;
         }
 
         public int IdInventario { get; set; }
         public int FkidMedicamento { get; set; }
         public string Lote { get; set; }
         public string FechaCaducidad { get; set; }
-        public int StockActual { get; set; }
+        public int Cantidad { get; set; }
         public int StockMinimo { get; set; }
         public string Ubicacion { get; set; }
-        public DateTime FechaRegistro { get; set; }
-        public string Estatus { get; set; }
+        public int FkidUsuario { get; set; }
     }
 }

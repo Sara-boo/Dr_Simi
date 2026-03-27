@@ -139,6 +139,12 @@
     <Compile Include="FrmRegristroCitas.Designer.cs">
       <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSeguimientoRegistroInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSeguimientoRegistroInventario.Designer.cs">
+      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCitas.resx">
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegristroCitas.resx">
       <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
+      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -188,6 +197,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotonOcultarClave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{828492ef-1604-44db-883b-060af9d7cf66}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
+      <Project>{71e9c884-717c-4c3a-a528-fcd3a04c8272}</Project>
+      <Name>Manejadores</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cerrar.png" />
