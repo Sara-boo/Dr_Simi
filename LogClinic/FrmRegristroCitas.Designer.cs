@@ -56,6 +56,8 @@
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.LblPersonal = new System.Windows.Forms.Label();
+            this.CmbEstado = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -312,11 +314,35 @@
             this.LblPersonal.TabIndex = 11;
             this.LblPersonal.Text = "Id";
             // 
+            // CmbEstado
+            // 
+            this.CmbEstado.FormattingEnabled = true;
+            this.CmbEstado.Items.AddRange(new object[] {
+            "Programada",
+            "Atendida",
+            "Cancelada",
+            "No_asistio"});
+            this.CmbEstado.Location = new System.Drawing.Point(1018, 124);
+            this.CmbEstado.Name = "CmbEstado";
+            this.CmbEstado.Size = new System.Drawing.Size(121, 28);
+            this.CmbEstado.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1014, 89);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(140, 20);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Estado de la cita";
+            // 
             // FrmRegristroCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 620);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.CmbEstado);
             this.Controls.Add(this.LblPersonal);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnCancelar);
@@ -377,5 +403,7 @@
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Label LblPaciente;
         private System.Windows.Forms.Label LblPersonal;
+        private System.Windows.Forms.ComboBox CmbEstado;
+        private System.Windows.Forms.Label label13;
     }
 }

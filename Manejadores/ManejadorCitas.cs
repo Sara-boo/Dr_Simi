@@ -19,12 +19,12 @@ namespace Manejadores
         public void Insertar(Citas cita)
         {
 
-            b.Comando($"CALL p_insertar_cita({cita.IdPaciente}, {cita.IdPersonal}, '{cita.FechaHora:yyyy-MM-dd HH:mm:ss}', '{cita.Motivo}')");
+            b.Comando($"CALL p_insertar_cita({cita.IdPaciente}, {cita.IdPersonal}, '{cita.FechaHora:yyyy-MM-dd HH:mm:ss}', '{cita.Motivo}');");
         }
 
         public void Editar(Citas cita)
         {
-            b.Comando($"CALL p_editar_citas()");
+            b.Comando($"CALL p_editar_cita({cita.IdCita},{cita.IdPaciente},{cita.IdPersonal},'{cita.FechaHora:yyyy-MM-dd HH:mm:ss}','{cita.Estado}','{cita.Motivo}');");
         }
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
@@ -35,12 +35,12 @@ namespace Manejadores
             tabla.Columns["Id_Personal"].Visible = false;
             //tabla.Columns["created_at"].Visible = false;
             //tabla.Columns["updated_at"].Visible = false;
-            tabla.Columns.Insert(8, Boton("Cambiar estado", Color.Green));
+            tabla.Columns.Insert(9, Boton("Modificar", Color.Green));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
 
         }
-        public DataRow BuscarPacientePorCurp(string curp)
+        public DataRow BuscarCurp(string curp)
         {
             DataTable dt = b.Consultar($"SELECT id_paciente, nombre_completo, fecha_nacimiento, tipo_sangre, alergias, enfermedades_cronicas FROM tbl_pacientes WHERE curp = '{curp}'", "tbl_pacientes").Tables[0];
 
@@ -49,6 +49,7 @@ namespace Manejadores
             else
                 return null;
         }
+
         public void LlenarMedico(ComboBox caja)
         {
             caja.DataSource = b.Consultar($"select id_personal, Medico from v_CmbMedico", "v_CmbMedico").Tables[0];
@@ -88,7 +89,7 @@ namespace Manejadores
                     }
                 }
                 // configurar el nombre y la ubicación del archivo excel
-                string filePath = @"C:\Users\Sara Avila\OneDrive - tecmm.edu.mx\Escritorio\P3\Mantenimientos.xlsx";//cambia la ruta donde se va guardar
+                string filePath = @"C:\Users\Sara Avila\OneDrive - tecmm.edu.mx\Escritorio\LogClinic\citas.xlsx";//cambia la ruta donde se va guardar
                 excelWorkbook.SaveAs(filePath);
 
                 //MENSAJE DE CONFIRMACIÓN
