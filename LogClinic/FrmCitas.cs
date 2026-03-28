@@ -26,11 +26,8 @@ namespace LogClinic
         {
             InitializeComponent();
             mc = new ManejadorCitas();
-        }
-
-        private void Citas_Load(object sender, EventArgs e)
-        {
-
+            AplicarDiseño();
+            DtgDatos.CellFormatting += DtgDatos_CellFormatting;
         }
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
@@ -93,6 +90,69 @@ namespace LogClinic
                     break;
 
             }
+        }
+
+        private void DtgDatos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // 2. Obtenemos el nombre de la columna que se está dibujando
+                string nombreColumna = DtgDatos.Columns[e.ColumnIndex].Name;
+
+                // 3. Si la columna es la de "Estado" (Asegúrate de que el nombre coincida con tu BD)
+                if (nombreColumna == "Estado" || nombreColumna == "estado")
+                {
+                    if (e.Value != null)
+                    {
+                        string estado = e.Value.ToString();
+
+                        // 4. Aplicamos los colores exactos de tu diseño objetivo
+                        switch (estado)
+                        {
+                            case "Programada":
+                                e.CellStyle.BackColor = ColorTranslator.FromHtml("#109B84"); // Verde oscuro/Teal
+                                e.CellStyle.ForeColor = Color.White;
+                                break;
+
+                            case "Atendida":
+                                e.CellStyle.BackColor = ColorTranslator.FromHtml("#0F5B78"); // Azul oscuro
+                                e.CellStyle.ForeColor = Color.White;
+                                break;
+
+                            case "No_asistio":
+                            case "No asistió": // Agrego ambas por si acaso viene con guion bajo o espacio
+                                e.CellStyle.BackColor = ColorTranslator.FromHtml("#DDF0E6"); // Verde muy clarito
+                                e.CellStyle.ForeColor = ColorTranslator.FromHtml("#538F6A"); // Texto verde oscuro
+                                break;
+
+                            case "Cancelada":
+                                e.CellStyle.BackColor = ColorTranslator.FromHtml("#D0E7E5"); // Celeste/Gris claro
+                                e.CellStyle.ForeColor = ColorTranslator.FromHtml("#678A88"); // Texto gris oscuro
+                                break;
+                        }
+
+                        // Opcional: Ponemos el texto en negritas para que resalte más
+                        e.CellStyle.Font = new Font(DtgDatos.Font, FontStyle.Bold);
+                    }
+                }
+            }
+        }
+
+        private void AplicarDiseño()
+        {
+            ManejadorDiseño md = new ManejadorDiseño();
+            this.BackColor = ColorTranslator.FromHtml("#CCECEE");
+
+            md.EstilosBoton(BtnNuevaCita, "14967F", "FFFFFF");
+            md.EstilosBoton(BtnFiltrar, "095D7E", "FFFFFF");
+            md.EstilosBoton(BtnCsv, "83A69F", "FFFFFF");
+
+            md.EstilizarTextBox(TxtPaciente, "FFFFFF", "C4D6D4");
+            md.EstilizarDateTimePicker(DtpDesdeFecha, "FFFFFF", "C4D6D4");
+            md.EstilizarDateTimePicker(DtpHastaFecha, "FFFFFF", "C4D6D4");
+
+            md.EstilizarComboBox(CmbEstado, "FFFFFF", "C4D6D4");
+            mc.EstilizarDataGrid(DtgDatos);
         }
     }
 }

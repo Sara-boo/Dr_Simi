@@ -65,7 +65,44 @@ namespace Manejadores
             btn.DefaultCellStyle.BackColor = fondo;
             btn.DefaultCellStyle.ForeColor = Color.White;
             return btn;
+        }
+        public void EstilizarDataGrid(DataGridView dgv)
+        {
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToResizeRows = false;
+            dgv.AllowUserToResizeColumns = false;
+            dgv.ReadOnly = true;
+            dgv.RowHeadersVisible = false; // Oculta la columna vacía de la izquierda
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;// Expande las columnas al ancho del control
+            dgv.AutoResizeColumns();
+            dgv.AutoResizeRows();
+            dgv.MultiSelect = false;
 
+            //Colores y bordes generales
+            dgv.BorderStyle = BorderStyle.FixedSingle;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal; // Solo líneas horizontales
+            dgv.GridColor = ColorTranslator.FromHtml("#B4B2B2"); // Color de las líneas divisorias (gris claro)
+
+            //Estilo de los Encabezados 
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Lucida Bright", 11F, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.ColumnHeadersHeight = 45;
+
+            //Estilo de las Filas (Celdas)
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 10F, FontStyle.Regular);
+            dgv.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#CCECEE"); // Un verde/gris muy sutil al seleccionar
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            //Altura y respiro de las filas
+            dgv.RowTemplate.Height = 50; // Filas más altas para que no se vea amontonado
+            dgv.DefaultCellStyle.Padding = new Padding(5); // Margen interno
         }
         public void Exportar(DataGridView tabla)
         {
