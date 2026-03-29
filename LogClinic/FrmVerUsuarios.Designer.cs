@@ -49,6 +49,8 @@
             this.DtgDatos.RowTemplate.Height = 24;
             this.DtgDatos.Size = new System.Drawing.Size(937, 377);
             this.DtgDatos.TabIndex = 14;
+            this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
+            this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
             // 
             // BtnAgregar
             // 
@@ -62,6 +64,7 @@
             this.BtnAgregar.TabIndex = 13;
             this.BtnAgregar.Text = "+";
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnBuscar
             // 
@@ -75,6 +78,7 @@
             this.BtnBuscar.TabIndex = 12;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtBuscar
             // 
@@ -118,6 +122,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmVerUsuarios";
             this.Text = "FrmVerUsuarios";
+            this.Load += new System.EventHandler(this.FrmVerUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

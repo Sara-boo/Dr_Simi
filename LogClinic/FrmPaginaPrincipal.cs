@@ -14,10 +14,13 @@ namespace LogClinic
     {
 
         ManejadorDiseño md;
-        public FrmPaginaPrincipal()
+        ManejadorLogin ml;
+        public FrmPaginaPrincipal(string username)
         {
             InitializeComponent();
             md = new ManejadorDiseño();
+            ml = new ManejadorLogin();
+            LblUsuarioActivo.Text = ml.ObtenerNombre(username);
             this.IsMdiContainer = true;
             foreach (Control ctrl in this.Controls)
             {
@@ -27,6 +30,7 @@ namespace LogClinic
             tsPrincipal.BackColor = ColorTranslator.FromHtml("#095D7E");
             md.QuitarBordesBotones(BtnCerrar);
             md.QuitarBordesBotones(BtnOcultarVentana);
+           
 
         }
         private void FrmPaginaPrincipal_Load(object sender, EventArgs e)

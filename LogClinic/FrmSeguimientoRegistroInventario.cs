@@ -19,6 +19,7 @@ namespace LogClinic
         public FrmSeguimientoRegistroInventario(int idMed)
         {
             InitializeComponent();
+            this.idRecibido = idMed;    
             this.idRecibido = idMed;
             mm = new ManejadorMedicamentos();
         }

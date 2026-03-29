@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>LogClinic.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
@@ -151,6 +154,12 @@
     <Compile Include="FrmRegristroCitas.Designer.cs">
       <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSeguimientoRegistroInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSeguimientoRegistroInventario.Designer.cs">
+      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,12 +171,6 @@
     </Compile>
     <Compile Include="FrmVerUsuarios.Designer.cs">
       <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSeguimientoRegistroInventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSeguimientoRegistroInventario.Designer.cs">
-      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,14 +201,14 @@
     <EmbeddedResource Include="FrmRegristroCitas.resx">
       <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
+      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVerUsuarios.resx">
       <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
-      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -279,6 +282,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UsuarioInicioSsesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ver.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

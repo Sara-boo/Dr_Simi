@@ -59,7 +59,7 @@ namespace Manejadores
             contenedor.BackColor = ColorTranslator.FromHtml($"#{colorFondo}");
             contenedor.Size = new Size(txt.Width + 40, txt.Height + 18);
             contenedor.Location = txt.Location;
-
+            contenedor.ForeColor = Color.Black;
             txt.BorderStyle = BorderStyle.None;
             txt.BackColor = ColorTranslator.FromHtml($"#{colorFondo}");
             txt.Location = new Point(12, 12);
