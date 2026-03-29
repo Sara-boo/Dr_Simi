@@ -103,6 +103,7 @@
     <Compile Include="ManejadorHistorialClinico.cs" />
     <Compile Include="ManejadorLogin.cs" />
     <Compile Include="ManejadorUsuarios.cs" />
+    <Compile Include="ManejadorMedicamentos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
