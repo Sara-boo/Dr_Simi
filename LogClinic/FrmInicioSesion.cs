@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LogClinic
 {
     public partial class FrmInicioSesion : Form
@@ -17,6 +18,7 @@ namespace LogClinic
         ManejadorDiseño md;
         ManejadorLogin ml;
         int contador = 0;
+        bool mostrarClave = false;
         public FrmInicioSesion()
         {
             InitializeComponent();
@@ -25,8 +27,8 @@ namespace LogClinic
             md.EstilosBoton(BtnIngresar, "E2FCD6", "000000");
             md.QuitarBordesBotones(BtnSalir);
             md.QuitarBordesBotones(BtnVer);
-            md.EstilizarTextBox(TxtClave, "CCECEE", "14967F");
-            md.EstilizarTextBox(TxtUsuario, "CCECEE", "14967F");
+            md.QuitarBordesBotones(BtnNoVer);
+
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -36,28 +38,60 @@ namespace LogClinic
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            if(ml.Validar(TxtUsuario, TxtClave))
+            if(!ml.ValidarCajasVacias(TxtClave, TxtUsuario))
             {
-                FrmPaginaPrincipal pp = new FrmPaginaPrincipal();
+                MessageBox.Show("Por favor, complete todos los campos.", "¡CAMPOS VACÍOS!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
+           
+            if (ml.Validar(TxtUsuario, TxtClave))
+            {
+                FrmPaginaPrincipal pp = new FrmPaginaPrincipal(TxtUsuario.Text);
                 pp.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Error de Credenciales....");
+                MessageBox.Show("Error el Usuario o Contraseña son Incorrectos!!!!", "¡ERROR DE AUTENTICACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ml.LimipiarCajas(TxtClave, TxtUsuario);
+
                 contador++;
-                if (contador >= 2)
+                if (contador >= 3)
                 {
-                    MessageBox.Show("Sus Credenciales se han Bloqueado, espere 3 segundos....");
+                    MessageBox.Show("Ha excedido el número maximo de intentos.\n\nSe activo el bloqueo por 3 segundos.", "¡ERROR DE AUTENTICACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ml.LimipiarCajas(TxtClave, TxtUsuario);
                     TxtUsuario.Enabled = false;
                     TxtClave.Enabled = false;
+                    BtnSalir.Enabled = false;
+                    BtnVer.Enabled = false;
+                    BtnNoVer.Enabled = false;
                     Thread.Sleep(3000);
-                    MessageBox.Show("Ahora puede Continuar....");
+                    MessageBox.Show("Se desactivó el bloqueo temporal, puede intentar nuevamente.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     TxtUsuario.Enabled = true;
                     TxtClave.Enabled = true;
+                    BtnSalir.Enabled = true;
+                    BtnVer.Enabled = true;
+                    BtnNoVer.Enabled = true;
                     contador = 0;
                 }
             }
+        }
+
+        private void BtnVer_Click(object sender, EventArgs e)
+        {
+            mostrarClave = true;
+            ml.MostrarOcultarContrasena(TxtClave, mostrarClave);
+            BtnNoVer.Visible = true;
+            BtnVer.Visible = false;
+           
+        }
+
+        private void BtnNoVer_Click(object sender, EventArgs e)
+        {
+            mostrarClave = false;
+            ml.MostrarOcultarContrasena(TxtClave, mostrarClave);
+            BtnVer.Visible = true;
+            BtnNoVer.Visible = false;
         }
     }
 }

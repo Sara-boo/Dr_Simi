@@ -19,8 +19,7 @@ namespace LogClinic
         public FrmSeguimientoRegistroInventario(int idMed)
         {
             InitializeComponent();
-            this.idRecibido = idMed;
-            btnCancelar.BackColor = Color.FromArgb(94, 226, 252, 214);
+            this.idRecibido = idMed;    
             mm = new ManejadorMedicamentos();
         }
 

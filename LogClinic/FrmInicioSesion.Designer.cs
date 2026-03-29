@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.PAzul = new System.Windows.Forms.Panel();
-            this.BtnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,7 +37,9 @@
             this.BtnIngresar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnNoVer = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnVer = new System.Windows.Forms.Button();
             this.PAzul.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,17 +56,6 @@
             this.PAzul.Name = "PAzul";
             this.PAzul.Size = new System.Drawing.Size(800, 92);
             this.PAzul.TabIndex = 16;
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.BackgroundImage = global::LogClinic.Properties.Resources.Cerrar;
-            this.BtnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnSalir.Location = new System.Drawing.Point(721, 14);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(53, 56);
-            this.BtnSalir.TabIndex = 18;
-            this.BtnSalir.UseVisualStyleBackColor = true;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // label1
             // 
@@ -147,6 +137,17 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Usuario";
             // 
+            // BtnNoVer
+            // 
+            this.BtnNoVer.BackgroundImage = global::LogClinic.Properties.Resources.Ver;
+            this.BtnNoVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnNoVer.Location = new System.Drawing.Point(707, 310);
+            this.BtnNoVer.Name = "BtnNoVer";
+            this.BtnNoVer.Size = new System.Drawing.Size(53, 56);
+            this.BtnNoVer.TabIndex = 18;
+            this.BtnNoVer.UseVisualStyleBackColor = true;
+            this.BtnNoVer.Click += new System.EventHandler(this.BtnNoVer_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::LogClinic.Properties.Resources.UsuarioInicioSsesion;
@@ -157,6 +158,17 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // BtnSalir
+            // 
+            this.BtnSalir.BackgroundImage = global::LogClinic.Properties.Resources.Cerrar;
+            this.BtnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSalir.Location = new System.Drawing.Point(721, 14);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(53, 56);
+            this.BtnSalir.TabIndex = 18;
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
             // BtnVer
             // 
             this.BtnVer.BackgroundImage = global::LogClinic.Properties.Resources.BotonOcultarClave;
@@ -166,6 +178,7 @@
             this.BtnVer.Size = new System.Drawing.Size(53, 56);
             this.BtnVer.TabIndex = 13;
             this.BtnVer.UseVisualStyleBackColor = true;
+            this.BtnVer.Click += new System.EventHandler(this.BtnVer_Click);
             // 
             // FrmInicioSesion
             // 
@@ -181,6 +194,7 @@
             this.Controls.Add(this.BtnIngresar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.BtnNoVer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -209,6 +223,7 @@
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BtnNoVer;
     }
 }
 
