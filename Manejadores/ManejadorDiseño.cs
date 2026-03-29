@@ -136,10 +136,9 @@ namespace Manejadores
         }
 
         // METODO PARA DAR FORMATO A LOS DATETIMEPICKER
-        public void EstilizarDateTimePicker(DateTimePicker dtp, string colorFondo, string colorBorde)
+        public void EstilizarDateTimePicker(DateTimePicker dtp, string colorFondo)
         {
             int radio = 10;
-            int borde = 2;
 
             Panel contenedor = new Panel();
             contenedor.BackColor = ColorTranslator.FromHtml($"#{colorFondo}");
@@ -160,10 +159,7 @@ namespace Manejadores
                     gp.CloseFigure();
 
                     e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                    using (Pen p = new Pen(ColorTranslator.FromHtml($"#{colorBorde}"), borde))
-                    {
-                        e.Graphics.DrawPath(p, gp);
-                    }
+                   
                 }
             };
 

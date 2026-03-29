@@ -21,6 +21,7 @@ namespace LogClinic
         {
             InitializeComponent();
             mc = new ManejadorCitas();
+            AplicarDiseño();
             mc.LlenarMedico(CmbMedico);
             DtpHoraProgramada.Format = DateTimePickerFormat.Time;
             DtpHoraProgramada.ShowUpDown = true;
@@ -35,6 +36,7 @@ namespace LogClinic
                 DtpFechaProgramada.Value = FrmCitas.cita.FechaHora;
                 DtpHoraProgramada.Value = FrmCitas.cita.FechaHora;
                 TxtMotivo.Text = FrmCitas.cita.Motivo.ToString();
+                
             }
         }
         private void BuscarDatosPaciente(string curpBuscada)
@@ -112,6 +114,25 @@ namespace LogClinic
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void AplicarDiseño()
+        {
+            ManejadorDiseño md = new ManejadorDiseño();
+
+            md.EstilosBoton(BtnBuscar, "14967F", "FFFFFF");
+
+            md.EstilizarTextBox(TxtBuscarPaciente, "F9FFFF", "83A69F");
+            md.EstilizarTextBox(TxtPaciente, "F9FFFF","B9B9B9" );
+            md.EstilizarTextBox(TxtTipoSangre,"F9FFFF" ,"B9B9B9" );
+            md.EstilizarTextBox(TxtFechaNac, "F9FFFF", "B9B9B9");
+            md.EstilizarTextBox(TxtAlergias, "F9FFFF", "B9B9B9");
+            md.EstilizarTextBox(TxtEnfCronicas, "F9FFFF", "B9B9B9");
+
+            md.EstilizarDateTimePicker(DtpFechaProgramada,  "83A69F");
+            md.EstilizarDateTimePicker(DtpHoraProgramada, "83A69F");
+
+            md.EstilizarComboBox(CmbEstado, "FFFFFF", "83A69F");
+            md.EstilizarComboBox(CmbMedico, "FFFFFF", "83A69F");
         }
     }
 }
