@@ -66,6 +66,25 @@ namespace Manejadores
             btn.DefaultCellStyle.ForeColor = Color.White;
             return btn;
         }
+        public DataGridViewImageColumn BotonImagen(string nombreColumna, Image imagen)
+        {
+            DataGridViewImageColumn columna = new DataGridViewImageColumn();
+            columna.Name = nombreColumna;
+            columna.HeaderText = ""; // Lo dejamos vacío para que se vea más limpio
+            columna.Image = imagen;
+
+            // Zoom asegura que la imagen no se distorsione ni se corte si la celda es más grande
+            columna.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
+            // Le damos un poco de margen para que el ícono no toque los bordes de la celda
+            columna.DefaultCellStyle.Padding = new Padding(10);
+
+            // Opcional: Le ponemos un color de fondo neutro o lo dejamos transparente
+            columna.DefaultCellStyle.BackColor = Color.White;
+            columna.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#F0F5F4");
+
+            return columna;
+        }
         public void EstilizarDataGrid(DataGridView dgv)
         {
             dgv.AllowUserToAddRows = false;
@@ -87,16 +106,14 @@ namespace Manejadores
             dgv.EnableHeadersVisualStyles = false;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Lucida Bright", 11F, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Lucida Bright", 14F, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.ColumnHeadersHeight = 45;
 
             //Estilo de las filas
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
-            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 10F, FontStyle.Regular);
-            dgv.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#CCECEE"); // Un verde/gris muy sutil al seleccionar
-            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 12F, FontStyle.Regular);
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             //Altura de las filas

@@ -21,12 +21,17 @@ namespace LogClinic
         {
             InitializeComponent();
             mc = new ManejadorCitas();
-            AplicarDiseño();
             mc.LlenarMedico(CmbMedico);
             DtpHoraProgramada.Format = DateTimePickerFormat.Time;
             DtpHoraProgramada.ShowUpDown = true;
+            LblPaciente.Visible = false;
+            LblPersonal.Visible = false;
+            CmbEstado.Text = "Programada";
+            CmbEstado.Enabled = false; // Deshabilitar el ComboBox de estado para nuevas citas
+            CmbEstado.Cursor= Cursors.No; // Cambiar el cursor para indicar que no se puede interactuar
             if (FrmCitas.cita.IdCita > 0)
             {
+                CmbEstado.Enabled = true; 
                 LblPaciente.Text = FrmCitas.cita.IdPaciente.ToString();
                 LblPersonal.Text = FrmCitas.cita.IdPersonal.ToString();
                 TxtBuscarPaciente.Text = FrmCitas.curp;
@@ -76,6 +81,7 @@ namespace LogClinic
             {
                 if (FrmCitas.cita.IdCita == 0)
                 {
+                    
                     mc.Insertar(new Citas(0, int.Parse(LblPaciente.Text), int.Parse(LblPersonal.Text), fechaHoraCombinada, "", TxtMotivo.Text));
                     MessageBox.Show("La cita ah sido programda con éxito", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
@@ -114,25 +120,6 @@ namespace LogClinic
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-        private void AplicarDiseño()
-        {
-            ManejadorDiseño md = new ManejadorDiseño();
-
-            md.EstilosBoton(BtnBuscar, "14967F", "FFFFFF");
-
-            md.EstilizarTextBox(TxtBuscarPaciente, "F9FFFF", "83A69F");
-            md.EstilizarTextBox(TxtPaciente, "F9FFFF","B9B9B9" );
-            md.EstilizarTextBox(TxtTipoSangre,"F9FFFF" ,"B9B9B9" );
-            md.EstilizarTextBox(TxtFechaNac, "F9FFFF", "B9B9B9");
-            md.EstilizarTextBox(TxtAlergias, "F9FFFF", "B9B9B9");
-            md.EstilizarTextBox(TxtEnfCronicas, "F9FFFF", "B9B9B9");
-
-            md.EstilizarDateTimePicker(DtpFechaProgramada,  "83A69F");
-            md.EstilizarDateTimePicker(DtpHoraProgramada, "83A69F");
-
-            md.EstilizarComboBox(CmbEstado, "FFFFFF", "83A69F");
-            md.EstilizarComboBox(CmbMedico, "FFFFFF", "83A69F");
         }
     }
 }

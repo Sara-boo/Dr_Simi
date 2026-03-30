@@ -26,7 +26,7 @@ namespace LogClinic
         {
             InitializeComponent();
             mc = new ManejadorCitas();
-            AplicarDiseño();
+            mc.EstilizarDataGrid(DtgDatos);
             DtgDatos.CellFormatting += DtgDatos_CellFormatting;
         }
 
@@ -130,22 +130,6 @@ namespace LogClinic
                     }
                 }
             }
-        }
-
-        private void AplicarDiseño()
-        {
-            ManejadorDiseño md = new ManejadorDiseño();
-            this.BackColor = ColorTranslator.FromHtml("#CCECEE");
-
-            md.EstilosBoton(BtnNuevaCita, "14967F", "FFFFFF");
-            md.EstilosBoton(BtnFiltrar, "095D7E", "FFFFFF");
-            md.EstilosBoton(BtnCsv, "83A69F", "FFFFFF");
-
-            md.EstilizarDateTimePicker(DtpDesdeFecha,  "C4D6D4");
-            md.EstilizarDateTimePicker(DtpHastaFecha, "C4D6D4");
-
-            md.EstilizarComboBox(CmbEstado, "FFFFFF", "C4D6D4");
-            mc.EstilizarDataGrid(DtgDatos);
         }
     }
 }
