@@ -38,6 +38,10 @@
             // 
             // dtgDatos
             // 
+            this.dtgDatos.AllowUserToAddRows = false;
+            this.dtgDatos.AllowUserToDeleteRows = false;
+            this.dtgDatos.AllowUserToResizeColumns = false;
+            this.dtgDatos.AllowUserToResizeRows = false;
             this.dtgDatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDatos.Location = new System.Drawing.Point(93, 110);
@@ -92,6 +96,7 @@
             this.Controls.Add(this.dtgDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMovimientosInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMovimientosInventario";
             this.Load += new System.EventHandler(this.FrmMovimientosInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
