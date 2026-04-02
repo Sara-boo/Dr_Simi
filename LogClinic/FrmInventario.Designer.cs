@@ -49,6 +49,10 @@
             // 
             // dtgDatos
             // 
+            this.dtgDatos.AllowUserToAddRows = false;
+            this.dtgDatos.AllowUserToDeleteRows = false;
+            this.dtgDatos.AllowUserToResizeColumns = false;
+            this.dtgDatos.AllowUserToResizeRows = false;
             this.dtgDatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDatos.Location = new System.Drawing.Point(65, 133);

@@ -27,7 +27,8 @@ namespace LogClinic
 
         private void btnAgregarInventario_Click(object sender, EventArgs e)
         {
-
+            FrmRegistroMedicamentos rm = new FrmRegistroMedicamentos();
+            rm.ShowDialog();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

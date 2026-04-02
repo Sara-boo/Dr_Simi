@@ -110,6 +110,12 @@
     <Compile Include="FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMovimientosInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMovimientosInventario.Designer.cs">
+      <DependentUpon>FrmMovimientosInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPaginaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMovimientosInventario.resx">
+      <DependentUpon>FrmMovimientosInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPaginaPrincipal.resx">
       <DependentUpon>FrmPaginaPrincipal.cs</DependentUpon>
