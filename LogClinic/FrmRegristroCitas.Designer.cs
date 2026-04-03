@@ -50,13 +50,17 @@
             this.label11 = new System.Windows.Forms.Label();
             this.DtpFechaProgramada = new System.Windows.Forms.DateTimePicker();
             this.DtpHoraProgramada = new System.Windows.Forms.DateTimePicker();
-            this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.LblPersonal = new System.Windows.Forms.Label();
             this.CmbEstado = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,7 +114,7 @@
             this.CmbMedico.FormattingEnabled = true;
             this.CmbMedico.Location = new System.Drawing.Point(589, 125);
             this.CmbMedico.Name = "CmbMedico";
-            this.CmbMedico.Size = new System.Drawing.Size(345, 30);
+            this.CmbMedico.Size = new System.Drawing.Size(403, 30);
             this.CmbMedico.TabIndex = 4;
             this.CmbMedico.SelectedIndexChanged += new System.EventHandler(this.CmbMedico_SelectedIndexChanged);
             // 
@@ -299,18 +303,6 @@
             this.DtpHoraProgramada.Size = new System.Drawing.Size(199, 29);
             this.DtpHoraProgramada.TabIndex = 10;
             // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(150)))), ((int)(((byte)(127)))));
-            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscar.Location = new System.Drawing.Point(425, 125);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(103, 41);
-            this.BtnBuscar.TabIndex = 13;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = false;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
-            // 
             // BtnCancelar
             // 
             this.BtnCancelar.Location = new System.Drawing.Point(776, 535);
@@ -355,7 +347,7 @@
             this.CmbEstado.Location = new System.Drawing.Point(591, 232);
             this.CmbEstado.Margin = new System.Windows.Forms.Padding(4, 5, 6, 7);
             this.CmbEstado.Name = "CmbEstado";
-            this.CmbEstado.Size = new System.Drawing.Size(229, 30);
+            this.CmbEstado.Size = new System.Drawing.Size(291, 30);
             this.CmbEstado.TabIndex = 16;
             // 
             // label13
@@ -368,12 +360,47 @@
             this.label13.TabIndex = 17;
             this.label13.Text = "Estado de la cita";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::LogClinic.Properties.Resources.Hora;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(1123, 343);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(52, 48);
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::LogClinic.Properties.Resources.Calendario;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(815, 343);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 48);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.BtnBuscar.BackgroundImage = global::LogClinic.Properties.Resources.Buscar;
+            this.BtnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscar.Location = new System.Drawing.Point(404, 122);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(52, 44);
+            this.BtnBuscar.TabIndex = 13;
+            this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
             // FrmRegristroCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1260, 620);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.CmbEstado);
             this.Controls.Add(this.LblPersonal);
@@ -399,6 +426,8 @@
             this.Text = "FrmRegristroCitas";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,5 +463,7 @@
         private System.Windows.Forms.Label LblPersonal;
         private System.Windows.Forms.ComboBox CmbEstado;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

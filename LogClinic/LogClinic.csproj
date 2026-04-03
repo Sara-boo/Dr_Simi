@@ -296,5 +296,20 @@
       <Name>Manejadores</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filtrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DWL CSV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hora.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
