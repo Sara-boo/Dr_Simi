@@ -40,7 +40,6 @@ namespace LogClinic
                 CmbEstado.Text = FrmCitas.cita.Estado;
                 DtpFechaProgramada.Value = FrmCitas.cita.FechaHora;
                 DtpHoraProgramada.Value = FrmCitas.cita.FechaHora;
-                TxtMotivo.Text = FrmCitas.cita.Motivo.ToString();
                 
             }
         }
@@ -82,13 +81,13 @@ namespace LogClinic
                 if (FrmCitas.cita.IdCita == 0)
                 {
                     
-                    mc.Insertar(new Citas(0, int.Parse(LblPaciente.Text), int.Parse(LblPersonal.Text), fechaHoraCombinada, "", TxtMotivo.Text));
+                    mc.Insertar(new Citas(0, int.Parse(LblPaciente.Text), int.Parse(LblPersonal.Text), fechaHoraCombinada, ""));
                     MessageBox.Show("La cita ah sido programda con éxito", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
                 else
                 {
-                    mc.Editar(new Citas(FrmCitas.cita.IdCita, int.Parse(LblPaciente.Text), int.Parse(LblPersonal.Text), fechaHoraCombinada, CmbEstado.Text, TxtMotivo.Text));
+                    mc.Editar(new Citas(FrmCitas.cita.IdCita, int.Parse(LblPaciente.Text), int.Parse(LblPersonal.Text), fechaHoraCombinada, CmbEstado.Text));
                     MessageBox.Show("La cita ha sido editada con éxito.","Operación Exitosa",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
 

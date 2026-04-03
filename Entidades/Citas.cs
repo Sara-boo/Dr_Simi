@@ -8,14 +8,13 @@ namespace Entidades
 {
     public class Citas 
     {
-        public Citas(int idCita, int idPaciente, int idPersonal, DateTime fechaHora, string estado, string motivo)
+        public Citas(int idCita, int idPaciente, int idPersonal, DateTime fechaHora, string estado)
         {
             IdCita = idCita;
             IdPaciente = idPaciente;
             IdPersonal = idPersonal;
             FechaHora = fechaHora;
             Estado = estado;
-            Motivo = motivo;
         }
 
         public int IdCita { get; set; }
@@ -23,6 +22,5 @@ namespace Entidades
         public int IdPersonal { get; set; }
         public DateTime FechaHora { get; set; }
         public string Estado { get; set; }
-        public string Motivo { get; set; }
     }
 }

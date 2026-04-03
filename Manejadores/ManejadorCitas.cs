@@ -19,12 +19,12 @@ namespace Manejadores
         public void Insertar(Citas cita)
         {
 
-            b.Comando($"CALL p_insertar_cita({cita.IdPaciente}, {cita.IdPersonal}, '{cita.FechaHora:yyyy-MM-dd HH:mm:ss}', '{cita.Motivo}');");
+            b.Comando($"CALL p_insertar_cita({cita.IdPaciente}, {cita.IdPersonal}, '{cita.FechaHora:yyyy-MM-dd HH:mm:ss}');");
         }
 
         public void Editar(Citas cita)
         {
-            b.Comando($"CALL p_editar_cita({cita.IdCita},{cita.IdPaciente},{cita.IdPersonal},'{cita.FechaHora:yyyy-MM-dd HH:mm:ss}','{cita.Estado}','{cita.Motivo}');");
+            b.Comando($"CALL p_editar_cita({cita.IdCita},{cita.IdPaciente},{cita.IdPersonal},'{cita.FechaHora:yyyy-MM-dd HH:mm:ss}','{cita.Estado}');");
         }
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
@@ -35,7 +35,7 @@ namespace Manejadores
             tabla.Columns["Id_Personal"].Visible = false;
             //tabla.Columns["created_at"].Visible = false;
             //tabla.Columns["updated_at"].Visible = false;
-            tabla.Columns.Insert(9, Boton("Modificar", ColorTranslator.FromHtml("#83A69F")));
+            tabla.Columns.Insert(8, Boton("Modificar", ColorTranslator.FromHtml("#83A69F")));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
 

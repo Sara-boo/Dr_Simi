@@ -50,8 +50,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.DtpFechaProgramada = new System.Windows.Forms.DateTimePicker();
             this.DtpHoraProgramada = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.TxtMotivo = new System.Windows.Forms.TextBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
@@ -260,7 +258,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Lucida Bright", 15F);
-            this.label10.Location = new System.Drawing.Point(592, 256);
+            this.label10.Location = new System.Drawing.Point(594, 314);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(191, 23);
             this.label10.TabIndex = 7;
@@ -270,7 +268,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Lucida Bright", 15F);
-            this.label11.Location = new System.Drawing.Point(912, 257);
+            this.label11.Location = new System.Drawing.Point(914, 315);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(184, 23);
             this.label11.TabIndex = 8;
@@ -286,7 +284,7 @@
             this.DtpFechaProgramada.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(150)))), ((int)(((byte)(127)))));
             this.DtpFechaProgramada.Font = new System.Drawing.Font("Lucida Bright", 14F);
             this.DtpFechaProgramada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaProgramada.Location = new System.Drawing.Point(589, 292);
+            this.DtpFechaProgramada.Location = new System.Drawing.Point(591, 350);
             this.DtpFechaProgramada.Name = "DtpFechaProgramada";
             this.DtpFechaProgramada.Size = new System.Drawing.Size(218, 29);
             this.DtpFechaProgramada.TabIndex = 9;
@@ -296,36 +294,16 @@
             this.DtpHoraProgramada.CalendarFont = new System.Drawing.Font("Lucida Bright", 14F);
             this.DtpHoraProgramada.Font = new System.Drawing.Font("Lucida Bright", 14F);
             this.DtpHoraProgramada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DtpHoraProgramada.Location = new System.Drawing.Point(916, 292);
+            this.DtpHoraProgramada.Location = new System.Drawing.Point(918, 350);
             this.DtpHoraProgramada.Name = "DtpHoraProgramada";
             this.DtpHoraProgramada.Size = new System.Drawing.Size(199, 29);
             this.DtpHoraProgramada.TabIndex = 10;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Lucida Bright", 15F);
-            this.label12.Location = new System.Drawing.Point(592, 353);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(176, 23);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Motivo de la Cita";
-            // 
-            // TxtMotivo
-            // 
-            this.TxtMotivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
-            this.TxtMotivo.Font = new System.Drawing.Font("Lucida Bright", 14F);
-            this.TxtMotivo.Location = new System.Drawing.Point(589, 389);
-            this.TxtMotivo.Multiline = true;
-            this.TxtMotivo.Name = "TxtMotivo";
-            this.TxtMotivo.Size = new System.Drawing.Size(626, 132);
-            this.TxtMotivo.TabIndex = 12;
             // 
             // BtnBuscar
             // 
             this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(150)))), ((int)(((byte)(127)))));
             this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscar.Location = new System.Drawing.Point(401, 124);
+            this.BtnBuscar.Location = new System.Drawing.Point(425, 125);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(103, 41);
             this.BtnBuscar.TabIndex = 13;
@@ -374,7 +352,7 @@
             "Atendida",
             "Cancelada",
             "No_asistio"});
-            this.CmbEstado.Location = new System.Drawing.Point(589, 210);
+            this.CmbEstado.Location = new System.Drawing.Point(591, 232);
             this.CmbEstado.Margin = new System.Windows.Forms.Padding(4, 5, 6, 7);
             this.CmbEstado.Name = "CmbEstado";
             this.CmbEstado.Size = new System.Drawing.Size(229, 30);
@@ -384,7 +362,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Lucida Bright", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(592, 177);
+            this.label13.Location = new System.Drawing.Point(594, 199);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 23);
             this.label13.TabIndex = 17;
@@ -402,8 +380,6 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnBuscar);
-            this.Controls.Add(this.TxtMotivo);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.DtpHoraProgramada);
             this.Controls.Add(this.DtpFechaProgramada);
             this.Controls.Add(this.label11);
@@ -451,8 +427,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker DtpFechaProgramada;
         private System.Windows.Forms.DateTimePicker DtpHoraProgramada;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox TxtMotivo;
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnGuardar;

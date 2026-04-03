@@ -19,7 +19,7 @@ namespace LogClinic
     {
         ManejadorCitas mc;
         int fila = 0, columna = 0;
-        public static Citas cita = new Citas(0, 0, 0, DateTime.MinValue, "", "");
+        public static Citas cita = new Citas(0, 0, 0, DateTime.MinValue, "");
         public static string curp = "";
         public static string medico = "";
         public FrmCitas()
@@ -77,10 +77,9 @@ namespace LogClinic
             cita.IdPersonal = int.Parse(DtgDatos.Rows[fila].Cells["Id_Personal"].Value.ToString());
             cita.FechaHora = DateTime.Parse(DtgDatos.Rows[fila].Cells["Fecha_Hora"].Value.ToString());
             cita.Estado = DtgDatos.Rows[fila].Cells["Estado"].Value.ToString();
-            cita.Motivo = DtgDatos.Rows[fila].Cells["Motivo"].Value.ToString();
             switch (columna)
             {
-                case 9:
+                case 8:
                     {
                         FrmRegristroCitas rc = new FrmRegristroCitas();
                         rc.ShowDialog();
