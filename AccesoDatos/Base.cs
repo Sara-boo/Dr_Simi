@@ -63,5 +63,26 @@ namespace AccesoDatos
 
             return ds;
         }
+        public string ConsultarV(string query)
+        {
+            string resultado = "";
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                object valor = cmd.ExecuteScalar();
+                if (valor != null)
+                    resultado = valor.ToString();
+                con.Close();
+            }
+            catch (Exception)
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+                throw;
+            }
+            return resultado;
+        }
     }
 }

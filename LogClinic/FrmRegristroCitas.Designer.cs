@@ -35,16 +35,16 @@
             this.CmbMedico = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtPaciente = new System.Windows.Forms.TextBox();
-            this.TxtCurp = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtTelefono = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TxtAlergias = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.TxtEnfCronicas = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.TxtAlergias = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtFechaNac = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TxtTipoSangre = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtPaciente = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.DtpFechaProgramada = new System.Windows.Forms.DateTimePicker();
@@ -54,6 +54,8 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.LblPaciente = new System.Windows.Forms.Label();
+            this.LblPersonal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,8 +100,9 @@
             this.CmbMedico.FormattingEnabled = true;
             this.CmbMedico.Location = new System.Drawing.Point(589, 125);
             this.CmbMedico.Name = "CmbMedico";
-            this.CmbMedico.Size = new System.Drawing.Size(121, 28);
+            this.CmbMedico.Size = new System.Drawing.Size(345, 28);
             this.CmbMedico.TabIndex = 4;
+            this.CmbMedico.SelectedIndexChanged += new System.EventHandler(this.CmbMedico_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -112,13 +115,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.LblPaciente);
             this.groupBox1.Controls.Add(this.TxtEnfCronicas);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.TxtAlergias);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.TxtTelefono);
+            this.groupBox1.Controls.Add(this.TxtFechaNac);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.TxtCurp);
+            this.groupBox1.Controls.Add(this.TxtTipoSangre);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.TxtPaciente);
             this.groupBox1.Controls.Add(this.label5);
@@ -129,53 +133,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // label5
+            // TxtEnfCronicas
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Nombre Completo";
+            this.TxtEnfCronicas.Location = new System.Drawing.Point(277, 230);
+            this.TxtEnfCronicas.Multiline = true;
+            this.TxtEnfCronicas.Name = "TxtEnfCronicas";
+            this.TxtEnfCronicas.Size = new System.Drawing.Size(203, 77);
+            this.TxtEnfCronicas.TabIndex = 9;
             // 
-            // TxtPaciente
+            // label9
             // 
-            this.TxtPaciente.Location = new System.Drawing.Point(24, 68);
-            this.TxtPaciente.Name = "TxtPaciente";
-            this.TxtPaciente.Size = new System.Drawing.Size(456, 26);
-            this.TxtPaciente.TabIndex = 1;
-            // 
-            // TxtCurp
-            // 
-            this.TxtCurp.Location = new System.Drawing.Point(24, 144);
-            this.TxtCurp.Name = "TxtCurp";
-            this.TxtCurp.Size = new System.Drawing.Size(203, 26);
-            this.TxtCurp.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 111);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "CURP";
-            // 
-            // TxtTelefono
-            // 
-            this.TxtTelefono.Location = new System.Drawing.Point(277, 144);
-            this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(203, 26);
-            this.TxtTelefono.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(273, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 20);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Teléfono";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(273, 197);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(191, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Enfermedades Crónicas";
             // 
             // TxtAlergias
             // 
@@ -194,22 +167,53 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Alergias";
             // 
-            // TxtEnfCronicas
+            // TxtFechaNac
             // 
-            this.TxtEnfCronicas.Location = new System.Drawing.Point(277, 230);
-            this.TxtEnfCronicas.Multiline = true;
-            this.TxtEnfCronicas.Name = "TxtEnfCronicas";
-            this.TxtEnfCronicas.Size = new System.Drawing.Size(203, 77);
-            this.TxtEnfCronicas.TabIndex = 9;
+            this.TxtFechaNac.Location = new System.Drawing.Point(277, 144);
+            this.TxtFechaNac.Name = "TxtFechaNac";
+            this.TxtFechaNac.Size = new System.Drawing.Size(203, 26);
+            this.TxtFechaNac.TabIndex = 5;
             // 
-            // label9
+            // label7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(273, 197);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(191, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Enfermedades Crónicas";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(273, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(168, 20);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Fecha de nacimiento";
+            // 
+            // TxtTipoSangre
+            // 
+            this.TxtTipoSangre.Location = new System.Drawing.Point(24, 144);
+            this.TxtTipoSangre.Name = "TxtTipoSangre";
+            this.TxtTipoSangre.Size = new System.Drawing.Size(203, 26);
+            this.TxtTipoSangre.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Tipo de sangre";
+            // 
+            // TxtPaciente
+            // 
+            this.TxtPaciente.Location = new System.Drawing.Point(24, 68);
+            this.TxtPaciente.Name = "TxtPaciente";
+            this.TxtPaciente.Size = new System.Drawing.Size(456, 26);
+            this.TxtPaciente.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Nombre Completo";
             // 
             // label10
             // 
@@ -262,12 +266,13 @@
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(364, 116);
+            this.BtnBuscar.Location = new System.Drawing.Point(363, 124);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(103, 41);
             this.BtnBuscar.TabIndex = 13;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // BtnCancelar
             // 
@@ -286,12 +291,32 @@
             this.BtnGuardar.TabIndex = 15;
             this.BtnGuardar.Text = "GUARDAR";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // LblPaciente
+            // 
+            this.LblPaciente.AutoSize = true;
+            this.LblPaciente.Location = new System.Drawing.Point(488, 13);
+            this.LblPaciente.Name = "LblPaciente";
+            this.LblPaciente.Size = new System.Drawing.Size(25, 20);
+            this.LblPaciente.TabIndex = 10;
+            this.LblPaciente.Text = "Id";
+            // 
+            // LblPersonal
+            // 
+            this.LblPersonal.AutoSize = true;
+            this.LblPersonal.Location = new System.Drawing.Point(972, 128);
+            this.LblPersonal.Name = "LblPersonal";
+            this.LblPersonal.Size = new System.Drawing.Size(25, 20);
+            this.LblPersonal.TabIndex = 11;
+            this.LblPersonal.Text = "Id";
             // 
             // FrmRegristroCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 620);
+            this.Controls.Add(this.LblPersonal);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnBuscar);
@@ -310,7 +335,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmRegristroCitas";
             this.Text = "FrmRegristroCitas";
             this.groupBox1.ResumeLayout(false);
@@ -329,7 +354,7 @@
         private System.Windows.Forms.ComboBox CmbMedico;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox TxtCurp;
+        private System.Windows.Forms.TextBox TxtTipoSangre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TxtPaciente;
         private System.Windows.Forms.Label label5;
@@ -337,7 +362,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtAlergias;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TxtTelefono;
+        private System.Windows.Forms.TextBox TxtFechaNac;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -348,5 +373,7 @@
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Label LblPaciente;
+        private System.Windows.Forms.Label LblPersonal;
     }
 }

@@ -97,17 +97,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmCitas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCitas.Designer.cs">
-      <DependentUpon>FrmCitas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPacientes.Designer.cs">
       <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCitas.Designer.cs">
+      <DependentUpon>FrmCitas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPaginaPrincipal.cs">
       <SubType>Form</SubType>
@@ -127,23 +127,17 @@
     <Compile Include="FrmRegistroMedicamentos.Designer.cs">
       <DependentUpon>FrmRegistroMedicamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegristroCitas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegristroCitas.Designer.cs">
-      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmRegistroPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRegistroPacientes.Designer.cs">
       <DependentUpon>FrmRegistroPacientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSeguimientoRegistroInventario.cs">
+    <Compile Include="FrmRegristroCitas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSeguimientoRegistroInventario.Designer.cs">
-      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
+    <Compile Include="FrmRegristroCitas.Designer.cs">
+      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,14 +156,11 @@
     <EmbeddedResource Include="FrmRegistroMedicamentos.resx">
       <DependentUpon>FrmRegistroMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegristroCitas.resx">
-      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistroPacientes.resx">
       <DependentUpon>FrmRegistroPacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
-      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRegristroCitas.resx">
+      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -197,16 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotonOcultarClave.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{828492ef-1604-44db-883b-060af9d7cf66}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
-      <Project>{71e9c884-717c-4c3a-a528-fcd3a04c8272}</Project>
-      <Name>Manejadores</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cerrar.png" />
@@ -240,6 +221,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Casa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{828492ef-1604-44db-883b-060af9d7cf66}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
+      <Project>{71e9c884-717c-4c3a-a528-fcd3a04c8272}</Project>
+      <Name>Manejadores</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
