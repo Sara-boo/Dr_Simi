@@ -18,7 +18,6 @@ namespace LogClinic
         public FrmRegistroMedicamentos()
         {
             InitializeComponent();
-            btnCancelar.BackColor = Color.FromArgb(94, 226, 252, 214);
             mm= new ManejadorMedicamentos();
         }
 

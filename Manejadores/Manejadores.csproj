@@ -101,8 +101,10 @@
     <Compile Include="ManejadorCitas.cs" />
     <Compile Include="ManejadorDiseño.cs" />
     <Compile Include="ManejadorHistorialClinico.cs" />
+    <Compile Include="ManejadorInventario.cs" />
     <Compile Include="ManejadorRPaciente.cs" />
     <Compile Include="ManejadorLogin.cs" />
+    <Compile Include="ManejadorMovimientoInventario.cs" />
     <Compile Include="ManejadorPersonal.cs" />
     <Compile Include="ManejadorUsuarios.cs" />
     <Compile Include="ManejadorMedicamentos.cs" />
