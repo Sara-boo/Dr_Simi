@@ -41,7 +41,7 @@ namespace LogClinic
                     consulta += $" AND Fecha_Hora BETWEEN '{DtpDesdeFecha.Value:yyyy-MM-dd} 00:00:00' AND '{DtpHastaFecha.Value:yyyy-MM-dd} 23:59:59'";
                 if (CmbEstado.Text != "")
                     consulta += $" AND Estado = '{CmbEstado.Text}'";
-                mc.Mostrar(consulta, DtgDatos, "v_citas");
+                mc.Mostrar(consulta, DtgDatos, "v_citas",Properties.Resources.Editar);
             }
             catch (MySqlException ex)
             {
