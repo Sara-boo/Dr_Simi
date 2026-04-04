@@ -41,7 +41,7 @@ namespace LogClinic
                     consulta += $" AND Fecha_Hora BETWEEN '{DtpDesdeFecha.Value:yyyy-MM-dd} 00:00:00' AND '{DtpHastaFecha.Value:yyyy-MM-dd} 23:59:59'";
                 if (CmbEstado.Text != "")
                     consulta += $" AND Estado = '{CmbEstado.Text}'";
-                mc.Mostrar(consulta, DtgDatos, "v_citas",Properties.Resources.Editar);
+                mc.Mostrar(consulta, DtgDatos, "v_citas");
             }
             catch (MySqlException ex)
             {
@@ -87,6 +87,24 @@ namespace LogClinic
 
                     }
                     break;
+                case 9: 
+                    {
+                        if (cita.Estado == "Programada")
+                        {
+                            DialogResult result = MessageBox.Show("¿Desea agregar el tratamiento para esta cita?", "Atender Cita", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                // FrmTratamiento ft = new FrmTratamiento();
+                                // ft.ShowDialog();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show($"No se puede agregar un tratamiento a esta cita porque su estado es: {cita.Estado}.", "Acción no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    break;
 
             }
         }
@@ -126,6 +144,18 @@ namespace LogClinic
                                 break;
                         }
                         e.CellStyle.Font = new Font(DtgDatos.Font, FontStyle.Bold);
+                    }
+                }
+                if (e.ColumnIndex == 9)
+                {
+                    string estado = DtgDatos.Rows[e.RowIndex].Cells["Estado"].Value?.ToString();
+
+                    if (estado != "Programada")
+                    {
+                        e.CellStyle.BackColor = Color.FromArgb(224, 224, 224); 
+                        e.CellStyle.ForeColor = Color.Gray; 
+                        e.CellStyle.SelectionBackColor = Color.FromArgb(224, 224, 224);
+                        e.CellStyle.SelectionForeColor = Color.Gray;
                     }
                 }
             }

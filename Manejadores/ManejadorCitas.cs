@@ -26,7 +26,7 @@ namespace Manejadores
         {
             b.Comando($"CALL p_editar_cita({cita.IdCita},{cita.IdPaciente},{cita.IdPersonal},'{cita.FechaHora:yyyy-MM-dd HH:mm:ss}','{cita.Estado}');");
         }
-        public void Mostrar(string consulta, DataGridView tabla, string datos, Image icono)
+        public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
@@ -35,8 +35,8 @@ namespace Manejadores
             tabla.Columns["Id_Personal"].Visible = false;
             //tabla.Columns["created_at"].Visible = false;
             //tabla.Columns["updated_at"].Visible = false;
-            //tabla.Columns.Insert(8, Boton("Modificar", ColorTranslator.FromHtml("#83A69F")));
-            tabla.Columns.Insert(8, BotonImagen("Editar",icono));
+            tabla.Columns.Insert(8, Boton("Editar",Color.LightSteelBlue));
+            tabla.Columns.Insert(9, Boton("Atender", Color.LightGray));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
 
@@ -62,29 +62,11 @@ namespace Manejadores
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.Text = titulo;
             btn.UseColumnTextForButtonValue = true;
-            btn.FlatStyle = FlatStyle.Popup;
+            btn.FlatStyle = FlatStyle.Flat;
             btn.DefaultCellStyle.BackColor = fondo;
-            btn.DefaultCellStyle.ForeColor = Color.White;
+            btn.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#095D7E");
+            btn.DefaultCellStyle.Font = new Font("Lucida Bright", 12F, FontStyle.Bold);
             return btn;
-        }
-        public DataGridViewImageColumn BotonImagen(string nombreColumna, Image imagen)
-        {
-            DataGridViewImageColumn columna = new DataGridViewImageColumn();
-            columna.Name = nombreColumna;
-            columna.HeaderText = ""; // Lo dejamos vacío para que se vea más limpio
-            columna.Image = imagen;
-
-            // Zoom asegura que la imagen no se distorsione ni se corte si la celda es más grande
-            columna.ImageLayout = DataGridViewImageCellLayout.Zoom;
-
-            // Le damos un poco de margen para que el ícono no toque los bordes de la celda
-            columna.DefaultCellStyle.Padding = new Padding(10);
-
-            // Opcional: Le ponemos un color de fondo neutro o lo dejamos transparente
-            columna.DefaultCellStyle.BackColor = Color.White;
-            columna.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#F0F5F4");
-
-            return columna;
         }
         public void EstilizarDataGrid(DataGridView dgv)
         {

@@ -32,18 +32,18 @@
             this.TxtBuscarPaciente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.LblNombre = new System.Windows.Forms.Label();
-            this.LblEdad = new System.Windows.Forms.Label();
-            this.LblCurp = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.LblAlergias = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.LblSangre = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.LblEnfCronicas = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.LblSangre = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.LblAlergias = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.LblCurp = new System.Windows.Forms.Label();
+            this.LblEdad = new System.Windows.Forms.Label();
+            this.LblNombre = new System.Windows.Forms.Label();
+            this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnBuscar
@@ -57,6 +57,7 @@
             this.BtnBuscar.Size = new System.Drawing.Size(52, 44);
             this.BtnBuscar.TabIndex = 16;
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtBuscarPaciente
             // 
@@ -96,69 +97,14 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
-            // LblNombre
+            // LblEnfCronicas
             // 
-            this.LblNombre.AutoSize = true;
-            this.LblNombre.Font = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNombre.Location = new System.Drawing.Point(18, 13);
-            this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(97, 24);
-            this.LblNombre.TabIndex = 18;
-            this.LblNombre.Text = "Nombre";
-            // 
-            // LblEdad
-            // 
-            this.LblEdad.AutoSize = true;
-            this.LblEdad.Location = new System.Drawing.Point(186, 61);
-            this.LblEdad.Name = "LblEdad";
-            this.LblEdad.Size = new System.Drawing.Size(49, 20);
-            this.LblEdad.TabIndex = 19;
-            this.LblEdad.Text = "Edad";
-            // 
-            // LblCurp
-            // 
-            this.LblCurp.AutoSize = true;
-            this.LblCurp.Location = new System.Drawing.Point(24, 61);
-            this.LblCurp.Name = "LblCurp";
-            this.LblCurp.Size = new System.Drawing.Size(51, 20);
-            this.LblCurp.TabIndex = 20;
-            this.LblCurp.Text = "CURP";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(941, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 20);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Enf. Crónicas";
-            // 
-            // LblAlergias
-            // 
-            this.LblAlergias.AutoSize = true;
-            this.LblAlergias.Location = new System.Drawing.Point(778, 61);
-            this.LblAlergias.Name = "LblAlergias";
-            this.LblAlergias.Size = new System.Drawing.Size(57, 20);
-            this.LblAlergias.TabIndex = 22;
-            this.LblAlergias.Text = "label6";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(763, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 20);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Alergias";
-            // 
-            // LblSangre
-            // 
-            this.LblSangre.AutoSize = true;
-            this.LblSangre.Location = new System.Drawing.Point(604, 61);
-            this.LblSangre.Name = "LblSangre";
-            this.LblSangre.Size = new System.Drawing.Size(57, 20);
-            this.LblSangre.TabIndex = 24;
-            this.LblSangre.Text = "label8";
+            this.LblEnfCronicas.AutoSize = true;
+            this.LblEnfCronicas.Location = new System.Drawing.Point(963, 61);
+            this.LblEnfCronicas.Name = "LblEnfCronicas";
+            this.LblEnfCronicas.Size = new System.Drawing.Size(67, 20);
+            this.LblEnfCronicas.TabIndex = 26;
+            this.LblEnfCronicas.Text = "label10";
             // 
             // label9
             // 
@@ -169,23 +115,78 @@
             this.label9.TabIndex = 25;
             this.label9.Text = "Tipo de sangre";
             // 
-            // LblEnfCronicas
+            // LblSangre
             // 
-            this.LblEnfCronicas.AutoSize = true;
-            this.LblEnfCronicas.Location = new System.Drawing.Point(963, 61);
-            this.LblEnfCronicas.Name = "LblEnfCronicas";
-            this.LblEnfCronicas.Size = new System.Drawing.Size(67, 20);
-            this.LblEnfCronicas.TabIndex = 26;
-            this.LblEnfCronicas.Text = "label10";
+            this.LblSangre.AutoSize = true;
+            this.LblSangre.Location = new System.Drawing.Point(604, 61);
+            this.LblSangre.Name = "LblSangre";
+            this.LblSangre.Size = new System.Drawing.Size(57, 20);
+            this.LblSangre.TabIndex = 24;
+            this.LblSangre.Text = "label8";
             // 
-            // dataGridView1
+            // label7
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 235);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1145, 344);
-            this.dataGridView1.TabIndex = 18;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(763, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 20);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Alergias";
+            // 
+            // LblAlergias
+            // 
+            this.LblAlergias.AutoSize = true;
+            this.LblAlergias.Location = new System.Drawing.Point(778, 61);
+            this.LblAlergias.Name = "LblAlergias";
+            this.LblAlergias.Size = new System.Drawing.Size(57, 20);
+            this.LblAlergias.TabIndex = 22;
+            this.LblAlergias.Text = "label6";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(941, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 20);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Enf. Crónicas";
+            // 
+            // LblCurp
+            // 
+            this.LblCurp.AutoSize = true;
+            this.LblCurp.Location = new System.Drawing.Point(24, 61);
+            this.LblCurp.Name = "LblCurp";
+            this.LblCurp.Size = new System.Drawing.Size(51, 20);
+            this.LblCurp.TabIndex = 20;
+            this.LblCurp.Text = "CURP";
+            // 
+            // LblEdad
+            // 
+            this.LblEdad.AutoSize = true;
+            this.LblEdad.Location = new System.Drawing.Point(186, 61);
+            this.LblEdad.Name = "LblEdad";
+            this.LblEdad.Size = new System.Drawing.Size(49, 20);
+            this.LblEdad.TabIndex = 19;
+            this.LblEdad.Text = "Edad";
+            // 
+            // LblNombre
+            // 
+            this.LblNombre.AutoSize = true;
+            this.LblNombre.Font = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNombre.Location = new System.Drawing.Point(18, 13);
+            this.LblNombre.Name = "LblNombre";
+            this.LblNombre.Size = new System.Drawing.Size(97, 24);
+            this.LblNombre.TabIndex = 18;
+            this.LblNombre.Text = "Nombre";
+            // 
+            // DtgDatos
+            // 
+            this.DtgDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgDatos.Location = new System.Drawing.Point(8, 235);
+            this.DtgDatos.Name = "DtgDatos";
+            this.DtgDatos.Size = new System.Drawing.Size(1145, 344);
+            this.DtgDatos.TabIndex = 18;
             // 
             // FrmHistorialClinico
             // 
@@ -193,20 +194,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(1166, 587);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DtgDatos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtBuscarPaciente);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmHistorialClinico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmHistorialClinico";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +228,6 @@
         private System.Windows.Forms.Label LblCurp;
         private System.Windows.Forms.Label LblEdad;
         private System.Windows.Forms.Label LblNombre;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DtgDatos;
     }
 }

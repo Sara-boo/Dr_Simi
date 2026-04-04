@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manejadores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace LogClinic
 {
     public partial class FrmHistorialClinico : Form
     {
+        ManejadorCitas mc;
         public FrmHistorialClinico()
         {
             InitializeComponent();
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -27,8 +27,7 @@ namespace LogClinic
             LblPaciente.Visible = false;
             LblPersonal.Visible = false;
             CmbEstado.Text = "Programada";
-            CmbEstado.Enabled = false; // Deshabilitar el ComboBox de estado para nuevas citas
-            CmbEstado.Cursor= Cursors.No; // Cambiar el cursor para indicar que no se puede interactuar
+           
             if (FrmCitas.cita.IdCita > 0)
             {
                 CmbEstado.Enabled = true; 
@@ -40,7 +39,8 @@ namespace LogClinic
                 CmbEstado.Text = FrmCitas.cita.Estado;
                 DtpFechaProgramada.Value = FrmCitas.cita.FechaHora;
                 DtpHoraProgramada.Value = FrmCitas.cita.FechaHora;
-                
+                CmbEstado.Enabled = true; // Deshabilitar el ComboBox de estado para nuevas citas
+                CmbEstado.Cursor = Cursors.Hand; // Cambiar el cursor para indicar que no se puede interactuar
             }
         }
         private void BuscarDatosPaciente(string curpBuscada)

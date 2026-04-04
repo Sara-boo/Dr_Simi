@@ -337,7 +337,9 @@
             // CmbEstado
             // 
             this.CmbEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.CmbEstado.Cursor = System.Windows.Forms.Cursors.No;
             this.CmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbEstado.Enabled = false;
             this.CmbEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CmbEstado.Font = new System.Drawing.Font("Lucida Bright", 14F);
             this.CmbEstado.FormattingEnabled = true;
