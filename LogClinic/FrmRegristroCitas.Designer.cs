@@ -305,22 +305,24 @@
             // 
             // BtnCancelar
             // 
+            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
             this.BtnCancelar.Location = new System.Drawing.Point(776, 535);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(106, 46);
+            this.BtnCancelar.Size = new System.Drawing.Size(136, 46);
             this.BtnCancelar.TabIndex = 14;
             this.BtnCancelar.Text = "CANCELAR";
-            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(1032, 535);
+            this.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(255)))), ((int)(((byte)(218)))));
+            this.BtnGuardar.Location = new System.Drawing.Point(1007, 535);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(107, 46);
+            this.BtnGuardar.Size = new System.Drawing.Size(132, 46);
             this.BtnGuardar.TabIndex = 15;
             this.BtnGuardar.Text = "GUARDAR";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // LblPersonal
