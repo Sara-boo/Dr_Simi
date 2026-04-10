@@ -107,7 +107,6 @@
     <Compile Include="ManejadorMovimientoInventario.cs" />
     <Compile Include="ManejadorPersonal.cs" />
     <Compile Include="ManejadorUsuarios.cs" />
-    <Compile Include="ManejadorMedicamentos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
