@@ -63,6 +63,16 @@ namespace LogClinic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Alergias_s {
+            get {
+                object obj = ResourceManager.GetObject("Alergias_s", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BotonOcultarClave {
             get {
                 object obj = ResourceManager.GetObject("BotonOcultarClave", resourceCulture);
@@ -143,9 +153,29 @@ namespace LogClinic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edad_s {
+            get {
+                object obj = ResourceManager.GetObject("edad_s", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Editar {
             get {
                 object obj = ResourceManager.GetObject("Editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EnfCronicas_s {
+            get {
+                object obj = ResourceManager.GetObject("EnfCronicas_s", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +216,16 @@ namespace LogClinic.Properties {
         internal static System.Drawing.Bitmap IconoUsuario {
             get {
                 object obj = ResourceManager.GetObject("IconoUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Identificacion_s {
+            get {
+                object obj = ResourceManager.GetObject("Identificacion_s", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +286,16 @@ namespace LogClinic.Properties {
         internal static System.Drawing.Bitmap Salir {
             get {
                 object obj = ResourceManager.GetObject("Salir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sangre_s {
+            get {
+                object obj = ResourceManager.GetObject("Sangre_s", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

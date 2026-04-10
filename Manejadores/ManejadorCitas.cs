@@ -41,6 +41,7 @@ namespace Manejadores
             tabla.AutoResizeRows();
 
         }
+       
         public DataRow BuscarCurp(string curp)
         {
             DataTable dt = b.Consultar($"SELECT id_paciente, nombre_completo, fecha_nacimiento, tipo_sangre, alergias, enfermedades_cronicas FROM tbl_pacientes WHERE curp = '{curp}'", "tbl_pacientes").Tables[0];
@@ -50,7 +51,6 @@ namespace Manejadores
             else
                 return null;
         }
-
         public void LlenarMedico(ComboBox caja)
         {
             caja.DataSource = b.Consultar($"select id_personal, Medico from v_CmbMedico", "v_CmbMedico").Tables[0];

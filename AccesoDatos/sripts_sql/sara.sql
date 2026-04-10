@@ -49,3 +49,30 @@ select p.id_personal,
 concat('Dr. ',p.nombre, ' ' ,p.apellido, ' (' ,p.especialidad, ')') as Medico
 from tbl_personal p
 where p.fkid_rol = 2;
+
+CREATE VIEW v_perfilPaciente AS
+SELECT
+    p.id_paciente,
+    p.nombre_completo,
+    p.curp,
+    TIMESTAMPDIFF(YEAR, p.fecha_nacimiento, CURDATE()) AS edad,
+    p.tipo_sangre,
+    p.alergias,
+    p.enfermedades_cronicas
+FROM tbl_pacientes p;
+SELECT * from v_perfilPaciente;
+
+CREATE VIEW v_historial_paciente AS
+SELECT
+    c.fkid_paciente AS id_paciente,
+    c.fecha_hora  AS Fecha_Hora,
+    c.estado AS Estado, 
+    CONCAT('Dr. ', per.nombre, ' ', per.apellido, ' (', per.especialidad, ')')  AS Medico,
+    h.motivo_consulta AS Motivo_Consulta,
+    CONCAT(m.nombre, ' ', m.concentracion, ' (', t.dosis, ' ', t.frecuencia, ')') AS Tratamiento_Receta,
+    h.diagnostico AS Diagnostico
+FROM tbl_citas c
+INNER JOIN tbl_personal per     ON c.fkid_personal  = per.id_personal
+LEFT  JOIN tbl_historial_clinico h ON c.id_cita = h.fkid_cita
+LEFT  JOIN tbl_tratamiento t    ON t.fkid_historial = h.id_historial
+LEFT  JOIN tbl_medicamentos m   ON t.fkid_medicamento = m.id_medicamento;

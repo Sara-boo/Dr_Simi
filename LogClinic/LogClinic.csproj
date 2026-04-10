@@ -70,6 +70,7 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Pipelines, Version=10.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.10.0.5\lib\net462\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -353,6 +354,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Identificacion_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edad_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sangre_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alergias_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnfCronicas_s.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
