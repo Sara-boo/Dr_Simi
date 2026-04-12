@@ -18,7 +18,7 @@ namespace LogClinic
         {
             InitializeComponent();
             mt = new ManejadorTratamiento();
-            mt.MostrarAlergiasEnfermedades($"SELECT p.alergias AS 'Alergias', p.enfermedades_cronicas AS 'Enfermedades crónicas' FROM tbl_pacientes WHERE p.nombre = 'Laura Martinez'", dtgDatosPaciente, "tbl_pacientes");
+            mt.MostrarAlergiasEnfermedades($"SELECT p.alergias AS 'Alergias', p.enfermedades_cronicas AS 'Enfermedades crónicas' FROM tbl_pacientes p WHERE p.nombre_completo = 'Laura Martinez'", dtgDatosPaciente, "tbl_pacientes");
         }
     }
 }
