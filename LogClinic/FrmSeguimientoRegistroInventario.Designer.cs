@@ -171,6 +171,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSeguimientoRegistroInventario";
             this.Text = "FrmSeguimientoRegistroInventario";
+            this.Load += new System.EventHandler(this.FrmSeguimientoRegistroInventario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

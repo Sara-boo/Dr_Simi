@@ -39,13 +39,17 @@
             // 
             // DtgPaciente
             // 
+            this.DtgPaciente.BackgroundColor = System.Drawing.Color.White;
             this.DtgPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgPaciente.GridColor = System.Drawing.Color.White;
             this.DtgPaciente.Location = new System.Drawing.Point(51, 144);
             this.DtgPaciente.Name = "DtgPaciente";
+            this.DtgPaciente.ReadOnly = true;
             this.DtgPaciente.RowHeadersWidth = 51;
             this.DtgPaciente.RowTemplate.Height = 24;
             this.DtgPaciente.Size = new System.Drawing.Size(1078, 465);
             this.DtgPaciente.TabIndex = 0;
+            this.DtgPaciente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgPaciente_CellClick);
             this.DtgPaciente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgPaciente_CellContentClick);
             // 
             // label1
@@ -64,16 +68,15 @@
             this.TxtBCurp.Name = "TxtBCurp";
             this.TxtBCurp.Size = new System.Drawing.Size(627, 22);
             this.TxtBCurp.TabIndex = 5;
-            this.TxtBCurp.TextChanged += new System.EventHandler(this.TxtBCurp_TextChanged);
             // 
             // BtnBuscar
             // 
             this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
             this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.White;
-            this.BtnBuscar.Location = new System.Drawing.Point(914, 23);
+            this.BtnBuscar.Location = new System.Drawing.Point(914, 25);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 43);
+            this.BtnBuscar.Size = new System.Drawing.Size(87, 43);
             this.BtnBuscar.TabIndex = 6;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = false;
@@ -84,7 +87,7 @@
             this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
             this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Location = new System.Drawing.Point(995, 25);
+            this.BtnAgregar.Location = new System.Drawing.Point(1007, 25);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(36, 41);
             this.BtnAgregar.TabIndex = 7;
@@ -98,9 +101,9 @@
             this.BtnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
             this.BtnReporte.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReporte.ForeColor = System.Drawing.Color.White;
-            this.BtnReporte.Location = new System.Drawing.Point(1037, 25);
+            this.BtnReporte.Location = new System.Drawing.Point(1049, 26);
             this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Size = new System.Drawing.Size(92, 41);
+            this.BtnReporte.Size = new System.Drawing.Size(104, 41);
             this.BtnReporte.TabIndex = 8;
             this.BtnReporte.Text = "Reporte";
             this.BtnReporte.UseVisualStyleBackColor = false;

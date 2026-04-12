@@ -12,13 +12,12 @@ namespace Manejadores
 
         public void Guardar(Paciente paciente)
         {
-            // Se asume que el orden de las columnas en tbl_pacientes coincide
-            b.Comando($"INSERT INTO tbl_pacientes VALUES(null, '{paciente.Curp}', '{paciente.NombreCompleto}', " +
-                      $"'{paciente.FechaNacimiento:yyyy-MM-dd}', '{paciente.Sexo}', '{paciente.Telefono}', " +
-                      $"'{paciente.Correo}', '{paciente.Direccion}', '{paciente.TipoSangre}', " +
-                      $"'{paciente.Alergias}', '{paciente.EnfermedadesCronicas}', now(), true, now(), now())");
+            b.Comando($"INSERT INTO tbl_pacientes (curp, nombre_completo, fecha_nacimiento, sexo, telefono, correo, direccion, tipo_sangre, alergias, enfermedades_cronicas, fecha_registro, activo) " +
+                      $"VALUES('{paciente.Curp}', '{paciente.NombreCompleto}', '{paciente.FechaNacimiento:yyyy-MM-dd}', " +
+                      $"'{paciente.Sexo}', '{paciente.Telefono}', '{paciente.Correo}', '{paciente.Direccion}', " +
+                      $"'{paciente.TipoSangre}', '{paciente.Alergias}', '{paciente.EnfermedadesCronicas}', now(), true)");
 
-            MessageBox.Show("Paciente registrado con éxito");
+            MessageBox.Show("Paciente registrado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void Modificar(Paciente paciente)
@@ -27,55 +26,88 @@ namespace Manejadores
                       $"nombre_completo='{paciente.NombreCompleto}', " +
                       $"curp='{paciente.Curp}', " +
                       $"fecha_nacimiento='{paciente.FechaNacimiento:yyyy-MM-dd}', " +
+                      $"sexo='{paciente.Sexo}', " +
                       $"telefono='{paciente.Telefono}', " +
                       $"correo='{paciente.Correo}', " +
                       $"direccion='{paciente.Direccion}', " +
                       $"tipo_sangre='{paciente.TipoSangre}', " +
                       $"alergias='{paciente.Alergias}', " +
                       $"enfermedades_cronicas='{paciente.EnfermedadesCronicas}', " +
-                      $"fecha_actualizacion=now() " +
+                      $"updated_at=now() " +
                       $"WHERE id_paciente = {paciente.IdPaciente}");
 
-            MessageBox.Show("Información actualizada");
+            MessageBox.Show("Información modificada correctamente", "Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void Mostrar(DataGridView tabla, string filtro)
         {
             tabla.Columns.Clear();
 
-        
-            string consulta = $"SELECT * FROM v_pacientes_activos " +
-                              $"WHERE (CURP LIKE '%{filtro}%' OR Nombre LIKE '%{filtro}%')";
+            string consulta = "SELECT id_paciente AS ID, nombre_completo AS Nombre, curp AS CURP, " +
+                              "fecha_nacimiento, " +
+                              "TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE()) AS Edad, " +
+                              "sexo AS Sexo, tipo_sangre AS Sangre, enfermedades_cronicas AS 'Enf. Crónicas', " +
+                              "alergias AS Alergias, direccion AS Dirección, correo AS Correo, telefono AS Teléfono " +
+                              $"FROM tbl_pacientes WHERE curp LIKE '%{filtro}%' AND activo = true";
 
-        
-            tabla.DataSource = b.Consultar(consulta, "v_pacientes_activos").Tables[0];
+            tabla.DataSource = b.Consultar(consulta, "tbl_pacientes").Tables[0];
 
-            if (tabla.Columns.Contains("ID"))
-                tabla.Columns["ID"].Visible = false;
+            if (tabla.Columns.Contains("ID")) tabla.Columns["ID"].Visible = false;
+            if (tabla.Columns.Contains("fecha_nacimiento")) tabla.Columns["fecha_nacimiento"].Visible = false;
 
-           
-            tabla.Columns.Add(Boton("Modificar", Color.LightBlue));
-            tabla.Columns.Add(Boton("Borrar", Color.LightPink));
+            Color colorAzul = Color.FromArgb(1, 91, 126);
+            Color colorTexto = Color.White;
+
+            DataGridViewButtonColumn btnModificar = Boton("Modificar", colorAzul, colorTexto);
+            btnModificar.Name = "Modificar";
+
+            DataGridViewButtonColumn btnBorrar = Boton("Borrar", colorAzul, colorTexto);
+            btnBorrar.Name = "Borrar";
+
+            tabla.Columns.Add(btnModificar);
+            tabla.Columns.Add(btnBorrar);
+
+            btnModificar.DisplayIndex = 0;
+            btnBorrar.DisplayIndex = 1;
+
+            tabla.RowTemplate.Height = 35;
         }
 
         public void Borrar(int id, string nombre)
         {
-            var r = MessageBox.Show($"¿Eliminar a {nombre}?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var r = MessageBox.Show($"¿Seguro que quiere borrar los datos de {nombre}?", "Confirmar",
+                                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
             if (r == DialogResult.Yes)
             {
                 b.Comando($"UPDATE tbl_pacientes SET activo = false WHERE id_paciente = {id}");
+                MessageBox.Show("Registro eliminado");
             }
         }
 
-        public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
+        public static DataGridViewButtonColumn Boton(string titulo, Color fondo, Color texto)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.Name = titulo;
             btn.Text = titulo;
             btn.UseColumnTextForButtonValue = true;
-            btn.FlatStyle = FlatStyle.Popup;
+            btn.FlatStyle = FlatStyle.Flat;
             btn.DefaultCellStyle.BackColor = fondo;
+            btn.DefaultCellStyle.ForeColor = texto;
+            btn.DefaultCellStyle.SelectionBackColor = fondo;
+            btn.DefaultCellStyle.SelectionForeColor = texto;
+            btn.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             return btn;
+        }
+
+        public System.Data.DataTable ObtenerDatosReporte(string filtro)
+        {
+            string consulta = "SELECT id_paciente AS ID, nombre_completo AS Nombre, curp AS CURP, " +
+                              "fecha_nacimiento AS 'Fecha Nacimiento', sexo AS Sexo, tipo_sangre AS Sangre, " +
+                              "enfermedades_cronicas AS 'Enf. Crónicas', alergias AS Alergias, " +
+                              "direccion AS Dirección, correo AS Correo, telefono AS Teléfono " +
+                              $"FROM tbl_pacientes WHERE curp LIKE '%{filtro}%' AND activo = true";
+            return b.Consultar(consulta, "tbl_pacientes").Tables[0];
         }
     }
 }

@@ -14,7 +14,7 @@ namespace LogClinic
             InitializeComponent();
             mp = new ManejadorRPaciente();
 
-            // Carga de datos si es modificación (siguiendo tu lógica de Agenda)
+           
             if (FrmPacientes.paciente.IdPaciente > 0)
             {
                 TxtNCompleto.Text = FrmPacientes.paciente.NombreCompleto;
@@ -26,12 +26,16 @@ namespace LogClinic
                 TxtDirreccion.Text = FrmPacientes.paciente.Direccion;
                 TxtTelefono.Text = FrmPacientes.paciente.Telefono;
                 TxtCorreo.Text = FrmPacientes.paciente.Correo;
+                DtpFNacimiento.Value = FrmPacientes.paciente.FechaNacimiento;
+
+
+
             }
         }
 
         private void BntGuardar_Click(object sender, EventArgs e)
         {
-            if (FrmPacientes.paciente.IdPaciente == 0) 
+            if (FrmPacientes.paciente.IdPaciente == 0)
             {
                 mp.Guardar(new Paciente
                 {
@@ -47,19 +51,22 @@ namespace LogClinic
                     Correo = TxtCorreo.Text
                 });
             }
-            else 
+            else
             {
                 mp.Modificar(new Paciente
                 {
                     IdPaciente = FrmPacientes.paciente.IdPaciente,
                     NombreCompleto = TxtNCompleto.Text,
                     Curp = TxtCurp.Text,
+                  
+                    FechaNacimiento = DtpFNacimiento.Value,
                     Direccion = TxtDirreccion.Text,
                     Telefono = TxtTelefono.Text,
                     Correo = TxtCorreo.Text,
                     Alergias = TxtAlergias.Text,
                     EnfermedadesCronicas = TxtECronicas.Text,
-                    TipoSangre = CmbTSangre.Text
+                    TipoSangre = CmbTSangre.Text,
+                    Sexo = CmbSexo.Text 
                 });
             }
             this.Close();
@@ -70,6 +77,7 @@ namespace LogClinic
             this.Close();
         }
 
+      
         private void label1_Click(object sender, EventArgs e) { }
         private void label4_Click(object sender, EventArgs e) { }
         private void label10_Click(object sender, EventArgs e) { }
@@ -84,10 +92,6 @@ namespace LogClinic
         private void TxtDirreccion_TextChanged(object sender, EventArgs e) { }
         private void TxtTelefono_TextChanged(object sender, EventArgs e) { }
         private void TxtCorreo_TextChanged(object sender, EventArgs e) { }
-
-        private void FrmRegistroPacientes_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void FrmRegistroPacientes_Load(object sender, EventArgs e) { }
     }
 }
