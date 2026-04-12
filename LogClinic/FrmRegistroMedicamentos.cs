@@ -14,11 +14,11 @@ namespace LogClinic
 {
     public partial class FrmRegistroMedicamentos : Form
     {
-        ManejadorMedicamentos mm;
+        //ManejadorMedicamentos mm;
         public FrmRegistroMedicamentos()
         {
             InitializeComponent();
-            mm= new ManejadorMedicamentos();
+          //  mm= new ManejadorMedicamentos();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -37,12 +37,12 @@ namespace LogClinic
                 }
 
                 bool requiere = chkRequiereReceta.Checked;
-                mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
+                //mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
 
-                int ultimoId = mm.ObtenerUltimoIdMedicamento();
-                FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
+              //  int ultimoId = mm.ObtenerUltimoIdMedicamento();
+               // FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
 
-                sm.ShowDialog();
+                //sm.ShowDialog();
                 this.Close();
             }
             catch (Exception ex)
