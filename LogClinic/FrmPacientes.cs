@@ -72,6 +72,12 @@ namespace LogClinic
         }
 
         private void DtgPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+
+        private void FrmPacientes_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnReporte_Click(object sender, EventArgs e) { }
     }
 }

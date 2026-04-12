@@ -84,5 +84,10 @@ namespace LogClinic
         private void TxtDirreccion_TextChanged(object sender, EventArgs e) { }
         private void TxtTelefono_TextChanged(object sender, EventArgs e) { }
         private void TxtCorreo_TextChanged(object sender, EventArgs e) { }
+
+        private void FrmRegistroPacientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

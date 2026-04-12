@@ -120,6 +120,7 @@
             this.Controls.Add(this.DtgPaciente);
             this.Name = "FrmPacientes";
             this.Text = "FrmPacientes";
+            this.Load += new System.EventHandler(this.FrmPacientes_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.DtgPaciente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
