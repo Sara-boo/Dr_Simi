@@ -37,12 +37,10 @@ namespace Manejadores
 
             MessageBox.Show("Información actualizada");
         }
-
-       
         public void Mostrar(DataGridView tabla, string filtro)
         {
             tabla.Columns.Clear();
-            // La parte clave es: TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE()) AS Edad
+            
             string consulta = $"SELECT id_paciente AS ID, nombre_completo AS Nombre, curp AS CURP, " +
                               $"TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE()) AS Edad, " +
                               $"sexo AS Sexo, tipo_sangre AS Sangre, enfermedades_cronicas AS 'Enf. Crónicas', " +
