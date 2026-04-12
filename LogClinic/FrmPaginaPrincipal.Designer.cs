@@ -53,6 +53,7 @@
             // tsPrincipal
             // 
             this.tsPrincipal.AutoSize = false;
+            this.tsPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
             this.tsPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.tsPrincipal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -68,10 +69,10 @@
             this.tsbRolesPermisos,
             this.tsbUsuarios,
             this.tsbCerrarSesion});
-            this.tsPrincipal.Location = new System.Drawing.Point(0, 81);
+            this.tsPrincipal.Location = new System.Drawing.Point(0, 100);
             this.tsPrincipal.Name = "tsPrincipal";
             this.tsPrincipal.Padding = new System.Windows.Forms.Padding(0);
-            this.tsPrincipal.Size = new System.Drawing.Size(85, 674);
+            this.tsPrincipal.Size = new System.Drawing.Size(113, 829);
             this.tsPrincipal.TabIndex = 9;
             this.tsPrincipal.Text = "MENU";
             this.tsPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsPrincipal_ItemClicked);
@@ -188,15 +189,16 @@
             // 
             // pSuperior
             // 
+            this.pSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
             this.pSuperior.Controls.Add(this.BtnCerrar);
             this.pSuperior.Controls.Add(this.BtnOcultarVentana);
             this.pSuperior.Controls.Add(this.LblUsuarioActivo);
             this.pSuperior.Controls.Add(this.pbUsuario);
             this.pSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pSuperior.Margin = new System.Windows.Forms.Padding(2);
+            this.pSuperior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pSuperior.Name = "pSuperior";
-            this.pSuperior.Size = new System.Drawing.Size(1443, 81);
+            this.pSuperior.Size = new System.Drawing.Size(1924, 100);
             this.pSuperior.TabIndex = 10;
             // 
             // BtnCerrar
@@ -204,10 +206,10 @@
             this.BtnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCerrar.BackgroundImage = global::LogClinic.Properties.Resources.Cerrar1;
             this.BtnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCerrar.Location = new System.Drawing.Point(1372, 22);
-            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnCerrar.Location = new System.Drawing.Point(1829, 27);
+            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(35, 37);
+            this.BtnCerrar.Size = new System.Drawing.Size(47, 46);
             this.BtnCerrar.TabIndex = 7;
             this.BtnCerrar.UseVisualStyleBackColor = true;
             // 
@@ -216,10 +218,10 @@
             this.BtnOcultarVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnOcultarVentana.BackgroundImage = global::LogClinic.Properties.Resources.MiniminarVentana;
             this.BtnOcultarVentana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnOcultarVentana.Location = new System.Drawing.Point(1312, 22);
-            this.BtnOcultarVentana.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnOcultarVentana.Location = new System.Drawing.Point(1749, 27);
+            this.BtnOcultarVentana.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnOcultarVentana.Name = "BtnOcultarVentana";
-            this.BtnOcultarVentana.Size = new System.Drawing.Size(35, 37);
+            this.BtnOcultarVentana.Size = new System.Drawing.Size(47, 46);
             this.BtnOcultarVentana.TabIndex = 6;
             this.BtnOcultarVentana.UseVisualStyleBackColor = true;
             // 
@@ -228,9 +230,11 @@
             this.LblUsuarioActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblUsuarioActivo.AutoSize = true;
             this.LblUsuarioActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuarioActivo.Location = new System.Drawing.Point(1026, 28);
+            this.LblUsuarioActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.LblUsuarioActivo.Location = new System.Drawing.Point(1368, 34);
+            this.LblUsuarioActivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblUsuarioActivo.Name = "LblUsuarioActivo";
-            this.LblUsuarioActivo.Size = new System.Drawing.Size(68, 20);
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(84, 25);
             this.LblUsuarioActivo.TabIndex = 3;
             this.LblUsuarioActivo.Text = "Usuario.";
             // 
@@ -239,22 +243,23 @@
             this.pbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbUsuario.BackgroundImage = global::LogClinic.Properties.Resources.IconoUsuario;
             this.pbUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbUsuario.Location = new System.Drawing.Point(1256, 22);
-            this.pbUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.pbUsuario.Location = new System.Drawing.Point(1675, 27);
+            this.pbUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbUsuario.Name = "pbUsuario";
-            this.pbUsuario.Size = new System.Drawing.Size(35, 37);
+            this.pbUsuario.Size = new System.Drawing.Size(47, 46);
             this.pbUsuario.TabIndex = 5;
             this.pbUsuario.TabStop = false;
             // 
             // FrmPaginaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 755);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.ClientSize = new System.Drawing.Size(1924, 929);
             this.Controls.Add(this.tsPrincipal);
             this.Controls.Add(this.pSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPaginaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO DE SESION";

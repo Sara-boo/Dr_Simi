@@ -19,12 +19,12 @@ namespace Manejadores
         public void Insertar(Citas cita)
         {
 
-            b.Comando($"CALL p_insertar_cita({cita.IdPaciente}, {cita.IdPersonal}, '{cita.FechaHora:yyyy-MM-dd HH:mm:ss}', '{cita.Motivo}')");
+            b.Comando($"CALL p_insertar_cita({cita.IdPaciente}, {cita.IdPersonal}, '{cita.FechaHora:yyyy-MM-dd HH:mm:ss}');");
         }
 
         public void Editar(Citas cita)
         {
-            b.Comando($"CALL p_editar_citas()");
+            b.Comando($"CALL p_editar_cita({cita.IdCita},{cita.IdPaciente},{cita.IdPersonal},'{cita.FechaHora:yyyy-MM-dd HH:mm:ss}','{cita.Estado}');");
         }
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
@@ -35,12 +35,14 @@ namespace Manejadores
             tabla.Columns["Id_Personal"].Visible = false;
             //tabla.Columns["created_at"].Visible = false;
             //tabla.Columns["updated_at"].Visible = false;
-            tabla.Columns.Insert(8, Boton("Cambiar estado", Color.Green));
+            tabla.Columns.Insert(8, Boton("Editar",Color.LightSteelBlue));
+            tabla.Columns.Insert(9, Boton("Atender", Color.LightGray));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
 
         }
-        public DataRow BuscarPacientePorCurp(string curp)
+       
+        public DataRow BuscarCurp(string curp)
         {
             DataTable dt = b.Consultar($"SELECT id_paciente, nombre_completo, fecha_nacimiento, tipo_sangre, alergias, enfermedades_cronicas FROM tbl_pacientes WHERE curp = '{curp}'", "tbl_pacientes").Tables[0];
 
@@ -51,8 +53,8 @@ namespace Manejadores
         }
         public void LlenarMedico(ComboBox caja)
         {
-            caja.DataSource = b.Consultar($"select id_personal, nombre, apellido, especialidad where fkid_rol = 2 from personal", "Piezas").Tables[0];
-            caja.DisplayMember = "nombre";
+            caja.DataSource = b.Consultar($"select id_personal, Medico from v_CmbMedico", "v_CmbMedico").Tables[0];
+            caja.DisplayMember = "Medico" ;
             caja.ValueMember = "id_personal";
         }
         public static DataGridViewButtonColumn Boton(string titulo ,Color fondo)
@@ -60,11 +62,46 @@ namespace Manejadores
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.Text = titulo;
             btn.UseColumnTextForButtonValue = true;
-            btn.FlatStyle = FlatStyle.Popup;
+            btn.FlatStyle = FlatStyle.Flat;
             btn.DefaultCellStyle.BackColor = fondo;
-            btn.DefaultCellStyle.ForeColor = Color.White;
+            btn.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#095D7E");
+            btn.DefaultCellStyle.Font = new Font("Lucida Bright", 12F, FontStyle.Bold);
             return btn;
+        }
+        public void EstilizarDataGrid(DataGridView dgv)
+        {
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToResizeRows = false;
+            dgv.AllowUserToResizeColumns = false;
+            dgv.ReadOnly = true;
+            dgv.RowHeadersVisible = false; // Oculta la columna vacía de la izquierda
+            dgv.AutoResizeColumns();
+            dgv.AutoResizeRows();
+            dgv.MultiSelect = false;
 
+            //Colores y bordes generales
+            dgv.BorderStyle = BorderStyle.FixedSingle;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal; // Solo líneas horizontales
+            dgv.GridColor = ColorTranslator.FromHtml("#B4B2B2"); // Color de las líneas divisorias 
+
+            //Estilo del encabezado
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Lucida Bright", 14F, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.ColumnHeadersHeight = 45;
+
+            //Estilo de las filas
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 12F, FontStyle.Regular);
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            //Altura de las filas
+            dgv.RowTemplate.Height = 50; // Filas más altas para que no se vea tan feo
+            dgv.DefaultCellStyle.Padding = new Padding(5); // Margen interno
         }
         public void Exportar(DataGridView tabla)
         {
@@ -88,7 +125,7 @@ namespace Manejadores
                     }
                 }
                 // configurar el nombre y la ubicación del archivo excel
-                string filePath = @"C:\Users\Sara Avila\OneDrive - tecmm.edu.mx\Escritorio\P3\Mantenimientos.xlsx";//cambia la ruta donde se va guardar
+                string filePath = @"C:\Users\Sara Avila\OneDrive - tecmm.edu.mx\Escritorio\LogClinic\citas.xlsx";//cambia la ruta donde se va guardar
                 excelWorkbook.SaveAs(filePath);
 
                 //MENSAJE DE CONFIRMACIÓN
