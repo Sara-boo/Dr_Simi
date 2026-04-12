@@ -57,3 +57,57 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+--Modifiqué tbl_tratamiento y agregué la tabla tbl_detalle_tratamiento para registrar los medicamentos asociados a cada tratamiento, ya que un tratamiento puede incluir varios medicamentos y un medicamento puede ser parte de varios tratamientos.
+CREATE TABLE tbl_tratamiento (
+    id_tratamiento INT AUTO_INCREMENT PRIMARY KEY,
+    fkid_historial INT NOT NULL,
+    descripcion_sintomas TEXT, 
+    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    fkid_usuario INT, 
+    FOREIGN KEY (fkid_historial) REFERENCES tbl_historial_clinico(id_historial),
+    FOREIGN KEY (fkid_usuario) REFERENCES tbl_usuarios(id_usuario),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tbl_detalle_tratamiento (
+    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    fkid_tratamiento INT NOT NULL, 
+    fkid_medicamento INT NOT NULL,
+    cantidad INT, 
+    dosis VARCHAR(100),
+    frecuencia VARCHAR(100),
+    duracion VARCHAR(100),
+    FOREIGN KEY (fkid_tratamiento) REFERENCES tbl_tratamiento(id_tratamiento),
+    FOREIGN KEY (fkid_medicamento) REFERENCES tbl_medicamentos(id_medicamento)
+);
+
+--Para registrar la salida de medicamentos (receta)
+DELIMITER $$
+CREATE PROCEDURE p_registrar_salida_inventario(
+IN p_fkid_medicamento INT,
+IN p_cantidad INT,
+IN p_fkid_usuario INT,
+IN p_motivo VARCHAR(255))
+BEGIN
+	DECLARE v_id_inventario INT;
+	DECLARE v_stock_actual INT;
+	
+	SELECT id_inventario, stock_actual INTO v_id_inventario, v_stock_actual FROM tbl_inventario WHERE fkid_medicamento = p_fkid_medicamento AND stock_actual >= p_cantidad ORDER BY fecha_caducidad ASC LIMIT 1;
+	
+	IF v_id_inventario IS NOT NULL THEN
+	UPDATE tbl_inventario
+	SET stock_actual = stock_actual - p_cantidad
+	WHERE id_inventario = v_id_inventario;
+	
+	INSERT INTO tbl_movimientos_inventario (fkid_inventario,tipo_movimiento, cantidad, motivo,fkid_usuario)
+	VALUES (v_id_inventario, 'Salida', p_cantidad, p_motivo, p_fkid_usuario);
+	
+	ELSE
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Stock insuficiente';
+	
+	END IF;
+	
+END$$
+DELIMITER ;

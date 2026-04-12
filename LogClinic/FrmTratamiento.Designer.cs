@@ -43,6 +43,7 @@
             this.dtgMedicamentos = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblPaciente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatosPaciente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamentos)).BeginInit();
             this.SuspendLayout();
@@ -190,6 +191,15 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
+            // lblPaciente
+            // 
+            this.lblPaciente.AutoSize = true;
+            this.lblPaciente.Location = new System.Drawing.Point(61, 20);
+            this.lblPaciente.Name = "lblPaciente";
+            this.lblPaciente.Size = new System.Drawing.Size(44, 16);
+            this.lblPaciente.TabIndex = 16;
+            this.lblPaciente.Text = "label7";
+            // 
             // FrmTratamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -197,6 +207,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(1028, 742);
             this.ControlBox = false;
+            this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtgMedicamentos);
@@ -237,5 +248,6 @@
         private System.Windows.Forms.DataGridView dtgMedicamentos;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblPaciente;
     }
 }
