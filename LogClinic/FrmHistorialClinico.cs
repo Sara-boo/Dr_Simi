@@ -59,11 +59,8 @@ namespace LogClinic
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 string nombreColumna = DtgDatos.Columns[e.ColumnIndex].Name;
-
-                // 1. Verificamos que la celda que se está pintando sea la de la Fecha
                 if (nombreColumna == "Fecha_Hora")
                 {
-                    // 2. Buscamos el valor del Estado en esta misma fila (aunque esté oculto)
                     string estado = DtgDatos.Rows[e.RowIndex].Cells["Estado"].Value?.ToString();
 
                     if (!string.IsNullOrEmpty(estado))
