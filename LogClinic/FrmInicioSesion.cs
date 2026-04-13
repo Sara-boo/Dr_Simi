@@ -24,11 +24,11 @@ namespace LogClinic
             InitializeComponent();
             md = new ManejadorDiseño();
             ml = new ManejadorLogin();
-            md.EstilosBoton(BtnIngresar, "E2FCD6", "000000");
             md.QuitarBordesBotones(BtnSalir);
             md.QuitarBordesBotones(BtnVer);
             md.QuitarBordesBotones(BtnNoVer);
-
+            md.EstilizarTextBox(TxtClave, "CCECEE", "14967F");
+            md.EstilizarTextBox(TxtUsuario, "CCECEE", "14967F");
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)

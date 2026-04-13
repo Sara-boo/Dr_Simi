@@ -44,10 +44,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Lucida Bright", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(37, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 34);
+            this.label1.Size = new System.Drawing.Size(307, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registro Usuarios";
             // 
@@ -101,41 +101,49 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(226, 377);
+            this.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
+            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(196)))), ((int)(((byte)(188)))));
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Javanese Text", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.Location = new System.Drawing.Point(225, 387);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(167, 46);
+            this.BtnGuardar.Size = new System.Drawing.Size(167, 61);
             this.BtnGuardar.TabIndex = 7;
             this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(433, 377);
+            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
+            this.BtnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(196)))), ((int)(((byte)(188)))));
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.Font = new System.Drawing.Font("Javanese Text", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.Location = new System.Drawing.Point(432, 387);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(167, 46);
+            this.BtnCancelar.Size = new System.Drawing.Size(167, 61);
             this.BtnCancelar.TabIndex = 8;
             this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // CmbPersonal
             // 
+            this.CmbPersonal.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbPersonal.FormattingEnabled = true;
-            this.CmbPersonal.Location = new System.Drawing.Point(192, 266);
+            this.CmbPersonal.Location = new System.Drawing.Point(192, 253);
             this.CmbPersonal.Name = "CmbPersonal";
-            this.CmbPersonal.Size = new System.Drawing.Size(236, 24);
+            this.CmbPersonal.Size = new System.Drawing.Size(270, 37);
             this.CmbPersonal.TabIndex = 9;
             // 
             // CmbEstatus
             // 
             this.CmbEstatus.Enabled = false;
+            this.CmbEstatus.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbEstatus.FormattingEnabled = true;
-            this.CmbEstatus.Location = new System.Drawing.Point(188, 318);
+            this.CmbEstatus.Location = new System.Drawing.Point(188, 315);
             this.CmbEstatus.Name = "CmbEstatus";
-            this.CmbEstatus.Size = new System.Drawing.Size(236, 24);
+            this.CmbEstatus.Size = new System.Drawing.Size(274, 37);
             this.CmbEstatus.TabIndex = 11;
             this.CmbEstatus.Visible = false;
             // 
@@ -155,7 +163,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.ClientSize = new System.Drawing.Size(815, 475);
             this.Controls.Add(this.CmbEstatus);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CmbPersonal);
@@ -167,6 +176,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmUsuarios";
             this.Text = "FrmUsuarios";
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
