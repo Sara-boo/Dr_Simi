@@ -50,6 +50,10 @@
             // 
             // dtgDatosPaciente
             // 
+            this.dtgDatosPaciente.AllowUserToAddRows = false;
+            this.dtgDatosPaciente.AllowUserToDeleteRows = false;
+            this.dtgDatosPaciente.AllowUserToResizeColumns = false;
+            this.dtgDatosPaciente.AllowUserToResizeRows = false;
             this.dtgDatosPaciente.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDatosPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDatosPaciente.Location = new System.Drawing.Point(91, 52);
@@ -113,6 +117,7 @@
             this.cmbMedicamento.Name = "cmbMedicamento";
             this.cmbMedicamento.Size = new System.Drawing.Size(449, 24);
             this.cmbMedicamento.TabIndex = 6;
+            this.cmbMedicamento.SelectedIndexChanged += new System.EventHandler(this.cmbMedicamento_SelectedIndexChanged);
             // 
             // label5
             // 
