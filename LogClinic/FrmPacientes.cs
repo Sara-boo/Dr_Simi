@@ -35,7 +35,7 @@ namespace LogClinic
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            paciente.IdPaciente = 0; // Indica que es un registro nuevo
+            paciente.IdPaciente = 0; 
             FrmRegistroPacientes frp = new FrmRegistroPacientes();
             frp.ShowDialog();
             mp.Mostrar(DtgPaciente, TxtBCurp.Text);
@@ -87,54 +87,40 @@ namespace LogClinic
 
         private void BtnReporte_Click(object sender, EventArgs e) 
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
-            saveFileDialog.Title = "Guardar Reporte de Pacientes";
-            saveFileDialog.FileName = "Reporte_Pacientes.xlsx";
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                Title = "Guardar Reporte de Pacientes",
+                FileName = "Reporte_Pacientes.xlsx"
+            };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-               
+                
                 System.Data.DataTable dt = mp.ObtenerDatosReporte(TxtBCurp.Text);
 
-                if (dt.Rows.Count > 0)
+                if (dt != null && dt.Rows.Count > 0)
                 {
-                    Excel.Application excelApp = new Excel.Application();
-                    excelApp.Workbooks.Add();
-                    Excel._Worksheet workSheet = excelApp.ActiveSheet;
-
-                    
-                    for (int i = 0; i < dt.Columns.Count; i++)
+                    try
                     {
-                        workSheet.Cells[1, i + 1] = dt.Columns[i].ColumnName;
-                        workSheet.Cells[1, i + 1].Font.Bold = true;
-                    }
+                        mp.ExportarReportePacientesExcel(dt, saveFileDialog.FileName);
 
-                    
-                    for (int i = 0; i < dt.Rows.Count; i++)
+                        MessageBox.Show("Reporte generado con éxito", "Excel",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
                     {
-                        for (int j = 0; j < dt.Columns.Count; j++)
-                        {
-                            workSheet.Cells[i + 2, j + 1] = dt.Rows[i][j].ToString();
-                        }
+                        MessageBox.Show("Error al exportar: " + ex.Message, "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    
-                    workSheet.SaveAs(saveFileDialog.FileName);
-                    excelApp.Quit();
-
-                  
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(workSheet);
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-
-                    MessageBox.Show("Reporte generado con éxito", "Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No hay datos para exportar.");
+                    MessageBox.Show("No hay datos para exportar para la CURP proporcionada.",
+                                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
 
         }
     }
-}

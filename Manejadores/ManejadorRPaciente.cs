@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 using AccesoDatos;
 using Entidades;
 
@@ -109,5 +110,57 @@ namespace Manejadores
                               $"FROM tbl_pacientes WHERE curp LIKE '%{filtro}%' AND activo = true";
             return b.Consultar(consulta, "tbl_pacientes").Tables[0];
         }
+
+        public void ExportarReportePacientesExcel(System.Data.DataTable dt, string rutaArchivo)
+        {
+            Microsoft.Office.Interop.Excel.Application excelApp = null;
+            Excel.Workbooks workbooks = null;
+            Excel.Workbook workbook = null;
+            Excel._Worksheet workSheet = null;
+
+            try
+            {
+                excelApp = new Excel.Application();
+                workbooks = excelApp.Workbooks;
+                workbook = workbooks.Add();
+                workSheet = excelApp.ActiveSheet;
+
+
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    var cell = (Excel.Range)workSheet.Cells[1, i + 1];
+                    cell.Value = dt.Columns[i].ColumnName;
+                    cell.Font.Bold = true;
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(cell);
+                }
+
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        workSheet.Cells[i + 2, j + 1] = dt.Rows[i][j].ToString();
+                    }
+                }
+
+
+                workSheet.SaveAs(rutaArchivo);
+                workbook.Close(false);
+                excelApp.Quit();
+            }
+            finally
+            {
+
+                if (workSheet != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(workSheet);
+                if (workbook != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                if (workbooks != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(workbooks);
+                if (excelApp != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
     }
 }
+
