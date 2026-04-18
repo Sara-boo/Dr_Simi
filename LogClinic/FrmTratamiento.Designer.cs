@@ -32,7 +32,7 @@
             this.dtgDatosPaciente = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSintomas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbMedicamento = new System.Windows.Forms.ComboBox();
@@ -90,14 +90,14 @@
             this.label2.Text = "_________________________________________________________________________________" +
     "_______________________________________";
             // 
-            // textBox1
+            // txtSintomas
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(95, 265);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(846, 113);
-            this.textBox1.TabIndex = 3;
+            this.txtSintomas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSintomas.Location = new System.Drawing.Point(95, 265);
+            this.txtSintomas.Multiline = true;
+            this.txtSintomas.Name = "txtSintomas";
+            this.txtSintomas.Size = new System.Drawing.Size(846, 113);
+            this.txtSintomas.TabIndex = 3;
             // 
             // label3
             // 
@@ -205,6 +205,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblPaciente
             // 
@@ -309,7 +310,7 @@
             this.Controls.Add(this.cmbMedicamento);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSintomas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtgDatosPaciente);
@@ -328,7 +329,7 @@
         private System.Windows.Forms.DataGridView dtgDatosPaciente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSintomas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbMedicamento;

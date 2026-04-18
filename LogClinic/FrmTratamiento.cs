@@ -91,5 +91,10 @@ namespace LogClinic
                 mt.MostrarMedicamentos(listaDetalles, dtgMedicamentos);
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
