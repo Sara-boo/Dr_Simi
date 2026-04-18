@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Manejadores
 {
@@ -40,6 +41,37 @@ namespace Manejadores
             {
                 presentacion.DataSource = null;
             }
+        }
+        public void GuardarMedicamento(DetalleTratamiento detalle, List<DetalleTratamiento> lista)
+        {
+            lista.Add(detalle);
+        }
+        public void MostrarMedicamentos(List<DetalleTratamiento> lista, DataGridView Tabla)
+        {
+            Tabla.Columns.Clear();
+            Tabla.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            Tabla.DataSource = lista.ToList();
+            Tabla.Columns["Id_detalle"].Visible = false;
+            Tabla.Columns["Fkid_tratamiento"].Visible=false;
+            Tabla.Columns["Fkid_medicamento"].Visible = false;
+            Tabla.Columns["NombreParaMostrar"].HeaderText = "Medicamento";
+            Tabla.Columns.Insert(8, Boton("-", Color.Red));
+            Tabla.AutoResizeColumns();
+            Tabla.AutoResizeRows();
+        }
+        public void BorrarMedicamento(List<DetalleTratamiento> lista, int fila)
+        {
+            lista.RemoveAt(fila);
+        }
+        DataGridViewButtonColumn Boton(string texto, Color fondo)
+        {
+            DataGridViewButtonColumn MiBoton = new DataGridViewButtonColumn();
+            MiBoton.Text = texto;
+            MiBoton.UseColumnTextForButtonValue = true;
+            MiBoton.FlatStyle = FlatStyle.Popup;
+            MiBoton.DefaultCellStyle.BackColor = fondo;
+            MiBoton.DefaultCellStyle.ForeColor = Color.White;
+            return MiBoton;
         }
     }
 }
