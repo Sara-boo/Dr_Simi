@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtBCurp = new System.Windows.Forms.TextBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnReporte = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DtgPaciente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,42 +72,53 @@
             // BtnBuscar
             // 
             this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.White;
-            this.BtnBuscar.Location = new System.Drawing.Point(914, 25);
+            this.BtnBuscar.Location = new System.Drawing.Point(914, 28);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(87, 43);
+            this.BtnBuscar.Size = new System.Drawing.Size(87, 38);
             this.BtnBuscar.TabIndex = 6;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnReporte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.BtnReporte.BackgroundImage = global::LogClinic.Properties.Resources.CSV_R;
+            this.BtnReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnReporte.FlatAppearance.BorderSize = 0;
+            this.BtnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReporte.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporte.ForeColor = System.Drawing.Color.White;
+            this.BtnReporte.Location = new System.Drawing.Point(1055, 19);
+            this.BtnReporte.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtnReporte.Size = new System.Drawing.Size(58, 56);
+            this.BtnReporte.TabIndex = 4;
+            this.BtnReporte.UseMnemonic = false;
+            this.BtnReporte.UseVisualStyleBackColor = false;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.BtnAgregar.BackgroundImage = global::LogClinic.Properties.Resources._;
+            this.BtnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Location = new System.Drawing.Point(1007, 25);
+            this.BtnAgregar.Location = new System.Drawing.Point(1016, 28);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(36, 41);
+            this.BtnAgregar.Size = new System.Drawing.Size(36, 38);
             this.BtnAgregar.TabIndex = 7;
-            this.BtnAgregar.Text = "+";
             this.BtnAgregar.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // BtnReporte
-            // 
-            this.BtnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
-            this.BtnReporte.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReporte.ForeColor = System.Drawing.Color.White;
-            this.BtnReporte.Location = new System.Drawing.Point(1049, 26);
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Size = new System.Drawing.Size(104, 41);
-            this.BtnReporte.TabIndex = 8;
-            this.BtnReporte.Text = "Reporte";
-            this.BtnReporte.UseVisualStyleBackColor = false;
-            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // FrmPacientes
             // 

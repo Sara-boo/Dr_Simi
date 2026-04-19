@@ -40,7 +40,8 @@ namespace Manejadores
             MessageBox.Show("Información modificada correctamente", "Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void Mostrar(DataGridView tabla, string filtro)
+        
+        public void Mostrar(DataGridView tabla, string filtro, Image imgEdit, Image imgDel)
         {
             tabla.Columns.Clear();
 
@@ -56,20 +57,23 @@ namespace Manejadores
             if (tabla.Columns.Contains("ID")) tabla.Columns["ID"].Visible = false;
             if (tabla.Columns.Contains("fecha_nacimiento")) tabla.Columns["fecha_nacimiento"].Visible = false;
 
-            Color colorAzul = Color.FromArgb(1, 91, 126);
-            Color colorTexto = Color.White;
+            DataGridViewImageColumn colEditar = new DataGridViewImageColumn();
+            colEditar.Image = imgEdit;
+            colEditar.Name = "Modificar";
+            colEditar.HeaderText = "Editar";
+            colEditar.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
-            DataGridViewButtonColumn btnModificar = Boton("Modificar", colorAzul, colorTexto);
-            btnModificar.Name = "Modificar";
+            DataGridViewImageColumn colBorrar = new DataGridViewImageColumn();
+            colBorrar.Image = imgDel;
+            colBorrar.Name = "Borrar";
+            colBorrar.HeaderText = "Eliminar";
+            colBorrar.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
-            DataGridViewButtonColumn btnBorrar = Boton("Borrar", colorAzul, colorTexto);
-            btnBorrar.Name = "Borrar";
+            tabla.Columns.Add(colEditar);
+            tabla.Columns.Add(colBorrar);
 
-            tabla.Columns.Add(btnModificar);
-            tabla.Columns.Add(btnBorrar);
-
-            btnModificar.DisplayIndex = 0;
-            btnBorrar.DisplayIndex = 1;
+            colEditar.DisplayIndex = 0;
+            colBorrar.DisplayIndex = 1;
 
             tabla.RowTemplate.Height = 35;
         }
@@ -84,21 +88,6 @@ namespace Manejadores
                 b.Comando($"UPDATE tbl_pacientes SET activo = false WHERE id_paciente = {id}");
                 MessageBox.Show("Registro eliminado");
             }
-        }
-
-        public static DataGridViewButtonColumn Boton(string titulo, Color fondo, Color texto)
-        {
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.Name = titulo;
-            btn.Text = titulo;
-            btn.UseColumnTextForButtonValue = true;
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.DefaultCellStyle.BackColor = fondo;
-            btn.DefaultCellStyle.ForeColor = texto;
-            btn.DefaultCellStyle.SelectionBackColor = fondo;
-            btn.DefaultCellStyle.SelectionForeColor = texto;
-            btn.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-            return btn;
         }
 
         public System.Data.DataTable ObtenerDatosReporte(string filtro)
@@ -125,7 +114,6 @@ namespace Manejadores
                 workbook = workbooks.Add();
                 workSheet = excelApp.ActiveSheet;
 
-
                 for (int i = 0; i < dt.Columns.Count; i++)
                 {
                     var cell = (Excel.Range)workSheet.Cells[1, i + 1];
@@ -133,7 +121,6 @@ namespace Manejadores
                     cell.Font.Bold = true;
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(cell);
                 }
-
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -143,19 +130,16 @@ namespace Manejadores
                     }
                 }
 
-
                 workSheet.SaveAs(rutaArchivo);
                 workbook.Close(false);
                 excelApp.Quit();
             }
             finally
             {
-
                 if (workSheet != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(workSheet);
                 if (workbook != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                 if (workbooks != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(workbooks);
                 if (excelApp != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-
 
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
@@ -163,4 +147,3 @@ namespace Manejadores
         }
     }
 }
-

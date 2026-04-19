@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using Entidades;
@@ -20,25 +21,31 @@ namespace LogClinic
 
         private void FrmPacientes_Load(object sender, EventArgs e)
         {
-            mp.Mostrar(DtgPaciente, TxtBCurp.Text);
+           
+
+            BtnReporte.ImageAlign = ContentAlignment.MiddleCenter;
+            BtnReporte.Text = "";
+
+            // Cargar datos en el DataGridView
+            mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
         }
 
         private void TxtBCurp_TextChanged(object sender, EventArgs e)
         {
-            mp.Mostrar(DtgPaciente, TxtBCurp.Text);
+            mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            mp.Mostrar(DtgPaciente, TxtBCurp.Text);
+            mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            paciente.IdPaciente = 0; 
+            paciente.IdPaciente = 0;
             FrmRegistroPacientes frp = new FrmRegistroPacientes();
             frp.ShowDialog();
-            mp.Mostrar(DtgPaciente, TxtBCurp.Text);
+            mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
         }
 
         private void DtgPaciente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -48,44 +55,44 @@ namespace LogClinic
 
             if (fila >= 0)
             {
-                
-                paciente.IdPaciente = int.Parse(DtgPaciente.Rows[fila].Cells["ID"].Value.ToString());
-                paciente.NombreCompleto = DtgPaciente.Rows[fila].Cells["Nombre"].Value.ToString();
-                paciente.Curp = DtgPaciente.Rows[fila].Cells["CURP"].Value.ToString();
-                paciente.Sexo = DtgPaciente.Rows[fila].Cells["Sexo"].Value.ToString();
-                paciente.TipoSangre = DtgPaciente.Rows[fila].Cells["Sangre"].Value.ToString();
-                paciente.EnfermedadesCronicas = DtgPaciente.Rows[fila].Cells["Enf. Crónicas"].Value.ToString();
-                paciente.Alergias = DtgPaciente.Rows[fila].Cells["Alergias"].Value.ToString();
-                paciente.Direccion = DtgPaciente.Rows[fila].Cells["Dirección"].Value.ToString();
-                paciente.Correo = DtgPaciente.Rows[fila].Cells["Correo"].Value.ToString();
-                paciente.Telefono = DtgPaciente.Rows[fila].Cells["Teléfono"].Value.ToString();
-                paciente.FechaNacimiento = Convert.ToDateTime(DtgPaciente.Rows[fila].Cells["fecha_nacimiento"].Value);
-
-
-
-                string nombreBoton = DtgPaciente.Columns[columna].Name;
-
-                if (nombreBoton == "Modificar")
+                try
                 {
-                    FrmRegistroPacientes frp = new FrmRegistroPacientes();
-                    frp.ShowDialog();
-                    mp.Mostrar(DtgPaciente, TxtBCurp.Text);
+                    if (DtgPaciente.Rows[fila].Cells["ID"].Value != null)
+                    {
+                        paciente.IdPaciente = int.Parse(DtgPaciente.Rows[fila].Cells["ID"].Value.ToString());
+                        paciente.NombreCompleto = DtgPaciente.Rows[fila].Cells["Nombre"].Value.ToString();
+                        paciente.Curp = DtgPaciente.Rows[fila].Cells["CURP"].Value.ToString();
+                        paciente.Sexo = DtgPaciente.Rows[fila].Cells["Sexo"].Value.ToString();
+                        paciente.TipoSangre = DtgPaciente.Rows[fila].Cells["Sangre"].Value.ToString();
+                        paciente.EnfermedadesCronicas = DtgPaciente.Rows[fila].Cells["Enf. Crónicas"].Value.ToString();
+                        paciente.Alergias = DtgPaciente.Rows[fila].Cells["Alergias"].Value.ToString();
+                        paciente.Direccion = DtgPaciente.Rows[fila].Cells["Dirección"].Value.ToString();
+                        paciente.Correo = DtgPaciente.Rows[fila].Cells["Correo"].Value.ToString();
+                        paciente.Telefono = DtgPaciente.Rows[fila].Cells["Teléfono"].Value.ToString();
+                        paciente.FechaNacimiento = Convert.ToDateTime(DtgPaciente.Rows[fila].Cells["fecha_nacimiento"].Value);
+
+                        string nombreBoton = DtgPaciente.Columns[columna].Name;
+
+                        if (nombreBoton == "Modificar")
+                        {
+                            FrmRegistroPacientes frp = new FrmRegistroPacientes();
+                            frp.ShowDialog();
+                            mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
+                        }
+                        else if (nombreBoton == "Borrar")
+                        {
+                            mp.Borrar(paciente.IdPaciente, paciente.NombreCompleto);
+                            mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
+                        }
+                    }
                 }
-                else if (nombreBoton == "Borrar")
+                catch (Exception)
                 {
-                   
-                    mp.Borrar(paciente.IdPaciente, paciente.NombreCompleto);
-                    mp.Mostrar(DtgPaciente, TxtBCurp.Text);
                 }
             }
         }
 
-      
-        private void DtgPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-
-        private void FrmPacientes_Load_1(object sender, EventArgs e) { }
-
-        private void BtnReporte_Click(object sender, EventArgs e) 
+        private void BtnReporte_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
@@ -96,7 +103,6 @@ namespace LogClinic
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                
                 System.Data.DataTable dt = mp.ObtenerDatosReporte(TxtBCurp.Text);
 
                 if (dt != null && dt.Rows.Count > 0)
@@ -104,7 +110,6 @@ namespace LogClinic
                     try
                     {
                         mp.ExportarReportePacientesExcel(dt, saveFileDialog.FileName);
-
                         MessageBox.Show("Reporte generado con éxito", "Excel",
                                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -116,11 +121,12 @@ namespace LogClinic
                 }
                 else
                 {
-                    MessageBox.Show("No hay datos para exportar para la CURP proporcionada.",
-                                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No hay datos para exportar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
 
-        }
+        private void DtgPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void FrmPacientes_Load_1(object sender, EventArgs e) { }
     }
+}

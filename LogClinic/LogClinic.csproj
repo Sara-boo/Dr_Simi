@@ -374,5 +374,11 @@
   <ItemGroup>
     <None Include="Resources\EnfCronicas_s.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CSV_R1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\+.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
