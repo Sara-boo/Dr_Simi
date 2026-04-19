@@ -21,18 +21,33 @@ namespace LogClinic
 
         private void FrmPacientes_Load(object sender, EventArgs e)
         {
-           
+            BtnReporte.FlatStyle = FlatStyle.Flat;
+            BtnReporte.FlatAppearance.BorderSize = 1;
+            BtnReporte.FlatAppearance.BorderColor = Color.White;
+            BtnReporte.BackColor = Color.FromArgb(1, 91, 126);
 
+            if (Properties.Resources.DWL_CSV != null)
+            {
+                BtnReporte.Image = (Image)(new Bitmap(Properties.Resources.DWL_CSV, new Size(16, 16)));
+            }
             BtnReporte.ImageAlign = ContentAlignment.MiddleCenter;
             BtnReporte.Text = "";
 
-            // Cargar datos en el DataGridView
             mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
         }
 
         private void TxtBCurp_TextChanged(object sender, EventArgs e)
         {
+            int pos = TxtBCurp.SelectionStart;
+            TxtBCurp.Text = TxtBCurp.Text.ToUpper();
+            TxtBCurp.SelectionStart = pos;
+
             mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
+        }
+
+        private void TxtBCurp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = char.ToUpper(e.KeyChar);
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)

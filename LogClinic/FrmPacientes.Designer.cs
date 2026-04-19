@@ -68,6 +68,7 @@
             this.TxtBCurp.Name = "TxtBCurp";
             this.TxtBCurp.Size = new System.Drawing.Size(627, 22);
             this.TxtBCurp.TabIndex = 5;
+            this.TxtBCurp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBCurp_KeyPress);
             // 
             // BtnBuscar
             // 
