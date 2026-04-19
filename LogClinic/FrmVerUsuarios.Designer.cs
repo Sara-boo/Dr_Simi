@@ -42,25 +42,25 @@
             this.DtgDatos.AllowUserToAddRows = false;
             this.DtgDatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(82, 194);
+            this.DtgDatos.Location = new System.Drawing.Point(59, 220);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.ReadOnly = true;
             this.DtgDatos.RowHeadersWidth = 51;
             this.DtgDatos.RowTemplate.Height = 24;
-            this.DtgDatos.Size = new System.Drawing.Size(937, 377);
+            this.DtgDatos.Size = new System.Drawing.Size(880, 377);
             this.DtgDatos.TabIndex = 14;
             this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
             this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.BackColor = System.Drawing.Color.CadetBlue;
+            this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnAgregar.Location = new System.Drawing.Point(972, 105);
+            this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.BtnAgregar.Location = new System.Drawing.Point(897, 136);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(47, 46);
+            this.BtnAgregar.Size = new System.Drawing.Size(47, 52);
             this.BtnAgregar.TabIndex = 13;
             this.BtnAgregar.Text = "+";
             this.BtnAgregar.UseVisualStyleBackColor = false;
@@ -68,13 +68,13 @@
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.BackColor = System.Drawing.Color.CadetBlue;
+            this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBuscar.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnBuscar.Location = new System.Drawing.Point(839, 104);
+            this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.BtnBuscar.Location = new System.Drawing.Point(743, 136);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(111, 46);
+            this.BtnBuscar.Size = new System.Drawing.Size(131, 52);
             this.BtnBuscar.TabIndex = 12;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = false;
@@ -82,30 +82,31 @@
             // 
             // TxtBuscar
             // 
-            this.TxtBuscar.BackColor = System.Drawing.Color.Linen;
-            this.TxtBuscar.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBuscar.Location = new System.Drawing.Point(210, 110);
+            this.TxtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.TxtBuscar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBuscar.Location = new System.Drawing.Point(302, 136);
+            this.TxtBuscar.Multiline = true;
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(568, 41);
+            this.TxtBuscar.Size = new System.Drawing.Size(415, 52);
             this.TxtBuscar.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 113);
+            this.label1.Font = new System.Drawing.Font("Javanese Text", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(48, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 29);
+            this.label1.Size = new System.Drawing.Size(256, 57);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre del Usuario: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Lucida Bright", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 29);
+            this.label2.Size = new System.Drawing.Size(161, 39);
             this.label2.TabIndex = 15;
             this.label2.Text = "Usuarios";
             // 
@@ -113,13 +114,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 632);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.ClientSize = new System.Drawing.Size(1014, 645);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DtgDatos);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVerUsuarios";
             this.Text = "FrmVerUsuarios";
             this.Load += new System.EventHandler(this.FrmVerUsuarios_Load);

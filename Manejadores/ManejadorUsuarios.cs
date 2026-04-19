@@ -51,8 +51,12 @@ namespace Manejadores
         }
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
+            var boton = ColorTranslator.FromHtml($"#E2FCD6");
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
+
+            tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            tabla.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             tabla.Columns["id_usuario"].Visible = false;
             tabla.Columns["id_personal"].Visible = false;
@@ -65,9 +69,9 @@ namespace Manejadores
                 col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; 
             }
             tabla.Columns["Usuario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            tabla.Columns.Add(Boton("Editar", Color.Green, true)); // ← Solo Editar
-            tabla.AutoResizeColumns();
-            tabla.AutoResizeRows();
+            tabla.Columns.Add(Boton("Editar", boton, true)); 
+
+            
         }
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo, bool nombre)
         {
@@ -76,7 +80,7 @@ namespace Manejadores
             btn.UseColumnTextForButtonValue = nombre;
             btn.FlatStyle = FlatStyle.Popup;
             btn.DefaultCellStyle.BackColor = fondo;
-            btn.DefaultCellStyle.ForeColor = Color.White;
+            btn.DefaultCellStyle.ForeColor = Color.Black;
             return btn;
 
         }

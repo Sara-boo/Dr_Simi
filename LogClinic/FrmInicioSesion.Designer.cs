@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.PAzul = new System.Windows.Forms.Panel();
+            this.BtnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             this.BtnIngresar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnNoVer = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnVer = new System.Windows.Forms.Button();
             this.PAzul.SuspendLayout();
@@ -54,6 +57,17 @@
             this.PAzul.Name = "PAzul";
             this.PAzul.Size = new System.Drawing.Size(800, 92);
             this.PAzul.TabIndex = 16;
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.BackgroundImage = global::LogClinic.Properties.Resources.Cerrar;
+            this.BtnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSalir.Location = new System.Drawing.Point(721, 14);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(53, 56);
+            this.BtnSalir.TabIndex = 18;
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // label1
             // 
@@ -96,33 +110,38 @@
             // 
             // TxtUsuario
             // 
+            this.TxtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.TxtUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtUsuario.Location = new System.Drawing.Point(368, 191);
             this.TxtUsuario.Multiline = true;
             this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.Size = new System.Drawing.Size(272, 31);
+            this.TxtUsuario.Size = new System.Drawing.Size(272, 43);
             this.TxtUsuario.TabIndex = 15;
             // 
             // TxtClave
             // 
+            this.TxtClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.TxtClave.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtClave.ForeColor = System.Drawing.Color.Black;
             this.TxtClave.Location = new System.Drawing.Point(368, 310);
             this.TxtClave.Multiline = true;
             this.TxtClave.Name = "TxtClave";
             this.TxtClave.PasswordChar = '*';
-            this.TxtClave.Size = new System.Drawing.Size(272, 31);
+            this.TxtClave.Size = new System.Drawing.Size(272, 43);
             this.TxtClave.TabIndex = 14;
             // 
             // BtnIngresar
             // 
+            this.BtnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(252)))), ((int)(((byte)(214)))));
+            this.BtnIngresar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(196)))), ((int)(((byte)(188)))));
+            this.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnIngresar.Font = new System.Drawing.Font("Javanese Text", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnIngresar.Location = new System.Drawing.Point(298, 434);
             this.BtnIngresar.Name = "BtnIngresar";
             this.BtnIngresar.Size = new System.Drawing.Size(203, 64);
             this.BtnIngresar.TabIndex = 12;
             this.BtnIngresar.Text = "Ingresar";
-            this.BtnIngresar.UseVisualStyleBackColor = true;
+            this.BtnIngresar.UseVisualStyleBackColor = false;
             this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
             // label3
