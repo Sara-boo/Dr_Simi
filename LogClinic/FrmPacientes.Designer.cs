@@ -32,20 +32,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtBCurp = new System.Windows.Forms.TextBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnReporte = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DtgPaciente)).BeginInit();
             this.SuspendLayout();
             // 
             // DtgPaciente
             // 
+            this.DtgPaciente.BackgroundColor = System.Drawing.Color.White;
             this.DtgPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgPaciente.GridColor = System.Drawing.Color.White;
             this.DtgPaciente.Location = new System.Drawing.Point(51, 144);
             this.DtgPaciente.Name = "DtgPaciente";
+            this.DtgPaciente.ReadOnly = true;
             this.DtgPaciente.RowHeadersWidth = 51;
             this.DtgPaciente.RowTemplate.Height = 24;
             this.DtgPaciente.Size = new System.Drawing.Size(1078, 465);
             this.DtgPaciente.TabIndex = 0;
+            this.DtgPaciente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgPaciente_CellClick);
             this.DtgPaciente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgPaciente_CellContentClick);
             // 
             // label1
@@ -64,47 +68,57 @@
             this.TxtBCurp.Name = "TxtBCurp";
             this.TxtBCurp.Size = new System.Drawing.Size(627, 22);
             this.TxtBCurp.TabIndex = 5;
-            this.TxtBCurp.TextChanged += new System.EventHandler(this.TxtBCurp_TextChanged);
             // 
             // BtnBuscar
             // 
             this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.White;
-            this.BtnBuscar.Location = new System.Drawing.Point(914, 23);
+            this.BtnBuscar.Location = new System.Drawing.Point(914, 28);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 43);
+            this.BtnBuscar.Size = new System.Drawing.Size(87, 38);
             this.BtnBuscar.TabIndex = 6;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnReporte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.BtnReporte.BackgroundImage = global::LogClinic.Properties.Resources.CSV_R;
+            this.BtnReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnReporte.FlatAppearance.BorderSize = 0;
+            this.BtnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReporte.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporte.ForeColor = System.Drawing.Color.White;
+            this.BtnReporte.Location = new System.Drawing.Point(1055, 19);
+            this.BtnReporte.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtnReporte.Size = new System.Drawing.Size(58, 56);
+            this.BtnReporte.TabIndex = 4;
+            this.BtnReporte.UseMnemonic = false;
+            this.BtnReporte.UseVisualStyleBackColor = false;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.BtnAgregar.BackgroundImage = global::LogClinic.Properties.Resources._;
+            this.BtnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Location = new System.Drawing.Point(995, 25);
+            this.BtnAgregar.Location = new System.Drawing.Point(1016, 28);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(36, 41);
+            this.BtnAgregar.Size = new System.Drawing.Size(36, 38);
             this.BtnAgregar.TabIndex = 7;
-            this.BtnAgregar.Text = "+";
             this.BtnAgregar.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // BtnReporte
-            // 
-            this.BtnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
-            this.BtnReporte.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReporte.ForeColor = System.Drawing.Color.White;
-            this.BtnReporte.Location = new System.Drawing.Point(1037, 25);
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Size = new System.Drawing.Size(92, 41);
-            this.BtnReporte.TabIndex = 8;
-            this.BtnReporte.Text = "Reporte";
-            this.BtnReporte.UseVisualStyleBackColor = false;
-            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // FrmPacientes
             // 
@@ -120,6 +134,7 @@
             this.Controls.Add(this.DtgPaciente);
             this.Name = "FrmPacientes";
             this.Text = "FrmPacientes";
+            this.Load += new System.EventHandler(this.FrmPacientes_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.DtgPaciente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
