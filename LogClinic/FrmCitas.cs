@@ -95,8 +95,10 @@ namespace LogClinic
 
                             if (result == DialogResult.Yes)
                             {
-                                // FrmTratamiento ft = new FrmTratamiento();
-                                // ft.ShowDialog();
+                                string nombrePaciente= DtgDatos.Rows[fila].Cells["Paciente"].Value.ToString();
+                                FrmTratamiento ft = new FrmTratamiento(cita.IdPaciente,cita.IdCita,nombrePaciente);
+                                ft.ShowDialog();
+                                BtnFiltrar.PerformClick();
                             }
                         }
                         else
