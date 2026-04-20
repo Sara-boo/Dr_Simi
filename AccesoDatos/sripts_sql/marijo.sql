@@ -111,3 +111,24 @@ BEGIN
 	
 END$$
 DELIMITER ;
+
+--Para mostrar el inventario en el datagrid 
+CREATE OR REPLACE VIEW v_mostrar_inventario AS 
+SELECT i.id_inventario, m.id_medicamento, m.nombre, m.tipo, m.presentacion, i.lote,i.fecha_caducidad, i.stock_actual, i.ubicacion 
+FROM tbl_medicamentos m INNER JOIN tbl_inventario i ON m.id_medicamento = i.fkid_medicamento;
+
+--Mostrar movimientos de inventario 
+CREATE OR REPLACE VIEW v_mostrar_movimientos AS
+SELECT 
+    mov.id_movimiento,
+    med.nombre AS 'Medicamento',
+    inv.lote AS 'Lote',
+    mov.tipo_movimiento AS 'Acción',
+    mov.cantidad AS 'Cantidad',
+    mov.motivo AS 'Concepto',
+    mov.fecha AS 'Fecha',
+    IFNULL(u.username, 'Sistema/Pendiente') AS 'Realizado por'
+FROM tbl_movimientos_inventario mov
+INNER JOIN tbl_inventario inv ON mov.fkid_inventario = inv.id_inventario
+INNER JOIN tbl_medicamentos med ON inv.fkid_medicamento = med.id_medicamento
+LEFT JOIN tbl_usuarios u ON mov.fkid_usuario = u.id_usuario;
