@@ -17,6 +17,10 @@ namespace LogClinic
         {
             InitializeComponent();
             mp = new ManejadorRPaciente();
+
+           
+            DtgPaciente.RowHeadersVisible = false; 
+            DtgPaciente.AllowUserToAddRows = false; 
         }
 
         private void FrmPacientes_Load(object sender, EventArgs e)
