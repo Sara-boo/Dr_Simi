@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Manejadores;
 using Entidades;
 
+
 namespace LogClinic
 {
     public partial class FrmRegistroMedicamentos : Form

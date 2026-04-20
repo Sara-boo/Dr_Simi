@@ -40,6 +40,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnNoVer = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+=========
+            this.BtnSalir = new System.Windows.Forms.Button();
+>>>>>>>>> Temporary merge branch 2
             this.BtnVer = new System.Windows.Forms.Button();
             this.PAzul.SuspendLayout();
             this.panel2.SuspendLayout();
