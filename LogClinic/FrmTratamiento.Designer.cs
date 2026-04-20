@@ -317,6 +317,7 @@
             this.Controls.Add(this.dtgDatosPaciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTratamiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTratamiento";
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatosPaciente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamentos)).EndInit();
