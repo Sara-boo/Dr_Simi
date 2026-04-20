@@ -18,11 +18,16 @@ namespace LogClinic
         ManejadorTratamiento mt;
 
         List<DetalleTratamiento> listaDetalles = new List<DetalleTratamiento>();
-        public FrmTratamiento()
+        int idPacienteRecibido;
+        int idCitaRecibida;
+        public FrmTratamiento(int idPaciente,int idCita,string NombrePaciente)
         {
             InitializeComponent();
             mt = new ManejadorTratamiento();
-            mt.MostrarAlergiasEnfermedades($"SELECT p.alergias AS 'Alergias', p.enfermedades_cronicas AS 'Enfermedades crónicas' FROM tbl_pacientes p WHERE p.nombre_completo = 'Laura Martinez'", dtgDatosPaciente, "tbl_pacientes");
+            this.idPacienteRecibido = idPaciente;
+            this.idCitaRecibida=idCita;
+            lblPaciente.Text = "Paciente: " + NombrePaciente;
+            mt.MostrarAlergiasEnfermedades($"SELECT alergias, enfermedades_cronicas FROM tbl_pacientes WHERE id_paciente = {idPaciente}", dtgDatosPaciente, "tbl_pacientes");
             mt.LlenarMedicamentos(cmbMedicamento);
         }
 
@@ -94,7 +99,44 @@ namespace LogClinic
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (listaDetalles.Count == 0)
+            {
+                MessageBox.Show("Debe agregar al menos un medicamento a la receta antes de guardar.",
+                                "Receta Vacía", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(txtSintomas.Text))
+            {
+                MessageBox.Show("Por favor, ingrese la descripción de los síntomas.",
+                                "Datos Faltantes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+               
+                Tratamiento cabecera = new Tratamiento(
+                    0,
+                    this.idPacienteRecibido,
+                    txtSintomas.Text,
+                    DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                    1
+                );
+
+                mt.GuardarConsultaCompleta(this.idCitaRecibida, txtSintomas.Text, "Sin observaciones", listaDetalles);
+
+
+                MessageBox.Show("El tratamiento y la receta se han registrado correctamente. El stock ha sido actualizado.",
+                                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close(); // Regresamos al formulario de citas
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un problema al guardar el tratamiento: " + ex.Message,
+                                "Error de Guardado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
