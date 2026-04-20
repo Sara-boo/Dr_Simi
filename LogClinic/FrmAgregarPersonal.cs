@@ -13,7 +13,6 @@ namespace LogClinic
         {
             InitializeComponent();
             mp = new ManejadorPersonal();
-
             CmbRol.DataSource = mp.ObtenerRoles();
             CmbRol.DisplayMember = "nombre_rol";
             CmbRol.ValueMember = "id_rol";
@@ -42,7 +41,6 @@ namespace LogClinic
                 TxtNombre.Focus();
                 return;
             }
-
             if (string.IsNullOrWhiteSpace(CmbEstado.Text))
             {
                 MessageBox.Show("Indique el estado del personal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -51,7 +49,7 @@ namespace LogClinic
             }
 
             Personal personalParaGuardar = new Personal(
-                FrmPersonal.personal.IdPersonal, 
+                FrmPersonal.personal.IdPersonal,
                 TxtNombre.Text.Trim(),
                 TxtApellidos.Text.Trim(),
                 TxtTelefono.Text.Trim(),
@@ -61,16 +59,20 @@ namespace LogClinic
                 Convert.ToInt32(CmbRol.SelectedValue)
             );
 
-            if (personalParaGuardar.IdPersonal == 0)
+            try
             {
-                mp.Guardar(personalParaGuardar);
-            }
-            else
-            {
-                mp.Modificar(personalParaGuardar);
-            }
+                if (personalParaGuardar.IdPersonal == 0)
+                    mp.Guardar(personalParaGuardar);
+                else
+                    mp.Modificar(personalParaGuardar);
 
-            Close();
+                Close();
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error al guardar",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
