@@ -121,6 +121,7 @@
             // 
             // TxtPaciente
             // 
+            this.TxtPaciente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtPaciente.Font = new System.Drawing.Font("Lucida Bright", 14F);
             this.TxtPaciente.Location = new System.Drawing.Point(13, 57);
             this.TxtPaciente.Name = "TxtPaciente";
