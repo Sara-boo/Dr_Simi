@@ -179,23 +179,26 @@
             // 
             // TxtNCompleto
             // 
+            this.TxtNCompleto.Font = new System.Drawing.Font("Lucida Bright", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNCompleto.Location = new System.Drawing.Point(263, 123);
             this.TxtNCompleto.Name = "TxtNCompleto";
-            this.TxtNCompleto.Size = new System.Drawing.Size(390, 22);
+            this.TxtNCompleto.Size = new System.Drawing.Size(390, 23);
             this.TxtNCompleto.TabIndex = 15;
             this.TxtNCompleto.TextChanged += new System.EventHandler(this.TxtNCompleto_TextChanged);
             // 
             // TxtCurp
             // 
             this.TxtCurp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtCurp.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtCurp.Location = new System.Drawing.Point(832, 122);
             this.TxtCurp.Name = "TxtCurp";
-            this.TxtCurp.Size = new System.Drawing.Size(312, 22);
+            this.TxtCurp.Size = new System.Drawing.Size(312, 23);
             this.TxtCurp.TabIndex = 16;
             this.TxtCurp.TextChanged += new System.EventHandler(this.TxtCurp_TextChanged);
             // 
             // TxtECronicas
             // 
+            this.TxtECronicas.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtECronicas.Location = new System.Drawing.Point(106, 288);
             this.TxtECronicas.Multiline = true;
             this.TxtECronicas.Name = "TxtECronicas";
@@ -205,6 +208,7 @@
             // 
             // TxtAlergias
             // 
+            this.TxtAlergias.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtAlergias.Location = new System.Drawing.Point(679, 288);
             this.TxtAlergias.Multiline = true;
             this.TxtAlergias.Name = "TxtAlergias";
@@ -214,6 +218,7 @@
             // 
             // TxtDirreccion
             // 
+            this.TxtDirreccion.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtDirreccion.Location = new System.Drawing.Point(106, 521);
             this.TxtDirreccion.Multiline = true;
             this.TxtDirreccion.Name = "TxtDirreccion";
@@ -223,26 +228,29 @@
             // 
             // TxtTelefono
             // 
+            this.TxtTelefono.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtTelefono.Location = new System.Drawing.Point(745, 520);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(399, 22);
+            this.TxtTelefono.Size = new System.Drawing.Size(399, 23);
             this.TxtTelefono.TabIndex = 20;
             this.TxtTelefono.TextChanged += new System.EventHandler(this.TxtTelefono_TextChanged);
             // 
             // TxtCorreo
             // 
+            this.TxtCorreo.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtCorreo.Location = new System.Drawing.Point(772, 631);
             this.TxtCorreo.Name = "TxtCorreo";
-            this.TxtCorreo.Size = new System.Drawing.Size(372, 22);
+            this.TxtCorreo.Size = new System.Drawing.Size(372, 23);
             this.TxtCorreo.TabIndex = 21;
             this.TxtCorreo.TextChanged += new System.EventHandler(this.TxtCorreo_TextChanged);
             // 
             // CmbSexo
             // 
+            this.CmbSexo.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.CmbSexo.FormattingEnabled = true;
             this.CmbSexo.Location = new System.Drawing.Point(628, 192);
             this.CmbSexo.Name = "CmbSexo";
-            this.CmbSexo.Size = new System.Drawing.Size(148, 24);
+            this.CmbSexo.Size = new System.Drawing.Size(148, 23);
             this.CmbSexo.TabIndex = 22;
             this.CmbSexo.SelectedIndexChanged += new System.EventHandler(this.CmbSexo_SelectedIndexChanged);
             // 
@@ -256,10 +264,11 @@
             // 
             // CmbTSangre
             // 
+            this.CmbTSangre.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.CmbTSangre.FormattingEnabled = true;
             this.CmbTSangre.Location = new System.Drawing.Point(987, 190);
             this.CmbTSangre.Name = "CmbTSangre";
-            this.CmbTSangre.Size = new System.Drawing.Size(134, 24);
+            this.CmbTSangre.Size = new System.Drawing.Size(134, 23);
             this.CmbTSangre.TabIndex = 24;
             this.CmbTSangre.SelectedIndexChanged += new System.EventHandler(this.CmbTSangre_SelectedIndexChanged);
             // 
@@ -319,6 +328,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRegistroPacientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegistroPacientes";
             this.Load += new System.EventHandler(this.FrmRegistroPacientes_Load);
             this.ResumeLayout(false);

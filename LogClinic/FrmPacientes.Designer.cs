@@ -64,9 +64,10 @@
             // 
             // TxtBCurp
             // 
-            this.TxtBCurp.Location = new System.Drawing.Point(281, 44);
+            this.TxtBCurp.Font = new System.Drawing.Font("Javanese Text", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBCurp.Location = new System.Drawing.Point(279, 33);
             this.TxtBCurp.Name = "TxtBCurp";
-            this.TxtBCurp.Size = new System.Drawing.Size(627, 22);
+            this.TxtBCurp.Size = new System.Drawing.Size(627, 30);
             this.TxtBCurp.TabIndex = 5;
             this.TxtBCurp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBCurp_KeyPress);
             // 
@@ -78,7 +79,7 @@
             this.BtnBuscar.ForeColor = System.Drawing.Color.White;
             this.BtnBuscar.Location = new System.Drawing.Point(914, 28);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(87, 38);
+            this.BtnBuscar.Size = new System.Drawing.Size(96, 38);
             this.BtnBuscar.TabIndex = 6;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = false;
@@ -133,7 +134,9 @@
             this.Controls.Add(this.TxtBCurp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DtgPaciente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPacientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPacientes";
             this.Load += new System.EventHandler(this.FrmPacientes_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.DtgPaciente)).EndInit();
