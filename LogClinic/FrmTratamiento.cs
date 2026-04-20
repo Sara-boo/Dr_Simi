@@ -138,5 +138,10 @@ namespace LogClinic
                                 "Error de Guardado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
