@@ -59,9 +59,18 @@ namespace LogClinic
 
         private void BtnCsv_Click(object sender, EventArgs e)
         {
-            mc.Exportar(DtgDatos);
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                Title = "Guardar Reporte de Citas",
+                FileName = "Reporte Citas.xlsx" // Nombre por defecto 
+            };
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Llamamos al método de tu manejador, pasándole la tabla y la ruta elegida
+                mc.Exportar(DtgDatos, saveFileDialog.FileName);
+            }
         }
-
         private void DtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex;
