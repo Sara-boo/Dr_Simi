@@ -16,7 +16,7 @@ namespace LogClinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMovimientosInventario());
+            Application.Run(new FrmVerUsuarios());
         }
     }
 }

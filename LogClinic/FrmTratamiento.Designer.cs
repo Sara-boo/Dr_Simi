@@ -191,6 +191,7 @@
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -316,6 +317,7 @@
             this.Controls.Add(this.dtgDatosPaciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTratamiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTratamiento";
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatosPaciente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMedicamentos)).EndInit();

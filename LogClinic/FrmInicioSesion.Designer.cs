@@ -40,7 +40,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnNoVer = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+=========
             this.BtnSalir = new System.Windows.Forms.Button();
+>>>>>>>>> Temporary merge branch 2
             this.BtnVer = new System.Windows.Forms.Button();
             this.PAzul.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -163,6 +165,38 @@
             this.label2.Size = new System.Drawing.Size(120, 64);
             this.label2.TabIndex = 10;
             this.label2.Text = "Usuario";
+            // 
+            // BtnNoVer
+            // 
+            this.BtnNoVer.BackgroundImage = global::LogClinic.Properties.Resources.Ver;
+            this.BtnNoVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnNoVer.Location = new System.Drawing.Point(707, 310);
+            this.BtnNoVer.Name = "BtnNoVer";
+            this.BtnNoVer.Size = new System.Drawing.Size(53, 56);
+            this.BtnNoVer.TabIndex = 18;
+            this.BtnNoVer.UseVisualStyleBackColor = true;
+            this.BtnNoVer.Click += new System.EventHandler(this.BtnNoVer_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::LogClinic.Properties.Resources.UsuarioInicioSsesion;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 157);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 254);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.BackgroundImage = global::LogClinic.Properties.Resources.Cerrar;
+            this.BtnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSalir.Location = new System.Drawing.Point(721, 14);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(53, 56);
+            this.BtnSalir.TabIndex = 18;
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // BtnVer
             // 
