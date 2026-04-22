@@ -14,7 +14,7 @@ namespace AccesoDatos
         MySqlConnection con;
         public Base()
         {
-            con = new MySqlConnection($"server=localhost; port=3311; user=root; password=12345; database=app_centro_salud;");
+            con = new MySqlConnection($"server=localhost; port=3311; user=root; password=1234; database=app_centro_salud;");
         }
 
         public void Comando(string query, bool mantenerConexion = false)
