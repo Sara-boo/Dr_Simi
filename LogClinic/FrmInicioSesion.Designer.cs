@@ -40,9 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnNoVer = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-=========
-            this.BtnSalir = new System.Windows.Forms.Button();
->>>>>>>>> Temporary merge branch 2
             this.BtnVer = new System.Windows.Forms.Button();
             this.PAzul.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -187,6 +184,8 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+=========
+>>>>>>>>> Temporary merge branch 2
             // BtnVer
             // 
             this.BtnVer.BackgroundImage = global::LogClinic.Properties.Resources.BotonOcultarClave;
