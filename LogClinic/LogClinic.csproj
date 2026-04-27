@@ -100,6 +100,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAgregarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarPersonal.Designer.cs">
+      <DependentUpon>FrmAgregarPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCitas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,12 @@
     </Compile>
     <Compile Include="FrmInicioSesion.Designer.cs">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPersonal.Designer.cs">
+      <DependentUpon>FrmPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRegistroMedicamentos.cs">
       <SubType>Form</SubType>
@@ -162,6 +174,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAgregarPersonal.resx">
+      <DependentUpon>FrmAgregarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCitas.resx">
       <DependentUpon>FrmCitas.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPaginaPrincipal.resx">
       <DependentUpon>FrmPaginaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPersonal.resx">
+      <DependentUpon>FrmPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistroMedicamentos.resx">
       <DependentUpon>FrmRegistroMedicamentos.cs</DependentUpon>
