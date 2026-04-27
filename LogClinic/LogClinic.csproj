@@ -106,6 +106,12 @@
     <Compile Include="FrmCitas.Designer.cs">
       <DependentUpon>FrmCitas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPacientes.Designer.cs">
+      <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPaginaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     </Compile>
     <Compile Include="FrmRegristroCitas.Designer.cs">
       <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroPacientes.Designer.cs">
+      <DependentUpon>FrmRegistroPacientes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSeguimientoRegistroInventario.cs">
       <SubType>Form</SubType>
@@ -156,6 +168,9 @@
     <EmbeddedResource Include="FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPacientes.resx">
+      <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPaginaPrincipal.resx">
       <DependentUpon>FrmPaginaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegristroCitas.resx">
       <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistroPacientes.resx">
+      <DependentUpon>FrmRegistroPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
       <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>

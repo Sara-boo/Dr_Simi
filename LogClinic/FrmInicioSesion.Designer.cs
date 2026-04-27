@@ -204,6 +204,7 @@
             this.Name = "FrmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIAR SESION";
+            this.Load += new System.EventHandler(this.FrmInicioSesion_Load);
             this.PAzul.ResumeLayout(false);
             this.PAzul.PerformLayout();
             this.panel2.ResumeLayout(false);
