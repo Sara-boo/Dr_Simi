@@ -40,6 +40,15 @@ namespace LogClinic
         {
             try
             {
+                Medicamentos med = new Medicamentos(
+                    FrmInventario.mSeleccionado.IdMedicamento,
+                    txtNombre.Text,
+                    txtDescripcion.Text,
+                    cmbTipo.Text,
+                    txtPresentacion.Text,
+                    txtConcentracion.Text,
+                    chkRequiereReceta.Checked
+                );
                 if (cmbTipo.SelectedIndex == -1)
                 {
                     MessageBox.Show("Seleccione un tipo de medicamento");
@@ -47,17 +56,20 @@ namespace LogClinic
                 }
 
                 bool requiere = chkRequiereReceta.Checked;
-                if(FrmInventario.inventario.FkidMedicamento==0)
+                if(med.IdMedicamento==0)
                 {
-                    mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
+                    mm.GuardarMedicamento(med);
                     int ultimoId = mm.ObtenerUltimoIdMedicamento();
+                    MessageBox.Show("Medicamento registrado. Ahora asigne el lote y stock inicial", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
                     sm.ShowDialog();
                 }
                 else
                 {
-                    mm.Modificar(new Medicamentos(FrmInventario.inventario.FkidMedicamento, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
-                    MessageBox.Show("¡Medicamento modificado con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    mm.Modificar(med);
+                    MessageBox.Show("Catálogo actualizado correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    FrmInventario.mSeleccionado.IdMedicamento = 0;
                 }
                 this.Close();
             }

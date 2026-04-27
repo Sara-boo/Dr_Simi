@@ -51,14 +51,21 @@ namespace Manejadores
         }
         public void Modificar(Medicamentos medicamento)
         {
-            b.Comando($"UPDATE tbl_medicamentos SET " +
+            try
+            {
+                b.Comando($"UPDATE tbl_medicamentos SET " +
                       $"nombre='{medicamento.Nombre}'," +
                       $"descripcion='{medicamento.Descripcion}'," +
                       $"tipo='{medicamento.Tipo}'," +
                       $"presentacion='{medicamento.Presentacion}'," +
                       $"concentracion='{medicamento.Concentracion}'," +
-                      $"requiere_receta={(medicamento.RequiereReceta ? 1: 0)} " +
+                      $"requiere_receta={(medicamento.RequiereReceta ? 1 : 0)} " +
                       $"WHERE id_medicamento = {medicamento.IdMedicamento}");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al modificar el medicamento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void Eliminar(Medicamentos medicamento)
         {
