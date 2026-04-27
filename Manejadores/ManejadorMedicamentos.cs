@@ -49,5 +49,24 @@ namespace Manejadores
 
             return id;
         }
+        public void Modificar(Medicamentos medicamento)
+        {
+            b.Comando($"UPDATE tbl_medicamentos SET " +
+                      $"nombre='{medicamento.Nombre}'," +
+                      $"descripcion='{medicamento.Descripcion}'," +
+                      $"tipo='{medicamento.Tipo}'," +
+                      $"presentacion='{medicamento.Presentacion}'," +
+                      $"concentracion='{medicamento.Concentracion}'," +
+                      $"requiere_receta={(medicamento.RequiereReceta ? 1: 0)} " +
+                      $"WHERE id_medicamento = {medicamento.IdMedicamento}");
+        }
+        public void Eliminar(Medicamentos medicamento)
+        {
+            var rs = MessageBox.Show("¿Está seguro de eliminar este medicamento?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (rs == DialogResult.Yes)
+            {
+                b.Comando($"DELETE FROM inventario WHERE id_medicamento = {medicamento.IdMedicamento}");
+            }
+        }
     }
 }

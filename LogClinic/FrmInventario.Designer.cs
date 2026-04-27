@@ -126,9 +126,9 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridView dtgDatos;
         private System.Windows.Forms.Button btnAgregarInventario;
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.DataGridView dtgDatos;
     }
 }

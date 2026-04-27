@@ -19,7 +19,16 @@ namespace LogClinic
         public FrmRegistroMedicamentos()
         {
             InitializeComponent();
-            mm= new ManejadorMedicamentos();
+            mm = new ManejadorMedicamentos();
+            if(FrmInventario.mSeleccionado.IdMedicamento > 0)
+            {
+                txtNombre.Text = FrmInventario.mSeleccionado.Nombre;
+                txtDescripcion.Text = FrmInventario.mSeleccionado.Descripcion;
+                cmbTipo.Text = FrmInventario.mSeleccionado.Tipo;
+                txtPresentacion.Text = FrmInventario.mSeleccionado.Presentacion;
+                txtConcentracion.Text = FrmInventario.mSeleccionado.Concentracion;
+                chkRequiereReceta.Checked = FrmInventario.mSeleccionado.RequiereReceta;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -38,12 +47,18 @@ namespace LogClinic
                 }
 
                 bool requiere = chkRequiereReceta.Checked;
-                mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
-
-                int ultimoId = mm.ObtenerUltimoIdMedicamento();
-                FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
-
-                sm.ShowDialog();
+                if(FrmInventario.inventario.FkidMedicamento==0)
+                {
+                    mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
+                    int ultimoId = mm.ObtenerUltimoIdMedicamento();
+                    FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
+                    sm.ShowDialog();
+                }
+                else
+                {
+                    mm.Modificar(new Medicamentos(FrmInventario.inventario.FkidMedicamento, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
+                    MessageBox.Show("¡Medicamento modificado con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 this.Close();
             }
             catch (Exception ex)

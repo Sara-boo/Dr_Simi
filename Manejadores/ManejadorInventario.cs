@@ -38,5 +38,33 @@ namespace Manejadores
             btn.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             return btn;
         }
+        public void RegistrarAjusteStock(int idInventario, int NuevaCantidad, string Tipo, string motivo, int usuario)
+        {
+            try
+            {
+                // 1. Calculamos la operación para el UPDATE
+                string operacion = (Tipo == "Entrada") ? "+" : "-";
+                string sqlStock = $"UPDATE tbl_inventario SET stock_actual = stock_actual {operacion} {NuevaCantidad} WHERE id_inventario = {idInventario};";
+
+                // Ejecutamos el update manteniendo la conexión abierta para el siguiente paso
+                b.Comando(sqlStock, true);
+
+                // 2. Insertamos el rastro en tbl_movimientos_inventario
+                // Usamos la variable global de tu FrmInicioSesion
+                string sqlMovimiento = $"INSERT INTO tbl_movimientos_inventario (fkid_inventario, tipo_movimiento, cantidad, motivo, fkid_usuario) " +
+                                       $"VALUES ({idInventario}, '{Tipo}', {NuevaCantidad}, '{motivo}', {usuario});";
+
+                b.Comando(sqlMovimiento, true);
+
+                // 3. Cierre de seguridad (ejecutamos una consulta simple para cerrar la conexión)
+                b.Consultar("SELECT 1", "dual", false);
+            }
+            catch (Exception ex)
+            {
+                // Si algo falla, cerramos la conexión por seguridad
+                b.Consultar("SELECT 1", "dual", false);
+                throw new Exception("Error al registrar el movimiento: " + ex.Message);
+            }
+        }
     }
 }

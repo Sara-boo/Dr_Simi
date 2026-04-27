@@ -20,12 +20,14 @@ namespace LogClinic
         List<DetalleTratamiento> listaDetalles = new List<DetalleTratamiento>();
         int idPacienteRecibido;
         int idCitaRecibida;
+        int idUsuarioActual;
         public FrmTratamiento(int idPaciente,int idCita,string NombrePaciente)
         {
             InitializeComponent();
             mt = new ManejadorTratamiento();
             this.idPacienteRecibido = idPaciente;
             this.idCitaRecibida=idCita;
+            //this.idUsuarioActual = usuario;
             lblPaciente.Text = "Paciente: " + NombrePaciente;
             mt.MostrarAlergiasEnfermedades($"SELECT alergias, enfermedades_cronicas FROM tbl_pacientes WHERE id_paciente = {idPaciente}", dtgDatosPaciente, "tbl_pacientes");
             mt.LlenarMedicamentos(cmbMedicamento);
@@ -99,6 +101,7 @@ namespace LogClinic
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            int idMedico = FrmInicioSesion.IdUsuarioLogueado;
             if (listaDetalles.Count == 0)
             {
                 MessageBox.Show("Debe agregar al menos un medicamento a la receta antes de guardar.",
@@ -124,7 +127,7 @@ namespace LogClinic
                     1
                 );
 
-                mt.GuardarConsultaCompleta(this.idCitaRecibida, txtSintomas.Text, "Sin observaciones", listaDetalles);
+                mt.GuardarConsultaCompleta(this.idCitaRecibida, txtSintomas.Text, "Sin observaciones", listaDetalles,idMedico);
 
 
                 MessageBox.Show("El tratamiento y la receta se han registrado correctamente. El stock ha sido actualizado.",

@@ -18,7 +18,7 @@ namespace LogClinic
         public static MovimientosInventario movimientoInventario = new MovimientosInventario(0, 0, "", 0, "", "", 0);
         int fila = 0;
         int columna = 0;
-        public FrmMovimientosInventario()
+        public FrmMovimientosInventario(int idInventario)
         {
             InitializeComponent();
             mmi = new ManejadorMovimientoInventario();
