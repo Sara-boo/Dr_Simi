@@ -30,5 +30,30 @@ namespace LogClinic
             md.EstilizarTextBox(TxtClave, "CCECEE", "14967F");
             md.EstilizarTextBox(TxtUsuario, "CCECEE", "14967F");
         }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnVer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnNoVer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmInicioSesion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

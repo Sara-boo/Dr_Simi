@@ -15,6 +15,7 @@ namespace LogClinic
 
         ManejadorDiseño md;
         ManejadorLogin ml;
+        private ToolStripButton botonActivoActual = null;
         public FrmPaginaPrincipal(string username)
         {
             InitializeComponent();
@@ -40,6 +41,35 @@ namespace LogClinic
 
         private void tsPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+        }
+
+        private void tsInicio_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+        }
+
+        private void tsbCitas_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmRegristroCitas frmRegristroCitas = new FrmRegristroCitas();
+            frmRegristroCitas.MdiParent = this;
+            frmRegristroCitas.Show();
+        }
+
+        private void tsbUsuario_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmVerUsuarios frmVerUsuarios = new FrmVerUsuarios();
+            frmVerUsuarios.MdiParent = this;    
+            frmVerUsuarios.Show();
+        }
+
+        private void tsbPersonal_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

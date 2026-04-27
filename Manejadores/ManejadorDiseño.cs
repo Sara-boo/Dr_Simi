@@ -96,6 +96,35 @@ namespace Manejadores
             txt.BringToFront();
         }
 
+        // METODO PARA COLOREAR SELECCIONES EN EL TOOLSTRIP
+        public void Boton(object senderBoton, ToolStrip tsMenu, ToolStripButton tsBoton)
+        {
+            Color colorSeleccion = ColorTranslator.FromHtml("#6381A1");
+            Color colorOriginal = ColorTranslator.FromHtml("#003B5C");
 
+            foreach (ToolStripItem item in tsMenu.Items)
+            {
+                if (item is ToolStripButton)
+                {
+                    item.BackColor = colorOriginal;
+                }
+            }
+
+            if (senderBoton is ToolStripButton boton)
+            {
+                boton.BackColor = colorSeleccion;
+                tsBoton = boton;
+            }
+        }
+
+
+        // METODO PARA CERRAR FORMULARIOS ACTIVOS AL CAMBIAR DE OPCION EN EL MENU
+        public void CerrarFormulariosActivos(Form formularioPadre)
+        {
+            foreach (Form formularioHijo in formularioPadre.MdiChildren)
+            {
+                formularioHijo.Close();
+            }
+        }
     }
 }

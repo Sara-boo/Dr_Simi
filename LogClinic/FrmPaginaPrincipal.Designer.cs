@@ -87,6 +87,7 @@
             this.tsInicio.Name = "tsInicio";
             this.tsInicio.Size = new System.Drawing.Size(95, 70);
             this.tsInicio.Text = "INICIO";
+            this.tsInicio.Click += new System.EventHandler(this.tsInicio_Click);
             // 
             // tsbCitas
             // 
@@ -99,6 +100,7 @@
             this.tsbCitas.Size = new System.Drawing.Size(95, 70);
             this.tsbCitas.Text = "CITAS";
             this.tsbCitas.ToolTipText = "CITAS";
+            this.tsbCitas.Click += new System.EventHandler(this.tsbCitas_Click);
             // 
             // tsbUsuario
             // 
@@ -110,6 +112,7 @@
             this.tsbUsuario.Name = "tsbUsuario";
             this.tsbUsuario.Size = new System.Drawing.Size(95, 70);
             this.tsbUsuario.Text = "CATEGORÍAS";
+            this.tsbUsuario.Click += new System.EventHandler(this.tsbUsuario_Click);
             // 
             // tsbPersonal
             // 
@@ -120,6 +123,7 @@
             this.tsbPersonal.Name = "tsbPersonal";
             this.tsbPersonal.Size = new System.Drawing.Size(95, 70);
             this.tsbPersonal.Text = "ALERTAS";
+            this.tsbPersonal.Click += new System.EventHandler(this.tsbPersonal_Click);
             // 
             // tsbPacientes
             // 
