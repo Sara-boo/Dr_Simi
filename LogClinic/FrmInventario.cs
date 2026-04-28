@@ -66,15 +66,21 @@ namespace LogClinic
             {
                 case 1:
                     FrmRegistroMedicamentos rm = new FrmRegistroMedicamentos();
-                    
                     rm.ShowDialog();
                     break;
                 case 2:
                     DialogResult result = MessageBox.Show("¿Está seguro de eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        mi.RegistrarAjusteStock(inventario.IdInventario, inventario.Cantidad, "Salida", "Eliminación de inventario",FrmInicioSesion.IdUsuarioLogueado);
-                        MessageBox.Show("Registro eliminado exitosamente.");
+                        mi.RegistrarMovimiento(
+                            inventario.IdInventario,
+                            inventario.Cantidad,
+                            "Salida",
+                            "Eliminación de inventario",
+                            FrmInicioSesion.IdUsuarioLogueado
+                            );
+                        MessageBox.Show("Registro eliminado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnBuscar.PerformClick();
                     }
                     break;
                 case 3:

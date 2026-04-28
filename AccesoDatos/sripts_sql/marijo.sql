@@ -132,3 +132,38 @@ FROM tbl_movimientos_inventario mov
 INNER JOIN tbl_inventario inv ON mov.fkid_inventario = inv.id_inventario
 INNER JOIN tbl_medicamentos med ON inv.fkid_medicamento = med.id_medicamento
 LEFT JOIN tbl_usuarios u ON mov.fkid_usuario = u.id_usuario;
+
+CREATE OR REPLACE VIEW v_inventario AS
+SELECT 
+    i.id_inventario, 
+    m.id_medicamento,
+    m.nombre AS Nombre, 
+    m.descripcion AS Descripcion, 
+    m.tipo AS Tipo, 
+    m.presentacion AS Presentacion, 
+    m.concentracion AS Concentracion, 
+    m.requiere_receta AS RequiereReceta,
+    i.stock_actual AS Stock
+FROM tbl_inventario i
+INNER JOIN tbl_medicamentos m ON i.fkid_medicamento = m.id_medicamento;
+
+-- Validar Stock y registrar elimminación (solo elimina el stock) --
+DELIMITER $$
+CREATE PROCEDURE p_eliminar_o_ajustar_stock(
+    IN p_id_inventario INT,
+    IN p_cantidad INT,
+    IN p_tipo_mov ENUM('Entrada','Salida','Ajuste'),
+    IN p_motivo TEXT,
+    IN p_id_usuario INT
+)
+BEGIN
+    IF p_tipo_mov = 'Entrada' THEN
+        UPDATE tbl_inventario SET stock_actual = stock_actual + p_cantidad WHERE id_inventario = p_id_inventario;
+    ELSE
+        UPDATE tbl_inventario SET stock_actual = stock_actual - p_cantidad WHERE id_inventario = p_id_inventario;
+    END IF;
+
+    INSERT INTO tbl_movimientos_inventario (fkid_inventario, tipo_movimiento, cantidad, motivo, fkid_usuario)
+    VALUES (p_id_inventario, p_tipo_mov, p_cantidad, p_motivo, p_id_usuario);
+END $$
+DELIMITER ;

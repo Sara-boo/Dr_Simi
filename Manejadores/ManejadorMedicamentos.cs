@@ -67,13 +67,5 @@ namespace Manejadores
                 MessageBox.Show("Error al modificar el medicamento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void Eliminar(Medicamentos medicamento)
-        {
-            var rs = MessageBox.Show("¿Está seguro de eliminar este medicamento?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (rs == DialogResult.Yes)
-            {
-                b.Comando($"DELETE FROM inventario WHERE id_medicamento = {medicamento.IdMedicamento}");
-            }
-        }
     }
 }
