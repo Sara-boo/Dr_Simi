@@ -38,5 +38,16 @@ namespace Manejadores
             btn.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             return btn;
         }
+        public void RegistrarMovimiento(int idInv, int cant, string tipo, string motivo, int idUser)
+        {
+            try
+            {
+                b.Comando($"CALL p_eliminar_o_ajustar_stock({idInv}, {cant}, '{tipo}', '{motivo}', {idUser})");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Oucrrió un error inesperado: " + ex.Message);
+            }
+        }
     }
 }

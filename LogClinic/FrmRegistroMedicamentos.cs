@@ -19,7 +19,16 @@ namespace LogClinic
         public FrmRegistroMedicamentos()
         {
             InitializeComponent();
-            mm= new ManejadorMedicamentos();
+            mm = new ManejadorMedicamentos();
+            if(FrmInventario.mSeleccionado.IdMedicamento > 0)
+            {
+                txtNombre.Text = FrmInventario.mSeleccionado.Nombre;
+                txtDescripcion.Text = FrmInventario.mSeleccionado.Descripcion;
+                cmbTipo.Text = FrmInventario.mSeleccionado.Tipo;
+                txtPresentacion.Text = FrmInventario.mSeleccionado.Presentacion;
+                txtConcentracion.Text = FrmInventario.mSeleccionado.Concentracion;
+                chkRequiereReceta.Checked = FrmInventario.mSeleccionado.RequiereReceta;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -31,6 +40,15 @@ namespace LogClinic
         {
             try
             {
+                Medicamentos med = new Medicamentos(
+                    FrmInventario.mSeleccionado.IdMedicamento,
+                    txtNombre.Text,
+                    txtDescripcion.Text,
+                    cmbTipo.Text,
+                    txtPresentacion.Text,
+                    txtConcentracion.Text,
+                    chkRequiereReceta.Checked
+                );
                 if (cmbTipo.SelectedIndex == -1)
                 {
                     MessageBox.Show("Seleccione un tipo de medicamento");
@@ -38,12 +56,21 @@ namespace LogClinic
                 }
 
                 bool requiere = chkRequiereReceta.Checked;
-                mm.GuardarMedicamento(new Medicamentos(0, txtNombre.Text, txtDescripcion.Text, cmbTipo.Text, txtPresentacion.Text, txtConcentracion.Text, requiere));
+                if(med.IdMedicamento==0)
+                {
+                    mm.GuardarMedicamento(med);
+                    int ultimoId = mm.ObtenerUltimoIdMedicamento();
+                    MessageBox.Show("Medicamento registrado. Ahora asigne el lote y stock inicial", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
+                    sm.ShowDialog();
+                }
+                else
+                {
+                    mm.Modificar(med);
+                    MessageBox.Show("Catálogo actualizado correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-               int ultimoId = mm.ObtenerUltimoIdMedicamento();
-                FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
-
-               sm.ShowDialog();
+                    FrmInventario.mSeleccionado.IdMedicamento = 0;
+                }
                 this.Close();
             }
             catch (Exception ex)

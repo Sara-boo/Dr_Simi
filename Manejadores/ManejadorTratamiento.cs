@@ -99,44 +99,27 @@ namespace Manejadores
                 MessageBox.Show("Ocurrió un error al guardar el tratamiento. Por favor, inténtelo de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }*/
-        public void GuardarConsultaCompleta(int idCita, string diagnostico, string observaciones, List<DetalleTratamiento> detalles)
+        public void GuardarConsultaCompleta(int idCita, string diag, string obs, List<DetalleTratamiento> lista, int idMed)
         {
-            try
+            // 1. Historial
+            b.Comando($"INSERT INTO tbl_historial_clinico (fkid_cita, diagnostico, observaciones) VALUES ({idCita}, '{diag}', '{obs}')", true);
+            int idH = int.Parse(b.Consultar("SELECT LAST_INSERT_ID()", "h", true).Tables[0].Rows[0][0].ToString());
+
+            // 2. Tratamiento (Usando el idMed que recibimos)
+            b.Comando($"INSERT INTO tbl_tratamiento (fkid_historial, fkid_usuario) VALUES ({idH}, {idMed})", true);
+            int idT = int.Parse(b.Consultar("SELECT LAST_INSERT_ID()", "t", true).Tables[0].Rows[0][0].ToString());
+
+            // 3. Detalles y Movimientos
+            foreach (var d in lista)
             {
-                string sqlHistorial = $"INSERT INTO tbl_historial_clinico (fkid_cita, diagnostico, observaciones) " +
-                                     $"VALUES ({idCita}, '{diagnostico.Replace("'", "''")}', '{observaciones.Replace("'", "''")}')";
-                b.Comando(sqlHistorial, true);
+                b.Comando($"INSERT INTO tbl_detalle_tratamiento ... VALUES ({idT}, {d.Fkid_medicamento}, ...)", true);
 
-                DataSet dsHistorial = b.Consultar("SELECT LAST_INSERT_ID() AS id_h", "temp", true);
-                int idHistorial = int.Parse(dsHistorial.Tables[0].Rows[0]["id_h"].ToString());
-
-                // Por ahora dejamos el ID de médico en 1 fijo hasta que pongas lo de la sesión
-                string sqlCabecera = $"INSERT INTO tbl_tratamiento (fkid_historial, fkid_usuario) VALUES ({idHistorial}, 1)";
-                b.Comando(sqlCabecera, true);
-
-                DataSet dsTratamiento = b.Consultar("SELECT LAST_INSERT_ID() AS id_t", "temp", true);
-                int idTratamiento = int.Parse(dsTratamiento.Tables[0].Rows[0]["id_t"].ToString());
-
-                foreach (var item in detalles)
-                {
-                    string sqlDetalle = $"INSERT INTO tbl_detalle_tratamiento (fkid_tratamiento, fkid_medicamento, cantidad, dosis, frecuencia, duracion) " +
-                                        $"VALUES ({idTratamiento}, {item.Fkid_medicamento}, {item.Cantidad}, '{item.Dosis}', '{item.Frecuencia}', '{item.Duracion}')";
-                    b.Comando(sqlDetalle, true);
-
-                    string sqlSalida = $"CALL p_registrar_salida_inventario({item.Fkid_medicamento}, {item.Cantidad}, 1, 'Receta Médica - Tratamiento #{idTratamiento}')";
-                    b.Comando(sqlSalida, true);
-                }
-
-                b.Comando($"UPDATE tbl_citas SET estado = 'Atendida' WHERE id_cita = {idCita}", true);
-
-                b.Consultar("SELECT 1", "dual", false);
-
-                MessageBox.Show("Consulta y receta guardadas correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // El movimiento de inventario también queda amarrado al médico
+                b.Comando($"CALL p_registrar_salida_inventario({d.Fkid_medicamento}, {d.Cantidad}, {idMed}, 'Venta')", true);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            // Cerramos
+            b.Consultar("SELECT 1", "dual", false);
         }
     }
 }

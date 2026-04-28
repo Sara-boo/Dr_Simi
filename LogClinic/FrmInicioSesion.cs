@@ -19,6 +19,8 @@ namespace LogClinic
         ManejadorLogin ml;
         int contador = 0;
         bool mostrarClave = false;
+        public static int IdUsuarioLogueado;
+        public static string NombreUsuarioLogueado;
         public FrmInicioSesion()
         {
             InitializeComponent();
@@ -46,6 +48,12 @@ namespace LogClinic
            
             if (ml.Validar(TxtUsuario, TxtClave))
             {
+                DataRow datos = ml.ObtenerDatosCompletos(TxtUsuario.Text);
+                if(datos != null)
+                {
+                    IdUsuarioLogueado = int.Parse(datos["id_usuario"].ToString());
+                    NombreUsuarioLogueado = datos["nombre_completo"].ToString();
+                }
                 FrmPaginaPrincipal pp = new FrmPaginaPrincipal(TxtUsuario.Text);
                 pp.Show();
                 this.Hide();

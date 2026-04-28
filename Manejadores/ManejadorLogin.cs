@@ -84,6 +84,15 @@ namespace Manejadores
             }
             return cadena.ToString();
         }
+        public DataRow ObtenerDatosCompletos(string username)
+        {
+            DataTable dt = b.Consultar($"SELECT * FROM v_NombreUsuario WHERE username = '{username}'", "v_NombreUsuario").Tables[0];
+            if(dt.Rows.Count == 0)
+            {
+                return dt.Rows[0];
+            }
+            return null;
+        }
 
     }
 }
