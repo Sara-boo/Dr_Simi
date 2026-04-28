@@ -69,6 +69,24 @@ namespace LogClinic
 
         private void tsbPersonal_Click(object sender, EventArgs e)
         {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmPersonal frmPersonal = new FrmPersonal();
+            frmPersonal.MdiParent = this;
+            frmPersonal.Show();
+        }
+
+        private void tsbPacientes_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmPacientes frmPacientes = new FrmPacientes();
+            frmPacientes.MdiParent = this;
+            frmPacientes.Show();
+        }
+
+        private void tsbHistorial_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -134,6 +134,7 @@
             this.tsbPacientes.Name = "tsbPacientes";
             this.tsbPacientes.Size = new System.Drawing.Size(95, 70);
             this.tsbPacientes.Text = "PRODUCTOS";
+            this.tsbPacientes.Click += new System.EventHandler(this.tsbPacientes_Click);
             // 
             // tsbHistorial
             // 
@@ -144,6 +145,7 @@
             this.tsbHistorial.Name = "tsbHistorial";
             this.tsbHistorial.Size = new System.Drawing.Size(95, 70);
             this.tsbHistorial.Text = "ENTRADAS";
+            this.tsbHistorial.Click += new System.EventHandler(this.tsbHistorial_Click);
             // 
             // tsbSalir
             // 
