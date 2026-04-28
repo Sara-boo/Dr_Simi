@@ -40,13 +40,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnNoVer = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-=========
-            this.BtnSalir = new System.Windows.Forms.Button();
->>>>>>>>> Temporary merge branch 2
             this.BtnVer = new System.Windows.Forms.Button();
             this.PAzul.SuspendLayout();
             this.panel2.SuspendLayout();
-//            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PAzul
@@ -81,16 +78,6 @@
             this.label1.Size = new System.Drawing.Size(300, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "INICIAR SESIÓN";
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.BackgroundImage = global::LogClinic.Properties.Resources.Cerrar;
-            this.BtnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnSalir.Location = new System.Drawing.Point(721, 14);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(53, 56);
-            this.BtnSalir.TabIndex = 18;
-            this.BtnSalir.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -187,17 +174,6 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // BtnSalir
-            // 
-            this.BtnSalir.BackgroundImage = global::LogClinic.Properties.Resources.Cerrar;
-            this.BtnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnSalir.Location = new System.Drawing.Point(721, 14);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(53, 56);
-            this.BtnSalir.TabIndex = 18;
-            this.BtnSalir.UseVisualStyleBackColor = true;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
-            // 
             // BtnVer
             // 
             this.BtnVer.BackgroundImage = global::LogClinic.Properties.Resources.BotonOcultarClave;
@@ -215,7 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(789, 534);
-//            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PAzul);
             this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.TxtClave);
@@ -228,12 +204,11 @@
             this.Name = "FrmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIAR SESION";
-            this.Load += new System.EventHandler(this.FrmInicioSesion_Load);
             this.PAzul.ResumeLayout(false);
             this.PAzul.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-//            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,4 +231,3 @@
         private System.Windows.Forms.Button BtnNoVer;
     }
 }
-
