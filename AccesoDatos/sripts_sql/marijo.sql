@@ -133,6 +133,8 @@ INNER JOIN tbl_inventario inv ON mov.fkid_inventario = inv.id_inventario
 INNER JOIN tbl_medicamentos med ON inv.fkid_medicamento = med.id_medicamento
 LEFT JOIN tbl_usuarios u ON mov.fkid_usuario = u.id_usuario;
 
+
+
 CREATE OR REPLACE VIEW v_inventario AS
 SELECT 
     i.id_inventario, 
