@@ -58,6 +58,7 @@
             // 
             this.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnBuscar.Location = new System.Drawing.Point(1305, 84);
             this.BtnBuscar.Name = "BtnBuscar";
@@ -74,9 +75,9 @@
             this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnAgregar.Location = new System.Drawing.Point(1427, 82);
+            this.BtnAgregar.Location = new System.Drawing.Point(1427, 84);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(60, 46);
+            this.BtnAgregar.Size = new System.Drawing.Size(60, 44);
             this.BtnAgregar.TabIndex = 3;
             this.BtnAgregar.Text = "+";
             this.BtnAgregar.TextAlign = System.Drawing.ContentAlignment.TopCenter;

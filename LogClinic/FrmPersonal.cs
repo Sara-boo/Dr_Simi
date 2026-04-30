@@ -77,8 +77,16 @@ namespace LogClinic
 
                 if (rs == DialogResult.Yes)
                 {
-                    mp.Eliminar(personal.IdPersonal);
-                    mp.BuscarPersonal(DtgDatosPersonal, "");
+                    try
+                    {
+                        mp.Eliminar(personal.IdPersonal);
+                        mp.BuscarPersonal(DtgDatosPersonal, "");
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message, "No se puede eliminar",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }

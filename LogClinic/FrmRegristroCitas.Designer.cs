@@ -98,6 +98,7 @@
             // TxtBuscarPaciente
             // 
             this.TxtBuscarPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.TxtBuscarPaciente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtBuscarPaciente.Font = new System.Drawing.Font("Lucida Bright", 14F);
             this.TxtBuscarPaciente.Location = new System.Drawing.Point(21, 122);
             this.TxtBuscarPaciente.Multiline = true;

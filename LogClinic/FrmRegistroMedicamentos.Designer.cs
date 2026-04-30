@@ -217,6 +217,7 @@
             this.Name = "FrmRegistroMedicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegistroMedicamentos";
+            this.Load += new System.EventHandler(this.FrmRegistroMedicamentos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -34,19 +34,56 @@ namespace LogClinic
         {
             try
             {
-                string consulta = "SELECT * FROM v_citas WHERE 1=1";
-                if (TxtPaciente.Text != "")
-                    consulta += $" AND Paciente LIKE '%{TxtPaciente.Text}%'";
+                int estadoFiltro = 0;
+                if (!string.IsNullOrWhiteSpace(TxtPaciente.Text))
+                    estadoFiltro += 1;
                 if (DtpDesdeFecha.Value.Date != DtpHastaFecha.Value.Date)
-                    consulta += $" AND Fecha_Hora BETWEEN '{DtpDesdeFecha.Value:yyyy-MM-dd} 00:00:00' AND '{DtpHastaFecha.Value:yyyy-MM-dd} 23:59:59'";
-                if (CmbEstado.Text != "")
-                    consulta += $" AND Estado = '{CmbEstado.Text}'";
+                    estadoFiltro += 2;
+                if (!string.IsNullOrWhiteSpace(CmbEstado.Text))
+                    estadoFiltro += 4;
+                string consulta = "SELECT * FROM v_citas";
+                string filtroTexto = $"(Paciente LIKE '%{TxtPaciente.Text}%' OR CURP LIKE '%{TxtPaciente.Text}%')";
+                string filtroFecha = $"Fecha_Hora BETWEEN '{DtpDesdeFecha.Value:yyyy-MM-dd} 00:00:00' AND '{DtpHastaFecha.Value:yyyy-MM-dd} 23:59:59'";
+                string filtroEstado = $"Estado = '{CmbEstado.Text}'";
+                switch (estadoFiltro)
+                {
+                    case 0: 
+                        break;
+
+                    case 1: 
+                        consulta += $" WHERE {filtroTexto}";
+                        break;
+
+                    case 2:
+                        consulta += $" WHERE {filtroFecha}";
+                        break;
+
+                    case 3:
+                        consulta += $" WHERE {filtroTexto} AND {filtroFecha}";
+                        break;
+
+                    case 4:
+                        consulta += $" WHERE {filtroEstado}";
+                        break;
+
+                    case 5: 
+                        consulta += $" WHERE {filtroTexto} AND {filtroEstado}";
+                        break;
+
+                    case 6: 
+                        consulta += $" WHERE {filtroFecha} AND {filtroEstado}";
+                        break;
+
+                    case 7:
+                        consulta += $" WHERE {filtroTexto} AND {filtroFecha} AND {filtroEstado}";
+                        break;
+                }
+
                 mc.Mostrar(consulta, DtgDatos, "v_citas");
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"No se pudo conectar a la base de datos.\n{ex.Message}",
-                                "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"No se pudo conectar a la base de datos.\n{ex.Message}", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -59,9 +96,18 @@ namespace LogClinic
 
         private void BtnCsv_Click(object sender, EventArgs e)
         {
-            mc.Exportar(DtgDatos);
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                Title = "Guardar Reporte de Citas",
+                FileName = "Reporte Citas.xlsx" // Nombre por defecto 
+            };
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Llamar al método del manejador, pasándole la tabla y la ruta elegida
+                mc.Exportar(DtgDatos, saveFileDialog.FileName);
+            }
         }
-
         private void DtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex;
