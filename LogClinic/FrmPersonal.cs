@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Entidades;
 using Manejadores;
 
+
 namespace LogClinic
 {
     public partial class FrmPersonal : Form

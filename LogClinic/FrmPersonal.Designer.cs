@@ -51,7 +51,7 @@
             this.TxtBuscador.Location = new System.Drawing.Point(296, 91);
             this.TxtBuscador.Multiline = true;
             this.TxtBuscador.Name = "TxtBuscador";
-            this.TxtBuscador.Size = new System.Drawing.Size(987, 31);
+            this.TxtBuscador.Size = new System.Drawing.Size(781, 31);
             this.TxtBuscador.TabIndex = 1;
             // 
             // BtnBuscar
@@ -60,7 +60,7 @@
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnBuscar.Location = new System.Drawing.Point(1305, 84);
+            this.BtnBuscar.Location = new System.Drawing.Point(1122, 86);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(106, 44);
             this.BtnBuscar.TabIndex = 2;
@@ -75,7 +75,7 @@
             this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnAgregar.Location = new System.Drawing.Point(1427, 84);
+            this.BtnAgregar.Location = new System.Drawing.Point(1244, 86);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(60, 44);
             this.BtnAgregar.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.DtgDatosPersonal.Name = "DtgDatosPersonal";
             this.DtgDatosPersonal.RowHeadersWidth = 51;
             this.DtgDatosPersonal.RowTemplate.Height = 24;
-            this.DtgDatosPersonal.Size = new System.Drawing.Size(1431, 594);
+            this.DtgDatosPersonal.Size = new System.Drawing.Size(1250, 594);
             this.DtgDatosPersonal.TabIndex = 4;
             this.DtgDatosPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatosPersonal_CellContentClick);
             // 
@@ -100,7 +100,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 45F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(1537, 835);
+            this.ClientSize = new System.Drawing.Size(1382, 835);
             this.Controls.Add(this.DtgDatosPersonal);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnBuscar);

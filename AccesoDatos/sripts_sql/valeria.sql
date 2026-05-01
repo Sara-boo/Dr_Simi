@@ -104,3 +104,12 @@ FROM tbl_usuarios u
 INNER JOIN tbl_personal p ON u.fkid_personal = p.id_personal
 INNER JOIN tbl_roles r ON p.fkid_rol = r.id_rol
 ORDER BY u.activo DESC;
+
+-- Vista para obtener el personal que no tiene Usuarios
+CREATE OR REPLACE VIEW v_PersonalSinUsuario AS
+SELECT 
+    p.id_personal, 
+    CONCAT(p.nombre, ' ', p.apellido) AS nombre_completo
+FROM tbl_personal p
+WHERE p.estado = 'Activo'
+AND p.id_personal NOT IN (SELECT fkid_personal FROM tbl_usuarios);
