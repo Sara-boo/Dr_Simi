@@ -21,7 +21,7 @@ namespace LogClinic
             InitializeComponent();
             this.idRecibido = idMed;    
             this.idRecibido = idMed;
-            mm = new ManejadorMedicamentos();
+           mm = new ManejadorMedicamentos();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -63,6 +63,11 @@ namespace LogClinic
             {
                 MessageBox.Show("Error al procesar el inventario: " + ex.Message);
             }
+        }
+
+        private void FrmSeguimientoRegistroInventario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

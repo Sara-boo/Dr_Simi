@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
+
 namespace Manejadores
 {
     public class ManejadorCitas
@@ -103,48 +104,88 @@ namespace Manejadores
             dgv.RowTemplate.Height = 50; // Filas más altas para que no se vea tan feo
             dgv.DefaultCellStyle.Padding = new Padding(5); // Margen interno
         }
-        public void Exportar(DataGridView tabla)
+        public void Exportar(DataGridView tabla, string filePath)
         {
-            Excel.Application excelApp = new Excel.Application();
+            Excel.Application excelApp = null;
             Excel.Workbook excelWorkbook = null;
             Excel.Worksheet excelWorkSheet = null;
+
             try
             {
-                //crear una nueva instancia de Excel
                 excelApp = new Excel.Application();
                 excelWorkbook = excelApp.Workbooks.Add();
                 excelWorkSheet = (Excel.Worksheet)excelWorkbook.Sheets[1];
-                excelApp.Visible = false; //no mostrar excel durante la exportacion
+                excelApp.Visible = false;
 
-                //exportar encabezados de la columna
-                for (int i = 0; i < tabla.Rows.Count; i++)
+                int columnaExcel = 1; //contador independiente para las columnas de Excel
+
+                // 1. Exportar ENCABEZADOS (Omitiendo IDs y Botones)
+                for (int i = 0; i < tabla.Columns.Count; i++)
                 {
-                    for (int j = 0; j < tabla.Columns.Count; j++)
+                    // Solo exportamos si la columna es visible Y NO es un botón
+                    if (tabla.Columns[i].Visible && !(tabla.Columns[i] is DataGridViewButtonColumn))
                     {
-                        excelWorkSheet.Cells[i + 2, j + 1] = tabla.Rows[i].Cells[j].Value.ToString();
+                        excelWorkSheet.Cells[1, columnaExcel] = tabla.Columns[i].HeaderText;
+
+                        // --- FORMATO DEL ENCABEZADO ---
+                        Excel.Range celda = (Excel.Range)excelWorkSheet.Cells[1, columnaExcel];
+                        celda.Font.Bold = true;
+                        celda.Font.Color = System.Drawing.ColorTranslator.ToOle(Color.White); // Letra blanca
+                        celda.Interior.Color = System.Drawing.ColorTranslator.ToOle(Color.FromArgb(15, 91, 120)); // Azul oscuro (estilo tu sistema)
+                        Marshal.ReleaseComObject(celda);
+
+                        columnaExcel++; //solo avanza si escribimos algo
                     }
                 }
-                // configurar el nombre y la ubicación del archivo excel
-                string filePath = @"C:\Users\Sara Avila\OneDrive - tecmm.edu.mx\Escritorio\LogClinic\citas.xlsx";//cambia la ruta donde se va guardar
-                excelWorkbook.SaveAs(filePath);
 
-                //MENSAJE DE CONFIRMACIÓN
-                MessageBox.Show("El archivo se guardo en :" + filePath);
+                // 2. Exportar los datos de las filas
+                for (int i = 0; i < tabla.Rows.Count; i++)
+                {
+                    columnaExcel = 1; //reinicia la columna de excel para cada nueva fila
+
+                    for (int j = 0; j < tabla.Columns.Count; j++)
+                    {
+                        // Aplicamos la misma regla: solo si es visible y no es botón
+                        if (tabla.Columns[j].Visible && !(tabla.Columns[j] is DataGridViewButtonColumn))
+                        {
+                            if (tabla.Rows[i].Cells[j].Value != null)
+                            {
+                                excelWorkSheet.Cells[i + 2, columnaExcel] = tabla.Rows[i].Cells[j].Value.ToString();
+                            }
+                            columnaExcel++;
+                        }
+                    }
+                }
+
+                // 3. --- FORMATO FINAL DEL DOCUMENTO ---
+                // Ajustamos el ancho de todas las columnas automáticamente para que no se corte el texto
+                excelWorkSheet.Columns.AutoFit();
+
+                // Guardar usando la ruta dinámica
+                excelWorkbook.SaveAs(filePath);
+                MessageBox.Show("Reporte generado con éxito.", "Exportación a Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al exportar a Excel" + ex.Message);
+                MessageBox.Show("Error al exportar a Excel: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                //liberar los recuersos de excel
-                if (excelWorkbook != null) excelWorkbook.Close(false);
-                if (excelApp != null) excelApp.Quit();
+                // 4. Limpieza robusta de memoria
+                if (excelWorkSheet != null) Marshal.ReleaseComObject(excelWorkSheet);
+                if (excelWorkbook != null)
+                {
+                    excelWorkbook.Close(false);
+                    Marshal.ReleaseComObject(excelWorkbook);
+                }
+                if (excelApp != null)
+                {
+                    excelApp.Quit();
+                    Marshal.ReleaseComObject(excelApp);
+                }
 
-                //liberrar los objetos COM
-                Marshal.ReleaseComObject(excelWorkSheet);
-                Marshal.ReleaseComObject(excelWorkbook);
-                Marshal.ReleaseComObject(excelApp);
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
             }
         }
     }

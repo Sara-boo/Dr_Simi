@@ -15,7 +15,7 @@ namespace LogClinic
 {
     public partial class FrmRegistroMedicamentos : Form
     {
-        ManejadorMedicamentos mm;
+       ManejadorMedicamentos mm;
         public FrmRegistroMedicamentos()
         {
             InitializeComponent();
@@ -77,6 +77,11 @@ namespace LogClinic
             {
                 MessageBox.Show("Error al guardar el medicamento: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmRegistroMedicamentos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

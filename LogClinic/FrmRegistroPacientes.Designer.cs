@@ -71,7 +71,7 @@
             this.label2.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(56, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 52);
+            this.label2.Size = new System.Drawing.Size(197, 50);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nombre Completo";
             // 
@@ -81,7 +81,7 @@
             this.label3.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(710, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 52);
+            this.label3.Size = new System.Drawing.Size(82, 50);
             this.label3.TabIndex = 5;
             this.label3.Text = "CURP";
             // 
@@ -91,7 +91,7 @@
             this.label4.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(40, 178);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(237, 52);
+            this.label4.Size = new System.Drawing.Size(226, 50);
             this.label4.TabIndex = 6;
             this.label4.Text = "Fecha De Nacimiento";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -102,7 +102,7 @@
             this.label5.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(553, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 52);
+            this.label5.Size = new System.Drawing.Size(66, 50);
             this.label5.TabIndex = 7;
             this.label5.Text = "Sexo";
             // 
@@ -112,7 +112,7 @@
             this.label6.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(808, 178);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 52);
+            this.label6.Size = new System.Drawing.Size(165, 50);
             this.label6.TabIndex = 8;
             this.label6.Text = "Tipo de Sangre";
             // 
@@ -122,7 +122,7 @@
             this.label7.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(254, 249);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(288, 52);
+            this.label7.Size = new System.Drawing.Size(274, 50);
             this.label7.TabIndex = 9;
             this.label7.Text = "Enfermedades de Cronicas";
             // 
@@ -132,7 +132,7 @@
             this.label8.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(847, 249);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 52);
+            this.label8.Size = new System.Drawing.Size(98, 50);
             this.label8.TabIndex = 10;
             this.label8.Text = "Alergias";
             // 
@@ -152,7 +152,7 @@
             this.label10.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(56, 466);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(129, 52);
+            this.label10.Size = new System.Drawing.Size(120, 50);
             this.label10.TabIndex = 12;
             this.label10.Text = "Dirreccion";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -163,7 +163,7 @@
             this.label11.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(720, 465);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 52);
+            this.label11.Size = new System.Drawing.Size(104, 50);
             this.label11.TabIndex = 13;
             this.label11.Text = "Telefono";
             // 
@@ -173,29 +173,32 @@
             this.label12.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(720, 584);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 52);
+            this.label12.Size = new System.Drawing.Size(86, 50);
             this.label12.TabIndex = 14;
             this.label12.Text = "Correo";
             // 
             // TxtNCompleto
             // 
+            this.TxtNCompleto.Font = new System.Drawing.Font("Lucida Bright", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNCompleto.Location = new System.Drawing.Point(263, 123);
             this.TxtNCompleto.Name = "TxtNCompleto";
-            this.TxtNCompleto.Size = new System.Drawing.Size(390, 22);
+            this.TxtNCompleto.Size = new System.Drawing.Size(390, 23);
             this.TxtNCompleto.TabIndex = 15;
             this.TxtNCompleto.TextChanged += new System.EventHandler(this.TxtNCompleto_TextChanged);
             // 
             // TxtCurp
             // 
             this.TxtCurp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtCurp.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtCurp.Location = new System.Drawing.Point(832, 122);
             this.TxtCurp.Name = "TxtCurp";
-            this.TxtCurp.Size = new System.Drawing.Size(312, 22);
+            this.TxtCurp.Size = new System.Drawing.Size(312, 23);
             this.TxtCurp.TabIndex = 16;
             this.TxtCurp.TextChanged += new System.EventHandler(this.TxtCurp_TextChanged);
             // 
             // TxtECronicas
             // 
+            this.TxtECronicas.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtECronicas.Location = new System.Drawing.Point(106, 288);
             this.TxtECronicas.Multiline = true;
             this.TxtECronicas.Name = "TxtECronicas";
@@ -205,6 +208,7 @@
             // 
             // TxtAlergias
             // 
+            this.TxtAlergias.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtAlergias.Location = new System.Drawing.Point(679, 288);
             this.TxtAlergias.Multiline = true;
             this.TxtAlergias.Name = "TxtAlergias";
@@ -214,6 +218,7 @@
             // 
             // TxtDirreccion
             // 
+            this.TxtDirreccion.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtDirreccion.Location = new System.Drawing.Point(106, 521);
             this.TxtDirreccion.Multiline = true;
             this.TxtDirreccion.Name = "TxtDirreccion";
@@ -223,26 +228,29 @@
             // 
             // TxtTelefono
             // 
+            this.TxtTelefono.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtTelefono.Location = new System.Drawing.Point(745, 520);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(399, 22);
+            this.TxtTelefono.Size = new System.Drawing.Size(399, 23);
             this.TxtTelefono.TabIndex = 20;
             this.TxtTelefono.TextChanged += new System.EventHandler(this.TxtTelefono_TextChanged);
             // 
             // TxtCorreo
             // 
+            this.TxtCorreo.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.TxtCorreo.Location = new System.Drawing.Point(772, 631);
             this.TxtCorreo.Name = "TxtCorreo";
-            this.TxtCorreo.Size = new System.Drawing.Size(372, 22);
+            this.TxtCorreo.Size = new System.Drawing.Size(372, 23);
             this.TxtCorreo.TabIndex = 21;
             this.TxtCorreo.TextChanged += new System.EventHandler(this.TxtCorreo_TextChanged);
             // 
             // CmbSexo
             // 
+            this.CmbSexo.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.CmbSexo.FormattingEnabled = true;
             this.CmbSexo.Location = new System.Drawing.Point(628, 192);
             this.CmbSexo.Name = "CmbSexo";
-            this.CmbSexo.Size = new System.Drawing.Size(148, 24);
+            this.CmbSexo.Size = new System.Drawing.Size(148, 23);
             this.CmbSexo.TabIndex = 22;
             this.CmbSexo.SelectedIndexChanged += new System.EventHandler(this.CmbSexo_SelectedIndexChanged);
             // 
@@ -256,10 +264,11 @@
             // 
             // CmbTSangre
             // 
+            this.CmbTSangre.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.CmbTSangre.FormattingEnabled = true;
             this.CmbTSangre.Location = new System.Drawing.Point(987, 190);
             this.CmbTSangre.Name = "CmbTSangre";
-            this.CmbTSangre.Size = new System.Drawing.Size(134, 24);
+            this.CmbTSangre.Size = new System.Drawing.Size(134, 23);
             this.CmbTSangre.TabIndex = 24;
             this.CmbTSangre.SelectedIndexChanged += new System.EventHandler(this.CmbTSangre_SelectedIndexChanged);
             // 
@@ -319,7 +328,9 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRegistroPacientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegistroPacientes";
+            this.Load += new System.EventHandler(this.FrmRegistroPacientes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
