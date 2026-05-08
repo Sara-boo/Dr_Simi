@@ -33,13 +33,10 @@
             this.tsbCitas = new System.Windows.Forms.ToolStripButton();
             this.tsbUsuario = new System.Windows.Forms.ToolStripButton();
             this.tsbPersonal = new System.Windows.Forms.ToolStripButton();
-            this.tsbPacientes = new System.Windows.Forms.ToolStripButton();
             this.tsbHistorial = new System.Windows.Forms.ToolStripButton();
+            this.tsbInventario = new System.Windows.Forms.ToolStripButton();
+            this.tsbVacunas = new System.Windows.Forms.ToolStripButton();
             this.tsbSalir = new System.Windows.Forms.ToolStripButton();
-            this.tsbReportes = new System.Windows.Forms.ToolStripButton();
-            this.tsbRolesPermisos = new System.Windows.Forms.ToolStripButton();
-            this.tsbUsuarios = new System.Windows.Forms.ToolStripButton();
-            this.tsbCerrarSesion = new System.Windows.Forms.ToolStripButton();
             this.pSuperior = new System.Windows.Forms.Panel();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnOcultarVentana = new System.Windows.Forms.Button();
@@ -62,13 +59,10 @@
             this.tsbCitas,
             this.tsbUsuario,
             this.tsbPersonal,
-            this.tsbPacientes,
             this.tsbHistorial,
-            this.tsbSalir,
-            this.tsbReportes,
-            this.tsbRolesPermisos,
-            this.tsbUsuarios,
-            this.tsbCerrarSesion});
+            this.tsbInventario,
+            this.tsbVacunas,
+            this.tsbSalir});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 100);
             this.tsPrincipal.Name = "tsPrincipal";
             this.tsPrincipal.Padding = new System.Windows.Forms.Padding(0);
@@ -87,6 +81,7 @@
             this.tsInicio.Name = "tsInicio";
             this.tsInicio.Size = new System.Drawing.Size(95, 70);
             this.tsInicio.Text = "INICIO";
+            this.tsInicio.Click += new System.EventHandler(this.tsInicio_Click);
             // 
             // tsbCitas
             // 
@@ -99,6 +94,7 @@
             this.tsbCitas.Size = new System.Drawing.Size(95, 70);
             this.tsbCitas.Text = "CITAS";
             this.tsbCitas.ToolTipText = "CITAS";
+            this.tsbCitas.Click += new System.EventHandler(this.tsbCitas_Click);
             // 
             // tsbUsuario
             // 
@@ -109,7 +105,8 @@
             this.tsbUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUsuario.Name = "tsbUsuario";
             this.tsbUsuario.Size = new System.Drawing.Size(95, 70);
-            this.tsbUsuario.Text = "CATEGORÍAS";
+            this.tsbUsuario.Text = "USUARIOS";
+            this.tsbUsuario.Click += new System.EventHandler(this.tsbUsuario_Click);
             // 
             // tsbPersonal
             // 
@@ -119,17 +116,8 @@
             this.tsbPersonal.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPersonal.Name = "tsbPersonal";
             this.tsbPersonal.Size = new System.Drawing.Size(95, 70);
-            this.tsbPersonal.Text = "ALERTAS";
-            // 
-            // tsbPacientes
-            // 
-            this.tsbPacientes.AutoSize = false;
-            this.tsbPacientes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbPacientes.Image = global::LogClinic.Properties.Resources.Pacientes;
-            this.tsbPacientes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbPacientes.Name = "tsbPacientes";
-            this.tsbPacientes.Size = new System.Drawing.Size(95, 70);
-            this.tsbPacientes.Text = "PRODUCTOS";
+            this.tsbPersonal.Text = "PERSONAL";
+            this.tsbPersonal.Click += new System.EventHandler(this.tsbPersonal_Click);
             // 
             // tsbHistorial
             // 
@@ -139,7 +127,30 @@
             this.tsbHistorial.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbHistorial.Name = "tsbHistorial";
             this.tsbHistorial.Size = new System.Drawing.Size(95, 70);
-            this.tsbHistorial.Text = "ENTRADAS";
+            this.tsbHistorial.Text = "HISTORIAL CLINICO";
+            this.tsbHistorial.Click += new System.EventHandler(this.tsbHistorial_Click);
+            // 
+            // tsbInventario
+            // 
+            this.tsbInventario.AutoSize = false;
+            this.tsbInventario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbInventario.Image = global::LogClinic.Properties.Resources.Inventario;
+            this.tsbInventario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbInventario.Name = "tsbInventario";
+            this.tsbInventario.Size = new System.Drawing.Size(85, 60);
+            this.tsbInventario.Text = "INVENTARIO";
+            this.tsbInventario.Click += new System.EventHandler(this.tsbInventario_Click);
+            // 
+            // tsbVacunas
+            // 
+            this.tsbVacunas.AutoSize = false;
+            this.tsbVacunas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbVacunas.Image = global::LogClinic.Properties.Resources.Vacunas;
+            this.tsbVacunas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVacunas.Name = "tsbVacunas";
+            this.tsbVacunas.Size = new System.Drawing.Size(85, 60);
+            this.tsbVacunas.Text = "VACUNAS";
+            this.tsbVacunas.Click += new System.EventHandler(this.tsbVacunas_Click);
             // 
             // tsbSalir
             // 
@@ -149,43 +160,8 @@
             this.tsbSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSalir.Name = "tsbSalir";
             this.tsbSalir.Size = new System.Drawing.Size(85, 60);
-            this.tsbSalir.Text = "SALIDAS";
-            // 
-            // tsbReportes
-            // 
-            this.tsbReportes.AutoSize = false;
-            this.tsbReportes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbReportes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReportes.Name = "tsbReportes";
-            this.tsbReportes.Size = new System.Drawing.Size(85, 60);
-            this.tsbReportes.Text = "REPORTES";
-            // 
-            // tsbRolesPermisos
-            // 
-            this.tsbRolesPermisos.AutoSize = false;
-            this.tsbRolesPermisos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbRolesPermisos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbRolesPermisos.Name = "tsbRolesPermisos";
-            this.tsbRolesPermisos.Size = new System.Drawing.Size(85, 60);
-            this.tsbRolesPermisos.Text = "ROLES Y PERMISOS";
-            // 
-            // tsbUsuarios
-            // 
-            this.tsbUsuarios.AutoSize = false;
-            this.tsbUsuarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbUsuarios.Name = "tsbUsuarios";
-            this.tsbUsuarios.Size = new System.Drawing.Size(85, 60);
-            this.tsbUsuarios.Text = "USUARIOS";
-            // 
-            // tsbCerrarSesion
-            // 
-            this.tsbCerrarSesion.AutoSize = false;
-            this.tsbCerrarSesion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCerrarSesion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCerrarSesion.Name = "tsbCerrarSesion";
-            this.tsbCerrarSesion.Size = new System.Drawing.Size(85, 60);
-            this.tsbCerrarSesion.Text = "CERRAR SESION";
+            this.tsbSalir.Text = "CERRAR SESION";
+            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click_1);
             // 
             // pSuperior
             // 
@@ -212,6 +188,7 @@
             this.BtnCerrar.Size = new System.Drawing.Size(47, 46);
             this.BtnCerrar.TabIndex = 7;
             this.BtnCerrar.UseVisualStyleBackColor = true;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // BtnOcultarVentana
             // 
@@ -224,6 +201,7 @@
             this.BtnOcultarVentana.Size = new System.Drawing.Size(47, 46);
             this.BtnOcultarVentana.TabIndex = 6;
             this.BtnOcultarVentana.UseVisualStyleBackColor = true;
+            this.BtnOcultarVentana.Click += new System.EventHandler(this.BtnOcultarVentana_Click);
             // 
             // LblUsuarioActivo
             // 
@@ -259,10 +237,12 @@
             this.Controls.Add(this.tsPrincipal);
             this.Controls.Add(this.pSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPaginaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO DE SESION";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPaginaPrincipal_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
@@ -280,13 +260,10 @@
         private System.Windows.Forms.ToolStripButton tsbCitas;
         private System.Windows.Forms.ToolStripButton tsbUsuario;
         private System.Windows.Forms.ToolStripButton tsbPersonal;
-        private System.Windows.Forms.ToolStripButton tsbPacientes;
         private System.Windows.Forms.ToolStripButton tsbHistorial;
+        private System.Windows.Forms.ToolStripButton tsbInventario;
+        private System.Windows.Forms.ToolStripButton tsbVacunas;
         private System.Windows.Forms.ToolStripButton tsbSalir;
-        private System.Windows.Forms.ToolStripButton tsbReportes;
-        private System.Windows.Forms.ToolStripButton tsbRolesPermisos;
-        private System.Windows.Forms.ToolStripButton tsbUsuarios;
-        private System.Windows.Forms.ToolStripButton tsbCerrarSesion;
         private System.Windows.Forms.Panel pSuperior;
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Button BtnOcultarVentana;

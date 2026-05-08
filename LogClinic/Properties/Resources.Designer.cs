@@ -303,6 +303,16 @@ namespace LogClinic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Inventario {
+            get {
+                object obj = ResourceManager.GetObject("Inventario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MiniminarVentana {
             get {
                 object obj = ResourceManager.GetObject("MiniminarVentana", resourceCulture);
@@ -353,6 +363,16 @@ namespace LogClinic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Tratamiento {
+            get {
+                object obj = ResourceManager.GetObject("Tratamiento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap UsuarioInicioSsesion {
             get {
                 object obj = ResourceManager.GetObject("UsuarioInicioSsesion", resourceCulture);
@@ -366,6 +386,16 @@ namespace LogClinic.Properties {
         internal static System.Drawing.Bitmap Usuarios {
             get {
                 object obj = ResourceManager.GetObject("Usuarios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vacunas {
+            get {
+                object obj = ResourceManager.GetObject("Vacunas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

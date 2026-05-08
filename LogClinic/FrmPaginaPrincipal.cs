@@ -15,6 +15,7 @@ namespace LogClinic
 
         ManejadorDiseño md;
         ManejadorLogin ml;
+        private ToolStripButton botonActivoActual = null;
         public FrmPaginaPrincipal(string username)
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace LogClinic
             }
             pSuperior.BackColor = ColorTranslator.FromHtml("#095D7E");
             tsPrincipal.BackColor = ColorTranslator.FromHtml("#095D7E");
+            tsPrincipal.ForeColor = ColorTranslator.FromHtml("#095D7E");
             md.QuitarBordesBotones(BtnCerrar);
             md.QuitarBordesBotones(BtnOcultarVentana);
            
@@ -40,6 +42,99 @@ namespace LogClinic
 
         private void tsPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+        }
+
+       
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnOcultarVentana_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void tsInicio_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+        }
+
+        private void tsbCitas_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmCitas frmCitas = new FrmCitas();
+            frmCitas.MdiParent = this;
+            frmCitas.Show();
+        }
+
+        private void tsbUsuario_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmVerUsuarios frmVerUsuarios = new FrmVerUsuarios();
+            frmVerUsuarios.MdiParent = this;
+            frmVerUsuarios.Show();
+        }
+
+        private void tsbPersonal_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmPersonal frmPersonal = new FrmPersonal();
+            frmPersonal.MdiParent = this;
+            frmPersonal.Show();
+        }
+
+        private void tsbPacientes_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmPacientes frmPacientes = new FrmPacientes();
+            frmPacientes.MdiParent = this;
+            frmPacientes.Show();
+        }
+
+        private void tsbHistorial_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmHistorialClinico frmHistorialClinico = new FrmHistorialClinico();
+            frmHistorialClinico.MdiParent = this;
+            frmHistorialClinico.Show();
+        }
+
+        private void tsbSalir_Click_1(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            Application.Restart();
+        }
+
+        private void tsbSalir_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmTratamiento frmTratamiento = new FrmTratamiento(0, 0, "");
+            frmTratamiento.MdiParent = this;
+            frmTratamiento.Show();
+        }
+
+        private void tsbInventario_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            FrmInventario frmInventario = new FrmInventario();
+            frmInventario.MdiParent = this;
+            frmInventario.Show();
+        }
+
+        private void tsbVacunas_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+
         }
     }
 }
