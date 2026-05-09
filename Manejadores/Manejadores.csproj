@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManejadorBitacora.cs" />
     <Compile Include="ManejadorCitas.cs" />
     <Compile Include="ManejadorDiseño.cs" />
     <Compile Include="ManejadorHistorialClinico.cs" />
