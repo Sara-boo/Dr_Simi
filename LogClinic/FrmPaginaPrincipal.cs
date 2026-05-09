@@ -136,5 +136,13 @@ namespace LogClinic
             md.CerrarFormulariosActivos(this);
 
         }
+
+        private void tsbPacientes_Click_1(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            FrmPacientes frmpacientes = new FrmPacientes();
+            frmpacientes.MdiParent = this;
+            frmpacientes.Show();
+        }
     }
 }
