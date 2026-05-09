@@ -10,6 +10,7 @@ namespace LogClinic
     public partial class FrmPacientes : Form
     {
         ManejadorRPaciente mp;
+        ManejadorBitacora mb;
         int fila = 0, columna = 0;
         public static Paciente paciente = new Paciente();
 
@@ -17,8 +18,9 @@ namespace LogClinic
         {
             InitializeComponent();
             mp = new ManejadorRPaciente();
+            mb = new ManejadorBitacora();
 
-           
+
             DtgPaciente.RowHeadersVisible = false; 
             DtgPaciente.AllowUserToAddRows = false; 
         }
@@ -101,12 +103,17 @@ namespace LogClinic
                         else if (nombreBoton == "Borrar")
                         {
                             mp.Borrar(paciente.IdPaciente, paciente.NombreCompleto);
+
+                            //Para el registro en bitácora
+                            mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Eliminó el paciente: {paciente.NombreCompleto}");
+
                             mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
                         }
                     }
                 }
                 catch (Exception)
                 {
+                    MessageBox.Show("Error al seleccionar el paciente. Intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
