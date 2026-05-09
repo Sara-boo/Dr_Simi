@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaginaPrincipal));
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
+            this.pSuperior = new System.Windows.Forms.Panel();
+            this.LblUsuarioActivo = new System.Windows.Forms.Label();
             this.tsInicio = new System.Windows.Forms.ToolStripButton();
+            this.tsbPacientes = new System.Windows.Forms.ToolStripButton();
             this.tsbCitas = new System.Windows.Forms.ToolStripButton();
             this.tsbUsuario = new System.Windows.Forms.ToolStripButton();
             this.tsbPersonal = new System.Windows.Forms.ToolStripButton();
@@ -38,12 +40,9 @@
             this.tsbInventario = new System.Windows.Forms.ToolStripButton();
             this.tsbVacunas = new System.Windows.Forms.ToolStripButton();
             this.tsbSalir = new System.Windows.Forms.ToolStripButton();
-            this.pSuperior = new System.Windows.Forms.Panel();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnOcultarVentana = new System.Windows.Forms.Button();
-            this.LblUsuarioActivo = new System.Windows.Forms.Label();
             this.pbUsuario = new System.Windows.Forms.PictureBox();
-            this.tsbPacientes = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.pSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
@@ -74,6 +73,32 @@
             this.tsPrincipal.Text = "MENU";
             this.tsPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsPrincipal_ItemClicked);
             // 
+            // pSuperior
+            // 
+            this.pSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.pSuperior.Controls.Add(this.BtnCerrar);
+            this.pSuperior.Controls.Add(this.BtnOcultarVentana);
+            this.pSuperior.Controls.Add(this.LblUsuarioActivo);
+            this.pSuperior.Controls.Add(this.pbUsuario);
+            this.pSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pSuperior.Margin = new System.Windows.Forms.Padding(2);
+            this.pSuperior.Name = "pSuperior";
+            this.pSuperior.Size = new System.Drawing.Size(1443, 81);
+            this.pSuperior.TabIndex = 10;
+            // 
+            // LblUsuarioActivo
+            // 
+            this.LblUsuarioActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblUsuarioActivo.AutoSize = true;
+            this.LblUsuarioActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuarioActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.LblUsuarioActivo.Location = new System.Drawing.Point(1026, 28);
+            this.LblUsuarioActivo.Name = "LblUsuarioActivo";
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(68, 20);
+            this.LblUsuarioActivo.TabIndex = 3;
+            this.LblUsuarioActivo.Text = "Usuario.";
+            // 
             // tsInicio
             // 
             this.tsInicio.AutoSize = false;
@@ -85,6 +110,19 @@
             this.tsInicio.Size = new System.Drawing.Size(95, 70);
             this.tsInicio.Text = "INICIO";
             this.tsInicio.Click += new System.EventHandler(this.tsInicio_Click);
+            // 
+            // tsbPacientes
+            // 
+            this.tsbPacientes.AutoSize = false;
+            this.tsbPacientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tsbPacientes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbPacientes.Image = global::LogClinic.Properties.Resources.pacientes_2;
+            this.tsbPacientes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPacientes.Name = "tsbPacientes";
+            this.tsbPacientes.Size = new System.Drawing.Size(95, 70);
+            this.tsbPacientes.Text = "PACIENTES";
+            this.tsbPacientes.ToolTipText = "PACIENTES";
+            this.tsbPacientes.Click += new System.EventHandler(this.tsbPacientes_Click_1);
             // 
             // tsbCitas
             // 
@@ -166,27 +204,13 @@
             this.tsbSalir.Text = "CERRAR SESION";
             this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click_1);
             // 
-            // pSuperior
-            // 
-            this.pSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
-            this.pSuperior.Controls.Add(this.BtnCerrar);
-            this.pSuperior.Controls.Add(this.BtnOcultarVentana);
-            this.pSuperior.Controls.Add(this.LblUsuarioActivo);
-            this.pSuperior.Controls.Add(this.pbUsuario);
-            this.pSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pSuperior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pSuperior.Name = "pSuperior";
-            this.pSuperior.Size = new System.Drawing.Size(1443, 81);
-            this.pSuperior.TabIndex = 10;
-            // 
             // BtnCerrar
             // 
             this.BtnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCerrar.BackgroundImage = global::LogClinic.Properties.Resources.Cerrar1;
             this.BtnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnCerrar.Location = new System.Drawing.Point(1372, 22);
-            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(35, 37);
             this.BtnCerrar.TabIndex = 7;
@@ -199,24 +223,12 @@
             this.BtnOcultarVentana.BackgroundImage = global::LogClinic.Properties.Resources.MiniminarVentana;
             this.BtnOcultarVentana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnOcultarVentana.Location = new System.Drawing.Point(1312, 22);
-            this.BtnOcultarVentana.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnOcultarVentana.Margin = new System.Windows.Forms.Padding(2);
             this.BtnOcultarVentana.Name = "BtnOcultarVentana";
             this.BtnOcultarVentana.Size = new System.Drawing.Size(35, 37);
             this.BtnOcultarVentana.TabIndex = 6;
             this.BtnOcultarVentana.UseVisualStyleBackColor = true;
             this.BtnOcultarVentana.Click += new System.EventHandler(this.BtnOcultarVentana_Click);
-            // 
-            // LblUsuarioActivo
-            // 
-            this.LblUsuarioActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblUsuarioActivo.AutoSize = true;
-            this.LblUsuarioActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuarioActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.LblUsuarioActivo.Location = new System.Drawing.Point(1026, 28);
-            this.LblUsuarioActivo.Name = "LblUsuarioActivo";
-            this.LblUsuarioActivo.Size = new System.Drawing.Size(68, 20);
-            this.LblUsuarioActivo.TabIndex = 3;
-            this.LblUsuarioActivo.Text = "Usuario.";
             // 
             // pbUsuario
             // 
@@ -224,24 +236,11 @@
             this.pbUsuario.BackgroundImage = global::LogClinic.Properties.Resources.IconoUsuario;
             this.pbUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbUsuario.Location = new System.Drawing.Point(1256, 22);
-            this.pbUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.pbUsuario.Name = "pbUsuario";
             this.pbUsuario.Size = new System.Drawing.Size(35, 37);
             this.pbUsuario.TabIndex = 5;
             this.pbUsuario.TabStop = false;
-            // 
-            // tsbPacientes
-            // 
-            this.tsbPacientes.AutoSize = false;
-            this.tsbPacientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tsbPacientes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbPacientes.Image = ((System.Drawing.Image)(resources.GetObject("tsbPacientes.Image")));
-            this.tsbPacientes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbPacientes.Name = "tsbPacientes";
-            this.tsbPacientes.Size = new System.Drawing.Size(84, 24);
-            this.tsbPacientes.Text = "PACIENTES";
-            this.tsbPacientes.ToolTipText = "PACIENTES";
-            this.tsbPacientes.Click += new System.EventHandler(this.tsbPacientes_Click_1);
             // 
             // FrmPaginaPrincipal
             // 
@@ -253,7 +252,7 @@
             this.Controls.Add(this.pSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPaginaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO DE SESION";
