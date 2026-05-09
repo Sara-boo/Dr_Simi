@@ -88,6 +88,7 @@
             this.btnExportar.Size = new System.Drawing.Size(41, 42);
             this.btnExportar.TabIndex = 3;
             this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnBuscar
             // 

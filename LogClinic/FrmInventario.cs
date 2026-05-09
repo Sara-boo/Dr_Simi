@@ -95,5 +95,48 @@ namespace LogClinic
                     break;
             }
         }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel files (*.xlsx)|*.xlsx",
+                Title = "Guardar Reporte de Inventario",
+                // Nombre dinámico con la fecha actual para evitar sobrescribir por error
+                FileName = $"Reporte_Inventario_{DateTime.Now:ddMMyyyy}.xlsx"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                System.Data.DataTable dt = mi.ObtenerDatosInventario(txtBuscar.Text);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    try
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+
+                        mi.ExportarInventarioExcel(dt, saveFileDialog.FileName);
+                        Manejadores.ManejadorBitacora mb = new Manejadores.ManejadorBitacora();
+                        mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, "Generó reporte de inventario");
+
+                        this.Cursor = Cursors.Default;
+                        MessageBox.Show("Reporte de inventario generado con éxito", "Excel",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        this.Cursor = Cursors.Default;
+                        MessageBox.Show("Error al exportar inventario: " + ex.Message, "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay datos de inventario disponibles para exportar.",
+                                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
     }
 }
