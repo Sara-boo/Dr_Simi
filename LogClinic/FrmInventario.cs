@@ -15,6 +15,7 @@ namespace LogClinic
     public partial class FrmInventario : Form
     {
         ManejadorInventario mi;
+        ManejadorBitacora mb;
         public static Inventario inventario = new Inventario(0, 0, "", "", 0, 0, "", 0);
         public static Medicamentos mSeleccionado= new Medicamentos(0, "", "", "", "", "", false);
         int fila = 0;
@@ -24,6 +25,7 @@ namespace LogClinic
         {
             InitializeComponent();
             mi=new ManejadorInventario();
+            mb = new ManejadorBitacora();
         }
 
         private void btnAgregarInventario_Click(object sender, EventArgs e)
@@ -79,6 +81,10 @@ namespace LogClinic
                             "Eliminación de inventario",
                             FrmInicioSesion.IdUsuarioLogueado
                             );
+                        //  Para la bitácora, se registra la acción de eliminación con el ID del usuario logueado
+                        string accion = $"Eliminación de inventario: Medicamento {mSeleccionado.Nombre}, Cantidad {inventario.Cantidad}";
+                        mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, accion);
+
                         MessageBox.Show("Registro eliminado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnBuscar.PerformClick();
                     }

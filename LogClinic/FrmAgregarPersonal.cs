@@ -8,11 +8,13 @@ namespace LogClinic
     public partial class FrmAgregarPersonal : Form
     {
         ManejadorPersonal mp;
+        ManejadorBitacora mb;
 
         public FrmAgregarPersonal(int accion)
         {
             InitializeComponent();
             mp = new ManejadorPersonal();
+            mb = new ManejadorBitacora();
             CmbRol.DataSource = mp.ObtenerRoles();
             CmbRol.DisplayMember = "nombre_rol";
             CmbRol.ValueMember = "id_rol";
@@ -62,9 +64,21 @@ namespace LogClinic
             try
             {
                 if (personalParaGuardar.IdPersonal == 0)
+                {
+                    // Registramos la acción en la bitácora
+                    mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Registró un nuevo miembro del personal: {personalParaGuardar.Nombre}");
                     mp.Guardar(personalParaGuardar);
+                }
                 else
+                {
                     mp.Modificar(personalParaGuardar);
+                    // Registramos la acción en la bitácora indicando qué ID se afectó
+                    mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Modificó los datos del personal: {personalParaGuardar.Nombre} (ID: {personalParaGuardar.IdPersonal})");
+                    MessageBox.Show("Datos actualizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Si marca error, borrar esta línea porque no es necesario limpiar el personal global, ya que se actualizó con los nuevos datos.
+                    FrmPersonal.personal.IdPersonal = 0;
+                }
 
                 Close();
             }

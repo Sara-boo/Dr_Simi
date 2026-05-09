@@ -16,11 +16,13 @@ namespace LogClinic
     public partial class FrmRegistroMedicamentos : Form
     {
        ManejadorMedicamentos mm;
+       ManejadorBitacora mb;
         public FrmRegistroMedicamentos()
         {
             InitializeComponent();
             mm = new ManejadorMedicamentos();
-            if(FrmInventario.mSeleccionado.IdMedicamento > 0)
+            mb = new ManejadorBitacora();
+            if (FrmInventario.mSeleccionado.IdMedicamento > 0)
             {
                 txtNombre.Text = FrmInventario.mSeleccionado.Nombre;
                 txtDescripcion.Text = FrmInventario.mSeleccionado.Descripcion;
@@ -59,6 +61,10 @@ namespace LogClinic
                 if(med.IdMedicamento==0)
                 {
                     mm.GuardarMedicamento(med);
+
+                    //Registrar en bitácora
+                    mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Registró un nuevo medicamento: {med.Nombre}");
+
                     int ultimoId = mm.ObtenerUltimoIdMedicamento();
                     MessageBox.Show("Medicamento registrado. Ahora asigne el lote y stock inicial", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FrmSeguimientoRegistroInventario sm = new FrmSeguimientoRegistroInventario(ultimoId);
@@ -67,6 +73,8 @@ namespace LogClinic
                 else
                 {
                     mm.Modificar(med);
+                    //Registrar en bitácora
+                    mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Modificó el medicamento: {med.Nombre} (ID: {med.IdMedicamento})");
                     MessageBox.Show("Catálogo actualizado correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     FrmInventario.mSeleccionado.IdMedicamento = 0;

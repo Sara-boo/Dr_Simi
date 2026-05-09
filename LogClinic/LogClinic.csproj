@@ -114,6 +114,12 @@
     <Compile Include="FrmAgregarPersonal.Designer.cs">
       <DependentUpon>FrmAgregarPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBitacora.Designer.cs">
+      <DependentUpon>FrmBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHistorialClinico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAgregarPersonal.resx">
       <DependentUpon>FrmAgregarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBitacora.resx">
+      <DependentUpon>FrmBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCitas.resx">
       <DependentUpon>FrmCitas.cs</DependentUpon>

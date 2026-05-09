@@ -21,6 +21,7 @@ namespace LogClinic
         bool mostrarClave = false;
         public static int IdUsuarioLogueado;
         public static string NombreUsuarioLogueado;
+        public static string RolUsuarioLogueado;
         public FrmInicioSesion()
         {
             InitializeComponent();
