@@ -59,7 +59,7 @@
             this.BtnNuevaCita.Font = new System.Drawing.Font("Lucida Bright", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNuevaCita.ForeColor = System.Drawing.Color.Honeydew;
             this.BtnNuevaCita.Location = new System.Drawing.Point(642, 21);
-            this.BtnNuevaCita.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnNuevaCita.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnNuevaCita.Name = "BtnNuevaCita";
             this.BtnNuevaCita.Size = new System.Drawing.Size(161, 50);
             this.BtnNuevaCita.TabIndex = 0;
@@ -74,7 +74,7 @@
             this.BtnFiltrar.Font = new System.Drawing.Font("Lucida Bright", 14.25F, System.Drawing.FontStyle.Bold);
             this.BtnFiltrar.ForeColor = System.Drawing.Color.Honeydew;
             this.BtnFiltrar.Location = new System.Drawing.Point(836, 22);
-            this.BtnFiltrar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnFiltrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnFiltrar.Name = "BtnFiltrar";
             this.BtnFiltrar.Size = new System.Drawing.Size(152, 50);
             this.BtnFiltrar.TabIndex = 1;
@@ -86,7 +86,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1760, 41);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 30);
             this.button3.TabIndex = 2;
@@ -110,7 +110,7 @@
             this.BtnCsv.Font = new System.Drawing.Font("Lucida Bright", 14.25F, System.Drawing.FontStyle.Bold);
             this.BtnCsv.ForeColor = System.Drawing.Color.Honeydew;
             this.BtnCsv.Location = new System.Drawing.Point(1016, 22);
-            this.BtnCsv.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnCsv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCsv.Name = "BtnCsv";
             this.BtnCsv.Size = new System.Drawing.Size(122, 50);
             this.BtnCsv.TabIndex = 4;
@@ -215,7 +215,7 @@
             this.DtgDatos.Location = new System.Drawing.Point(11, 200);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.DtgDatos.Size = new System.Drawing.Size(1160, 416);
+            this.DtgDatos.Size = new System.Drawing.Size(1424, 638);
             this.DtgDatos.TabIndex = 14;
             this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
             this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
@@ -266,7 +266,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(1182, 626);
+            this.ClientSize = new System.Drawing.Size(1447, 850);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -278,7 +278,7 @@
             this.Controls.Add(this.BtnNuevaCita);
             this.Font = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmCitas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";

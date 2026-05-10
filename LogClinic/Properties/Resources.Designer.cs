@@ -243,6 +243,16 @@ namespace LogClinic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondo_textura {
+            get {
+                object obj = ResourceManager.GetObject("fondo_textura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Historial {
             get {
                 object obj = ResourceManager.GetObject("Historial", resourceCulture);
@@ -306,6 +316,16 @@ namespace LogClinic.Properties {
         internal static System.Drawing.Bitmap Inventario {
             get {
                 object obj = ResourceManager.GetObject("Inventario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marca_agua {
+            get {
+                object obj = ResourceManager.GetObject("marca_agua", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -30,8 +30,10 @@ namespace LogClinic
             md.QuitarBordesBotones(BtnSalir);
             md.QuitarBordesBotones(BtnVer);
             md.QuitarBordesBotones(BtnNoVer);
-            md.EstilizarTextBox(TxtClave, "CCECEE", "14967F");
-            md.EstilizarTextBox(TxtUsuario, "CCECEE", "14967F");
+            md.RedondearPanel(PanelPrincipal,11);
+            md.RedondearBoton(BtnIngresar, 11);
+            md.RedondearTextBox(TxtUsuario, 11);
+            md.RedondearTextBox(TxtClave, 11);
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)

@@ -401,5 +401,11 @@
   <ItemGroup>
     <None Include="Resources\pacientes_2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_textura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca_agua.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
