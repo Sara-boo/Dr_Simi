@@ -220,6 +220,9 @@
   <data name="DWL CSV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DWL CSV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="marca_agua" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marca_agua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Tratamiento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tratamiento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -229,7 +232,7 @@
   <data name="Personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="marca_agua" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\marca_agua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo_circulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_circulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

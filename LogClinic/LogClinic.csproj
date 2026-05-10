@@ -407,5 +407,8 @@
   <ItemGroup>
     <None Include="Resources\marca_agua.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_circulo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
