@@ -77,7 +77,7 @@ namespace LogClinic
                     MessageBox.Show("Datos actualizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //Si marca error, borrar esta línea porque no es necesario limpiar el personal global, ya que se actualizó con los nuevos datos.
-                    FrmPersonal.personal.IdPersonal = 0;
+                    //FrmPersonal.personal.IdPersonal = 0;
                 }
 
                 Close();

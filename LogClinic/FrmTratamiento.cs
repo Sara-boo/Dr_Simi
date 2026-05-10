@@ -16,6 +16,7 @@ namespace LogClinic
     public partial class FrmTratamiento : Form
     {
         ManejadorTratamiento mt;
+        ManejadorBitacora mb;
 
         List<DetalleTratamiento> listaDetalles = new List<DetalleTratamiento>();
         int idPacienteRecibido;
@@ -25,6 +26,7 @@ namespace LogClinic
         {
             InitializeComponent();
             mt = new ManejadorTratamiento();
+            mb= new ManejadorBitacora();
             this.idPacienteRecibido = idPaciente;
             this.idCitaRecibida=idCita;
             //this.idUsuarioActual = usuario;
@@ -102,6 +104,12 @@ namespace LogClinic
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             int idMedico = FrmInicioSesion.IdUsuarioLogueado;
+            if(idMedico == 0)
+            {
+                MessageBox.Show("No se ha podido identificar al médico. Por favor, asegúrese de haber iniciado sesión correctamente.",
+                                "Error de Identificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (listaDetalles.Count == 0)
             {
                 MessageBox.Show("Debe agregar al menos un medicamento a la receta antes de guardar.",
@@ -129,6 +137,8 @@ namespace LogClinic
 
                 mt.GuardarConsultaCompleta(this.idCitaRecibida, txtSintomas.Text, "Sin observaciones", listaDetalles,idMedico);
 
+                //Para la bitácora
+                mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, "Registró un nuevo tratamiento para el paciente");
 
                 MessageBox.Show("El tratamiento y la receta se han registrado correctamente. El stock ha sido actualizado.",
                                 "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

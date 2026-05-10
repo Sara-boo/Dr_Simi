@@ -48,15 +48,18 @@ namespace LogClinic
                 MessageBox.Show("Por favor, complete todos los campos.", "¡CAMPOS VACÍOS!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; 
             }
-           
+
             if (ml.Validar(TxtUsuario, TxtClave))
             {
                 DataRow datos = ml.ObtenerDatosCompletos(TxtUsuario.Text);
-                if(datos != null)
+
+                if (datos != null) 
                 {
                     IdUsuarioLogueado = int.Parse(datos["id_usuario"].ToString());
                     NombreUsuarioLogueado = datos["nombre_completo"].ToString();
+                    RolUsuarioLogueado = datos["rol"].ToString(); // ¡Desbloqueado!
                 }
+
                 FrmPaginaPrincipal pp = new FrmPaginaPrincipal(TxtUsuario.Text);
                 pp.Show();
                 this.Hide();
