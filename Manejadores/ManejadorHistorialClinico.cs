@@ -46,7 +46,7 @@ namespace Manejadores
             dgv.MultiSelect = false;
 
             //Colores y bordes generales
-            dgv.BorderStyle = BorderStyle.FixedSingle;
+            dgv.BorderStyle = BorderStyle.None;
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single; // Solo líneas horizontales
             dgv.GridColor = Color.LightGray; // Color de las líneas divisorias 
 

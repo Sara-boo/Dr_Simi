@@ -24,6 +24,7 @@ namespace LogClinic
         {
             InitializeComponent();
             mu = new ManejadorUsuarios();
+            mu.EstilizarDataGrid(DtgDatos);
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
