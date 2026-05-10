@@ -59,6 +59,7 @@ namespace LogClinic
         {
             md.Boton(sender, tsPrincipal, botonActivoActual);
             md.CerrarFormulariosActivos(this);
+            LblModulo.Text = "Inicio";
         }
 
         private void tsbCitas_Click(object sender, EventArgs e)
@@ -68,6 +69,7 @@ namespace LogClinic
             FrmCitas frmCitas = new FrmCitas();
             frmCitas.MdiParent = this;
             frmCitas.Show();
+            LblModulo.Text = "Citas";   
         }
 
         private void tsbUsuario_Click(object sender, EventArgs e)
@@ -77,6 +79,7 @@ namespace LogClinic
             FrmVerUsuarios frmVerUsuarios = new FrmVerUsuarios();
             frmVerUsuarios.MdiParent = this;
             frmVerUsuarios.Show();
+            LblModulo.Text = "Usuarios";
         }
 
         private void tsbPersonal_Click(object sender, EventArgs e)
@@ -86,6 +89,7 @@ namespace LogClinic
             FrmPersonal frmPersonal = new FrmPersonal();
             frmPersonal.MdiParent = this;
             frmPersonal.Show();
+            LblModulo.Text = "Personal";
         }
 
         private void tsbPacientes_Click(object sender, EventArgs e)
@@ -95,6 +99,7 @@ namespace LogClinic
             FrmPacientes frmPacientes = new FrmPacientes();
             frmPacientes.MdiParent = this;
             frmPacientes.Show();
+            LblModulo.Text = "Pacientes";
         }
 
         private void tsbHistorial_Click(object sender, EventArgs e)
@@ -104,6 +109,7 @@ namespace LogClinic
             FrmHistorialClinico frmHistorialClinico = new FrmHistorialClinico();
             frmHistorialClinico.MdiParent = this;
             frmHistorialClinico.Show();
+            LblModulo.Text = "Historial Clínico";
         }
 
         private void tsbSalir_Click_1(object sender, EventArgs e)
@@ -128,6 +134,7 @@ namespace LogClinic
             FrmInventario frmInventario = new FrmInventario();
             frmInventario.MdiParent = this;
             frmInventario.Show();
+            LblModulo.Text = "Inventario";
         }
 
         private void tsbVacunas_Click(object sender, EventArgs e)
@@ -143,6 +150,7 @@ namespace LogClinic
             FrmPacientes frmpacientes = new FrmPacientes();
             frmpacientes.MdiParent = this;
             frmpacientes.Show();
+            LblModulo.Text = "Pacientes";
         }
     }
 }
