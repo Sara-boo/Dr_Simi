@@ -45,45 +45,47 @@
             this.BtnOcultarVentana = new System.Windows.Forms.Button();
             this.LblUsuarioActivo = new System.Windows.Forms.Label();
             this.pbUsuario = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.PanelFondo = new System.Windows.Forms.Panel();
             this.PanelCitasHoy = new System.Windows.Forms.Panel();
-            this.PanelStockC = new System.Windows.Forms.Panel();
-            this.PanelPacientesActivos = new System.Windows.Forms.Panel();
-            this.PanelVacunas = new System.Windows.Forms.Panel();
-            this.PanelProximasCitas = new System.Windows.Forms.Panel();
-            this.PanelAccesoDirecto = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.LblCitasHoy = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.LblCitasHoy = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PanelAccesoDirecto = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.PanelProximasCitas = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.DtgDatos = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.PanelVacunas = new System.Windows.Forms.Panel();
+            this.PanelPacientesActivos = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.LblPacientesA = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PanelStockC = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.LblStock = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.LblFecha = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tsPrincipal.SuspendLayout();
             this.pSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
+            this.PanelFondo.SuspendLayout();
             this.PanelCitasHoy.SuspendLayout();
-            this.PanelStockC.SuspendLayout();
-            this.PanelPacientesActivos.SuspendLayout();
-            this.PanelProximasCitas.SuspendLayout();
-            this.PanelAccesoDirecto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PanelAccesoDirecto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.PanelProximasCitas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
+            this.PanelPacientesActivos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.PanelStockC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tsPrincipal
@@ -292,29 +294,21 @@
             this.pbUsuario.TabIndex = 5;
             this.pbUsuario.TabStop = false;
             // 
-            // label1
+            // PanelFondo
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Lucida Bright", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
-            this.label1.Location = new System.Drawing.Point(153, 133);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 42);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Resumen del Día";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Lucida Bright", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(186, 185);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 22);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Domingo, 10 de mayo de 2026";
+            this.PanelFondo.Controls.Add(this.PanelCitasHoy);
+            this.PanelFondo.Controls.Add(this.pictureBox1);
+            this.PanelFondo.Controls.Add(this.PanelAccesoDirecto);
+            this.PanelFondo.Controls.Add(this.PanelProximasCitas);
+            this.PanelFondo.Controls.Add(this.PanelVacunas);
+            this.PanelFondo.Controls.Add(this.PanelPacientesActivos);
+            this.PanelFondo.Controls.Add(this.PanelStockC);
+            this.PanelFondo.Controls.Add(this.LblFecha);
+            this.PanelFondo.Controls.Add(this.label1);
+            this.PanelFondo.Location = new System.Drawing.Point(88, 81);
+            this.PanelFondo.Name = "PanelFondo";
+            this.PanelFondo.Size = new System.Drawing.Size(1846, 926);
+            this.PanelFondo.TabIndex = 12;
             // 
             // PanelCitasHoy
             // 
@@ -324,83 +318,29 @@
             this.PanelCitasHoy.Controls.Add(this.label3);
             this.PanelCitasHoy.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelCitasHoy.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelCitasHoy.Location = new System.Drawing.Point(149, 244);
+            this.PanelCitasHoy.Location = new System.Drawing.Point(43, 148);
             this.PanelCitasHoy.Name = "PanelCitasHoy";
             this.PanelCitasHoy.Size = new System.Drawing.Size(375, 197);
-            this.PanelCitasHoy.TabIndex = 14;
+            this.PanelCitasHoy.TabIndex = 23;
             // 
-            // PanelStockC
+            // pictureBox2
             // 
-            this.PanelStockC.BackColor = System.Drawing.Color.White;
-            this.PanelStockC.Controls.Add(this.pictureBox3);
-            this.PanelStockC.Controls.Add(this.LblStock);
-            this.PanelStockC.Controls.Add(this.label5);
-            this.PanelStockC.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelStockC.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelStockC.Location = new System.Drawing.Point(610, 244);
-            this.PanelStockC.Name = "PanelStockC";
-            this.PanelStockC.Size = new System.Drawing.Size(388, 197);
-            this.PanelStockC.TabIndex = 15;
+            this.pictureBox2.Location = new System.Drawing.Point(41, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(104, 106);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
-            // PanelPacientesActivos
+            // LblCitasHoy
             // 
-            this.PanelPacientesActivos.BackColor = System.Drawing.Color.White;
-            this.PanelPacientesActivos.Controls.Add(this.pictureBox4);
-            this.PanelPacientesActivos.Controls.Add(this.label4);
-            this.PanelPacientesActivos.Controls.Add(this.label6);
-            this.PanelPacientesActivos.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelPacientesActivos.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelPacientesActivos.Location = new System.Drawing.Point(1085, 244);
-            this.PanelPacientesActivos.Name = "PanelPacientesActivos";
-            this.PanelPacientesActivos.Size = new System.Drawing.Size(387, 197);
-            this.PanelPacientesActivos.TabIndex = 16;
-            // 
-            // PanelVacunas
-            // 
-            this.PanelVacunas.BackColor = System.Drawing.Color.White;
-            this.PanelVacunas.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelVacunas.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelVacunas.Location = new System.Drawing.Point(1544, 244);
-            this.PanelVacunas.Name = "PanelVacunas";
-            this.PanelVacunas.Size = new System.Drawing.Size(320, 197);
-            this.PanelVacunas.TabIndex = 17;
-            // 
-            // PanelProximasCitas
-            // 
-            this.PanelProximasCitas.BackColor = System.Drawing.Color.White;
-            this.PanelProximasCitas.Controls.Add(this.pictureBox5);
-            this.PanelProximasCitas.Controls.Add(this.dataGridView1);
-            this.PanelProximasCitas.Controls.Add(this.label8);
-            this.PanelProximasCitas.Controls.Add(this.label7);
-            this.PanelProximasCitas.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelProximasCitas.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelProximasCitas.Location = new System.Drawing.Point(149, 504);
-            this.PanelProximasCitas.Name = "PanelProximasCitas";
-            this.PanelProximasCitas.Size = new System.Drawing.Size(958, 480);
-            this.PanelProximasCitas.TabIndex = 18;
-            // 
-            // PanelAccesoDirecto
-            // 
-            this.PanelAccesoDirecto.BackColor = System.Drawing.Color.White;
-            this.PanelAccesoDirecto.Controls.Add(this.pictureBox6);
-            this.PanelAccesoDirecto.Controls.Add(this.label9);
-            this.PanelAccesoDirecto.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelAccesoDirecto.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelAccesoDirecto.Location = new System.Drawing.Point(1253, 504);
-            this.PanelAccesoDirecto.Name = "PanelAccesoDirecto";
-            this.PanelAccesoDirecto.Size = new System.Drawing.Size(598, 480);
-            this.PanelAccesoDirecto.TabIndex = 19;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(149, 178);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.LblCitasHoy.AutoSize = true;
+            this.LblCitasHoy.Font = new System.Drawing.Font("Lucida Bright", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCitasHoy.ForeColor = System.Drawing.Color.Black;
+            this.LblCitasHoy.Location = new System.Drawing.Point(211, 93);
+            this.LblCitasHoy.Name = "LblCitasHoy";
+            this.LblCitasHoy.Size = new System.Drawing.Size(39, 40);
+            this.LblCitasHoy.TabIndex = 1;
+            this.LblCitasHoy.Text = "0";
             // 
             // label3
             // 
@@ -412,24 +352,165 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Citas de Hoy";
             // 
-            // LblCitasHoy
+            // pictureBox1
             // 
-            this.LblCitasHoy.AutoSize = true;
-            this.LblCitasHoy.Font = new System.Drawing.Font("Lucida Bright", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCitasHoy.ForeColor = System.Drawing.Color.Black;
-            this.LblCitasHoy.Location = new System.Drawing.Point(211, 93);
-            this.LblCitasHoy.Name = "LblCitasHoy";
-            this.LblCitasHoy.Size = new System.Drawing.Size(61, 40);
-            this.LblCitasHoy.TabIndex = 1;
-            this.LblCitasHoy.Text = "12";
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(43, 82);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // PanelAccesoDirecto
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(41, 38);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(104, 106);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.PanelAccesoDirecto.BackColor = System.Drawing.Color.White;
+            this.PanelAccesoDirecto.Controls.Add(this.pictureBox6);
+            this.PanelAccesoDirecto.Controls.Add(this.label9);
+            this.PanelAccesoDirecto.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelAccesoDirecto.ForeColor = System.Drawing.Color.DimGray;
+            this.PanelAccesoDirecto.Location = new System.Drawing.Point(1147, 408);
+            this.PanelAccesoDirecto.Name = "PanelAccesoDirecto";
+            this.PanelAccesoDirecto.Size = new System.Drawing.Size(598, 480);
+            this.PanelAccesoDirecto.TabIndex = 28;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(18, 5);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(56, 56);
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.label9.Location = new System.Drawing.Point(80, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(214, 27);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Accesos Rápidos";
+            // 
+            // PanelProximasCitas
+            // 
+            this.PanelProximasCitas.BackColor = System.Drawing.Color.White;
+            this.PanelProximasCitas.Controls.Add(this.pictureBox5);
+            this.PanelProximasCitas.Controls.Add(this.DtgDatos);
+            this.PanelProximasCitas.Controls.Add(this.label8);
+            this.PanelProximasCitas.Controls.Add(this.label7);
+            this.PanelProximasCitas.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelProximasCitas.ForeColor = System.Drawing.Color.DimGray;
+            this.PanelProximasCitas.Location = new System.Drawing.Point(43, 408);
+            this.PanelProximasCitas.Name = "PanelProximasCitas";
+            this.PanelProximasCitas.Size = new System.Drawing.Size(958, 480);
+            this.PanelProximasCitas.TabIndex = 27;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(15, 5);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(56, 52);
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
+            // 
+            // DtgDatos
+            // 
+            this.DtgDatos.BackgroundColor = System.Drawing.Color.White;
+            this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgDatos.Location = new System.Drawing.Point(0, 63);
+            this.DtgDatos.Name = "DtgDatos";
+            this.DtgDatos.Size = new System.Drawing.Size(955, 402);
+            this.DtgDatos.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.label8.Location = new System.Drawing.Point(615, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(313, 15);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Control de navegación de citas programadas";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.label7.Location = new System.Drawing.Point(77, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(191, 27);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Próximas Citas";
+            // 
+            // PanelVacunas
+            // 
+            this.PanelVacunas.BackColor = System.Drawing.Color.White;
+            this.PanelVacunas.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelVacunas.ForeColor = System.Drawing.Color.DimGray;
+            this.PanelVacunas.Location = new System.Drawing.Point(1438, 148);
+            this.PanelVacunas.Name = "PanelVacunas";
+            this.PanelVacunas.Size = new System.Drawing.Size(320, 197);
+            this.PanelVacunas.TabIndex = 26;
+            // 
+            // PanelPacientesActivos
+            // 
+            this.PanelPacientesActivos.BackColor = System.Drawing.Color.White;
+            this.PanelPacientesActivos.Controls.Add(this.pictureBox4);
+            this.PanelPacientesActivos.Controls.Add(this.LblPacientesA);
+            this.PanelPacientesActivos.Controls.Add(this.label6);
+            this.PanelPacientesActivos.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelPacientesActivos.ForeColor = System.Drawing.Color.DimGray;
+            this.PanelPacientesActivos.Location = new System.Drawing.Point(979, 148);
+            this.PanelPacientesActivos.Name = "PanelPacientesActivos";
+            this.PanelPacientesActivos.Size = new System.Drawing.Size(387, 197);
+            this.PanelPacientesActivos.TabIndex = 25;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(34, 38);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(106, 106);
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
+            // 
+            // LblPacientesA
+            // 
+            this.LblPacientesA.AutoSize = true;
+            this.LblPacientesA.Font = new System.Drawing.Font("Lucida Bright", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPacientesA.ForeColor = System.Drawing.Color.Black;
+            this.LblPacientesA.Location = new System.Drawing.Point(232, 93);
+            this.LblPacientesA.Name = "LblPacientesA";
+            this.LblPacientesA.Size = new System.Drawing.Size(39, 40);
+            this.LblPacientesA.TabIndex = 4;
+            this.LblPacientesA.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(146, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(242, 32);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Pacientes Activos";
+            // 
+            // PanelStockC
+            // 
+            this.PanelStockC.BackColor = System.Drawing.Color.White;
+            this.PanelStockC.Controls.Add(this.pictureBox3);
+            this.PanelStockC.Controls.Add(this.LblStock);
+            this.PanelStockC.Controls.Add(this.label5);
+            this.PanelStockC.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelStockC.ForeColor = System.Drawing.Color.DimGray;
+            this.PanelStockC.Location = new System.Drawing.Point(504, 148);
+            this.PanelStockC.Name = "PanelStockC";
+            this.PanelStockC.Size = new System.Drawing.Size(388, 197);
+            this.PanelStockC.TabIndex = 24;
             // 
             // pictureBox3
             // 
@@ -446,9 +527,9 @@
             this.LblStock.ForeColor = System.Drawing.Color.Black;
             this.LblStock.Location = new System.Drawing.Point(229, 93);
             this.LblStock.Name = "LblStock";
-            this.LblStock.Size = new System.Drawing.Size(61, 40);
+            this.LblStock.Size = new System.Drawing.Size(39, 40);
             this.LblStock.TabIndex = 4;
-            this.LblStock.Text = "12";
+            this.LblStock.Text = "0";
             // 
             // label5
             // 
@@ -460,92 +541,29 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Stock Crítico ";
             // 
-            // pictureBox4
+            // LblFecha
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(34, 27);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(106, 106);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.LblFecha.AutoSize = true;
+            this.LblFecha.BackColor = System.Drawing.Color.Transparent;
+            this.LblFecha.Font = new System.Drawing.Font("Lucida Bright", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFecha.ForeColor = System.Drawing.Color.DimGray;
+            this.LblFecha.Location = new System.Drawing.Point(80, 89);
+            this.LblFecha.Name = "LblFecha";
+            this.LblFecha.Size = new System.Drawing.Size(297, 22);
+            this.LblFecha.TabIndex = 22;
+            this.LblFecha.Text = "Domingo, 10 de mayo de 2026";
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Bright", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(232, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 40);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "12";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Bright", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(146, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(242, 32);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Pacientes Activos";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
-            this.label7.Location = new System.Drawing.Point(77, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(191, 27);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Próximas Citas";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
-            this.label8.Location = new System.Drawing.Point(615, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(313, 15);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Control de navegación de citas programadas";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(955, 402);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Location = new System.Drawing.Point(15, 5);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(56, 52);
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
-            this.label9.Location = new System.Drawing.Point(80, 12);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(214, 27);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Accesos Rápidos";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Location = new System.Drawing.Point(18, 5);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(56, 56);
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Lucida Bright", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.label1.Location = new System.Drawing.Point(47, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(330, 42);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Resumen del Día";
             // 
             // FrmPaginaPrincipal
             // 
@@ -553,15 +571,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(1656, 969);
-            this.Controls.Add(this.PanelCitasHoy);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.PanelAccesoDirecto);
-            this.Controls.Add(this.PanelProximasCitas);
-            this.Controls.Add(this.PanelVacunas);
-            this.Controls.Add(this.PanelPacientesActivos);
-            this.Controls.Add(this.PanelStockC);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PanelFondo);
             this.Controls.Add(this.tsPrincipal);
             this.Controls.Add(this.pSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -577,25 +587,26 @@
             this.pSuperior.ResumeLayout(false);
             this.pSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
+            this.PanelFondo.ResumeLayout(false);
+            this.PanelFondo.PerformLayout();
             this.PanelCitasHoy.ResumeLayout(false);
             this.PanelCitasHoy.PerformLayout();
-            this.PanelStockC.ResumeLayout(false);
-            this.PanelStockC.PerformLayout();
-            this.PanelPacientesActivos.ResumeLayout(false);
-            this.PanelPacientesActivos.PerformLayout();
-            this.PanelProximasCitas.ResumeLayout(false);
-            this.PanelProximasCitas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelAccesoDirecto.ResumeLayout(false);
             this.PanelAccesoDirecto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.PanelProximasCitas.ResumeLayout(false);
+            this.PanelProximasCitas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
+            this.PanelPacientesActivos.ResumeLayout(false);
+            this.PanelPacientesActivos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.PanelStockC.ResumeLayout(false);
+            this.PanelStockC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -617,29 +628,30 @@
         private System.Windows.Forms.PictureBox pbUsuario;
         private System.Windows.Forms.ToolStripButton tsbPacientes;
         private System.Windows.Forms.Label LblModulo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel PanelFondo;
         private System.Windows.Forms.Panel PanelCitasHoy;
-        private System.Windows.Forms.Panel PanelStockC;
-        private System.Windows.Forms.Panel PanelPacientesActivos;
-        private System.Windows.Forms.Panel PanelVacunas;
-        private System.Windows.Forms.Panel PanelProximasCitas;
-        private System.Windows.Forms.Panel PanelAccesoDirecto;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label LblCitasHoy;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel PanelAccesoDirecto;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel PanelProximasCitas;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.DataGridView DtgDatos;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel PanelVacunas;
+        private System.Windows.Forms.Panel PanelPacientesActivos;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label LblPacientesA;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel PanelStockC;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label LblStock;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LblFecha;
+        private System.Windows.Forms.Label label1;
     }
 }

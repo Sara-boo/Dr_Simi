@@ -76,3 +76,43 @@ INNER JOIN tbl_personal per     ON c.fkid_personal  = per.id_personal
 LEFT  JOIN tbl_historial_clinico h ON c.id_cita = h.fkid_cita
 LEFT  JOIN tbl_tratamiento t    ON t.fkid_historial = h.id_historial
 LEFT  JOIN tbl_medicamentos m   ON t.fkid_medicamento = m.id_medicamento;
+
+
+-- contador de las citas programadas
+CREATE OR REPLACE VIEW v_total_citas_hoy AS
+SELECT COUNT(*) AS Total_Citas_Hoy
+FROM tbl_citas
+WHERE DATE(fecha_hora) = CURDATE()
+AND estado = 'Programada';
+SELECT *from v_total_citas_hoy;
+
+-- contador para el stock crítico 
+CREATE OR REPLACE VIEW v_total_stock_critico AS
+SELECT COUNT(*) AS Total_Stock_Critico
+FROM tbl_inventario
+WHERE stock_actual <= stock_minimo
+AND estatus = 'Activo';
+select * from v_total_stock_critico;
+
+-- contador de pacientes activos 
+CREATE OR REPLACE VIEW v_total_pacientes_activos AS
+SELECT COUNT(*) AS Total_Pacientes_Activos
+FROM tbl_pacientes
+WHERE activo = 1;
+select * from v_total_pacientes_activos;
+
+-- viata de las citas para hoy
+CREATE OR REPLACE VIEW v_proximas_citas_hoy AS
+SELECT
+    TIME_FORMAT(c.fecha_hora, '%h:%i %p')           AS Hora,
+    p.nombre_completo                                AS Paciente,
+    CONCAT('Dr. ', per.nombre, ' ', per.apellido,
+           ' • ', per.especialidad)                  AS Doctor
+FROM tbl_citas c
+INNER JOIN tbl_pacientes p   ON c.fkid_paciente = p.id_paciente
+INNER JOIN tbl_personal  per ON c.fkid_personal  = per.id_personal
+WHERE DATE(c.fecha_hora) = CURDATE()
+AND c.estado = 'Programada'
+ORDER BY c.fecha_hora ASC;
+
+SELECT * from v_proximas_citas_hoy;

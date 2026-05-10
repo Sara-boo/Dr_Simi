@@ -27,6 +27,10 @@ namespace Manejadores
         {
             b.Comando($"CALL p_editar_cita({cita.IdCita},{cita.IdPaciente},{cita.IdPersonal},'{cita.FechaHora:yyyy-MM-dd HH:mm:ss}','{cita.Estado}');");
         }
+        public DataSet Consultar(string consulta, string datos)
+        {
+            return b.Consultar(consulta, datos);
+        }
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
@@ -40,9 +44,16 @@ namespace Manejadores
             tabla.Columns.Insert(9, Boton("Atender", Color.LightGray));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
+        }
+        public void MostrarIS(string consulta, DataGridView tabla, string datos)
+        {
+            tabla.Columns.Clear();
+            tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
+            tabla.AutoResizeColumns();
+            tabla.AutoResizeRows();
 
         }
-       
+
         public DataRow BuscarCurp(string curp)
         {
             DataTable dt = b.Consultar($"SELECT id_paciente, nombre_completo, fecha_nacimiento, tipo_sangre, alergias, enfermedades_cronicas FROM tbl_pacientes WHERE curp = '{curp}'", "tbl_pacientes").Tables[0];
