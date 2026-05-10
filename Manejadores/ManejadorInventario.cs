@@ -17,17 +17,46 @@ namespace Manejadores
         Base b = new Base();
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
+            tabla.DataSource = null;
             tabla.Columns.Clear();
-            tabla.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
+
             tabla.Columns["id_inventario"].Visible = false;
             tabla.Columns["id_medicamento"].Visible = false;
+
+            tabla.EnableHeadersVisualStyles = false;
+
+            tabla.DefaultCellStyle.Font = new Font("Lucida Bright", 10, FontStyle.Regular);
+            tabla.Columns["id_inventario"].Visible = false;
+            tabla.Columns["id_medicamento"].Visible = false;
+
+            // Estilo de los Encabezados (Azul Oscuro)
+            tabla.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 66, 91);
+            tabla.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            tabla.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(45, 66, 91);
+            tabla.ColumnHeadersDefaultCellStyle.Font = new Font("Javanese Text", 10, FontStyle.Bold);
+            tabla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            tabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            tabla.ColumnHeadersHeight = 40;
+
+            tabla.DefaultCellStyle.Font = new Font("Javanese Text", 9);
+            tabla.DefaultCellStyle.SelectionBackColor = Color.FromArgb(30, 144, 255);
+            tabla.DefaultCellStyle.SelectionForeColor = Color.White;
+            tabla.BackgroundColor = Color.White;
+            tabla.GridColor = Color.FromArgb(210, 210, 210);
+
+            tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tabla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tabla.RowHeadersVisible = false; // Ocultar la columna gris de la izquierda
+
+
             tabla.Columns.Insert(1,Boton("Editar", Color.Orange));
             tabla.Columns.Insert(2, Boton("Borrar", Color.Red));
             tabla.Columns.Insert(3, Boton("Detalles", Color.SkyBlue));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
+        
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
@@ -36,7 +65,7 @@ namespace Manejadores
             btn.FlatStyle = FlatStyle.Popup;
             btn.DefaultCellStyle.BackColor = fondo;
             btn.DefaultCellStyle.ForeColor = Color.White;
-            btn.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            btn.DefaultCellStyle.Font = new Font("Lucida Bright", 10, FontStyle.Bold);
             return btn;
         }
         public void RegistrarMovimiento(int idInv, int cant, string tipo, string motivo, int idUser)

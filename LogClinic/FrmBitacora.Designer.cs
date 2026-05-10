@@ -34,20 +34,29 @@
             // 
             // DtgDatos
             // 
+            this.DtgDatos.AllowUserToAddRows = false;
+            this.DtgDatos.AllowUserToDeleteRows = false;
+            this.DtgDatos.AllowUserToResizeColumns = false;
+            this.DtgDatos.AllowUserToResizeRows = false;
+            this.DtgDatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DtgDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(121, 92);
+            this.DtgDatos.Location = new System.Drawing.Point(116, 109);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.RowHeadersWidth = 51;
             this.DtgDatos.RowTemplate.Height = 24;
-            this.DtgDatos.Size = new System.Drawing.Size(905, 417);
+            this.DtgDatos.Size = new System.Drawing.Size(1229, 677);
             this.DtgDatos.TabIndex = 0;
             // 
             // FrmBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 579);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
+            this.ClientSize = new System.Drawing.Size(1449, 880);
+            this.ControlBox = false;
             this.Controls.Add(this.DtgDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBitacora";
             this.Text = "FrmBitacora";
             this.Load += new System.EventHandler(this.FrmBitacora_Load);

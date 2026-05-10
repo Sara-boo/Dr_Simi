@@ -63,5 +63,10 @@ namespace LogClinic
             cmbTipo.Items.Add("Ajuste");
             cmbTipo.SelectedIndex = 0;
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

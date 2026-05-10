@@ -30,8 +30,16 @@ namespace LogClinic
 
         private void btnAgregarInventario_Click(object sender, EventArgs e)
         {
+            mSeleccionado.IdMedicamento = 0;
+            mSeleccionado.Nombre = "";
+            mSeleccionado.Descripcion = "";
+            mSeleccionado.Tipo = "";
+            mSeleccionado.Presentacion = "";
+            mSeleccionado.Concentracion = "";
+            mSeleccionado.RequiereReceta = false;
             FrmRegistroMedicamentos rm = new FrmRegistroMedicamentos();
             rm.ShowDialog();
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -59,16 +67,17 @@ namespace LogClinic
             // Usamos el objeto global de Medicamentos para que el FrmRegistro los lea
             mSeleccionado.IdMedicamento = int.Parse(dtgDatos.Rows[e.RowIndex].Cells["id_medicamento"].Value.ToString());
             mSeleccionado.Nombre = dtgDatos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-            mSeleccionado.Descripcion = dtgDatos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+            mSeleccionado.Descripcion = dtgDatos.Rows[e.RowIndex].Cells["Descripción"].Value.ToString();
             mSeleccionado.Tipo = dtgDatos.Rows[e.RowIndex].Cells["Tipo"].Value.ToString();
-            mSeleccionado.Presentacion = dtgDatos.Rows[e.RowIndex].Cells["Presentacion"].Value.ToString();
-            mSeleccionado.Concentracion = dtgDatos.Rows[e.RowIndex].Cells["Concentracion"].Value.ToString();
+            mSeleccionado.Presentacion = dtgDatos.Rows[e.RowIndex].Cells["Presentación"].Value.ToString();
+            mSeleccionado.Concentracion = dtgDatos.Rows[e.RowIndex].Cells["Concentración"].Value.ToString();
             mSeleccionado.RequiereReceta = Convert.ToBoolean(dtgDatos.Rows[e.RowIndex].Cells["RequiereReceta"].Value);
             switch (e.ColumnIndex)
             {
                 case 1:
                     FrmRegistroMedicamentos rm = new FrmRegistroMedicamentos();
                     rm.ShowDialog();
+                    btnBuscar.PerformClick();
                     break;
                 case 2:
                     DialogResult result = MessageBox.Show("¿Está seguro de eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

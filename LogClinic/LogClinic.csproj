@@ -398,5 +398,8 @@
   <ItemGroup>
     <None Include="Resources\Tratamiento.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\cerrar_ventana.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

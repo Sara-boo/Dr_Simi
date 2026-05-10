@@ -169,6 +169,8 @@
             // 
             // dtgMedicamentos
             // 
+            this.dtgMedicamentos.AllowUserToAddRows = false;
+            this.dtgMedicamentos.AllowUserToDeleteRows = false;
             this.dtgMedicamentos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgMedicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgMedicamentos.Location = new System.Drawing.Point(96, 566);
