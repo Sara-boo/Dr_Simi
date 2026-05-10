@@ -90,6 +90,11 @@ namespace LogClinic
 
         private void BtnNuevaCita_Click(object sender, EventArgs e)
         {
+            cita.IdCita = 0;
+            cita.IdPaciente = 0;
+            cita.IdPersonal = 0;
+            cita.FechaHora = DateTime.MinValue;
+            cita.Estado = "";
             FrmRegristroCitas rc = new FrmRegristroCitas();
             rc.ShowDialog();
         }

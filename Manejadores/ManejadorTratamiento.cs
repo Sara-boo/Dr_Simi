@@ -17,8 +17,35 @@ namespace Manejadores
         Base b = new Base();
         public void MostrarAlergiasEnfermedades(string consulta, DataGridView tabla, string datos)
         {
+            tabla.DataSource = null;
             tabla.Columns.Clear();
+
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
+
+            tabla.EnableHeadersVisualStyles = false;
+
+            tabla.DefaultCellStyle.Font = new Font("Lucida Bright", 10, FontStyle.Regular);
+            tabla.Columns["alergias"].HeaderText = "Alergias";
+            tabla.Columns["enfermedades_cronicas"].HeaderText = "Enfermedades Crónicas";
+
+            // Estilo de los Encabezados (Azul Oscuro)
+            tabla.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 66, 91);
+            tabla.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            tabla.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(45, 66, 91);
+            tabla.ColumnHeadersDefaultCellStyle.Font = new Font("Javanese Text", 10, FontStyle.Bold);
+            tabla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            tabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            tabla.ColumnHeadersHeight = 40;
+
+            tabla.DefaultCellStyle.Font = new Font("Javanese Text", 9);
+            tabla.DefaultCellStyle.SelectionBackColor = Color.FromArgb(30, 144, 255);
+            tabla.DefaultCellStyle.SelectionForeColor = Color.White;
+            tabla.BackgroundColor = Color.White;
+            tabla.GridColor = Color.FromArgb(210, 210, 210);
+
+            tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tabla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tabla.RowHeadersVisible = false; // Ocultar la columna gris de la izquierda
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
@@ -48,13 +75,39 @@ namespace Manejadores
         }
         public void MostrarMedicamentos(List<DetalleTratamiento> lista, DataGridView Tabla)
         {
+            Tabla.DataSource = null;
             Tabla.Columns.Clear();
-            Tabla.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-            Tabla.DataSource = lista.ToList();
+
+            Tabla.DataSource=lista.ToList();
+
+            Tabla.EnableHeadersVisualStyles = false;
+
+            Tabla.DefaultCellStyle.Font = new Font("Lucida Bright", 10, FontStyle.Regular);
             Tabla.Columns["Id_detalle"].Visible = false;
             Tabla.Columns["Fkid_tratamiento"].Visible = false;
             Tabla.Columns["Fkid_medicamento"].Visible = false;
             Tabla.Columns["NombreParaMostrar"].HeaderText = "Medicamento";
+
+            // Estilo de los Encabezados (Azul Oscuro)
+            Tabla.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 66, 91);
+            Tabla.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            Tabla.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(45, 66, 91);
+            Tabla.ColumnHeadersDefaultCellStyle.Font = new Font("Javanese Text", 10, FontStyle.Bold);
+            Tabla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Tabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            Tabla.ColumnHeadersHeight = 40;
+
+            Tabla.DefaultCellStyle.Font = new Font("Javanese Text", 9);
+            Tabla.DefaultCellStyle.SelectionBackColor = Color.FromArgb(30, 144, 255);
+            Tabla.DefaultCellStyle.SelectionForeColor = Color.White;
+            Tabla.BackgroundColor = Color.White;
+            Tabla.GridColor = Color.FromArgb(210, 210, 210);
+
+            Tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Tabla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Tabla.RowHeadersVisible = false; // Ocultar la columna gris de la izquierda
+
+
             Tabla.Columns.Insert(8, Boton("-", Color.Red));
             Tabla.AutoResizeColumns();
             Tabla.AutoResizeRows();

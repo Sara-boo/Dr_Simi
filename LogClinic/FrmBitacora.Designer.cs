@@ -58,6 +58,7 @@
             this.Controls.Add(this.DtgDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBitacora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBitacora";
             this.Load += new System.EventHandler(this.FrmBitacora_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();

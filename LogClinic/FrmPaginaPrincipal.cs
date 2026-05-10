@@ -197,5 +197,16 @@ namespace LogClinic
             frmpacientes.Show();
             LblModulo.Text = "Pacientes";
         }
+
+        private void TsbBitacora_Click(object sender, EventArgs e)
+        {
+            md.Boton(sender, tsPrincipal, botonActivoActual);
+            md.CerrarFormulariosActivos(this);
+            PanelFondo.SendToBack();
+            FrmBitacora frmBitacora = new FrmBitacora();
+            frmBitacora.MdiParent = this;
+            frmBitacora.Show();
+            LblModulo.Text = "Bitácora";
+        }
     }
 }

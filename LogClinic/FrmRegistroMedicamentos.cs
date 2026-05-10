@@ -84,7 +84,7 @@ namespace LogClinic
                     mm.Modificar(med);
 
                     //Registrar en bitácora
-                    mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Modificó el medicamento: {med.Nombre} (ID: {med.IdMedicamento})");
+                    mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Modificó el medicamento: {med.Nombre}");
                     MessageBox.Show("Catálogo actualizado correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     FrmInventario.mSeleccionado.IdMedicamento = 0;

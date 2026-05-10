@@ -138,7 +138,7 @@ namespace LogClinic
                 mt.GuardarConsultaCompleta(this.idCitaRecibida, txtSintomas.Text, "Sin observaciones", listaDetalles,idMedico);
 
                 //Para la bitácora
-                mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, "Registró un nuevo tratamiento para el paciente");
+                mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Registró un nuevo tratamiento para el paciente {lblPaciente.Text}");
 
                 MessageBox.Show("El tratamiento y la receta se han registrado correctamente. El stock ha sido actualizado.",
                                 "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -155,6 +155,11 @@ namespace LogClinic
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmTratamiento_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
