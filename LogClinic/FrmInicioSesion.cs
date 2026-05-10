@@ -112,5 +112,15 @@ namespace LogClinic
         {
 
         }
+
+        private void PAzul_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmInicioSesion_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -79,7 +79,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(710, 118);
+            this.label3.Location = new System.Drawing.Point(752, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 50);
             this.label3.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(553, 178);
+            this.label5.Location = new System.Drawing.Point(573, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 50);
             this.label5.TabIndex = 7;
@@ -110,7 +110,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(808, 178);
+            this.label6.Location = new System.Drawing.Point(850, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(165, 50);
             this.label6.TabIndex = 8;
@@ -130,7 +130,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(847, 249);
+            this.label8.Location = new System.Drawing.Point(889, 249);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 50);
             this.label8.TabIndex = 10;
@@ -140,7 +140,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Bright", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(89, 401);
+            this.label9.Location = new System.Drawing.Point(89, 424);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(280, 29);
             this.label9.TabIndex = 11;
@@ -150,7 +150,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(56, 466);
+            this.label10.Location = new System.Drawing.Point(56, 489);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 50);
             this.label10.TabIndex = 12;
@@ -161,7 +161,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(720, 465);
+            this.label11.Location = new System.Drawing.Point(731, 489);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 50);
             this.label11.TabIndex = 13;
@@ -171,18 +171,19 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Javanese Text", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(720, 584);
+            this.label12.Location = new System.Drawing.Point(731, 601);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 50);
             this.label12.TabIndex = 14;
             this.label12.Text = "Correo";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // TxtNCompleto
             // 
             this.TxtNCompleto.Font = new System.Drawing.Font("Lucida Bright", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNCompleto.Location = new System.Drawing.Point(263, 123);
             this.TxtNCompleto.Name = "TxtNCompleto";
-            this.TxtNCompleto.Size = new System.Drawing.Size(390, 23);
+            this.TxtNCompleto.Size = new System.Drawing.Size(426, 23);
             this.TxtNCompleto.TabIndex = 15;
             this.TxtNCompleto.TextChanged += new System.EventHandler(this.TxtNCompleto_TextChanged);
             // 
@@ -190,9 +191,9 @@
             // 
             this.TxtCurp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtCurp.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
-            this.TxtCurp.Location = new System.Drawing.Point(832, 122);
+            this.TxtCurp.Location = new System.Drawing.Point(874, 122);
             this.TxtCurp.Name = "TxtCurp";
-            this.TxtCurp.Size = new System.Drawing.Size(312, 23);
+            this.TxtCurp.Size = new System.Drawing.Size(329, 23);
             this.TxtCurp.TabIndex = 16;
             this.TxtCurp.TextChanged += new System.EventHandler(this.TxtCurp_TextChanged);
             // 
@@ -202,45 +203,45 @@
             this.TxtECronicas.Location = new System.Drawing.Point(106, 288);
             this.TxtECronicas.Multiline = true;
             this.TxtECronicas.Name = "TxtECronicas";
-            this.TxtECronicas.Size = new System.Drawing.Size(516, 81);
+            this.TxtECronicas.Size = new System.Drawing.Size(583, 102);
             this.TxtECronicas.TabIndex = 17;
             this.TxtECronicas.TextChanged += new System.EventHandler(this.TxtECronicas_TextChanged);
             // 
             // TxtAlergias
             // 
             this.TxtAlergias.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
-            this.TxtAlergias.Location = new System.Drawing.Point(679, 288);
+            this.TxtAlergias.Location = new System.Drawing.Point(721, 288);
             this.TxtAlergias.Multiline = true;
             this.TxtAlergias.Name = "TxtAlergias";
-            this.TxtAlergias.Size = new System.Drawing.Size(456, 81);
+            this.TxtAlergias.Size = new System.Drawing.Size(473, 102);
             this.TxtAlergias.TabIndex = 18;
             this.TxtAlergias.TextChanged += new System.EventHandler(this.TxtAlergias_TextChanged);
             // 
             // TxtDirreccion
             // 
             this.TxtDirreccion.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
-            this.TxtDirreccion.Location = new System.Drawing.Point(106, 521);
+            this.TxtDirreccion.Location = new System.Drawing.Point(106, 544);
             this.TxtDirreccion.Multiline = true;
             this.TxtDirreccion.Name = "TxtDirreccion";
-            this.TxtDirreccion.Size = new System.Drawing.Size(551, 133);
+            this.TxtDirreccion.Size = new System.Drawing.Size(583, 154);
             this.TxtDirreccion.TabIndex = 19;
             this.TxtDirreccion.TextChanged += new System.EventHandler(this.TxtDirreccion_TextChanged);
             // 
             // TxtTelefono
             // 
             this.TxtTelefono.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
-            this.TxtTelefono.Location = new System.Drawing.Point(745, 520);
+            this.TxtTelefono.Location = new System.Drawing.Point(761, 543);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(399, 23);
+            this.TxtTelefono.Size = new System.Drawing.Size(442, 23);
             this.TxtTelefono.TabIndex = 20;
             this.TxtTelefono.TextChanged += new System.EventHandler(this.TxtTelefono_TextChanged);
             // 
             // TxtCorreo
             // 
             this.TxtCorreo.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
-            this.TxtCorreo.Location = new System.Drawing.Point(772, 631);
+            this.TxtCorreo.Location = new System.Drawing.Point(761, 654);
             this.TxtCorreo.Name = "TxtCorreo";
-            this.TxtCorreo.Size = new System.Drawing.Size(372, 23);
+            this.TxtCorreo.Size = new System.Drawing.Size(442, 23);
             this.TxtCorreo.TabIndex = 21;
             this.TxtCorreo.TextChanged += new System.EventHandler(this.TxtCorreo_TextChanged);
             // 
@@ -248,9 +249,9 @@
             // 
             this.CmbSexo.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.CmbSexo.FormattingEnabled = true;
-            this.CmbSexo.Location = new System.Drawing.Point(628, 192);
+            this.CmbSexo.Location = new System.Drawing.Point(670, 192);
             this.CmbSexo.Name = "CmbSexo";
-            this.CmbSexo.Size = new System.Drawing.Size(148, 23);
+            this.CmbSexo.Size = new System.Drawing.Size(165, 23);
             this.CmbSexo.TabIndex = 22;
             this.CmbSexo.SelectedIndexChanged += new System.EventHandler(this.CmbSexo_SelectedIndexChanged);
             // 
@@ -258,7 +259,7 @@
             // 
             this.DtpFNacimiento.Location = new System.Drawing.Point(283, 190);
             this.DtpFNacimiento.Name = "DtpFNacimiento";
-            this.DtpFNacimiento.Size = new System.Drawing.Size(247, 22);
+            this.DtpFNacimiento.Size = new System.Drawing.Size(264, 22);
             this.DtpFNacimiento.TabIndex = 23;
             this.DtpFNacimiento.ValueChanged += new System.EventHandler(this.DtpFNacimiento_ValueChanged);
             // 
@@ -266,9 +267,9 @@
             // 
             this.CmbTSangre.Font = new System.Drawing.Font("Lucida Bright", 7.8F);
             this.CmbTSangre.FormattingEnabled = true;
-            this.CmbTSangre.Location = new System.Drawing.Point(987, 190);
+            this.CmbTSangre.Location = new System.Drawing.Point(1029, 190);
             this.CmbTSangre.Name = "CmbTSangre";
-            this.CmbTSangre.Size = new System.Drawing.Size(134, 23);
+            this.CmbTSangre.Size = new System.Drawing.Size(143, 23);
             this.CmbTSangre.TabIndex = 24;
             this.CmbTSangre.SelectedIndexChanged += new System.EventHandler(this.CmbTSangre_SelectedIndexChanged);
             // 
@@ -276,9 +277,9 @@
             // 
             this.BntGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(230)))), ((int)(((byte)(201)))));
             this.BntGuardar.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BntGuardar.Location = new System.Drawing.Point(493, 684);
+            this.BntGuardar.Location = new System.Drawing.Point(482, 751);
             this.BntGuardar.Name = "BntGuardar";
-            this.BntGuardar.Size = new System.Drawing.Size(110, 41);
+            this.BntGuardar.Size = new System.Drawing.Size(127, 43);
             this.BntGuardar.TabIndex = 25;
             this.BntGuardar.Text = "Guardar";
             this.BntGuardar.UseVisualStyleBackColor = false;
@@ -288,9 +289,9 @@
             // 
             this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.BtnCancelar.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(745, 684);
+            this.BtnCancelar.Location = new System.Drawing.Point(787, 751);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(110, 41);
+            this.BtnCancelar.Size = new System.Drawing.Size(127, 43);
             this.BtnCancelar.TabIndex = 26;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
@@ -301,7 +302,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(1199, 737);
+            this.ClientSize = new System.Drawing.Size(1274, 806);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BntGuardar);
             this.Controls.Add(this.CmbTSangre);
@@ -328,7 +329,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRegistroPacientes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmRegistroPacientes";
             this.Load += new System.EventHandler(this.FrmRegistroPacientes_Load);
             this.ResumeLayout(false);

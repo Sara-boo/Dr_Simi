@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 82);
+            this.label1.Location = new System.Drawing.Point(179, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 52);
             this.label1.TabIndex = 0;
@@ -48,10 +48,10 @@
             // 
             // TxtBuscador
             // 
-            this.TxtBuscador.Location = new System.Drawing.Point(296, 91);
+            this.TxtBuscador.Location = new System.Drawing.Point(428, 135);
             this.TxtBuscador.Multiline = true;
             this.TxtBuscador.Name = "TxtBuscador";
-            this.TxtBuscador.Size = new System.Drawing.Size(781, 31);
+            this.TxtBuscador.Size = new System.Drawing.Size(497, 31);
             this.TxtBuscador.TabIndex = 1;
             // 
             // BtnBuscar
@@ -60,7 +60,7 @@
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnBuscar.Location = new System.Drawing.Point(1122, 86);
+            this.BtnBuscar.Location = new System.Drawing.Point(954, 122);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(106, 44);
             this.BtnBuscar.TabIndex = 2;
@@ -75,7 +75,7 @@
             this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnAgregar.Location = new System.Drawing.Point(1244, 86);
+            this.BtnAgregar.Location = new System.Drawing.Point(1091, 122);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(60, 44);
             this.BtnAgregar.TabIndex = 3;
@@ -87,11 +87,11 @@
             // DtgDatosPersonal
             // 
             this.DtgDatosPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatosPersonal.Location = new System.Drawing.Point(56, 168);
+            this.DtgDatosPersonal.Location = new System.Drawing.Point(188, 203);
             this.DtgDatosPersonal.Name = "DtgDatosPersonal";
             this.DtgDatosPersonal.RowHeadersWidth = 51;
             this.DtgDatosPersonal.RowTemplate.Height = 24;
-            this.DtgDatosPersonal.Size = new System.Drawing.Size(1250, 594);
+            this.DtgDatosPersonal.Size = new System.Drawing.Size(963, 500);
             this.DtgDatosPersonal.TabIndex = 4;
             this.DtgDatosPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatosPersonal_CellContentClick);
             // 
@@ -100,7 +100,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 45F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(1382, 835);
+            this.ClientSize = new System.Drawing.Size(1447, 850);
             this.Controls.Add(this.DtgDatosPersonal);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnBuscar);
@@ -110,6 +110,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.Name = "FrmPersonal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPersonal";
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatosPersonal)).EndInit();
             this.ResumeLayout(false);

@@ -68,6 +68,7 @@
             this.PAzul.Name = "PAzul";
             this.PAzul.Size = new System.Drawing.Size(600, 120);
             this.PAzul.TabIndex = 16;
+            this.PAzul.Paint += new System.Windows.Forms.PaintEventHandler(this.PAzul_Paint);
             // 
             // label4
             // 
@@ -327,6 +328,7 @@
             this.Name = "FrmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIAR SESION";
+            this.Load += new System.EventHandler(this.FrmInicioSesion_Load_1);
             this.PAzul.ResumeLayout(false);
             this.PAzul.PerformLayout();
             this.PanelPrincipal.ResumeLayout(false);
