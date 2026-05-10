@@ -46,7 +46,7 @@ namespace Manejadores
             dgv.MultiSelect = false;
 
             //Colores y bordes generales
-            dgv.BorderStyle = BorderStyle.FixedSingle;
+            dgv.BorderStyle = BorderStyle.None;
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single; // Solo líneas horizontales
             dgv.GridColor = Color.LightGray; // Color de las líneas divisorias 
 
@@ -55,14 +55,14 @@ namespace Manejadores
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             dgv.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#EDF3F5");
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Lucida Bright", 13F, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Lucida Bright", 18F, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.ColumnHeadersHeight = 45;
 
             //Estilo de las filas
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
-            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 12F, FontStyle.Regular);
+            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 16F, FontStyle.Regular);
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             //Altura de las filas

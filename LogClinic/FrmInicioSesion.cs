@@ -21,6 +21,7 @@ namespace LogClinic
         bool mostrarClave = false;
         public static int IdUsuarioLogueado;
         public static string NombreUsuarioLogueado;
+        public static string RolUsuarioLogueado;
         public FrmInicioSesion()
         {
             InitializeComponent();
@@ -29,8 +30,10 @@ namespace LogClinic
             md.QuitarBordesBotones(BtnSalir);
             md.QuitarBordesBotones(BtnVer);
             md.QuitarBordesBotones(BtnNoVer);
-            md.EstilizarTextBox(TxtClave, "CCECEE", "14967F");
-            md.EstilizarTextBox(TxtUsuario, "CCECEE", "14967F");
+            md.RedondearPanel(PanelPrincipal,11);
+            md.RedondearBoton(BtnIngresar, 11);
+            md.RedondearTextBox(TxtUsuario, 11);
+            md.RedondearTextBox(TxtClave, 11);
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -45,15 +48,18 @@ namespace LogClinic
                 MessageBox.Show("Por favor, complete todos los campos.", "¡CAMPOS VACÍOS!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; 
             }
-           
+
             if (ml.Validar(TxtUsuario, TxtClave))
             {
                 DataRow datos = ml.ObtenerDatosCompletos(TxtUsuario.Text);
-                if(datos != null)
+
+                if (datos != null) 
                 {
                     IdUsuarioLogueado = int.Parse(datos["id_usuario"].ToString());
                     NombreUsuarioLogueado = datos["nombre_completo"].ToString();
+                    RolUsuarioLogueado = datos["rol"].ToString(); // ¡Desbloqueado!
                 }
+
                 FrmPaginaPrincipal pp = new FrmPaginaPrincipal(TxtUsuario.Text);
                 pp.Show();
                 this.Hide();

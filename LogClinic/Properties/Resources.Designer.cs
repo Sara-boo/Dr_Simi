@@ -243,6 +243,16 @@ namespace LogClinic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondo_textura {
+            get {
+                object obj = ResourceManager.GetObject("fondo_textura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Historial {
             get {
                 object obj = ResourceManager.GetObject("Historial", resourceCulture);
@@ -313,6 +323,26 @@ namespace LogClinic.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_circulo {
+            get {
+                object obj = ResourceManager.GetObject("logo_circulo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marca_agua {
+            get {
+                object obj = ResourceManager.GetObject("marca_agua", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MiniminarVentana {
             get {
                 object obj = ResourceManager.GetObject("MiniminarVentana", resourceCulture);
@@ -326,6 +356,16 @@ namespace LogClinic.Properties {
         internal static System.Drawing.Bitmap Pacientes {
             get {
                 object obj = ResourceManager.GetObject("Pacientes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pacientes_2 {
+            get {
+                object obj = ResourceManager.GetObject("pacientes_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

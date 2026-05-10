@@ -134,7 +134,7 @@ INNER JOIN tbl_medicamentos med ON inv.fkid_medicamento = med.id_medicamento
 LEFT JOIN tbl_usuarios u ON mov.fkid_usuario = u.id_usuario;
 
 
-
+--Vista para mostrar inventario --
 CREATE OR REPLACE VIEW v_inventario AS
 SELECT 
     i.id_inventario, 
@@ -169,3 +169,29 @@ BEGIN
     VALUES (p_id_inventario, p_tipo_mov, p_cantidad, p_motivo, p_id_usuario);
 END $$
 DELIMITER ;
+
+--VISTA PARA LA BITÁCORA --
+CREATE OR REPLACE VIEW v_bitacora AS 
+SELECT 
+    b.fkid_usuario, 
+    u.nombre_completo AS 'Usuario',
+    b.accion AS 'Acción Realizada', 
+    b.fecha AS 'Fecha y Hora'
+FROM tbl_bitacora b 
+INNER JOIN v_NombreUsuario u ON b.fkid_usuario = u.id_usuario 
+ORDER BY b.fecha DESC;
+
+SELECT * FROM v_bitacora;
+
+--MODIFIQUÉ LA VISTA DE VALERIA V_NombreUsuario 
+CREATE OR REPLACE VIEW v_NombreUsuario AS
+SELECT 
+    u.id_usuario, 
+    u.username,
+    CONCAT(p.nombre, ' ', p.apellido) AS nombre_completo,
+    r.nombre_rol AS rol 
+FROM tbl_usuarios u
+INNER JOIN tbl_personal p ON u.fkid_personal = p.id_personal
+INNER JOIN tbl_roles r ON p.fkid_rol = r.id_rol;
+
+

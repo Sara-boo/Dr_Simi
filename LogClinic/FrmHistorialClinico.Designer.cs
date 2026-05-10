@@ -65,19 +65,19 @@
             this.TxtBuscarPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.TxtBuscarPaciente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtBuscarPaciente.Font = new System.Drawing.Font("Lucida Bright", 14F);
-            this.TxtBuscarPaciente.Location = new System.Drawing.Point(40, 55);
+            this.TxtBuscarPaciente.Location = new System.Drawing.Point(34, 55);
             this.TxtBuscarPaciente.Multiline = true;
             this.TxtBuscarPaciente.Name = "TxtBuscarPaciente";
-            this.TxtBuscarPaciente.Size = new System.Drawing.Size(377, 44);
+            this.TxtBuscarPaciente.Size = new System.Drawing.Size(476, 44);
             this.TxtBuscarPaciente.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Bright", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(30, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(340, 23);
+            this.label3.Size = new System.Drawing.Size(402, 28);
             this.label3.TabIndex = 14;
             this.label3.Text = "Buscar Paciente (Ingrese la CURP)";
             // 
@@ -101,7 +101,7 @@
             this.groupBox1.Controls.Add(this.LblNombre);
             this.groupBox1.Location = new System.Drawing.Point(12, 119);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1141, 93);
+            this.groupBox1.Size = new System.Drawing.Size(1349, 93);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
@@ -109,7 +109,7 @@
             // 
             this.pictureBox5.BackgroundImage = global::LogClinic.Properties.Resources.EnfCronicas_s;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(936, 61);
+            this.pictureBox5.Location = new System.Drawing.Point(1057, 59);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(25, 22);
             this.pictureBox5.TabIndex = 32;
@@ -119,7 +119,7 @@
             // 
             this.pictureBox4.BackgroundImage = global::LogClinic.Properties.Resources.Alergias_s;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(751, 61);
+            this.pictureBox4.Location = new System.Drawing.Point(839, 59);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 22);
             this.pictureBox4.TabIndex = 31;
@@ -129,7 +129,7 @@
             // 
             this.pictureBox3.BackgroundImage = global::LogClinic.Properties.Resources.Sangre_s;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(578, 59);
+            this.pictureBox3.Location = new System.Drawing.Point(593, 59);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 22);
             this.pictureBox3.TabIndex = 30;
@@ -139,7 +139,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::LogClinic.Properties.Resources.edad_s;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(303, 59);
+            this.pictureBox2.Location = new System.Drawing.Point(356, 59);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 22);
             this.pictureBox2.TabIndex = 29;
@@ -159,7 +159,7 @@
             // 
             this.LblIdPaciente.AutoSize = true;
             this.LblIdPaciente.Enabled = false;
-            this.LblIdPaciente.Location = new System.Drawing.Point(293, 17);
+            this.LblIdPaciente.Location = new System.Drawing.Point(236, 17);
             this.LblIdPaciente.Name = "LblIdPaciente";
             this.LblIdPaciente.Size = new System.Drawing.Size(25, 20);
             this.LblIdPaciente.TabIndex = 27;
@@ -168,88 +168,99 @@
             // LblEnfCronicas
             // 
             this.LblEnfCronicas.AutoSize = true;
+            this.LblEnfCronicas.Font = new System.Drawing.Font("Lucida Bright", 14F);
             this.LblEnfCronicas.ForeColor = System.Drawing.Color.DimGray;
-            this.LblEnfCronicas.Location = new System.Drawing.Point(963, 61);
+            this.LblEnfCronicas.Location = new System.Drawing.Point(1084, 59);
             this.LblEnfCronicas.Name = "LblEnfCronicas";
-            this.LblEnfCronicas.Size = new System.Drawing.Size(0, 20);
+            this.LblEnfCronicas.Size = new System.Drawing.Size(123, 22);
             this.LblEnfCronicas.TabIndex = 26;
+            this.LblEnfCronicas.Text = "enf.cronicas";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Lucida Bright", 16F);
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(565, 13);
+            this.label9.Location = new System.Drawing.Point(586, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 20);
+            this.label9.Size = new System.Drawing.Size(169, 24);
             this.label9.TabIndex = 25;
             this.label9.Text = "Tipo de sangre";
             // 
             // LblSangre
             // 
             this.LblSangre.AutoSize = true;
+            this.LblSangre.Font = new System.Drawing.Font("Lucida Bright", 14F);
             this.LblSangre.ForeColor = System.Drawing.Color.DimGray;
-            this.LblSangre.Location = new System.Drawing.Point(604, 61);
+            this.LblSangre.Location = new System.Drawing.Point(624, 59);
             this.LblSangre.Name = "LblSangre";
-            this.LblSangre.Size = new System.Drawing.Size(0, 20);
+            this.LblSangre.Size = new System.Drawing.Size(72, 22);
             this.LblSangre.TabIndex = 24;
+            this.LblSangre.Text = "sangre";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Bright", 16F);
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(763, 13);
+            this.label7.Location = new System.Drawing.Point(851, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 20);
+            this.label7.Size = new System.Drawing.Size(94, 24);
             this.label7.TabIndex = 23;
             this.label7.Text = "Alergias";
             // 
             // LblAlergias
             // 
             this.LblAlergias.AutoSize = true;
+            this.LblAlergias.Font = new System.Drawing.Font("Lucida Bright", 14F);
             this.LblAlergias.ForeColor = System.Drawing.Color.DimGray;
-            this.LblAlergias.Location = new System.Drawing.Point(778, 61);
+            this.LblAlergias.Location = new System.Drawing.Point(866, 59);
             this.LblAlergias.Name = "LblAlergias";
-            this.LblAlergias.Size = new System.Drawing.Size(0, 20);
+            this.LblAlergias.Size = new System.Drawing.Size(74, 22);
             this.LblAlergias.TabIndex = 22;
+            this.LblAlergias.Text = "alergia";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Bright", 16F);
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(941, 13);
+            this.label5.Location = new System.Drawing.Point(1062, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 20);
+            this.label5.Size = new System.Drawing.Size(259, 24);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Enf. Crónicas";
+            this.label5.Text = "Enfermedades Crónicas";
             // 
             // LblCurp
             // 
             this.LblCurp.AutoSize = true;
-            this.LblCurp.Font = new System.Drawing.Font("Lucida Bright", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCurp.Font = new System.Drawing.Font("Lucida Bright", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCurp.ForeColor = System.Drawing.Color.DimGray;
-            this.LblCurp.Location = new System.Drawing.Point(64, 61);
+            this.LblCurp.Location = new System.Drawing.Point(68, 61);
             this.LblCurp.Name = "LblCurp";
-            this.LblCurp.Size = new System.Drawing.Size(54, 20);
+            this.LblCurp.Size = new System.Drawing.Size(60, 22);
             this.LblCurp.TabIndex = 20;
             this.LblCurp.Text = "CURP";
             // 
             // LblEdad
             // 
             this.LblEdad.AutoSize = true;
+            this.LblEdad.Font = new System.Drawing.Font("Lucida Bright", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEdad.ForeColor = System.Drawing.Color.DimGray;
-            this.LblEdad.Location = new System.Drawing.Point(330, 61);
+            this.LblEdad.Location = new System.Drawing.Point(387, 59);
             this.LblEdad.Name = "LblEdad";
-            this.LblEdad.Size = new System.Drawing.Size(49, 20);
+            this.LblEdad.Size = new System.Drawing.Size(56, 22);
             this.LblEdad.TabIndex = 19;
             this.LblEdad.Text = "Edad";
             // 
             // LblNombre
             // 
             this.LblNombre.AutoSize = true;
-            this.LblNombre.Font = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNombre.Font = new System.Drawing.Font("Lucida Bright", 16F);
+            this.LblNombre.ForeColor = System.Drawing.Color.DimGray;
             this.LblNombre.Location = new System.Drawing.Point(18, 13);
             this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(97, 24);
+            this.LblNombre.Size = new System.Drawing.Size(96, 24);
             this.LblNombre.TabIndex = 18;
             this.LblNombre.Text = "Nombre";
             // 
@@ -287,7 +298,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DtgDatos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DtgDatos.RowHeadersVisible = false;
-            this.DtgDatos.Size = new System.Drawing.Size(1145, 344);
+            this.DtgDatos.Size = new System.Drawing.Size(1338, 440);
             this.DtgDatos.TabIndex = 18;
             this.DtgDatos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DtgDatos_CellFormatting);
             // 
@@ -297,9 +308,11 @@
             this.BtnBuscar.BackgroundImage = global::LogClinic.Properties.Resources.Buscar;
             this.BtnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscar.Location = new System.Drawing.Point(423, 55);
+            this.BtnBuscar.FlatAppearance.BorderSize = 0;
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Location = new System.Drawing.Point(516, 48);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(52, 44);
+            this.BtnBuscar.Size = new System.Drawing.Size(58, 58);
             this.BtnBuscar.TabIndex = 16;
             this.BtnBuscar.UseVisualStyleBackColor = false;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
@@ -309,7 +322,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(1166, 587);
+            this.ClientSize = new System.Drawing.Size(1376, 687);
             this.Controls.Add(this.DtgDatos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnBuscar);

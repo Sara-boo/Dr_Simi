@@ -15,6 +15,7 @@ namespace LogClinic
     public partial class FrmUsuarios : Form
     {
         ManejadorUsuarios mu;
+        ManejadorBitacora mb;
         public FrmUsuarios()
         {
             InitializeComponent();
@@ -54,6 +55,9 @@ namespace LogClinic
 
                     if (resultado == "Insertado")
                     {
+                        //Para la bitácora
+                        mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Registró un nuevo usuario: {TxtNombre.Text}");
+
                         MessageBox.Show("¡Usuario registrado exitosamente!", "Éxito", MessageBoxButtons.OK,MessageBoxIcon.Information);
                         Close();
                     }
@@ -74,6 +78,7 @@ namespace LogClinic
                         activo,
                         FrmVerUsuarios.usuario.IdPersonal 
                     ));
+                    mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Actualizó el usuario: {TxtNombre.Text}");
 
                     MessageBox.Show("¡Usuario actualizado exitosamente!", "Éxito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -73,52 +73,30 @@ namespace Manejadores
             MiBoton.DefaultCellStyle.ForeColor = Color.White;
             return MiBoton;
         }
-        /*public void GuardarTratamiento(Tratamiento cabecera, List<DetalleTratamiento> detalles)
-        {
-            try
-            {
-                string sqlCabecera = $"INSERT INTO tbl_tratamiento (fkid_historial,descripcion_sintomas,fkid_usuario) VALUES ({cabecera.Fkid_historial},'{cabecera.Descripcion}',{cabecera.Fkid_usuario})";
-                b.Comando(sqlCabecera, true);
-
-                DataSet dsId= b.Consultar("SELECT LAST_INSERT_ID() AS id_tratamiento", "temp",true);
-                int idTratamiento= int.Parse(dsId.Tables[0].Rows[0]["id_tratamiento"].ToString());
-
-                foreach(var item in detalles)
-                {
-                    string sqlDetalle = $"INSERT INTO tbl_detalle_tratamiento (fkid_tratamiento,fkid_medicamento,cantidad,dosis,frecuencia,duracion) VALUES ({idTratamiento},{item.Fkid_medicamento},{item.Cantidad},'{item.Dosis}','{item.Frecuencia}','{item.Duracion}')";
-                    b.Comando(sqlDetalle, true);
-
-                    string sqlSalida= $"CALL p_registrar_salida_inventario({item.Fkid_medicamento}, {item.Cantidad}, {cabecera.Fkid_usuario}, 'Receta Médica - Tratamiento #{idTratamiento}')";
-                    b.Comando(sqlSalida, true);
-
-                    b.Consultar("SELECT 1", "temp", false);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocurrió un error al guardar el tratamiento. Por favor, inténtelo de nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }*/
         public void GuardarConsultaCompleta(int idCita, string diag, string obs, List<DetalleTratamiento> lista, int idMed)
         {
+            b.Comando($"UPDATE tbl_citas SET estado = 'Atendida' WHERE id_cita = {idCita}", true);
+
             // 1. Historial
             b.Comando($"INSERT INTO tbl_historial_clinico (fkid_cita, diagnostico, observaciones) VALUES ({idCita}, '{diag}', '{obs}')", true);
             int idH = int.Parse(b.Consultar("SELECT LAST_INSERT_ID()", "h", true).Tables[0].Rows[0][0].ToString());
 
-            // 2. Tratamiento (Usando el idMed que recibimos)
-            b.Comando($"INSERT INTO tbl_tratamiento (fkid_historial, fkid_usuario) VALUES ({idH}, {idMed})", true);
+            // 2. Tratamiento
+            b.Comando($"INSERT INTO tbl_tratamiento (fkid_historial, fkid_usuario, descripcion_sintomas) VALUES ({idH}, {idMed}, '{diag}')", true);
             int idT = int.Parse(b.Consultar("SELECT LAST_INSERT_ID()", "t", true).Tables[0].Rows[0][0].ToString());
 
-            // 3. Detalles y Movimientos
+            // 3. Detalles (Foreach que ya tenías corregido)
             foreach (var d in lista)
             {
-                b.Comando($"INSERT INTO tbl_detalle_tratamiento ... VALUES ({idT}, {d.Fkid_medicamento}, ...)", true);
+                string sqlDetalle = $@"INSERT INTO tbl_detalle_tratamiento 
+            (fkid_tratamiento, fkid_medicamento, cantidad, dosis, frecuencia, duracion) 
+            VALUES ({idT}, {d.Fkid_medicamento}, {d.Cantidad}, '{d.Dosis}', '{d.Frecuencia}', '{d.Duracion}')";
 
-                // El movimiento de inventario también queda amarrado al médico
+                b.Comando(sqlDetalle, true);
                 b.Comando($"CALL p_registrar_salida_inventario({d.Fkid_medicamento}, {d.Cantidad}, {idMed}, 'Venta')", true);
             }
 
-            // Cerramos
+            // Cierre
             b.Consultar("SELECT 1", "dual", false);
         }
     }

@@ -90,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora.cs" />
     <Compile Include="Citas.cs" />
     <Compile Include="DetalleTratamiento.cs" />
     <Compile Include="HistorialClinico.cs" />

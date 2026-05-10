@@ -198,5 +198,51 @@ namespace Manejadores
                 tsBoton = boton;
             }
         }
+        public void RedondearPanel(Panel panel, int radio)
+        {
+            panel.BorderStyle = BorderStyle.None;
+
+            //ruta (path) para el rectángulo con bordes redondeados
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+
+            // Esquina superior izquierda
+            path.AddArc(new Rectangle(0, 0, radio, radio), 180, 90);
+            // Esquina superior derecha
+            path.AddArc(new Rectangle(panel.Width - radio, 0, radio, radio), -90, 90);
+            // Esquina inferior derecha
+            path.AddArc(new Rectangle(panel.Width - radio, panel.Height - radio, radio, radio), 0, 90);
+            // Esquina inferior izquierda
+            path.AddArc(new Rectangle(0, panel.Height - radio, radio, radio), 90, 90);
+            path.CloseFigure();
+
+            //panel que su nueva forma es esta región recortada
+            panel.Region = new Region(path);
+        }
+        public void RedondearBoton(Button boton, int radio)
+        {
+            boton.FlatStyle = FlatStyle.Flat;
+            boton.FlatAppearance.BorderSize = 0;
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radio, radio), 180, 90);
+            path.AddArc(new Rectangle(boton.Width - radio, 0, radio, radio), -90, 90);
+            path.AddArc(new Rectangle(boton.Width - radio, boton.Height - radio, radio, radio), 0, 90);
+            path.AddArc(new Rectangle(0, boton.Height - radio, radio, radio), 90, 90);
+            path.CloseFigure();
+            boton.Region = new Region(path);
+        }
+        public void RedondearTextBox(TextBox textBox, int radio)
+        {
+            textBox.BorderStyle = BorderStyle.None;
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radio, radio), 180, 90);
+            path.AddArc(new Rectangle(textBox.Width - radio, 0, radio, radio), -90, 90);
+            path.AddArc(new Rectangle(textBox.Width - radio, textBox.Height - radio, radio, radio), 0, 90);
+            path.AddArc(new Rectangle(0, textBox.Height - radio, radio, radio), 90, 90); path.CloseFigure();
+            path.CloseFigure();
+            textBox.Region = new Region(path);
+        }
     }
 }

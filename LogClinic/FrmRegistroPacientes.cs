@@ -10,11 +10,13 @@ namespace LogClinic
     public partial class FrmRegistroPacientes : Form
     {
         ManejadorRPaciente mp;
+        ManejadorBitacora mb;
 
         public FrmRegistroPacientes()
         {
             InitializeComponent();
             mp = new ManejadorRPaciente();
+            mb = new ManejadorBitacora();
 
             CmbSexo.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbTSangre.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -66,11 +68,19 @@ namespace LogClinic
                 Correo = TxtCorreo.Text
             };
 
-            if (FrmPacientes.paciente.IdPaciente == 0) mp.Guardar(p);
+            if (FrmPacientes.paciente.IdPaciente == 0)
+            {
+                mp.Guardar(p);
+
+                //Registro para la bitácora
+                mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Registó al paciente: {p.NombreCompleto}");
+            }
             else
             {
                 p.IdPaciente = FrmPacientes.paciente.IdPaciente;
                 mp.Modificar(p);
+                mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Modificó al paciente: {p.NombreCompleto}");
+                MessageBox.Show("Paciente modificado con éxito", "Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Close();
         }

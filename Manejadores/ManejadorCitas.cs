@@ -27,6 +27,10 @@ namespace Manejadores
         {
             b.Comando($"CALL p_editar_cita({cita.IdCita},{cita.IdPaciente},{cita.IdPersonal},'{cita.FechaHora:yyyy-MM-dd HH:mm:ss}','{cita.Estado}');");
         }
+        public DataSet Consultar(string consulta, string datos)
+        {
+            return b.Consultar(consulta, datos);
+        }
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
@@ -40,9 +44,16 @@ namespace Manejadores
             tabla.Columns.Insert(9, Boton("Atender", Color.LightGray));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
+        }
+        public void MostrarIS(string consulta, DataGridView tabla, string datos)
+        {
+            tabla.Columns.Clear();
+            tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
+            tabla.AutoResizeColumns();
+            tabla.AutoResizeRows();
 
         }
-       
+
         public DataRow BuscarCurp(string curp)
         {
             DataTable dt = b.Consultar($"SELECT id_paciente, nombre_completo, fecha_nacimiento, tipo_sangre, alergias, enfermedades_cronicas FROM tbl_pacientes WHERE curp = '{curp}'", "tbl_pacientes").Tables[0];
@@ -82,7 +93,7 @@ namespace Manejadores
             dgv.MultiSelect = false;
 
             //Colores y bordes generales
-            dgv.BorderStyle = BorderStyle.FixedSingle;
+            dgv.BorderStyle = BorderStyle.None;
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal; // Solo líneas horizontales
             dgv.GridColor = ColorTranslator.FromHtml("#B4B2B2"); // Color de las líneas divisorias 
 
@@ -90,14 +101,14 @@ namespace Manejadores
             dgv.EnableHeadersVisualStyles = false;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Lucida Bright", 14F, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Lucida Bright", 18F, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.ColumnHeadersHeight = 45;
 
             //Estilo de las filas
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
-            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 12F, FontStyle.Regular);
+            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 16F, FontStyle.Regular);
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             //Altura de las filas
