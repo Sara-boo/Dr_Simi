@@ -43,6 +43,7 @@
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnOcultarVentana = new System.Windows.Forms.Button();
             this.pbUsuario = new System.Windows.Forms.PictureBox();
+            this.LblModulo = new System.Windows.Forms.Label();
             this.tsPrincipal.SuspendLayout();
             this.pSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
@@ -76,6 +77,7 @@
             // pSuperior
             // 
             this.pSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(93)))), ((int)(((byte)(126)))));
+            this.pSuperior.Controls.Add(this.LblModulo);
             this.pSuperior.Controls.Add(this.BtnCerrar);
             this.pSuperior.Controls.Add(this.BtnOcultarVentana);
             this.pSuperior.Controls.Add(this.LblUsuarioActivo);
@@ -91,11 +93,11 @@
             // 
             this.LblUsuarioActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblUsuarioActivo.AutoSize = true;
-            this.LblUsuarioActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuarioActivo.Font = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuarioActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
             this.LblUsuarioActivo.Location = new System.Drawing.Point(1026, 28);
             this.LblUsuarioActivo.Name = "LblUsuarioActivo";
-            this.LblUsuarioActivo.Size = new System.Drawing.Size(68, 20);
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(99, 24);
             this.LblUsuarioActivo.TabIndex = 3;
             this.LblUsuarioActivo.Text = "Usuario.";
             // 
@@ -242,6 +244,17 @@
             this.pbUsuario.TabIndex = 5;
             this.pbUsuario.TabStop = false;
             // 
+            // LblModulo
+            // 
+            this.LblModulo.AutoSize = true;
+            this.LblModulo.Font = new System.Drawing.Font("Lucida Bright", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblModulo.ForeColor = System.Drawing.Color.White;
+            this.LblModulo.Location = new System.Drawing.Point(94, 22);
+            this.LblModulo.Name = "LblModulo";
+            this.LblModulo.Size = new System.Drawing.Size(151, 40);
+            this.LblModulo.TabIndex = 8;
+            this.LblModulo.Text = "Modulo";
+            // 
             // FrmPaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,5 +297,6 @@
         private System.Windows.Forms.Label LblUsuarioActivo;
         private System.Windows.Forms.PictureBox pbUsuario;
         private System.Windows.Forms.ToolStripButton tsbPacientes;
+        private System.Windows.Forms.Label LblModulo;
     }
 }
