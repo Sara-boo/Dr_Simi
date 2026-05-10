@@ -42,6 +42,15 @@ namespace LogClinic
         {
             try
             {
+                if(string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                   string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
+                   string.IsNullOrWhiteSpace(cmbTipo.Text) ||
+                   string.IsNullOrWhiteSpace(txtPresentacion.Text) ||
+                   string.IsNullOrWhiteSpace(txtConcentracion.Text))
+                {
+                    MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 Medicamentos med = new Medicamentos(
                     FrmInventario.mSeleccionado.IdMedicamento,
                     txtNombre.Text,
@@ -73,6 +82,7 @@ namespace LogClinic
                 else
                 {
                     mm.Modificar(med);
+
                     //Registrar en bitácora
                     mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Modificó el medicamento: {med.Nombre} (ID: {med.IdMedicamento})");
                     MessageBox.Show("Catálogo actualizado correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);

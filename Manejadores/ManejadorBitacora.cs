@@ -26,13 +26,39 @@ namespace Manejadores
         }
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
+            tabla.DataSource = null;
             tabla.Columns.Clear();
-            tabla.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
+
             tabla.Columns["fkid_usuario"].Visible = false;
+
+            tabla.EnableHeadersVisualStyles = false;
+
+
+            tabla.DefaultCellStyle.Font = new Font("LucidaBrigth", 10, FontStyle.Regular);
+
+            // Estilo de los Encabezados (Azul Oscuro)
+            tabla.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 66, 91);
+            tabla.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            tabla.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(45, 66, 91);
+            tabla.ColumnHeadersDefaultCellStyle.Font = new Font("Javanese Text", 10, FontStyle.Bold);
+            tabla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            tabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            tabla.ColumnHeadersHeight = 40;
+
+            tabla.DefaultCellStyle.Font = new Font("Javanese Text", 9);
+            tabla.DefaultCellStyle.SelectionBackColor = Color.FromArgb(30, 144, 255);
+            tabla.DefaultCellStyle.SelectionForeColor = Color.White;
+            tabla.BackgroundColor = Color.White;
+            tabla.GridColor = Color.FromArgb(210, 210, 210);
+
+            tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tabla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tabla.RowHeadersVisible = false; // Ocultar la columna gris de la izquierda
+
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
-            tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
