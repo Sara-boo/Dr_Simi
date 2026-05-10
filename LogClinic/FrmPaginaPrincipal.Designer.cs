@@ -37,6 +37,7 @@
             this.tsbPersonal = new System.Windows.Forms.ToolStripButton();
             this.tsbHistorial = new System.Windows.Forms.ToolStripButton();
             this.tsbInventario = new System.Windows.Forms.ToolStripButton();
+            this.TsbBitacora = new System.Windows.Forms.ToolStripButton();
             this.tsbVacunas = new System.Windows.Forms.ToolStripButton();
             this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.pSuperior = new System.Windows.Forms.Panel();
@@ -103,6 +104,7 @@
             this.tsbPersonal,
             this.tsbHistorial,
             this.tsbInventario,
+            this.TsbBitacora,
             this.tsbVacunas,
             this.tsbSalir});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 81);
@@ -195,6 +197,16 @@
             this.tsbInventario.Size = new System.Drawing.Size(85, 60);
             this.tsbInventario.Text = "INVENTARIO";
             this.tsbInventario.Click += new System.EventHandler(this.tsbInventario_Click);
+            // 
+            // TsbBitacora
+            // 
+            this.TsbBitacora.AutoSize = false;
+            this.TsbBitacora.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TsbBitacora.Image = global::LogClinic.Properties.Resources.Tratamiento;
+            this.TsbBitacora.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TsbBitacora.Name = "TsbBitacora";
+            this.TsbBitacora.Size = new System.Drawing.Size(84, 70);
+            this.TsbBitacora.Text = "BITACORA";
             // 
             // tsbVacunas
             // 
@@ -653,5 +665,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripButton TsbBitacora;
     }
 }
