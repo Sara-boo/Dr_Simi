@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>LogClinic.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
@@ -51,6 +54,10 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.16.0.18925.20022\lib\net40\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=9.6.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.9.6.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
@@ -64,6 +71,10 @@
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Pipelines, Version=10.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.10.0.5\lib\net462\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -103,17 +114,41 @@
     <Compile Include="FrmAgregarPersonal.Designer.cs">
       <DependentUpon>FrmAgregarPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCitas.cs">
+    <Compile Include="FrmBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCitas.Designer.cs">
-      <DependentUpon>FrmCitas.cs</DependentUpon>
+    <Compile Include="FrmBitacora.Designer.cs">
+      <DependentUpon>FrmBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHistorialClinico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistorialClinico.Designer.cs">
+      <DependentUpon>FrmHistorialClinico.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPacientes.Designer.cs">
       <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCitas.Designer.cs">
+      <DependentUpon>FrmCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInventario.Designer.cs">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMovimientosInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMovimientosInventario.Designer.cs">
+      <DependentUpon>FrmMovimientosInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPaginaPrincipal.cs">
       <SubType>Form</SubType>
@@ -139,28 +174,64 @@
     <Compile Include="FrmRegistroMedicamentos.Designer.cs">
       <DependentUpon>FrmRegistroMedicamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegristroCitas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegristroCitas.Designer.cs">
-      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmRegistroPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRegistroPacientes.Designer.cs">
       <DependentUpon>FrmRegistroPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRegristroCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegristroCitas.Designer.cs">
+      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSeguimientoRegistroInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSeguimientoRegistroInventario.Designer.cs">
+      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTratamiento.Designer.cs">
+      <DependentUpon>FrmTratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVerUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerUsuarios.Designer.cs">
+      <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAgregarPersonal.resx">
       <DependentUpon>FrmAgregarPersonal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBitacora.resx">
+      <DependentUpon>FrmBitacora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCitas.resx">
       <DependentUpon>FrmCitas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistorialClinico.resx">
+      <DependentUpon>FrmHistorialClinico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInventario.resx">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMovimientosInventario.resx">
+      <DependentUpon>FrmMovimientosInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPacientes.resx">
       <DependentUpon>FrmPacientes.cs</DependentUpon>
@@ -174,11 +245,24 @@
     <EmbeddedResource Include="FrmRegistroMedicamentos.resx">
       <DependentUpon>FrmRegistroMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegristroCitas.resx">
-      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistroPacientes.resx">
       <DependentUpon>FrmRegistroPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegristroCitas.resx">
+      <DependentUpon>FrmRegristroCitas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSeguimientoRegistroInventario.resx">
+      <DependentUpon>FrmSeguimientoRegistroInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTratamiento.resx">
+      <DependentUpon>FrmTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerUsuarios.resx">
+      <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -206,16 +290,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotonOcultarClave.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{828492ef-1604-44db-883b-060af9d7cf66}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
-      <Project>{71e9c884-717c-4c3a-a528-fcd3a04c8272}</Project>
-      <Name>Manejadores</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cerrar.png" />
@@ -249,6 +323,92 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Casa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{828492ef-1604-44db-883b-060af9d7cf66}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
+      <Project>{71e9c884-717c-4c3a-a528-fcd3a04c8272}</Project>
+      <Name>Manejadores</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioInicioSsesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{828492ef-1604-44db-883b-060af9d7cf66}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
+      <Project>{71e9c884-717c-4c3a-a528-fcd3a04c8272}</Project>
+      <Name>Manejadores</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filtrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DWL CSV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Identificacion_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edad_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sangre_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alergias_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnfCronicas_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CSV_R1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\+.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vacunas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tratamiento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacientes_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_textura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca_agua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_circulo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

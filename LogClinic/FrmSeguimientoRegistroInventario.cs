@@ -15,12 +15,15 @@ namespace LogClinic
     public partial class FrmSeguimientoRegistroInventario : Form
     {
         ManejadorMedicamentos mm;
+        ManejadorBitacora mb;
         public int idRecibido;
         public FrmSeguimientoRegistroInventario(int idMed)
         {
             InitializeComponent();
+            this.idRecibido = idMed;    
             this.idRecibido = idMed;
-            mm = new ManejadorMedicamentos();
+           mm = new ManejadorMedicamentos();
+           mb = new ManejadorBitacora();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -50,6 +53,9 @@ namespace LogClinic
                 nuevoInv.FkidUsuario = idUsuarioSesion;
 
                 mm.RegistroInventario(nuevoInv);
+                //Para la bitácora
+                mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Registró un nuevo inventario para el medicamento con lote {lote}.");
+
                 MessageBox.Show("¡Inventario y Movimiento registrado con éxito!","Éxito",MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
@@ -62,6 +68,11 @@ namespace LogClinic
             {
                 MessageBox.Show("Error al procesar el inventario: " + ex.Message);
             }
+        }
+
+        private void FrmSeguimientoRegistroInventario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

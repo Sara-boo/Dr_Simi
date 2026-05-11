@@ -3,17 +3,20 @@ using System.Windows.Forms;
 using Entidades;
 using Manejadores;
 
+
 namespace LogClinic
 {
     public partial class FrmPersonal : Form
     {
         ManejadorPersonal mp;
+        ManejadorBitacora mb;
         public static Personal personal = new Personal(0, "", "", "", "", "", "", 0);
 
         public FrmPersonal()
         {
             InitializeComponent();
             mp = new ManejadorPersonal();
+            mb = new ManejadorBitacora();
 
             DtgDatosPersonal.ReadOnly = true;                    // Evita modo edición
             DtgDatosPersonal.AllowUserToAddRows = false;         // Quita la fila vacía del final
@@ -80,7 +83,13 @@ namespace LogClinic
                     try
                     {
                         mp.Eliminar(personal.IdPersonal);
+
+                        // Creamos un mensaje descriptivo que incluya el nombre del afectado en la bitacora
+                        string mensajeAccion = $"Eliminó al miembro del personal: {personal.Nombre} {personal.Apellido})";
+                        mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, mensajeAccion);
+
                         mp.BuscarPersonal(DtgDatosPersonal, "");
+                        MessageBox.Show("Personal eliminado correctamente y registrado en bitácora.", "Éxito");
                     }
                     catch (MySql.Data.MySqlClient.MySqlException ex)
                     {

@@ -98,13 +98,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManejadorBitacora.cs" />
     <Compile Include="ManejadorCitas.cs" />
     <Compile Include="ManejadorDiseño.cs" />
     <Compile Include="ManejadorHistorialClinico.cs" />
-    <Compile Include="ManejadorLogin.cs" />
-    <Compile Include="ManejadorPersonal.cs" />
-    <Compile Include="ManejadorUsuarios.cs" />
+    <Compile Include="ManejadorInventario.cs" />
+    <Compile Include="ManejadorMedicamentos.cs" />
     <Compile Include="ManejadorRPaciente.cs" />
+    <Compile Include="ManejadorLogin.cs" />
+    <Compile Include="ManejadorMovimientoInventario.cs" />
+    <Compile Include="ManejadorPersonal.cs" />
+    <Compile Include="ManejadorTratamiento.cs" />
+    <Compile Include="ManejadorUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

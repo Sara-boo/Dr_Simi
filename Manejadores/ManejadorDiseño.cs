@@ -59,7 +59,7 @@ namespace Manejadores
             contenedor.BackColor = ColorTranslator.FromHtml($"#{colorFondo}");
             contenedor.Size = new Size(txt.Width + 40, txt.Height + 18);
             contenedor.Location = txt.Location;
-
+            contenedor.ForeColor = Color.Black;
             txt.BorderStyle = BorderStyle.None;
             txt.BackColor = ColorTranslator.FromHtml($"#{colorFondo}");
             txt.Location = new Point(12, 12);
@@ -95,7 +95,154 @@ namespace Manejadores
             contenedor.Controls.Add(txt);
             txt.BringToFront();
         }
+        // METODO PARA DAR FORMATO A LOS COMBOBOX (Color de borde, fondo y redondeado)
+        public void EstilizarComboBox(ComboBox cmb, string colorFondo, string colorBorde)
+        {
+            int radio = 10; // Radio más sutil para no cortar la flecha desplegable
+            int borde = 2;
+
+            Panel contenedor = new Panel();
+            contenedor.BackColor = ColorTranslator.FromHtml($"#{colorFondo}");
+            contenedor.Size = new Size(cmb.Width + 10, cmb.Height + 10);
+            contenedor.Location = cmb.Location;
+
+            cmb.FlatStyle = FlatStyle.Flat; 
+            cmb.BackColor = ColorTranslator.FromHtml($"#{colorFondo}");
+            cmb.Location = new Point(5, 5);
+            cmb.Width = contenedor.Width - 10;
+
+            contenedor.Paint += (s, e) =>
+            {
+                Rectangle rect = new Rectangle(0, 0, contenedor.Width - 1, contenedor.Height - 1);
+                using (System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath())
+                {
+                    gp.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                    gp.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                    gp.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                    gp.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                    gp.CloseFigure();
+
+                    e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    using (Pen p = new Pen(ColorTranslator.FromHtml($"#{colorBorde}"), borde))
+                    {
+                        e.Graphics.DrawPath(p, gp);
+                    }
+                }
+            };
+
+            cmb.Parent.Controls.Add(contenedor);
+            contenedor.Controls.Add(cmb);
+            cmb.BringToFront();
+        }
+
+        // METODO PARA DAR FORMATO A LOS DATETIMEPICKER
+        public void EstilizarDateTimePicker(DateTimePicker dtp, string colorFondo)
+        {
+            int radio = 10;
+
+            Panel contenedor = new Panel();
+            contenedor.BackColor = ColorTranslator.FromHtml($"#{colorFondo}");
+            contenedor.Size = new Size(dtp.Width + 10, dtp.Height + 10);
+            contenedor.Location = dtp.Location;
+            dtp.Location = new Point(5, 5);
+            dtp.Width = contenedor.Width - 10;
+
+            contenedor.Paint += (s, e) =>
+            {
+                Rectangle rect = new Rectangle(0, 0, contenedor.Width - 1, contenedor.Height - 1);
+                using (System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath())
+                {
+                    gp.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                    gp.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                    gp.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                    gp.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                    gp.CloseFigure();
+
+                    e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                   
+                }
+            };
+
+            dtp.Parent.Controls.Add(contenedor);
+            contenedor.Controls.Add(dtp);
+            dtp.BringToFront();
+        }
+
+        // METODO PARA CERRAR FORMULARIOS ACTIVOS AL CAMBIAR DE OPCION EN EL MENU
+        public void CerrarFormulariosActivos(Form formularioPadre)
+        {
+            foreach (Form formularioHijo in formularioPadre.MdiChildren)
+            {
+                formularioHijo.Close();
+            }
+        }
 
 
+        // METODO PARA COLOREAR SELECCIONES EN EL TOOLSTRIP
+        public void Boton(object senderBoton, ToolStrip tsMenu, ToolStripButton tsBoton)
+        {
+            Color colorSeleccion = ColorTranslator.FromHtml("#29455A");
+            Color colorOriginal = ColorTranslator.FromHtml("#095D7E");
+
+            foreach (ToolStripItem item in tsMenu.Items)
+            {
+                if (item is ToolStripButton)
+                {
+                    item.BackColor = colorOriginal;
+                }
+            }
+
+            if (senderBoton is ToolStripButton boton)
+            {
+                boton.BackColor = colorSeleccion;
+                tsBoton = boton;
+            }
+        }
+        public void RedondearPanel(Panel panel, int radio)
+        {
+            panel.BorderStyle = BorderStyle.None;
+
+            //ruta (path) para el rectángulo con bordes redondeados
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+
+            // Esquina superior izquierda
+            path.AddArc(new Rectangle(0, 0, radio, radio), 180, 90);
+            // Esquina superior derecha
+            path.AddArc(new Rectangle(panel.Width - radio, 0, radio, radio), -90, 90);
+            // Esquina inferior derecha
+            path.AddArc(new Rectangle(panel.Width - radio, panel.Height - radio, radio, radio), 0, 90);
+            // Esquina inferior izquierda
+            path.AddArc(new Rectangle(0, panel.Height - radio, radio, radio), 90, 90);
+            path.CloseFigure();
+
+            //panel que su nueva forma es esta región recortada
+            panel.Region = new Region(path);
+        }
+        public void RedondearBoton(Button boton, int radio)
+        {
+            boton.FlatStyle = FlatStyle.Flat;
+            boton.FlatAppearance.BorderSize = 0;
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radio, radio), 180, 90);
+            path.AddArc(new Rectangle(boton.Width - radio, 0, radio, radio), -90, 90);
+            path.AddArc(new Rectangle(boton.Width - radio, boton.Height - radio, radio, radio), 0, 90);
+            path.AddArc(new Rectangle(0, boton.Height - radio, radio, radio), 90, 90);
+            path.CloseFigure();
+            boton.Region = new Region(path);
+        }
+        public void RedondearTextBox(TextBox textBox, int radio)
+        {
+            textBox.BorderStyle = BorderStyle.None;
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, radio, radio), 180, 90);
+            path.AddArc(new Rectangle(textBox.Width - radio, 0, radio, radio), -90, 90);
+            path.AddArc(new Rectangle(textBox.Width - radio, textBox.Height - radio, radio, radio), 0, 90);
+            path.AddArc(new Rectangle(0, textBox.Height - radio, radio, radio), 90, 90); path.CloseFigure();
+            path.CloseFigure();
+            textBox.Region = new Region(path);
+        }
     }
 }
