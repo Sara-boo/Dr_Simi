@@ -410,5 +410,20 @@
   <ItemGroup>
     <None Include="Resources\logo_circulo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estetoscopio_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\advertencia_naranja_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios_activos_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reloj_relleno_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceso_directo_1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

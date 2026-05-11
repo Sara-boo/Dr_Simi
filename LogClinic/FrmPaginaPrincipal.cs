@@ -35,8 +35,6 @@ namespace LogClinic
             PanelPacientesActivos.BackColor = Color.White;
             PanelStockC.BackColor = Color.White;
             PanelProximasCitas.BackColor = Color.White;
-            PanelAccesoDirecto.BackColor = Color.White;
-            PanelVacunas.BackColor = Color.White;
             tsPrincipal.ForeColor = ColorTranslator.FromHtml("#095D7E");
             md.QuitarBordesBotones(BtnCerrar);
             md.QuitarBordesBotones(BtnOcultarVentana);
@@ -44,8 +42,6 @@ namespace LogClinic
             md.RedondearPanel(PanelPacientesActivos, 15);
             md.RedondearPanel(PanelStockC, 15);
             md.RedondearPanel(PanelProximasCitas, 15);
-            md.RedondearPanel(PanelAccesoDirecto, 15);
-            md.RedondearPanel(PanelVacunas, 15);
         }
         private void FrmPaginaPrincipal_Load(object sender, EventArgs e)
         {
