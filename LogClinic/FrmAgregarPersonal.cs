@@ -108,5 +108,10 @@ namespace LogClinic
         {
             Close();
         }
+
+        private void FrmAgregarPersonal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
