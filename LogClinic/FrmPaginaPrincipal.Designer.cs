@@ -310,9 +310,9 @@
             this.PanelFondo.Controls.Add(this.PanelStockC);
             this.PanelFondo.Controls.Add(this.LblFecha);
             this.PanelFondo.Controls.Add(this.label1);
-            this.PanelFondo.Location = new System.Drawing.Point(88, 98);
+            this.PanelFondo.Location = new System.Drawing.Point(88, 96);
             this.PanelFondo.Name = "PanelFondo";
-            this.PanelFondo.Size = new System.Drawing.Size(1846, 914);
+            this.PanelFondo.Size = new System.Drawing.Size(1846, 910);
             this.PanelFondo.TabIndex = 12;
             // 
             // PanelCitasHoy
@@ -323,7 +323,7 @@
             this.PanelCitasHoy.Controls.Add(this.label3);
             this.PanelCitasHoy.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelCitasHoy.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelCitasHoy.Location = new System.Drawing.Point(43, 148);
+            this.PanelCitasHoy.Location = new System.Drawing.Point(72, 148);
             this.PanelCitasHoy.Name = "PanelCitasHoy";
             this.PanelCitasHoy.Size = new System.Drawing.Size(354, 174);
             this.PanelCitasHoy.TabIndex = 23;
@@ -434,7 +434,7 @@
             this.PanelPacientesActivos.Controls.Add(this.label6);
             this.PanelPacientesActivos.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelPacientesActivos.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelPacientesActivos.Location = new System.Drawing.Point(972, 148);
+            this.PanelPacientesActivos.Location = new System.Drawing.Point(1001, 148);
             this.PanelPacientesActivos.Name = "PanelPacientesActivos";
             this.PanelPacientesActivos.Size = new System.Drawing.Size(383, 174);
             this.PanelPacientesActivos.TabIndex = 25;
@@ -478,7 +478,7 @@
             this.PanelStockC.Controls.Add(this.label5);
             this.PanelStockC.Font = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelStockC.ForeColor = System.Drawing.Color.DimGray;
-            this.PanelStockC.Location = new System.Drawing.Point(505, 148);
+            this.PanelStockC.Location = new System.Drawing.Point(534, 148);
             this.PanelStockC.Name = "PanelStockC";
             this.PanelStockC.Size = new System.Drawing.Size(365, 174);
             this.PanelStockC.TabIndex = 24;
