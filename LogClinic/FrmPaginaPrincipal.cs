@@ -42,32 +42,34 @@ namespace LogClinic
             md.RedondearPanel(PanelPacientesActivos, 15);
             md.RedondearPanel(PanelStockC, 15);
             md.RedondearPanel(PanelProximasCitas, 15);
+            md.EstilizarDataGrid(DtgDatos);
         }
         private void FrmPaginaPrincipal_Load(object sender, EventArgs e)
         {
             try
             {
-                // 1. Fecha actual
                 LblFecha.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-
-                // 2. Citas de hoy (Agregamos .Tables[0] y corregimos los nombres)
                 LblCitasHoy.Text = mc.Consultar("SELECT * FROM v_total_citas_hoy", "v_total_citas_hoy")
                                    .Tables[0].Rows[0]["Total_Citas_Hoy"].ToString();
 
-                // 3. Stock Crítico
                 LblStock.Text = mc.Consultar("SELECT * FROM v_total_stock_critico", "v_total_stock_critico")
                                 .Tables[0].Rows[0]["Total_Stock_Critico"].ToString();
-
-                // 4. Pacientes Activos
                 LblPacientesA.Text = mc.Consultar("SELECT * FROM v_total_pacientes_activos", "v_total_pacientes_activos")
                                      .Tables[0].Rows[0]["Total_Pacientes_Activos"].ToString();
 
-                // 5. DataGridView de próximas citas (Corregimos el nombre de la vista)
-                mc.MostrarIS("SELECT * FROM v_proximas_citas_hoy", DtgDatos, "v_proximas_citas_hoy");
+                mc.MostrarIS("SELECT * FROM v_proximas_citas_hoy", DtgDatos, "v_proximas_citas_hoy"); DtgDatos.Columns["Hora"].Width = 100; // Le damos un ancho fijo para que no se estire de más
+                DtgDatos.Columns["Hora"].DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#E2EFEF"); 
+                DtgDatos.Columns["Hora"].DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#0F5B78"); 
+                DtgDatos.Columns["Hora"].DefaultCellStyle.Font = new Font("Lucida Bright", 15F, FontStyle.Bold);
+                DtgDatos.Columns["Hora"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                DtgDatos.Columns["Paciente"].DefaultCellStyle.Font = new Font("Lucida Bright", 15F, FontStyle.Bold);
+                DtgDatos.Columns["Paciente"].DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#1A3A4A");
+                DtgDatos.Columns["Paciente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos del panel principal:\n" + ex.Message, "Error de Lectura", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 

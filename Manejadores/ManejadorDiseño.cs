@@ -244,5 +244,38 @@ namespace Manejadores
             path.CloseFigure();
             textBox.Region = new Region(path);
         }
+        public void EstilizarDataGrid(DataGridView dgv)
+        {
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToResizeRows = false;
+            dgv.AllowUserToResizeColumns = false;
+            dgv.ReadOnly = true;
+            dgv.RowHeadersVisible = false; 
+            dgv.MultiSelect = false;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Que ocupe todo el ancho
+
+            // Colores y bordes generales (Más sutiles)
+            dgv.BackgroundColor = ColorTranslator.FromHtml("#F5F9F9"); // Fondo del contenedor
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.GridColor = ColorTranslator.FromHtml("#E0E0E0"); 
+            dgv.ColumnHeadersVisible = false;
+
+            // Estilo general de las filas (Gris oscuro para que el Doctor no resalte tanto)
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#555555");
+            dgv.DefaultCellStyle.Font = new Font("Lucida Bright", 15F, FontStyle.Regular);
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Evitar el color azul genérico al seleccionar
+            dgv.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#F0F5F5");
+            dgv.DefaultCellStyle.SelectionForeColor = ColorTranslator.FromHtml("#333333");
+
+            // Altura y espacio
+            dgv.RowTemplate.Height = 70; // Filas altas como en tu diseño
+            dgv.DefaultCellStyle.Padding = new Padding(10, 5, 10, 5); // Márgenes internos
+        }
     }
 }
