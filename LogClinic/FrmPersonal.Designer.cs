@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 84);
+            this.label1.Location = new System.Drawing.Point(163, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 52);
             this.label1.TabIndex = 0;
@@ -48,10 +48,10 @@
             // 
             // TxtBuscador
             // 
-            this.TxtBuscador.Location = new System.Drawing.Point(421, 95);
+            this.TxtBuscador.Location = new System.Drawing.Point(398, 95);
             this.TxtBuscador.Multiline = true;
             this.TxtBuscador.Name = "TxtBuscador";
-            this.TxtBuscador.Size = new System.Drawing.Size(573, 31);
+            this.TxtBuscador.Size = new System.Drawing.Size(613, 31);
             this.TxtBuscador.TabIndex = 1;
             // 
             // BtnBuscar
@@ -60,7 +60,7 @@
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnBuscar.Location = new System.Drawing.Point(1033, 88);
+            this.BtnBuscar.Location = new System.Drawing.Point(1033, 82);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(106, 44);
             this.BtnBuscar.TabIndex = 2;
@@ -75,7 +75,7 @@
             this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnAgregar.Location = new System.Drawing.Point(1170, 88);
+            this.BtnAgregar.Location = new System.Drawing.Point(1170, 82);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(60, 44);
             this.BtnAgregar.TabIndex = 3;
@@ -86,6 +86,7 @@
             // 
             // DtgDatosPersonal
             // 
+            this.DtgDatosPersonal.BackgroundColor = System.Drawing.Color.White;
             this.DtgDatosPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgDatosPersonal.Location = new System.Drawing.Point(188, 167);
             this.DtgDatosPersonal.Name = "DtgDatosPersonal";

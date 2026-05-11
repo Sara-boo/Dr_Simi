@@ -31,23 +31,28 @@ namespace Manejadores
             b.Comando(consulta);
         }
 
-        public void BuscarPersonal(DataGridView tabla, string busqueda)
+        public void BuscarPersonal(DataGridView tabla, string busqueda, Image imgModificar, Image imgEliminar)
         {
             string consulta = $"CALL sp_buscar_personal('{busqueda}')";
             DataTable dt = b.Consultar(consulta, "personal").Tables[0];
 
-            tabla.DataSource = null;        // Limpia el origen primero
-            tabla.Columns.Clear();          // Luego limpia las columnas
-            tabla.DataSource = dt;          // Asigna el nuevo origen
+            tabla.DataSource = null;
+            tabla.Columns.Clear();
+            tabla.DataSource = dt;
 
             if (tabla.Columns["id_personal"] != null) tabla.Columns["id_personal"].Visible = false;
             if (tabla.Columns["fkid_rol"] != null) tabla.Columns["fkid_rol"].Visible = false;
 
-            tabla.Columns.Add(Boton("Modificar", Color.Green));
-            tabla.Columns.Add(Boton("Eliminar", Color.Red));
+            tabla.Columns.Add(CrearColumnaImagen("Modificar", imgModificar));
+            tabla.Columns.Add(CrearColumnaImagen("Eliminar", imgEliminar));
+
+            tabla.RowTemplate.Height = 28;
+            foreach (DataGridViewRow fila in tabla.Rows)
+            {
+                fila.Height = 28;
+            }
 
             tabla.AutoResizeColumns();
-            tabla.AutoResizeRows();
         }
 
         public DataTable ObtenerRoles()
@@ -55,16 +60,16 @@ namespace Manejadores
             return b.Consultar("SELECT id_rol, nombre_rol FROM tbl_roles", "roles").Tables[0];
         }
 
-        private DataGridViewButtonColumn Boton(string titulo, Color fondo)
+        private DataGridViewImageColumn CrearColumnaImagen(string nombre, Image imagen)
         {
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.HeaderText = titulo;
-            btn.Text = titulo;
-            btn.UseColumnTextForButtonValue = true;
-            btn.FlatStyle = FlatStyle.Popup;
-            btn.DefaultCellStyle.BackColor = fondo;
-            btn.DefaultCellStyle.ForeColor = Color.White;
-            return btn;
+            DataGridViewImageColumn columna = new DataGridViewImageColumn();
+            columna.Name = nombre;
+            columna.HeaderText = nombre;
+            columna.Image = imagen;
+            columna.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            columna.DefaultCellStyle.Padding = new Padding(4);
+            columna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            return columna;
         }
     }
 }
