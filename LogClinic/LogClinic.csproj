@@ -204,6 +204,12 @@
     <Compile Include="FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVacunas.Designer.cs">
+      <DependentUpon>FrmVacunas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVerUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVacunas.resx">
+      <DependentUpon>FrmVacunas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVerUsuarios.resx">
       <DependentUpon>FrmVerUsuarios.cs</DependentUpon>

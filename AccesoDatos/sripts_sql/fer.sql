@@ -92,3 +92,69 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
+
+-- Vista para mostrar las citas
+CREATE VIEW v_citas AS
+SELECT 
+    p.nombre_completo                                        AS Paciente,
+    c.fecha_hora                                             AS Fecha_Hora,
+    CONCAT('Dr. ', per.nombre, ' ', per.apellido, 
+           ' (', per.especialidad, ')')                      AS Medico_Asignado,
+    c.motivo                                                 AS Observaciones,
+    c.estado                                                 AS Estado
+FROM tbl_citas c
+INNER JOIN tbl_pacientes p   ON c.fkid_paciente = p.id_paciente
+INNER JOIN tbl_personal  per ON c.fkid_personal = per.id_personal;
+
+
+
+CREATE OR REPLACE VIEW v_catalogo_vacunas AS
+SELECT 
+    i.id_inventario, 
+    CONCAT(m.nombre, ' (Lote: ', i.lote, ' - Stock: ', i.stock_actual, ')') AS nombre_vacuna
+FROM tbl_inventario i
+INNER JOIN tbl_medicamentos m ON i.fkid_medicamento = m.id_medicamento
+WHERE m.tipo = 'Vacuna' 
+  AND i.stock_actual > 0 
+  AND i.estatus = 'Activo';
+  
+-- Para guardar la vacuna --
+
+DROP PROCEDURE IF EXISTS p_registrar_vacunacion;
+
+DELIMITER $$
+CREATE PROCEDURE p_registrar_vacunacion(
+    IN p_id_inventario INT,
+    IN p_id_usuario INT
+)
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Error al registrar la vacunación';
+    END;
+
+    START TRANSACTION;
+
+    -- 1. Insertar registro de vacunación
+    INSERT INTO tbl_registro_vacunacion (fkid_inventario) 
+    VALUES (p_id_inventario);
+
+    -- 2. Restar 1 al stock
+    UPDATE tbl_inventario 
+    SET stock_actual = stock_actual - 1 
+    WHERE id_inventario = p_id_inventario;
+
+    -- 3. Movimiento sin usuario (NULL es válido)
+    INSERT INTO tbl_movimientos_inventario (fkid_inventario, tipo_movimiento, cantidad, motivo)
+    VALUES (p_id_inventario, 'Salida', 1, 'Aplicación de Vacuna');
+
+    -- 4. Marcar agotado si llegó a 0
+    UPDATE tbl_inventario 
+    SET estatus = 'Agotado' 
+    WHERE id_inventario = p_id_inventario AND stock_actual <= 0;
+
+    COMMIT;
+END $$
+DELIMITER ;
+--
