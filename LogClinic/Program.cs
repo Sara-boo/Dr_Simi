@@ -16,7 +16,7 @@ namespace LogClinic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPaginaPrincipal("admin"));
+            Application.Run(new FrmVacunas());
         }
     }
 }
