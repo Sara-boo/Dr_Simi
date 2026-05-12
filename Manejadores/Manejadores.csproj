@@ -110,6 +110,7 @@
     <Compile Include="ManejadorPersonal.cs" />
     <Compile Include="ManejadorTratamiento.cs" />
     <Compile Include="ManejadorUsuarios.cs" />
+    <Compile Include="ManejadorVacunas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
