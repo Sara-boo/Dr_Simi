@@ -20,6 +20,7 @@ namespace LogClinic
         {
             InitializeComponent();
             mu = new ManejadorUsuarios();
+            mb = new ManejadorBitacora();
             mu.LlenarPersonal(CmbPersonal);
             mu.LlenarEstatus(CmbEstatus);
 
@@ -39,10 +40,28 @@ namespace LogClinic
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            int idPersonal = Convert.ToInt32(CmbPersonal.SelectedValue);
-            bool activo = Convert.ToBoolean(CmbEstatus.SelectedValue);
+            // 1. Validar que el ComboBox no esté vacío o con selección nula
+            if (CmbPersonal.SelectedValue == null || CmbPersonal.Items.Count == 0)
+            {
+                MessageBox.Show("No hay personal disponible para asignar una cuenta. " +
+                                "\n\nPor favor, registre primero a un empleado en el catálogo de Personal " +
+                                "que no tenga un usuario asignado todavía.",
+                                "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Esto detiene el proceso y evita que la app se cierre
+            }
+            if (CmbPersonal.SelectedValue == null || Convert.ToInt32(CmbPersonal.SelectedValue) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un miembro del personal para vincular la cuenta.",
+                                "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
+                // 2. Si pasó la validación, ahora sí podemos obtener el ID con seguridad
+                int idPersonal = Convert.ToInt32(CmbPersonal.SelectedValue);
+                bool activo = Convert.ToBoolean(CmbEstatus.SelectedValue);
+
                 if (!mu.ValidarCajasVacias(TxtClave, TxtNombre))
                 {
                     MessageBox.Show("Por favor, complete todos los campos.", "¡CAMPOS VACÍOS!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -55,16 +74,10 @@ namespace LogClinic
 
                     if (resultado == "Insertado")
                     {
-                        //Para la bitácora
                         mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Registró un nuevo usuario: {TxtNombre.Text}");
 
-                        MessageBox.Show("¡Usuario registrado exitosamente!", "Éxito", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("¡Usuario registrado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(resultado, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        mu.LimipiarCajas(TxtClave, TxtNombre);
                     }
                 }
                 else  
