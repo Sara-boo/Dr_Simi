@@ -87,9 +87,10 @@ namespace Manejadores
 
         public void LlenarPersonal(ComboBox caja)
         {
-            caja.DataSource = b.Consultar($"SELECT * FROM v_PersonalSinUsuario", $"v_PersonalSinUsuario").Tables[0];
-            caja.DisplayMember = $"nombre_completo";
-            caja.ValueMember = $"id_personal";
+            DataTable dt = b.Consultar("SELECT * FROM v_PersonalSinUsuario", "v_PersonalSinUsuario").Tables[0];
+            caja.DataSource = dt;
+            caja.DisplayMember = "nombre_completo";
+            caja.ValueMember = "id_personal"; 
         }
 
         public void LlenarEstatus(ComboBox caja)

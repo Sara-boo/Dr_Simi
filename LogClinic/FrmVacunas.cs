@@ -52,7 +52,7 @@ namespace LogClinic
 
                 // Bitácora general del sistema
                 Manejadores.ManejadorBitacora mb = new Manejadores.ManejadorBitacora();
-                mb.GuardarBitacora(idUser, $"Aplicó una vacuna (ID Inventario: {idInv})");
+                mb.GuardarBitacora(idUser, $"Aplicó una vacuna (Vacuna: {CmbVacunas.Text})");
 
                 MessageBox.Show("Vacunación registrada y stock actualizado.", "Éxito");
                 this.Close();
