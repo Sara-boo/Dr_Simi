@@ -50,7 +50,8 @@ namespace Manejadores
                               "TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE()) AS Edad, " +
                               "sexo AS Sexo, tipo_sangre AS Sangre, enfermedades_cronicas AS 'Enf. Crónicas', " +
                               "alergias AS Alergias, direccion AS Dirección, correo AS Correo, telefono AS Teléfono " +
-                              $"FROM tbl_pacientes WHERE curp LIKE '%{filtro}%' AND activo = true";
+                              $"FROM tbl_pacientes WHERE (curp LIKE '%{filtro}%' OR nombre_completo LIKE '%{filtro}%') AND activo = true " +
+                              "ORDER BY nombre_completo ASC";
 
             tabla.DataSource = b.Consultar(consulta, "tbl_pacientes").Tables[0];
 
@@ -62,7 +63,7 @@ namespace Manejadores
             colEditar.Name = "Modificar";
             colEditar.HeaderText = "Editar";
             colEditar.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            colEditar.DefaultCellStyle.Padding = new Padding(4); 
+            colEditar.DefaultCellStyle.Padding = new Padding(4);
 
             DataGridViewImageColumn colBorrar = new DataGridViewImageColumn();
             colBorrar.Image = imgDel;
@@ -83,6 +84,8 @@ namespace Manejadores
             tabla.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             tabla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             tabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            tabla.ColumnHeadersHeight = 35;
+
             tabla.DefaultCellStyle.Font = new Font("Segoe UI", 9);
             tabla.DefaultCellStyle.SelectionBackColor = Color.FromArgb(30, 144, 255);
             tabla.DefaultCellStyle.SelectionForeColor = Color.White;
@@ -101,6 +104,11 @@ namespace Manejadores
             }
 
             tabla.AutoResizeColumns();
+
+            if (tabla.Columns.Contains("Nombre"))
+            {
+                tabla.Sort(tabla.Columns["Nombre"], System.ComponentModel.ListSortDirection.Ascending);
+            }
         }
 
         public void Borrar(int id, string nombre)
@@ -121,7 +129,8 @@ namespace Manejadores
                               "fecha_nacimiento AS 'Fecha Nacimiento', sexo AS Sexo, tipo_sangre AS Sangre, " +
                               "enfermedades_cronicas AS 'Enf. Crónicas', alergias AS Alergias, " +
                               "direccion AS Dirección, correo AS Correo, telefono AS Teléfono " +
-                              $"FROM tbl_pacientes WHERE curp LIKE '%{filtro}%' AND activo = true";
+                              $"FROM tbl_pacientes WHERE (curp LIKE '%{filtro}%' OR nombre_completo LIKE '%{filtro}%') AND activo = true " +
+                              "ORDER BY nombre_completo ASC";
             return b.Consultar(consulta, "tbl_pacientes").Tables[0];
         }
 

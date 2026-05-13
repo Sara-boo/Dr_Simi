@@ -20,9 +20,8 @@ namespace LogClinic
             mp = new ManejadorRPaciente();
             mb = new ManejadorBitacora();
 
-
-            DtgPaciente.RowHeadersVisible = false; 
-            DtgPaciente.AllowUserToAddRows = false; 
+            DtgPaciente.RowHeadersVisible = false;
+            DtgPaciente.AllowUserToAddRows = false;
         }
 
         private void FrmPacientes_Load(object sender, EventArgs e)
@@ -103,10 +102,7 @@ namespace LogClinic
                         else if (nombreBoton == "Borrar")
                         {
                             mp.Borrar(paciente.IdPaciente, paciente.NombreCompleto);
-
-                            //Para el registro en bitácora
                             mb.GuardarBitacora(FrmInicioSesion.IdUsuarioLogueado, $"Eliminó el paciente: {paciente.NombreCompleto}");
-
                             mp.Mostrar(DtgPaciente, TxtBCurp.Text, Properties.Resources.Edit, Properties.Resources.Eliminar_R);
                         }
                     }
