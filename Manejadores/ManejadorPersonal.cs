@@ -46,10 +46,30 @@ namespace Manejadores
             tabla.Columns.Add(CrearColumnaImagen("Modificar", imgModificar));
             tabla.Columns.Add(CrearColumnaImagen("Eliminar", imgEliminar));
 
-            tabla.RowTemplate.Height = 28;
+            tabla.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 66, 91);
+            tabla.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            tabla.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(45, 66, 91);
+            tabla.ColumnHeadersDefaultCellStyle.Font = new Font("Javanese Text", 10, FontStyle.Bold);
+            tabla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            tabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            tabla.ColumnHeadersHeight = 40;
+
+            tabla.DefaultCellStyle.Font = new Font("Javanese Text", 9);
+            tabla.DefaultCellStyle.SelectionBackColor = Color.FromArgb(30, 144, 255);
+            tabla.DefaultCellStyle.SelectionForeColor = Color.White;
+            tabla.BackgroundColor = Color.White;
+            tabla.GridColor = Color.FromArgb(210, 210, 210);
+
+            tabla.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tabla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tabla.RowHeadersVisible = false;
+            tabla.EnableHeadersVisualStyles = false;
+
+            
+            tabla.RowTemplate.Height = 45;
             foreach (DataGridViewRow fila in tabla.Rows)
             {
-                fila.Height = 28;
+                fila.Height = 45;
             }
 
             tabla.AutoResizeColumns();
@@ -67,7 +87,8 @@ namespace Manejadores
             columna.HeaderText = nombre;
             columna.Image = imagen;
             columna.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            columna.DefaultCellStyle.Padding = new Padding(4);
+           
+            columna.DefaultCellStyle.Padding = new Padding(2);
             columna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             return columna;
         }

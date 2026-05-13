@@ -182,6 +182,11 @@ namespace LogClinic
         {
             md.Boton(sender, tsPrincipal, botonActivoActual);
             md.CerrarFormulariosActivos(this);
+            PanelFondo.SendToBack();
+            FrmVacunas frmVacunas = new FrmVacunas();
+            frmVacunas.MdiParent = this;
+            frmVacunas.Show();
+            LblModulo.Text = "Vacunas";
 
         }
 
