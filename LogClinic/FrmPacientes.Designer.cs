@@ -56,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Bright", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 44);
+            this.label1.Location = new System.Drawing.Point(50, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 29);
             this.label1.TabIndex = 4;
@@ -64,10 +64,10 @@
             // 
             // TxtBCurp
             // 
-            this.TxtBCurp.Font = new System.Drawing.Font("Javanese Text", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBCurp.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBCurp.Location = new System.Drawing.Point(297, 40);
             this.TxtBCurp.Name = "TxtBCurp";
-            this.TxtBCurp.Size = new System.Drawing.Size(782, 30);
+            this.TxtBCurp.Size = new System.Drawing.Size(782, 46);
             this.TxtBCurp.TabIndex = 5;
             this.TxtBCurp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBCurp_KeyPress);
             // 
@@ -77,7 +77,7 @@
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.White;
-            this.BtnBuscar.Location = new System.Drawing.Point(1101, 35);
+            this.BtnBuscar.Location = new System.Drawing.Point(1102, 43);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(96, 38);
             this.BtnBuscar.TabIndex = 6;
@@ -96,7 +96,7 @@
             this.BtnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReporte.Font = new System.Drawing.Font("Javanese Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReporte.ForeColor = System.Drawing.Color.White;
-            this.BtnReporte.Location = new System.Drawing.Point(1258, 26);
+            this.BtnReporte.Location = new System.Drawing.Point(1267, 34);
             this.BtnReporte.Margin = new System.Windows.Forms.Padding(0);
             this.BtnReporte.Name = "BtnReporte";
             this.BtnReporte.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -114,7 +114,7 @@
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Font = new System.Drawing.Font("Javanese Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Location = new System.Drawing.Point(1219, 35);
+            this.BtnAgregar.Location = new System.Drawing.Point(1219, 43);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(36, 38);
             this.BtnAgregar.TabIndex = 7;
