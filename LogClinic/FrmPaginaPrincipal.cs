@@ -92,8 +92,10 @@ namespace LogClinic
         {
             md.Boton(sender, tsPrincipal, botonActivoActual);
             md.CerrarFormulariosActivos(this);
-            PanelFondo.Visible= true;
+            PanelFondo.Visible = true;
+            PanelFondo.BringToFront();
             LblModulo.Text = "Inicio";
+            FrmPaginaPrincipal_Load(null, null);
         }
 
         private void tsbCitas_Click(object sender, EventArgs e)
