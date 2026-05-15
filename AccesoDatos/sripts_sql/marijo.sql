@@ -160,41 +160,6 @@ FROM tbl_bitacora b
 INNER JOIN v_NombreUsuario u ON b.fkid_usuario = u.id_usuario 
 ORDER BY b.fecha DESC;
 
--- Procedimiento para filtrar roles para la bitácora --
-DELIMITER $$
-
-DROP PROCEDURE IF EXISTS p_consultar_bitacora$$
-
-CREATE PROCEDURE p_consultar_bitacora(
-    IN p_id_usuario INT,
-    IN p_rol VARCHAR(50)
-)
-BEGIN
-    IF p_rol = 'Admin' OR p_rol = 'Administrador' THEN
-        SELECT 
-            b.id_bitacora, 
-            u.nombre_completo AS Usuario, 
-            b.accion AS 'Acción Realizada', 
-            b.fecha AS 'Fecha y Hora'
-        FROM tbl_bitacora b
-        INNER JOIN v_NombreUsuario u ON b.fkid_usuario = u.id_usuario
-        WHERE DATE(b.fecha) = CURDATE() 
-        ORDER BY b.fecha DESC;
-    ELSE
-        SELECT 
-            b.id_bitacora, 
-            u.nombre_completo AS Usuario, 
-            b.accion AS 'Acción Realizada', 
-            b.fecha AS 'Fecha y Hora'
-        FROM tbl_bitacora b
-        INNER JOIN v_NombreUsuario u ON b.fkid_usuario = u.id_usuario
-        WHERE b.fkid_usuario = p_id_usuario 
-          AND DATE(b.fecha) = CURDATE()
-        ORDER BY b.fecha DESC;
-    END IF;
-END$$
-
-DELIMITER ;
 
 
 --MODIFIQUÉ LA VISTA DE VALERIA V_NombreUsuario 
@@ -274,4 +239,17 @@ BEGIN
 
 END$$
 
+DELIMITER ;
+
+-- Procedimiento almacenado para inserción en la bitácotra--
+DELIMITER $$
+DROP PROCEDURE IF EXISTS p_registrar_bitacora;
+CREATE PROCEDURE p_registrar_bitacora(
+    IN p_fkid_usuario INT,
+    IN p_accion VARCHAR(200)
+)
+BEGIN
+    INSERT INTO tbl_bitacora (fkid_usuario, accion, fecha)
+    VALUES (p_fkid_usuario, p_accion, NOW());
+END $$
 DELIMITER ;
