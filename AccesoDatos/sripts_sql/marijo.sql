@@ -155,12 +155,10 @@ SELECT
     b.fkid_usuario, 
     u.nombre_completo AS 'Usuario',
     b.accion AS 'Acción Realizada', 
-    b.fecha AS 'Fecha y Hora'
+    b.fecha AS 'Fecha'
 FROM tbl_bitacora b 
 INNER JOIN v_NombreUsuario u ON b.fkid_usuario = u.id_usuario 
 ORDER BY b.fecha DESC;
-
-SELECT * FROM v_bitacora;
 
 -- Procedimiento para filtrar roles para la bitácora --
 DELIMITER $$

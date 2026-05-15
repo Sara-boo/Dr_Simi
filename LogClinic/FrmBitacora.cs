@@ -25,8 +25,16 @@ namespace LogClinic
         {
             int id = FrmInicioSesion.IdUsuarioLogueado;
             string rol = FrmInicioSesion.RolUsuarioLogueado;
+            string sql;
 
-            string sql = $"CALL p_consultar_bitacora({id}, '{rol}')";
+            if (rol == "Administrador")
+            {
+                sql = "SELECT * FROM v_bitacora WHERE DATE(Fecha) = CURDATE() ORDER BY Fecha DESC";
+            }
+            else
+            {
+                sql = $"SELECT * FROM v_bitacora WHERE fkid_usuario = {id} AND DATE(Fecha) = CURDATE() ORDER BY Fecha DESC";
+            }
 
             mb.Mostrar(sql, DtgDatos, "v_bitacora");
         }
