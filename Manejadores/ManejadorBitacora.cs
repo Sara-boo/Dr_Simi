@@ -34,9 +34,6 @@ namespace Manejadores
             if (tabla.Columns.Contains("fkid_usuario"))
                 tabla.Columns["fkid_usuario"].Visible = false;
 
-            if (tabla.Columns.Contains("id_usuario"))
-                tabla.Columns["id_usuario"].Visible = false;
-
             tabla.EnableHeadersVisualStyles = false;
 
 
