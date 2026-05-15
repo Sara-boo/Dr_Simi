@@ -22,8 +22,14 @@ namespace AccesoDatos
             try
             {
                 if (con.State != ConnectionState.Open)
+                {
                     con.Open();
+                    //configurar la zona horaria en cuanto abre la aplicación
+                    MySqlCommand cmdZonaHoraria = new MySqlCommand("SET time_zone = '-06:00';", con);
+                    cmdZonaHoraria.ExecuteNonQuery();
+                }
 
+                //ejecutar la consulta principal
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.ExecuteNonQuery();
 
@@ -45,8 +51,13 @@ namespace AccesoDatos
             try
             {
                 if (con.State != ConnectionState.Open)
+                {
                     con.Open();
-
+                    //zona horaria qui porque este es el método que lee las Vistas
+                    MySqlCommand cmdZonaHoraria = new MySqlCommand("SET time_zone = '-06:00';", con);
+                    cmdZonaHoraria.ExecuteNonQuery();
+                }
+                //ejecuta la lectura con la hora ya corregida
                 MySqlDataAdapter da = new MySqlDataAdapter(query, con);
                 da.Fill(ds, table);
 
