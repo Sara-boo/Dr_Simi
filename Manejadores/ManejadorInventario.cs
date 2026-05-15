@@ -21,14 +21,12 @@ namespace Manejadores
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
 
-            tabla.Columns["id_inventario"].Visible = false;
-            tabla.Columns["id_medicamento"].Visible = false;
-
             tabla.EnableHeadersVisualStyles = false;
 
             tabla.DefaultCellStyle.Font = new Font("Lucida Bright", 10, FontStyle.Regular);
             tabla.Columns["id_inventario"].Visible = false;
             tabla.Columns["id_medicamento"].Visible = false;
+            tabla.Columns["estatus"].Visible = false;
 
             // Estilo de los Encabezados (Azul Oscuro)
             tabla.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 66, 91);

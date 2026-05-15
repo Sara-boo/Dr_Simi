@@ -30,7 +30,12 @@ namespace Manejadores
             tabla.Columns.Clear();
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
 
-            tabla.Columns["fkid_usuario"].Visible = false;
+            // Forma segura de ocultar columnas sin que la app se cierre
+            if (tabla.Columns.Contains("fkid_usuario"))
+                tabla.Columns["fkid_usuario"].Visible = false;
+
+            if (tabla.Columns.Contains("id_usuario"))
+                tabla.Columns["id_usuario"].Visible = false;
 
             tabla.EnableHeadersVisualStyles = false;
 

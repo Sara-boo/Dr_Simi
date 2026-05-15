@@ -18,17 +18,19 @@ namespace LogClinic
         public static MovimientosInventario movimientoInventario = new MovimientosInventario(0, 0, "", 0, "", "", 0);
         int fila = 0;
         int columna = 0;
+        int idInventarioRecibido;
         public FrmMovimientosInventario(int idInventario)
         {
             InitializeComponent();
             mmi = new ManejadorMovimientoInventario();
+            idInventarioRecibido = idInventario;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busqueda = txtBuscar.Text;
             string filtro = cmbTipo.Text;
-            string query = "SELECT * FROM v_mostrar_movimientos WHERE 1=1";
+            string query = $"SELECT * FROM v_mostrar_movimientos WHERE id_inventario = {this.idInventarioRecibido}";
 
             if (!string.IsNullOrEmpty(busqueda))
             {

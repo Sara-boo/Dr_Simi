@@ -26,7 +26,7 @@ namespace Manejadores
 
         public void Editar(Usuarios usuario)
         {
-            b.Comando($"CALL p_EditarUsuario({usuario.IdUsuario}, '{usuario.UserName}', '{usuario.Password}',{usuario.IdPersonal}, {usuario.Activo})");
+            b.Comando($"CALL p_EditarUsuario({usuario.IdUsuario}, '{usuario.UserName}', '{usuario.Password}', {usuario.Activo}, {usuario.IdPersonal})");
         }
 
         public void Estado(Usuarios usuario)
