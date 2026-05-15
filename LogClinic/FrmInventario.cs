@@ -20,7 +20,7 @@ namespace LogClinic
         public static Medicamentos mSeleccionado= new Medicamentos(0, "", "", "", "", "", false);
         int fila = 0;
         int columna = 0;
-        
+
         public FrmInventario()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace LogClinic
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            mi.Mostrar($"SELECT * FROM v_inventario where nombre like '%{txtBuscar.Text}%'",dtgDatos,"v_inventario");
+            mi.Mostrar($"SELECT * FROM v_inventario where nombre like '%{txtBuscar.Text}%' AND estatus='Activo'",dtgDatos,"v_inventario");
         }
 
         private void dtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -146,6 +146,11 @@ namespace LogClinic
                                     "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void FrmInventario_Load(object sender, EventArgs e)
+        {
+           // mi.Mostrar("SELECT * FROM v_inventario", dtgDatos, "v_inventario");
         }
     }
 }

@@ -134,41 +134,20 @@ INNER JOIN tbl_medicamentos med ON inv.fkid_medicamento = med.id_medicamento
 LEFT JOIN tbl_usuarios u ON mov.fkid_usuario = u.id_usuario;
 
 
---Vista para mostrar inventario --
 CREATE OR REPLACE VIEW v_inventario AS
 SELECT 
     i.id_inventario, 
-    m.id_medicamento,
+    m.id_medicamento, 
     m.nombre AS Nombre, 
-    m.descripcion AS Descripcion, 
+    m.descripcion AS Descripción, 
     m.tipo AS Tipo, 
-    m.presentacion AS Presentacion, 
-    m.concentracion AS Concentracion, 
+    m.presentacion AS Presentación, 
+    m.concentracion AS Concentración, 
     m.requiere_receta AS RequiereReceta,
-    i.stock_actual AS Stock
+    i.stock_actual AS Stock,
+    i.estatus
 FROM tbl_inventario i
 INNER JOIN tbl_medicamentos m ON i.fkid_medicamento = m.id_medicamento;
-
--- Validar Stock y registrar elimminación (solo elimina el stock) --
-DELIMITER $$
-CREATE PROCEDURE p_eliminar_o_ajustar_stock(
-    IN p_id_inventario INT,
-    IN p_cantidad INT,
-    IN p_tipo_mov ENUM('Entrada','Salida','Ajuste'),
-    IN p_motivo TEXT,
-    IN p_id_usuario INT
-)
-BEGIN
-    IF p_tipo_mov = 'Entrada' THEN
-        UPDATE tbl_inventario SET stock_actual = stock_actual + p_cantidad WHERE id_inventario = p_id_inventario;
-    ELSE
-        UPDATE tbl_inventario SET stock_actual = stock_actual - p_cantidad WHERE id_inventario = p_id_inventario;
-    END IF;
-
-    INSERT INTO tbl_movimientos_inventario (fkid_inventario, tipo_movimiento, cantidad, motivo, fkid_usuario)
-    VALUES (p_id_inventario, p_tipo_mov, p_cantidad, p_motivo, p_id_usuario);
-END $$
-DELIMITER ;
 
 --VISTA PARA LA BITÁCORA --
 CREATE OR REPLACE VIEW v_bitacora AS 
@@ -183,6 +162,43 @@ ORDER BY b.fecha DESC;
 
 SELECT * FROM v_bitacora;
 
+-- Procedimiento para filtrar roles para la bitácora --
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS p_consultar_bitacora$$
+
+CREATE PROCEDURE p_consultar_bitacora(
+    IN p_id_usuario INT,
+    IN p_rol VARCHAR(50)
+)
+BEGIN
+    IF p_rol = 'Admin' OR p_rol = 'Administrador' THEN
+        SELECT 
+            b.id_bitacora, 
+            u.nombre_completo AS Usuario, 
+            b.accion AS 'Acción Realizada', 
+            b.fecha AS 'Fecha y Hora'
+        FROM tbl_bitacora b
+        INNER JOIN v_NombreUsuario u ON b.fkid_usuario = u.id_usuario
+        WHERE DATE(b.fecha) = CURDATE() 
+        ORDER BY b.fecha DESC;
+    ELSE
+        SELECT 
+            b.id_bitacora, 
+            u.nombre_completo AS Usuario, 
+            b.accion AS 'Acción Realizada', 
+            b.fecha AS 'Fecha y Hora'
+        FROM tbl_bitacora b
+        INNER JOIN v_NombreUsuario u ON b.fkid_usuario = u.id_usuario
+        WHERE b.fkid_usuario = p_id_usuario 
+          AND DATE(b.fecha) = CURDATE()
+        ORDER BY b.fecha DESC;
+    END IF;
+END$$
+
+DELIMITER ;
+
+
 --MODIFIQUÉ LA VISTA DE VALERIA V_NombreUsuario 
 CREATE OR REPLACE VIEW v_NombreUsuario AS
 SELECT 
@@ -194,4 +210,70 @@ FROM tbl_usuarios u
 INNER JOIN tbl_personal p ON u.fkid_personal = p.id_personal
 INNER JOIN tbl_roles r ON p.fkid_rol = r.id_rol;
 
+-- Para mostrar los movimientos de inventario en el datagrid
+CREATE OR REPLACE VIEW v_mostrar_movimientos AS
+SELECT 
+    m.id_movimiento,
+    i.id_inventario, 
+    med.nombre AS 'Medicamento',
+    i.lote AS 'Lote',
+    m.tipo_movimiento AS 'Acción',
+    m.cantidad AS 'Cantidad',
+    m.motivo AS 'Motivo',
+    m.fecha AS 'Fecha'
+FROM tbl_movimientos_inventario m
+INNER JOIN tbl_inventario i ON m.fkid_inventario = i.id_inventario
+INNER JOIN tbl_medicamentos med ON i.fkid_medicamento = med.id_medicamento;
 
+--Eliminar un medicamento (solo elimina el registro del medicamento, no el inventario ni los movimientos históricos)
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS p_eliminar_o_ajustar_stock$$
+
+CREATE PROCEDURE p_eliminar_o_ajustar_stock(
+    IN p_id_inventario INT,
+    IN p_cantidad INT,
+    IN p_tipo_mov ENUM('Entrada','Salida','Ajuste'),
+    IN p_motivo TEXT,
+    IN p_id_usuario INT
+)
+BEGIN
+    IF p_motivo LIKE '%Eliminación%' THEN
+        UPDATE tbl_inventario 
+        SET estatus = 'Agotado', 
+            stock_actual = 0 
+        WHERE id_inventario = p_id_inventario;
+    ELSE
+        IF p_tipo_mov = 'Entrada' THEN
+            UPDATE tbl_inventario 
+            SET stock_actual = stock_actual + p_cantidad,
+                estatus = 'Activo' 
+            WHERE id_inventario = p_id_inventario;
+        ELSE
+            UPDATE tbl_inventario 
+            SET stock_actual = stock_actual - p_cantidad 
+            WHERE id_inventario = p_id_inventario;
+        END IF;
+    END IF;
+    INSERT INTO tbl_movimientos_inventario (
+        fkid_inventario, 
+        tipo_movimiento, 
+        cantidad, 
+        motivo, 
+        fkid_usuario
+    )
+    VALUES (
+        p_id_inventario, 
+        p_tipo_mov, 
+        p_cantidad, 
+        p_motivo, 
+        p_id_usuario
+    );
+    
+    UPDATE tbl_inventario 
+    SET estatus = 'Agotado' 
+    WHERE id_inventario = p_id_inventario AND stock_actual <= 0;
+
+END$$
+
+DELIMITER ;

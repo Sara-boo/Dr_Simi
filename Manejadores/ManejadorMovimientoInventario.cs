@@ -19,8 +19,8 @@ namespace Manejadores
             tabla.DataSource = null;
             tabla.DataSource = b.Consultar(consulta, datos).Tables[0];
 
-            if (tabla.Columns.Contains("id_movimiento"))
                 tabla.Columns["id_movimiento"].Visible = false;
+                tabla.Columns["id_inventario"].Visible = false;
 
             tabla.EnableHeadersVisualStyles = false;
 

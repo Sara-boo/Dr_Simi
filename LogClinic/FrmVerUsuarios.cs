@@ -24,7 +24,7 @@ namespace LogClinic
         {
             InitializeComponent();
             mu = new ManejadorUsuarios();
-            mu.EstilizarDataGrid(DtgDatos);
+            mu.EstilizarDataGrid(DtgDatos); 
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace LogClinic
 
         private void FrmVerUsuarios_Load(object sender, EventArgs e)
         {
-            mu.Mostrar($"SELECT * FROM v_usuarios WHERE Usuario LIKE '%{TxtBuscar.Text}%'", DtgDatos, "v_usuarios");
+           // mu.Mostrar($"SELECT * FROM v_usuarios WHERE Usuario LIKE '%{TxtBuscar.Text}%'", DtgDatos, "v_usuarios");
         }
     }
 }

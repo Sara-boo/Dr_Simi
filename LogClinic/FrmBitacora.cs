@@ -23,20 +23,11 @@ namespace LogClinic
 
         private void FrmBitacora_Load(object sender, EventArgs e)
         {
-            string sql;
             int id = FrmInicioSesion.IdUsuarioLogueado;
             string rol = FrmInicioSesion.RolUsuarioLogueado;
 
-            if (rol == "Admin")
-            {
-                sql = "SELECT * FROM v_bitacora";
-            }
-            else
-            {
-                sql = $"SELECT * FROM v_bitacora WHERE fkid_usuario = {id}";
-            }
+            string sql = $"CALL p_consultar_bitacora({id}, '{rol}')";
 
-            // Llamamos a tu método genérico
             mb.Mostrar(sql, DtgDatos, "v_bitacora");
         }
     }
