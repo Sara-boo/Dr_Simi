@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37012.4 d17.14
+VisualStudioVersion = 17.14.37012.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogClinic", "LogClinic\LogClinic.csproj", "{D0F4CA3C-1C9E-4DCB-8A00-B63F676A8484}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{828492EF-1604-44DB-883B-060AF9D7CF66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{75BE8BB8-4D75-4D0A-8642-3796584270B0}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador LogClinic", "Instalador LogClinic\Instalador LogClinic.vdproj", "{7592D217-50D1-7629-7BAB-B7E450FF4A50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,8 @@ Global
 		{75BE8BB8-4D75-4D0A-8642-3796584270B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75BE8BB8-4D75-4D0A-8642-3796584270B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75BE8BB8-4D75-4D0A-8642-3796584270B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7592D217-50D1-7629-7BAB-B7E450FF4A50}.Debug|Any CPU.ActiveCfg = Debug
+		{7592D217-50D1-7629-7BAB-B7E450FF4A50}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
